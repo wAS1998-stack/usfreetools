@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | USFreeTools.com</title>
+  <meta name="description" content="Get in touch with the USFreeTools.com team. Suggest a tool, report a bug, or ask a question.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://usfreetools.com/contact.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-logo">🔧 USFree<span>Tools</span></a><div class="nav-links"><a href="index.html">Home</a><a href="tools.html">All Tools</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a><a href="tools.html" class="nav-cta">Browse Tools →</a></div><button class="nav-toggle"><span></span><span></span><span></span></button></div></nav>
+<div style="background:linear-gradient(135deg,#0057FF,#0040CC);color:white;padding:60px 24px;text-align:center;">
+  <h1 style="font-family:var(--font-head);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;">Get in Touch</h1>
+  <p style="color:rgba(255,255,255,0.8);max-width:560px;margin:12px auto 0;">Have a question, suggestion, or found a bug? We'd love to hear from you.</p>
+</div>
+<div class="content-page"><div class="content-inner">
+  <h2 style="margin-top:0;">Contact Us</h2>
+  <p>Fill out the form below and we'll get back to you as soon as possible. You can also email us directly at <strong>hello@usfreetools.com</strong>.</p>
+  <div id="contactAlert" class="alert alert-success hidden">✅ Thank you! Your message has been received. We'll respond within 1–2 business days.</div>
+  <form id="contactForm" onsubmit="return submitContact(event)">
+    <div class="form-row">
+      <div class="form-group"><label for="cName">Your Name *</label><input type="text" id="cName" required placeholder="John Smith"></div>
+      <div class="form-group"><label for="cEmail">Your Email *</label><input type="email" id="cEmail" required placeholder="john@example.com"></div>
+    </div>
+    <div class="form-group"><label for="cSubject">Subject *</label>
+      <select id="cSubject" required><option value="">Select a topic…</option><option>Tool Suggestion</option><option>Bug Report</option><option>General Question</option><option>Advertising Inquiry</option><option>Partnership</option><option>Other</option></select>
+    </div>
+    <div class="form-group"><label for="cMessage">Message *</label><textarea id="cMessage" required rows="6" placeholder="Tell us what's on your mind…"></textarea></div>
+    <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:14px 32px;">Send Message →</button>
+  </form>
+  <div class="divider"></div>
+  <h2>Other Ways to Reach Us</h2>
+  <ul><li><strong>Email:</strong> hello@usfreetools.com</li><li><strong>Support:</strong> support@usfreetools.com</li><li><strong>Advertising:</strong> ads@usfreetools.com</li><li><strong>Response Time:</strong> Typically within 1–2 business days</li></ul>
+  <p style="color:var(--gray);font-size:0.85rem;">Note: To make this form functional, connect it to Formspree, AWS Lambda + SES, or Netlify Forms (see README).</p>
+</div></div>
+<footer class="footer"><div class="footer-inner"><div class="footer-bottom" style="border-top:none;padding-top:0;"><p>© 2025 USFreeTools.com · <a href="privacy.html" style="color:rgba(255,255,255,0.7);">Privacy</a> · <a href="terms.html" style="color:rgba(255,255,255,0.7);">Terms</a></p></div></div></footer>
+<script src="js/main.js"></script>
+<script>function submitContact(e){e.preventDefault();document.getElementById('contactAlert').classList.remove('hidden');document.getElementById('contactForm').reset();window.scrollTo({top:200,behavior:'smooth'});return false;}</script>
+</body></html>

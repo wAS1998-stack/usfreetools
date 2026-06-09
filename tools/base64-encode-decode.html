@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 Encoder &amp; Decoder – Free Tool | USFreeTools</title>
+  <meta name="description" content="Encode plain text to Base64 or decode Base64 strings back to readable text. Widely used in APIs, email attachments, data URIs, and authentication… Free.">
+  <meta name="keywords" content="base64 encode, base64 decode, base64 converter, encode base64 online, base64 to text">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://usfreetools.com/tools/base64-encode-decode.html">
+  <meta property="og:title" content="Base64 Encoder &amp; Decoder — Free Online Tool">
+  <meta property="og:description" content="Encode text to Base64 or decode it back to plain text.">
+  <meta property="og:url" content="https://usfreetools.com/tools/base64-encode-decode.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Base64 Encoder & Decoder", "url": "https://usfreetools.com/tools/base64-encode-decode.html", "description": "Encode plain text to Base64 or decode Base64 strings back to readable text. Widely used in APIs, email attachments, data URIs, and authentication tokens.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Base64 encryption?", "acceptedAnswer": {"@type": "Answer", "text": "No. It's encoding, not encryption \u2014 anyone can decode it. Never use it to protect secrets."}}, {"@type": "Question", "name": "Why does Base64 make data bigger?", "acceptedAnswer": {"@type": "Answer", "text": "It represents every 3 bytes as 4 ASCII characters, increasing size by about 33%."}}, {"@type": "Question", "name": "Does it handle emoji and non-English text?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 it encodes and decodes UTF-8 correctly, so emoji and international scripts survive."}}, {"@type": "Question", "name": "What are the = signs at the end?", "acceptedAnswer": {"@type": "Answer", "text": "Padding characters that make the output length a multiple of four \u2014 a normal part of Base64."}}, {"@type": "Question", "name": "Is Base64 a form of encryption?", "acceptedAnswer": {"@type": "Answer", "text": "No. Base64 is encoding, not encryption \u2014 it is fully reversible by anyone with no key involved. Never use it to protect sensitive data."}}, {"@type": "Question", "name": "Why is Base64 output larger than the input?", "acceptedAnswer": {"@type": "Answer", "text": "Base64 represents every three bytes as four characters, so output is about 33% larger. That size cost is the price of making binary data text-safe."}}]}</script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔢</text></svg>">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfreetools.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usfreetools.com/tools.html"}, {"@type": "ListItem", "position": 3, "name": "Base64 Encoder & Decoder", "item": "https://usfreetools.com/tools/base64-encode-decode.html"}]}</script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+    <a href="../index.html" class="nav-logo">🔧 USFree<span>Tools</span></a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">All Tools</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../tools.html" class="nav-cta">Browse 100+ Tools →</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div></nav>
+<div class="tool-page"><div class="tool-page-inner">
+  <div class="tool-breadcrumb">
+    <a href="../index.html">Home</a> › <a href="../tools.html">Tools</a> › <a href="../tools.html?cat=developer">Developer Tools</a> › Base64 Encoder &amp; Decoder
+  </div>
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+  <div class="tool-page-layout">
+    <div>
+      <div class="tool-main-card">
+        <h1>🔢 Base64 Encoder &amp; Decoder</h1>
+        <p>Encode plain text to Base64 or decode Base64 strings back to readable text. Widely used in APIs, email attachments, data URIs, and authentication tokens.</p>
+        <div id="toolContainer" data-impl="base64"></div>
+
+      </div>
+        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
+          <h2>What is Base64 Encoder &amp; Decoder?</h2>
+          <p style="color:#374151;line-height:1.7;">Base64 encoding turns binary data and text into an ASCII-safe string that survives systems built for text — email, JSON, URLs, and HTTP headers. This encoder/decoder converts both directions instantly: paste text to encode it, or paste a Base64 string to decode it back.</p>
+        </div>
+
+        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
+        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+
+        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+          <h2>About Base64 Encoder &amp; Decoder</h2>
+          
+          <p class="tool-intro-lead">It correctly handles UTF-8, so emoji and international characters round-trip cleanly. Everything runs in your browser, which matters when you're decoding tokens or payloads you'd rather not send to a third-party server.</p>
+        <h2>How to Use It</h2>
+          <ul>
+            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
+            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
+            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
+            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
+          </ul>
+
+          <h2>Common Use Cases</h2>
+          <ul>
+            <li>Encoding data to embed safely in JSON</li>
+            <li>Decoding a Base64 token to inspect contents</li>
+            <li>Creating data URIs for inline images in CSS</li>
+            <li>Building HTTP Basic Auth header values</li>
+            <li>Encoding binary data for email (MIME)</li>
+            <li>Debugging Base64 strings from logs</li>
+            <li>Decoding payloads from APIs and webhooks</li>
+            <li>Round-tripping UTF-8 text with emoji</li>
+          </ul>
+
+          <h2>Good to Know</h2>
+          <ul>
+            <li>Base64 increases data size by roughly 33% — three bytes become four characters.</li>
+            <li>It's encoding, not encryption: treat Base64 strings as fully readable.</li>
+            <li>Data URIs use Base64 to embed small images directly in HTML/CSS, saving a request.</li>
+          </ul>
+
+          <h2>Why You Can Trust This Tool</h2>
+          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
+        </article>
+
+        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
+          <h3>Is Base64 encryption?</h3>
+          <p class="tool-intro-lead">No. It's encoding, not encryption — anyone can decode it. Never use it to protect secrets.</p>
+          <h3>Why does Base64 make data bigger?</h3>
+          <p class="tool-intro-lead">It represents every 3 bytes as 4 ASCII characters, increasing size by about 33%.</p>
+          <h3>Does it handle emoji and non-English text?</h3>
+          <p class="tool-intro-lead">Yes — it encodes and decodes UTF-8 correctly, so emoji and international scripts survive.</p>
+          <h3>What are the = signs at the end?</h3>
+          <p class="tool-intro-lead">Padding characters that make the output length a multiple of four — a normal part of Base64.</p>
+        
+          <h3>Is Base64 a form of encryption?</h3>
+          <p class="tool-intro-lead">No. Base64 is encoding, not encryption — it is fully reversible by anyone with no key involved. Never use it to protect sensitive data.</p>
+          <h3>Why is Base64 output larger than the input?</h3>
+          <p class="tool-intro-lead">Base64 represents every three bytes as four characters, so output is about 33% larger. That size cost is the price of making binary data text-safe.</p>
+        </article>
+                <article class="content-inner indepth-section" style="margin-top:22px;">
+          <h2>A Developer’s Perspective</h2>
+          <p>Developers live in a world of formats, encodings, and transformations — JSON and CSV, Base64 and hex, minified and pretty-printed code, timestamps and tokens. Moving cleanly between these representations is a constant, low-level need, and doing it by hand is both slow and error-prone. Dedicated tools turn these chores into instant, reliable operations that keep you in flow.</p>
+          <p>The best developer utilities share a few traits: they run entirely client-side so sensitive payloads never leave the browser, they handle edge cases like UTF-8 and escaping correctly, and they fail loudly with clear errors rather than producing silently wrong output. For debugging, inspecting, and quick transformations, a fast browser tool often beats both a heavyweight IDE plugin and a command-line one-liner you have to remember.</p>
+          <h3>Where this comes up in practice</h3>
+          <ul>
+            <li>Formatting, validating, or converting data while debugging an API.</li>
+            <li>Encoding or decoding payloads, tokens, and parameters safely.</li>
+            <li>Cleaning or transforming code and configuration files.</li>
+            <li>Inspecting structure and catching syntax errors before they ship.</li>
+          </ul>
+          <p>For everyday development chores, a focused tool that is fast, correct, and private is worth more than a clever script. It removes a small point of friction dozens of times a day, which adds up to real time and fewer mistakes.</p>
+        </article>
+                <article class="content-inner deepfaq-section" style="margin-top:22px;">
+          <h2>Common Questions From Developers</h2>
+          <p>A question that comes up constantly is the difference between encoding, encryption, and hashing. Encoding like Base64 is fully reversible and offers no security — it only makes data safe for text-only channels. Encryption is reversible with a key and does protect data. Hashing is one-way and is used to verify integrity, not to hide information. Confusing these leads to real security mistakes, like using Base64 to 'protect' a secret that anyone can decode instantly.</p>
+          <p>Another frequent concern is handling edge cases correctly. UTF-8 characters, escaped sequences, trailing commas in JSON, and quoting in CSV are where naive transformations silently break. A good tool handles these correctly and reports errors clearly rather than producing output that looks right but is subtly malformed — which is far harder to debug later.</p>
+          <p>Developers also ask why a browser tool beats a quick script. For one-off inspection and transformation while debugging, a fast client-side tool keeps sensitive payloads off external servers and saves you from remembering exact command syntax. It removes a small but constant point of friction without compromising on correctness or privacy.</p>
+          <h3>Tips for the best results</h3>
+          <p>Never confuse encoding with encryption, validate structure and edge cases before relying on transformed data, and prefer client-side tools so payloads stay private.</p>
+        </article>
+        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+          <h2>Expert Tips</h2>
+          <ul>
+            <li>Use it to inspect a token or payload without sending it to a server.</li>
+            <li>Remember output is ~33% larger than the input.</li>
+            <li>Decode data URIs to see the embedded content.</li>
+            <li>Treat any Base64 string as fully readable, never as protected.</li>
+          </ul>
+          <h2>Common Mistakes to Avoid</h2>
+          <ul>
+            <li>Using Base64 to 'hide' sensitive data — it is trivially decoded.</li>
+            <li>Forgetting it inflates size by about a third.</li>
+            <li>Mishandling UTF-8 and corrupting emoji or accents.</li>
+            <li>Confusing the trailing = padding with part of the data.</li>
+          </ul>
+          <p class="tool-intro-lead">Base64's purpose is to make binary data safe for text-only channels — email, URLs, JSON — not to secure it. The most dangerous misconception is treating it as encryption; it is fully reversible by anyone. Use it for transport and embedding, understand its 33% size cost, and reach for real encryption whenever secrecy matters.</p>
+        </article>
+        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+          <h2>Related Tools</h2>
+          <p class="tool-intro-lead">If this tool helped, try our <a href="url-encode-decode.html">URL encoder/decoder</a> to encode for URLs, or use the <a href="hash-generator.html">hash generator</a> to create cryptographic hashes. You can also use the <a href="jwt-decoder.html">JWT decoder</a> to decode tokens.</p>
+        </article>
+      <div class="ad-label">Advertisement</div>
+  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+    </div>
+
+    <div class="tool-sidebar">
+      <div><div class="ad-label">Advertisement</div><div class="ad-banner ad-banner-side"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense<br>300×250</p></div></div></div>
+      <div class="sidebar-widget">
+        <h4>Related Developer Tools</h4>
+        <a href="json-formatter.html" class="related-tool"><span class="related-tool-icon">📋</span><span>JSON Formatter &amp; Validator</span></a>
+          <a href="url-encode-decode.html" class="related-tool"><span class="related-tool-icon">🔗</span><span>URL Encoder &amp; Decoder</span></a>
+          <a href="html-encode-decode.html" class="related-tool"><span class="related-tool-icon">🌐</span><span>HTML Encoder &amp; Decoder</span></a>
+          <a href="hash-generator.html" class="related-tool"><span class="related-tool-icon">#️⃣</span><span>Hash Generator (SHA-256)</span></a>
+          <a href="uuid-generator.html" class="related-tool"><span class="related-tool-icon">🆔</span><span>UUID Generator</span></a>
+      </div>
+      <div class="sidebar-widget">
+        <h4>💻 Developer Tools</h4>
+        <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free developer tools — all instant, private, and free with no signup required.</p>
+        <a href="../tools.html?cat=developer" class="btn btn-outline btn-full" style="margin-top:10px;">View All Developer Tools →</a>
+      </div>
+      <div><div class="ad-label">Advertisement</div><div class="ad-banner ad-banner-side"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense<br>300×250</p></div></div></div>
+    </div>
+  </div>
+</div></div>
+<footer class="footer"><div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" style="color:white;margin-bottom:12px;display:inline-flex;">🔧 USFree<span style="color:#FF4D00">Tools</span></a>
+        <p>100+ free online tools for everyone. No signup, no downloads, 100% free forever. Built with care in the USA.</p>
+      </div>
+      <div class="footer-col"><h4>Popular Tools</h4>
+        <a href="../tools/word-counter.html">Word Counter</a>
+        <a href="../tools/password-generator.html">Password Generator</a>
+        <a href="../tools/json-formatter.html">JSON Formatter</a>
+        <a href="../tools/percentage-calculator.html">Percentage Calculator</a>
+        <a href="../tools/qr-code-generator.html">QR Code Generator</a>
+      </div>
+      <div class="footer-col"><h4>Categories</h4>
+        <a href="../tools.html?cat=text">Text Tools</a>
+        <a href="../tools.html?cat=developer">Developer Tools</a>
+        <a href="../tools.html?cat=security">Security Tools</a>
+        <a href="../tools.html?cat=converter">Converters</a>
+        <a href="../tools.html?cat=seo">SEO Tools</a>
+        <a href="../tools.html?cat=math">Calculators</a>
+        <a href="../tools.html?cat=unit">Unit Converters</a>
+      </div>
+      <div class="footer-col"><h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../sitemap.html">Sitemap</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 USFreeTools.com · All Rights Reserved · Made in the USA</p>
+      <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
+    </div>
+  </div></footer>
+<script src="../js/main.js"></script>
+<script src="../js/tool-logic.js"></script>
+</body>
+</html>
