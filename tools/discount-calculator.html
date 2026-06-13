@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Discount Calculator", "url": "https://usfreetools.com/tools/discount-calculator.html", "description": "Calculate the final price after a discount and see exactly how much money you save. Perfect for shopping and sales.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate a discount?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the original price by the discount to find savings, then subtract; 40% off $50 saves $20, leaving $30."}}, {"@type": "Question", "name": "How do stacked discounts work?", "acceptedAnswer": {"@type": "Answer", "text": "They apply in sequence, not added \u2014 an extra 10% off an already-30%-off item comes off the reduced price."}}, {"@type": "Question", "name": "How do I find the original price from a sale price?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the sale price by (1 minus the discount); a $30 item at 40% off was $50."}}, {"@type": "Question", "name": "How do stacked discounts work?", "acceptedAnswer": {"@type": "Answer", "text": "They apply in sequence, not added together. A 30% then 10% discount is not 40% off \u2014 the second discount applies to the already-reduced price, giving 37% off."}}, {"@type": "Question", "name": "How do I find the original price from a sale price?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the sale price by one minus the discount. A $75 item at 25% off was $100, since 75 divided by 0.75 equals 100."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate a discount?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the original price by the discount percentage as a decimal to find the saving, then subtract it from the original. A 25% discount on $80 saves $20, for a sale price of $60."}}, {"@type": "Question", "name": "What is a quick way to find the sale price?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the original by what you pay. For 30% off, you pay 70%, so multiply by 0.70. This gives the final price directly in one step."}}, {"@type": "Question", "name": "Do stacked discounts add together?", "acceptedAnswer": {"@type": "Answer", "text": "No. A 50%-off item with an extra 20% off is not 70% off. The second discount applies to the already-reduced price, making the total saving 60%, not 70%."}}, {"@type": "Question", "name": "Does this include sales tax?", "acceptedAnswer": {"@type": "Answer", "text": "No. The calculator shows the discounted price before tax. Sales tax, where it applies, is added to the discounted price separately and varies by location."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏷️</text></svg>">
 
@@ -49,107 +49,37 @@
         <div id="toolContainer" data-impl="discountCalc"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Discount Calculator?</h2>
-          <p style="color:#374151;line-height:1.7;">A '40% off' tag is exciting, but the number that matters is what you'll actually pay — and how much you save. This discount calculator instantly finds the sale price and your savings from an original price and a discount percentage, so you can shop with clarity instead of mental arithmetic.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Discount Calculator</h2>
-          
-          <p class="tool-intro-lead">Enter the original price and the discount, and get the final price and amount saved immediately. It's handy at the register, while comparing deals, or when stacking a coupon on a sale.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Finding the sale price from a percentage off</li>
-            <li>Calculating how much you save on a deal</li>
-            <li>Comparing discounts across stores</li>
-            <li>Checking a final price before buying</li>
-            <li>Working out stacked or coupon discounts</li>
-            <li>Verifying a register total</li>
-            <li>Budgeting around a planned purchase</li>
-            <li>Evaluating whether a sale is worth it</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>Stacked discounts apply sequentially, so '30% off plus 10% off' is less than 40% total.</li>
-            <li>To reverse an original price, divide the sale price by (1 − discount).</li>
-            <li>A 50%-then-50% deal is 75% off, not 100%.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>How do I calculate a discount?</h3>
-          <p class="tool-intro-lead">Multiply the original price by the discount to find savings, then subtract; 40% off $50 saves $20, leaving $30.</p>
-          <h3>How do stacked discounts work?</h3>
-          <p class="tool-intro-lead">They apply in sequence, not added — an extra 10% off an already-30%-off item comes off the reduced price.</p>
-          <h3>How do I find the original price from a sale price?</h3>
-          <p class="tool-intro-lead">Divide the sale price by (1 minus the discount); a $30 item at 40% off was $50.</p>
-        
-          <h3>How do stacked discounts work?</h3>
-          <p class="tool-intro-lead">They apply in sequence, not added together. A 30% then 10% discount is not 40% off — the second discount applies to the already-reduced price, giving 37% off.</p>
-          <h3>How do I find the original price from a sale price?</h3>
-          <p class="tool-intro-lead">Divide the sale price by one minus the discount. A $75 item at 25% off was $100, since 75 divided by 0.75 equals 100.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Putting the Numbers in Context</h2>
-          <p>Everyday math problems — percentages, averages, ratios, interest, time spans — share a common trait: the arithmetic is simple, but the setup is where mistakes happen. Choosing the wrong base for a percentage, forgetting to weight an average, or mismatching units in a ratio produces answers that look plausible but are wrong. A good calculator does not just compute; it enforces the correct structure so the result you get is the result you meant.</p>
-          <p>These calculations show up constantly in financial decisions, academic work, cooking, fitness, and planning. Because the stakes can be real — a loan estimate, a grade, a budget — accuracy and clarity matter more than raw speed. A calculator that runs instantly in your browser, with no data leaving your device, lets you test scenarios freely: change an input, see the effect immediately, and build intuition for how the numbers move.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Working out a tip, discount, or sale price quickly and correctly.</li>
-            <li>Estimating loan or savings outcomes before making a financial commitment.</li>
-            <li>Checking a grade, average, or ratio for school or work.</li>
-            <li>Planning time, dates, or durations for scheduling and deadlines.</li>
-          </ul>
-          <p>The point of any calculator is confidence. By handling the mechanics correctly and letting you focus on the inputs, it turns a potentially error-prone task into a quick, reliable check you can trust for decisions that matter.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions, Answered</h2>
-          <p>One of the most common sources of error is the base of a percentage. A change from 10 to 15 is a five percentage-point rise but a 50% relative increase, and the two are not interchangeable. Whenever you calculate a percentage change, name the original value explicitly as your base — that single habit prevents most percentage mistakes, including the classic error of using the new value as the denominator.</p>
-          <p>Averages raise their own questions. The mean is sensitive to outliers, so a single extreme value can pull it far from what is typical; for skewed data like incomes or prices, the median often represents the center more honestly. And weighted averages — like a GPA — require multiplying each value by its weight, not simply averaging the raw numbers. Choosing the right kind of average is as important as the arithmetic itself.</p>
-          <p>For financial calculations, people often ask why the monthly payment is not the whole story. The total interest paid over the life of a loan can dwarf differences in the monthly figure, so comparing offers on total cost rather than monthly payment alone leads to far better decisions. These tools provide estimates to inform that comparison, not financial advice.</p>
-          <h3>Tips for the best results</h3>
-          <p>Name your base before calculating any percentage, choose the average that fits your data, and compare loans on total cost rather than the monthly payment alone.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Stacked discounts apply in sequence, not added together.</li>
-            <li>Reverse an original price by dividing the sale price by (1 − discount).</li>
-            <li>Check the final price before assuming a deal is good.</li>
-            <li>Watch whether tax applies before or after the discount.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Adding stacked percentages instead of applying them in sequence.</li>
-            <li>Assuming 50% off twice equals 100% off (it is 75%).</li>
-            <li>Calculating the discount on the wrong base amount.</li>
-            <li>Ignoring tax in the final total.</li>
-          </ul>
-          <p class="tool-intro-lead">Discounts are simple alone but tricky stacked: a 30%-then-10% offer is not 40% off, because the second discount applies to the already-reduced price. To work backward from a sale price to the original, divide by one minus the discount. Keeping the base amount straight is the key to getting deal math right.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="percentage-calculator.html">percentage calculator</a> to do percentage math, or use the <a href="tip-calculator.html">tip calculator</a> to calculate tips. You can also use the <a href="percentage-increase-calculator.html">percentage increase calculator</a> to calculate increases.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Calculator Does</h2>
+<p>This calculator works out the final price after a discount, and shows you exactly how much you save. Enter the original price and the discount percentage, and it gives you the sale price and the dollar amount off. It is the quickest way to answer the question every shopper asks at a sale rack: what will this actually cost me, and how much am I really saving?</p><p>Sale signs are designed to look appealing, but the real number — what you pay at the register — takes a quick calculation that is easy to get slightly wrong in your head. This tool gives you the exact figure instantly, so you can judge a deal clearly and avoid the common trap of assuming a discount is bigger than it is.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How Discounts Are Calculated</h2>
+<p>A discount is a percentage taken off the original price. To find the amount saved, multiply the original price by the discount percentage as a decimal: 25% off a $80 item is $80 times 0.25, or $20 saved. The sale price is then the original minus the saving — $60 in that example. Equivalently, you can multiply the original by what is left after the discount: 75% of $80 is $60, the same answer in one step.</p><p>That one-step method is a useful shortcut. If something is 30% off, you are paying 70% of the price, so multiply by 0.70. If it is 40% off, multiply by 0.60. Thinking in terms of what you pay rather than what you save often makes the mental math faster, and it is exactly how the calculator arrives at the final price for you.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Reading Sales Like a Smart Shopper</h2>
+<p>Discounts can be presented in ways that make them seem larger than they are, so a little clarity helps. A common one is stacked discounts: an item marked 50% off, then an extra 20% off. These do not add up to 70% off, as it might seem. The second discount applies to the already-reduced price, so 20% off the half-price item brings the total saving to 60%, not 70%. Calculating each step in turn — or simply finding the final price directly — keeps you from overestimating the deal.</p><p>It is also worth remembering that a percentage saving means more in dollars on an expensive item than a cheap one. Ten percent off a $500 purchase saves $50, while the same 10% off a $20 item saves just $2. When deciding whether a discount is worth acting on, the dollar amount often matters more than the percentage — and seeing both, as this calculator shows, helps you judge whether a sale is genuinely worth it rather than reacting to an attractive-looking percentage alone.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>For the final price in one step, multiply by what you pay — 30% off means multiplying by 0.70.</li><li>Stacked discounts do not simply add up; the second applies to the already-reduced price.</li><li>A percentage saving is worth more in dollars on expensive items than cheap ones.</li><li>Look at the dollar saving, not just the percentage, when deciding if a deal is worth it.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How do I calculate a discount?</h3><p>Multiply the original price by the discount percentage as a decimal to find the saving, then subtract it from the original. A 25% discount on $80 saves $20, for a sale price of $60.</p><h3>What is a quick way to find the sale price?</h3><p>Multiply the original by what you pay. For 30% off, you pay 70%, so multiply by 0.70. This gives the final price directly in one step.</p><h3>Do stacked discounts add together?</h3><p>No. A 50%-off item with an extra 20% off is not 70% off. The second discount applies to the already-reduced price, making the total saving 60%, not 70%.</p><h3>Does this include sales tax?</h3><p>No. The calculator shows the discounted price before tax. Sales tax, where it applies, is added to the discounted price separately and varies by location.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This calculator runs entirely in your browser, so nothing you enter is uploaded or stored. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more everyday math, the <a href="percentage-calculator.html">percentage calculator</a> handles any percentage question, the <a href="tip-calculator.html">tip calculator</a> works out gratuities, and the <a href="profit-margin-calculator.html">profit margin calculator</a> helps with pricing from the seller's side.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

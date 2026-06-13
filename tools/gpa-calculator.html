@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "GPA Calculator", "url": "https://usfreetools.com/tools/gpa-calculator.html", "description": "Calculate your GPA by entering your course grades and credit hours. Supports standard 4.0 scale.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is GPA weighted by credit hours?", "acceptedAnswer": {"@type": "Answer", "text": "Each grade's points are multiplied by credit hours, summed, and divided by total credits \u2014 a 4-credit A counts more than a 1-credit A."}}, {"@type": "Question", "name": "What's the standard 4.0 scale?", "acceptedAnswer": {"@type": "Answer", "text": "Typically A = 4.0, B = 3.0, C = 2.0, D = 1.0, F = 0, with pluses/minuses adjusting by ~0.3."}}, {"@type": "Question", "name": "Weighted vs unweighted GPA?", "acceptedAnswer": {"@type": "Answer", "text": "Unweighted uses a standard scale; weighted gives extra points for honors/AP courses and can exceed 4.0."}}, {"@type": "Question", "name": "How is GPA calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Each course grade is converted to grade points, multiplied by the course's credit hours, summed, and divided by total credits \u2014 a credit-weighted average."}}, {"@type": "Question", "name": "What is the difference between weighted and unweighted GPA?", "acceptedAnswer": {"@type": "Answer", "text": "Unweighted GPA caps at 4.0 regardless of course difficulty; weighted GPA gives extra points for honors or AP courses, so it can exceed 4.0."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is GPA calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Convert each grade to grade points, multiply by the course's credits, add up all the weighted points, and divide by the total credits. The result is your weighted grade point average, which is what this calculator computes."}}, {"@type": "Question", "name": "Why are credits part of the calculation?", "acceptedAnswer": {"@type": "Answer", "text": "Because courses carry different weights. A four-credit course affects your GPA four times as much as a one-credit course with the same grade, so credits must be included for the average to be accurate."}}, {"@type": "Question", "name": "Can my GPA be above 4.0?", "acceptedAnswer": {"@type": "Answer", "text": "On a standard unweighted 4.0 scale, no. But some schools use weighted scales that award extra points for honors or advanced courses, which can push a GPA above 4.0. It depends entirely on your institution's grading system."}}, {"@type": "Question", "name": "How do I find the grade I need to hit a target GPA?", "acceptedAnswer": {"@type": "Answer", "text": "Enter your known grades and credits, then experiment with the grade in your remaining course until the result reaches your target. Because the calculation is instant, you can quickly see what each possible grade does to your average."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 
@@ -49,106 +49,38 @@
         <div id="toolContainer" data-impl="gpaCalc"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is GPA Calculator?</h2>
-          <p style="color:#374151;line-height:1.7;">Your GPA distills a semester of grades into one number that matters for scholarships, honors, and applications. This calculator computes your grade point average from your course grades and credit hours, weighting each course by its credits the way schools actually do.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About GPA Calculator</h2>
-          
-          <p class="tool-intro-lead">Enter each course's grade and credit hours to get your weighted GPA instantly. It's the quick way to check where you stand, project a target, or see how one course affects the whole.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Calculating your semester GPA</li>
-            <li>Projecting your cumulative GPA</li>
-            <li>Seeing how one grade affects your average</li>
-            <li>Setting a target GPA for next term</li>
-            <li>Checking eligibility for honors or scholarships</li>
-            <li>Planning which grades you need</li>
-            <li>Comparing weighted course loads</li>
-            <li>Tracking academic progress</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>GPA weights each course by credit hours, so high-credit courses influence it more.</li>
-            <li>The common scale is A=4.0 to F=0, but plus/minus and weighted scales vary by school.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>How is GPA weighted by credit hours?</h3>
-          <p class="tool-intro-lead">Each grade's points are multiplied by credit hours, summed, and divided by total credits — a 4-credit A counts more than a 1-credit A.</p>
-          <h3>What's the standard 4.0 scale?</h3>
-          <p class="tool-intro-lead">Typically A = 4.0, B = 3.0, C = 2.0, D = 1.0, F = 0, with pluses/minuses adjusting by ~0.3.</p>
-          <h3>Weighted vs unweighted GPA?</h3>
-          <p class="tool-intro-lead">Unweighted uses a standard scale; weighted gives extra points for honors/AP courses and can exceed 4.0.</p>
-        
-          <h3>How is GPA calculated?</h3>
-          <p class="tool-intro-lead">Each course grade is converted to grade points, multiplied by the course's credit hours, summed, and divided by total credits — a credit-weighted average.</p>
-          <h3>What is the difference between weighted and unweighted GPA?</h3>
-          <p class="tool-intro-lead">Unweighted GPA caps at 4.0 regardless of course difficulty; weighted GPA gives extra points for honors or AP courses, so it can exceed 4.0.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Putting the Numbers in Context</h2>
-          <p>Everyday math problems — percentages, averages, ratios, interest, time spans — share a common trait: the arithmetic is simple, but the setup is where mistakes happen. Choosing the wrong base for a percentage, forgetting to weight an average, or mismatching units in a ratio produces answers that look plausible but are wrong. A good calculator does not just compute; it enforces the correct structure so the result you get is the result you meant.</p>
-          <p>These calculations show up constantly in financial decisions, academic work, cooking, fitness, and planning. Because the stakes can be real — a loan estimate, a grade, a budget — accuracy and clarity matter more than raw speed. A calculator that runs instantly in your browser, with no data leaving your device, lets you test scenarios freely: change an input, see the effect immediately, and build intuition for how the numbers move.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Working out a tip, discount, or sale price quickly and correctly.</li>
-            <li>Estimating loan or savings outcomes before making a financial commitment.</li>
-            <li>Checking a grade, average, or ratio for school or work.</li>
-            <li>Planning time, dates, or durations for scheduling and deadlines.</li>
-          </ul>
-          <p>The point of any calculator is confidence. By handling the mechanics correctly and letting you focus on the inputs, it turns a potentially error-prone task into a quick, reliable check you can trust for decisions that matter.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions, Answered</h2>
-          <p>One of the most common sources of error is the base of a percentage. A change from 10 to 15 is a five percentage-point rise but a 50% relative increase, and the two are not interchangeable. Whenever you calculate a percentage change, name the original value explicitly as your base — that single habit prevents most percentage mistakes, including the classic error of using the new value as the denominator.</p>
-          <p>Averages raise their own questions. The mean is sensitive to outliers, so a single extreme value can pull it far from what is typical; for skewed data like incomes or prices, the median often represents the center more honestly. And weighted averages — like a GPA — require multiplying each value by its weight, not simply averaging the raw numbers. Choosing the right kind of average is as important as the arithmetic itself.</p>
-          <p>For financial calculations, people often ask why the monthly payment is not the whole story. The total interest paid over the life of a loan can dwarf differences in the monthly figure, so comparing offers on total cost rather than monthly payment alone leads to far better decisions. These tools provide estimates to inform that comparison, not financial advice.</p>
-          <h3>Tips for the best results</h3>
-          <p>Name your base before calculating any percentage, choose the average that fits your data, and compare loans on total cost rather than the monthly payment alone.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Weight each course by its credit hours, not just its grade.</li>
-            <li>Project how a target grade affects your cumulative GPA.</li>
-            <li>Know your school's exact scale, including plus/minus values.</li>
-            <li>Distinguish weighted from unweighted GPA when comparing.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Averaging grades without weighting by credit hours.</li>
-            <li>Assuming every school uses the identical scale.</li>
-            <li>Confusing weighted and unweighted GPA.</li>
-            <li>Forgetting that a high-credit course moves your GPA more.</li>
-          </ul>
-          <p class="tool-intro-lead">GPA is a credit-weighted average, so a four-credit course influences it far more than a one-credit course — averaging raw grades gives the wrong answer. Scales also vary, including how plus and minus grades count and whether honors courses are weighted. Knowing your institution's exact system is essential for an accurate projection.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="average-calculator.html">average calculator</a> to calculate simple averages, or use the <a href="percentage-calculator.html">percentage calculator</a> to convert to percentages. You can also use the <a href="scientific-calculator.html">scientific calculator</a> to do advanced math.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This GPA Calculator Does</h2>
+<p>This calculator works out your grade point average from your course grades and their credit weights. You enter each course's grade and how many credits it carries, and it returns your weighted GPA. Because courses with more credits count more toward your average, a simple average of your grades would be misleading — this tool gives you the figure schools actually use.</p><p>Whether you are tracking progress toward a scholarship threshold, checking whether you will make the dean's list, or just want to know where you stand before final grades post, a GPA calculation answers it in seconds rather than guesswork.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How a Weighted GPA Is Calculated</h2>
+<p>GPA is a weighted average. Each grade is converted to grade points — typically a 4.0 scale where an A is 4.0, a B is 3.0, and so on — and then multiplied by the number of credits for that course. You add up all those weighted points, add up all your credits, and divide the first total by the second. The result is your GPA.</p><p>The weighting is what makes it more than a plain average. A top grade in a one-credit elective moves your GPA far less than the same grade in a four-credit core course, because the core course contributes four times the weight. This is why two students with the same letter grades can have different GPAs if their course loads differ — and why this calculator asks for credits, not just grades.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Using Your GPA to Plan Ahead</h2>
+<p>Beyond telling you where you stand, a GPA calculation is a planning tool. If you know your current GPA and the grades you expect this term, you can project where you will land and whether it clears a threshold that matters — a scholarship minimum, an honors cutoff, or a program requirement. Working backwards, you can also figure out what grades you need in remaining courses to reach a target, which turns a vague worry into a concrete plan.</p><p>This kind of forecasting is especially useful when one difficult course is weighing on you. Because the calculation is weighted, you can see exactly how much a strong grade in a high-credit course could lift your average, or how much cushion a few easier credits provide. Running the scenarios removes the anxiety of not knowing and lets you focus your effort where it moves your GPA the most.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>A Note on Different Grading Scales</h2>
+<p>Grading scales are not universal, and this matters when interpreting a GPA. Many schools use the standard 4.0 scale, but some use weighted scales that award extra points for honors or advanced courses, pushing a GPA above 4.0. Others use plus and minus grades that map to values like 3.7 or 3.3. When comparing GPAs across schools, it is worth knowing which scale each uses, because the same number can mean different things.</p><p>This calculator works on the common point-and-credit model, which covers the great majority of cases. If your institution uses an unusual scale, the underlying method is the same — convert each grade to its point value, weight by credits, and average — so you can still rely on the result as long as you enter the grade points your school assigns.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How is GPA calculated?</h3><p>Convert each grade to grade points, multiply by the course's credits, add up all the weighted points, and divide by the total credits. The result is your weighted grade point average, which is what this calculator computes.</p><h3>Why are credits part of the calculation?</h3><p>Because courses carry different weights. A four-credit course affects your GPA four times as much as a one-credit course with the same grade, so credits must be included for the average to be accurate.</p><h3>Can my GPA be above 4.0?</h3><p>On a standard unweighted 4.0 scale, no. But some schools use weighted scales that award extra points for honors or advanced courses, which can push a GPA above 4.0. It depends entirely on your institution's grading system.</p><h3>How do I find the grade I need to hit a target GPA?</h3><p>Enter your known grades and credits, then experiment with the grade in your remaining course until the result reaches your target. Because the calculation is instant, you can quickly see what each possible grade does to your average.</p>
+</article>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips for GPA Planning</h2>
+<ul><li>Higher-credit courses move your GPA the most — focus effort where it has the biggest weighted impact.</li><li>To find the grade you need, enter your known results and adjust the remaining course.</li><li>Know your school's scale — weighted scales can exceed 4.0.</li><li>Check your GPA before scholarship or honors deadlines.</li></ul>
+<h2>Why You Can Rely on This Tool</h2><p>Every calculation runs entirely in your browser, so nothing you enter is uploaded or stored. The page loads over a secure connection, needs no account or download, and returns the same accurate result every time. It is free to use without limits.</p>
+</article>
+      <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more academic and number tools, the <a href="grade-calculator.html">grade calculator</a> works out your overall grade from weighted assignments, the <a href="percentage-calculator.html">percentage calculator</a> handles any percentage, and the <a href="average-calculator.html">average calculator</a> averages a set of scores.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

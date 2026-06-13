@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "URL Encoder & Decoder", "url": "https://usfreetools.com/tools/url-encode-decode.html", "description": "Encode special characters in URLs into percent-encoded format, or decode them back. Essential for query strings, links, and web development.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Component vs full-URL encoding?", "acceptedAnswer": {"@type": "Answer", "text": "Component encoding escapes characters like / and ? for a single value; full-URL encoding preserves structure while escaping unsafe characters."}}, {"@type": "Question", "name": "Why does a space become %20?", "acceptedAnswer": {"@type": "Answer", "text": "Spaces aren't allowed in URLs, so they're replaced with their percent-encoded value (or + in query strings)."}}, {"@type": "Question", "name": "Does it handle non-English characters?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 characters like \u00e9 encode as UTF-8 percent sequences and decode back correctly."}}, {"@type": "Question", "name": "Why does a space become %20?", "acceptedAnswer": {"@type": "Answer", "text": "Spaces are not allowed in URLs, so they are percent-encoded as %20 in paths. In query strings they sometimes appear as a plus sign instead."}}, {"@type": "Question", "name": "Should I encode the whole URL or just parts?", "acceptedAnswer": {"@type": "Answer", "text": "Encode individual values, not the entire URL. Structural characters like ? & and / must stay intact to keep the URL working."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is URL encoding?", "acceptedAnswer": {"@type": "Answer", "text": "It is the process of replacing characters that are unsafe or have special meaning in a URL with a percent sign and two hexadecimal digits. A space becomes %20, for example, so the character can travel safely in a web address."}}, {"@type": "Question", "name": "Why do spaces turn into %20?", "acceptedAnswer": {"@type": "Answer", "text": "Because spaces are not allowed in URLs. Percent-encoding replaces the space with %20 \u2014 the percent sign plus the hex value for a space \u2014 so it can be carried in the URL without breaking it."}}, {"@type": "Question", "name": "What is double-encoding?", "acceptedAnswer": {"@type": "Answer", "text": "It happens when text is encoded twice, turning a %20 into %2520. It is a common bug that breaks links, and decoding the URL reveals it. Encode each value once, at the right step."}}, {"@type": "Question", "name": "When do I need to encode a URL?", "acceptedAnswer": {"@type": "Answer", "text": "Whenever you put arbitrary text \u2014 user input, search terms, names, or anything with special characters \u2014 into a URL. Encoding ensures those characters are treated as data, not as parts of the URL's structure."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
 
@@ -49,106 +49,37 @@
         <div id="toolContainer" data-impl="urlEncoder"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is URL Encoder &amp; Decoder?</h2>
-          <p style="color:#374151;line-height:1.7;">URLs can only safely contain certain characters, so spaces, ampersands, and non-English letters must be percent-encoded (a space becomes %20). This URL encoder/decoder converts text to and from that safe form, essential when building query strings or parsing parameters.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About URL Encoder &amp; Decoder</h2>
-          
-          <p class="tool-intro-lead">Encode a value before dropping it into a URL to avoid breaking the link; decode a parameter to read what it actually contains. It handles full URLs and individual components, all locally in your browser.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Encoding query string parameters safely</li>
-            <li>Decoding a parameter to read its value</li>
-            <li>Building tracking URLs with special characters</li>
-            <li>Fixing links broken by spaces or symbols</li>
-            <li>Encoding search terms for API requests</li>
-            <li>Handling international characters in URLs</li>
-            <li>Debugging redirect and callback URLs</li>
-            <li>Preparing form data for GET requests</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>A space encodes as %20 in paths and often + in query strings — both decode to a space.</li>
-            <li>Reserved characters (/ ? # &amp; =) carry structural meaning and must be encoded when used as data.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Component vs full-URL encoding?</h3>
-          <p class="tool-intro-lead">Component encoding escapes characters like / and ? for a single value; full-URL encoding preserves structure while escaping unsafe characters.</p>
-          <h3>Why does a space become %20?</h3>
-          <p class="tool-intro-lead">Spaces aren't allowed in URLs, so they're replaced with their percent-encoded value (or + in query strings).</p>
-          <h3>Does it handle non-English characters?</h3>
-          <p class="tool-intro-lead">Yes — characters like é encode as UTF-8 percent sequences and decode back correctly.</p>
-        
-          <h3>Why does a space become %20?</h3>
-          <p class="tool-intro-lead">Spaces are not allowed in URLs, so they are percent-encoded as %20 in paths. In query strings they sometimes appear as a plus sign instead.</p>
-          <h3>Should I encode the whole URL or just parts?</h3>
-          <p class="tool-intro-lead">Encode individual values, not the entire URL. Structural characters like ? &amp; and / must stay intact to keep the URL working.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>A Developer’s Perspective</h2>
-          <p>Developers live in a world of formats, encodings, and transformations — JSON and CSV, Base64 and hex, minified and pretty-printed code, timestamps and tokens. Moving cleanly between these representations is a constant, low-level need, and doing it by hand is both slow and error-prone. Dedicated tools turn these chores into instant, reliable operations that keep you in flow.</p>
-          <p>The best developer utilities share a few traits: they run entirely client-side so sensitive payloads never leave the browser, they handle edge cases like UTF-8 and escaping correctly, and they fail loudly with clear errors rather than producing silently wrong output. For debugging, inspecting, and quick transformations, a fast browser tool often beats both a heavyweight IDE plugin and a command-line one-liner you have to remember.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Formatting, validating, or converting data while debugging an API.</li>
-            <li>Encoding or decoding payloads, tokens, and parameters safely.</li>
-            <li>Cleaning or transforming code and configuration files.</li>
-            <li>Inspecting structure and catching syntax errors before they ship.</li>
-          </ul>
-          <p>For everyday development chores, a focused tool that is fast, correct, and private is worth more than a clever script. It removes a small point of friction dozens of times a day, which adds up to real time and fewer mistakes.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions From Developers</h2>
-          <p>A question that comes up constantly is the difference between encoding, encryption, and hashing. Encoding like Base64 is fully reversible and offers no security — it only makes data safe for text-only channels. Encryption is reversible with a key and does protect data. Hashing is one-way and is used to verify integrity, not to hide information. Confusing these leads to real security mistakes, like using Base64 to 'protect' a secret that anyone can decode instantly.</p>
-          <p>Another frequent concern is handling edge cases correctly. UTF-8 characters, escaped sequences, trailing commas in JSON, and quoting in CSV are where naive transformations silently break. A good tool handles these correctly and reports errors clearly rather than producing output that looks right but is subtly malformed — which is far harder to debug later.</p>
-          <p>Developers also ask why a browser tool beats a quick script. For one-off inspection and transformation while debugging, a fast client-side tool keeps sensitive payloads off external servers and saves you from remembering exact command syntax. It removes a small but constant point of friction without compromising on correctness or privacy.</p>
-          <h3>Tips for the best results</h3>
-          <p>Never confuse encoding with encryption, validate structure and edge cases before relying on transformed data, and prefer client-side tools so payloads stay private.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Encode query parameter values so special characters do not break the URL.</li>
-            <li>Decode a parameter to read what it actually contains.</li>
-            <li>Know that a space becomes %20 in paths and often + in query strings.</li>
-            <li>Encode user-supplied values before building a URL.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Encoding an entire URL when you meant to encode just one component.</li>
-            <li>Forgetting reserved characters like &amp; and = carry structural meaning.</li>
-            <li>Double-encoding a value that was already encoded.</li>
-            <li>Assuming + and %20 are interchangeable in every context.</li>
-          </ul>
-          <p class="tool-intro-lead">URL encoding keeps links from breaking when values contain spaces, ampersands, or non-English characters. The subtlety is component-versus-whole-URL encoding: escape a single value fully, but preserve the structural characters when handling a complete URL. Double-encoding is a frequent bug — encode each value exactly once.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="base64-encode-decode.html">Base64 encoder/decoder</a> to encode data safely, or use the <a href="html-encode-decode.html">HTML encoder</a> to escape HTML entities. You can also use the <a href="slug-generator.html">slug generator</a> to make clean URLs.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool encodes and decodes URLs. Paste text or a URL with special characters and it converts them into the percent-encoded form that web addresses require; paste encoded text full of percent signs and it decodes it back into readable characters. It is an everyday helper for developers building links, debugging query strings, and working with anything that travels through a URL.</p><p>URLs can only contain a limited set of characters, so anything outside that set — spaces, accented letters, symbols, and many punctuation marks — has to be encoded to travel safely in a web address. This tool handles that conversion both directions, saving you from doing it by hand and from the subtle bugs that broken encoding causes.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How URL Encoding Works</h2>
+<p>URL encoding, also called percent-encoding, replaces unsafe characters with a percent sign followed by two hexadecimal digits representing the character's value. A space becomes %20, an ampersand becomes %26, a question mark becomes %3F. This lets characters that would otherwise have special meaning in a URL — or that are not allowed at all — be carried safely as data rather than being misinterpreted as part of the URL's structure.</p><p>The reason this matters is that certain characters control how a URL is parsed. A question mark starts the query string, an ampersand separates parameters, a slash separates path segments. If you want one of those characters to appear as actual data — say, an ampersand inside a search term — it must be encoded, or the browser will read it as structure and your link will break. Encoding removes that ambiguity, which is why it is essential whenever user input or arbitrary text ends up in a URL.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Where URL Encoding Matters in Practice</h2>
+<p>The most common place this comes up is query strings — the part of a URL after the question mark that carries parameters. When you build a link that includes a search term, a name, an email address, or any text a user typed, that text must be encoded so its special characters do not break the URL. A search for “fish & chips” has to become “fish%20%26%20chips” in the URL, or the ampersand would be read as a parameter separator and the link would fail.</p><p>It also matters in form submissions, API requests, and anywhere data is passed through a web address. Developers debugging a misbehaving link often find the culprit is encoding — either text that should have been encoded was not, or something got double-encoded (encoded twice, turning a %20 into %2520). Being able to quickly decode a URL to see what it actually contains, or encode a value correctly before using it, is a routine part of web work, and this tool makes both instant and reliable.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Always encode user input or arbitrary text before putting it in a URL, so special characters do not break the link.</li><li>Watch for double-encoding — if you see %2520, a %20 was encoded a second time.</li><li>Decode a suspicious URL to see exactly what data it carries; it is a useful debugging step.</li><li>Spaces become %20, and the encoding is what lets symbols travel safely in a web address.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>What is URL encoding?</h3><p>It is the process of replacing characters that are unsafe or have special meaning in a URL with a percent sign and two hexadecimal digits. A space becomes %20, for example, so the character can travel safely in a web address.</p><h3>Why do spaces turn into %20?</h3><p>Because spaces are not allowed in URLs. Percent-encoding replaces the space with %20 — the percent sign plus the hex value for a space — so it can be carried in the URL without breaking it.</p><h3>What is double-encoding?</h3><p>It happens when text is encoded twice, turning a %20 into %2520. It is a common bug that breaks links, and decoding the URL reveals it. Encode each value once, at the right step.</p><h3>When do I need to encode a URL?</h3><p>Whenever you put arbitrary text — user input, search terms, names, or anything with special characters — into a URL. Encoding ensures those characters are treated as data, not as parts of the URL's structure.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This tool runs entirely in your browser, so anything you encode or decode stays on your device. It works instantly, needs no account or download, and runs anywhere. Like every tool here, it is free to use as often as you need.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more developer and web tools, the <a href="base64-encode-decode.html">Base64 encoder and decoder</a> handles a different common encoding, the <a href="html-encode-decode.html">HTML encoder and decoder</a> escapes characters for web pages, and the <a href="slug-generator.html">slug generator</a> creates clean URLs from titles.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

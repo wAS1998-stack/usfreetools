@@ -423,7 +423,9 @@ h1 { font-weight: 700; }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 940px) {
-  .tool-page-layout { grid-template-columns: 1fr; }
+  .tool-page-layout { grid-template-columns: minmax(0, 1fr); }
+  .tool-page-layout > * { min-width: 0; }
+  .tool-main-card, .tool-page-layout .content-inner { min-width: 0; overflow-wrap: anywhere; }
   .tool-sidebar { position: static; flex-direction: row; flex-wrap: wrap; }
   .tool-sidebar > * { flex: 1 1 280px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
@@ -504,6 +506,163 @@ h1 { font-weight: 700; }
 .blog-card-footer { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 0.82rem; color: var(--primary); font-weight: 600; }
 .ad-banner-top { min-height: 90px; margin: 10px 0; }
 
+
+/* ---- Blog card mobile polish ---- */
+@media (max-width: 720px) {
+  .blog-grid { padding: 16px 18px 60px; gap: 18px; }
+  .blog-card-img { height: 120px; font-size: 2.8rem; }
+  .blog-card-body { padding: 18px 20px; }
+  .blog-card h3 { font-size: 1.15rem; }
+}
+
+
+/* ---- Stat boxes (word counter, reading time, etc.) ---- */
+.tool-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; margin-top: 16px; }
+.stat-box {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  background: var(--primary-light); border: 1px solid #D7DEFF; border-radius: 12px; padding: 16px 12px;
+}
+.stat-box strong { font-family: var(--font-head); font-size: 1.7rem; font-weight: 700; color: var(--primary); line-height: 1.1; }
+.stat-box span { font-size: 0.8rem; color: var(--gray); font-weight: 500; margin-top: 4px; }
+
+
+/* ---- Small-phone overflow fixes (<=420px) ---- */
+* { box-sizing: border-box; }
+@media (max-width: 420px) {
+  /* reduce side padding so content fits narrow screens */
+  .tool-page { padding: 24px 12px 60px; }
+  .content-page { padding: 28px 14px 60px; }
+  /* blog grid: single column, no 320px min that overflows narrow screens */
+  .blog-grid { grid-template-columns: 1fr; padding: 16px 12px 60px; gap: 16px; }
+  .blog-card { max-width: 100%; }
+  /* reduce heavy padding that pushes content past the viewport */
+  .tool-main-card { padding: 22px 18px; }
+  .content-inner { padding: 22px 18px; }
+  .tool-page, .tool-page-inner { overflow-x: hidden; }
+  /* ensure no element forces width beyond the screen */
+  .tool-main-card, .content-inner, .blog-card, .stat-box { max-width: 100%; box-sizing: border-box; }
+  /* button rows wrap instead of overflowing (e.g. password generator) */
+  .tool-actions { flex-wrap: wrap; }
+  img, canvas, pre, textarea { max-width: 100%; }
+  /* hero search row wraps and input can shrink */
+  .hero-search { flex-wrap: wrap; }
+  .hero-search input { min-width: 0; flex: 1 1 100%; }
+  .hero-search button { flex: 1 1 100%; }
+  /* large headings must not overflow narrow screens */
+  .tool-main-card h1 { font-size: 1.5rem; line-height: 1.15; word-break: break-word; overflow-wrap: anywhere; }
+  .content-page h1, .content-inner h1 { font-size: 1.7rem; word-break: break-word; }
+  /* any inline-styled widget container stays within the card */
+  #toolContainer, #toolContainer > div { max-width: 100%; box-sizing: border-box; }
+  /* inline two/three-column grids inside widgets collapse to one column */
+  #toolContainer [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  #toolContainer input, #toolContainer select { min-width: 0; }
+  #toolContainer input[type=text], #toolContainer input[type=number], #toolContainer textarea, #toolContainer select { max-width: 100%; box-sizing: border-box; }
+}
+/* global safety net: never allow horizontal scroll */
+html, body { overflow-x: hidden; }
+
+
+/* ---- Tabs (Metric/Imperial toggles etc.) ---- */
+.tabs-container { margin-bottom: 4px; }
+.tabs {
+  display: inline-flex; gap: 4px; background: var(--paper2, #f0ece2);
+  border: 1px solid var(--border); border-radius: 12px; padding: 4px; margin-bottom: 18px;
+  max-width: 100%; flex-wrap: wrap;
+}
+.tab {
+  appearance: none; border: none; background: transparent; cursor: pointer;
+  font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; color: var(--gray);
+  padding: 9px 22px; border-radius: 9px; transition: all 0.18s ease; white-space: nowrap;
+}
+.tab:hover { color: var(--ink); }
+.tab.active { background: var(--primary); color: #fff; box-shadow: 0 2px 8px rgba(27,67,232,0.25); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+
+/* hero stats: tighter and cleaner on small phones */
+@media (max-width: 420px) {
+  .hero-stats { gap: 10px; }
+  .hero-stat { min-width: 0; flex: 1 1 calc(50% - 10px); padding: 14px 10px; }
+  .hero-stat strong { font-size: 1.5rem; }
+  .hero-stat span { font-size: 0.74rem; }
+}
+
+
+/* ---- Tools page search bar ---- */
+.search-bar { display: flex; gap: 10px; align-items: stretch; }
+.search-bar input {
+  flex: 1; min-width: 0; padding: 14px 18px; font-family: var(--font-body); font-size: 1rem;
+  border: 1px solid var(--border-strong, #d7ccb8); border-radius: 12px;
+  background: #fff; color: var(--ink); box-sizing: border-box; transition: all 0.18s ease;
+}
+.search-bar input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(27,67,232,0.12); }
+.search-bar button {
+  flex-shrink: 0; padding: 14px 26px; font-family: var(--font-body); font-size: 1rem; font-weight: 700;
+  color: #fff; background: var(--primary); border: none; border-radius: 12px; cursor: pointer;
+  transition: all 0.18s ease; box-shadow: 0 2px 10px rgba(27,67,232,0.25);
+}
+.search-bar button:hover { background: var(--primary-dark, #1536c4); transform: translateY(-1px); }
+@media (max-width: 420px) {
+  .search-bar { flex-direction: column; }
+  .search-bar button { width: 100%; }
+}
+
+/* ============================================================
+   TOOL WIDGET STYLES (form inputs, results, outputs, progress)
+   ============================================================ */
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 4px; }
+.form-group label { font-size: 0.86rem; font-weight: 600; color: var(--ink); }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 12px 14px; font-family: var(--font-body); font-size: 1rem;
+  border: 1px solid var(--border-strong, #d7ccb8); border-radius: 11px;
+  background: var(--paper2, #fff); color: var(--ink); box-sizing: border-box;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(27,67,232,0.12);
+}
+
+.tool-result-bar {
+  margin-top: 18px; padding: 20px 22px; border-radius: 13px;
+  background: var(--primary-light, #eef1ff); border: 1px solid #d7deff;
+  font-family: var(--font-head); font-weight: 600; color: var(--primary);
+  text-align: center; line-height: 1.4; min-height: 24px;
+}
+.tool-result-bar strong { font-weight: 800; }
+
+.tool-input-area, .tool-output-area {
+  width: 100%; padding: 14px 16px; font-family: var(--font-body); font-size: 1rem;
+  border: 1px solid var(--border-strong, #d7ccb8); border-radius: 12px;
+  background: var(--paper2, #fff); color: var(--ink); box-sizing: border-box;
+  resize: vertical; line-height: 1.6; transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.tool-output-area { background: var(--paper, #faf8f3); }
+.tool-input-area:focus, .tool-output-area:focus {
+  outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(27,67,232,0.12);
+}
+
+.tool-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.tool-col { display: flex; flex-direction: column; gap: 6px; }
+@media (max-width: 560px) { .tool-row { grid-template-columns: 1fr; } }
+
+.progress { width: 100%; height: 12px; background: var(--border, #e8e0d0); border-radius: 999px; overflow: hidden; margin-top: 8px; }
+.progress-bar { height: 100%; background: var(--primary); border-radius: 999px; transition: width 0.3s ease; }
+
+.range-val { font-weight: 700; color: var(--primary); font-family: var(--font-head); }
+.text-gray { color: var(--gray); }
+
+.alert {
+  padding: 12px 16px; border-radius: 11px; background: #fff7ed; border: 1px solid #fed7aa;
+  color: #9a3412; font-size: 0.9rem; margin-top: 10px;
+}
+
+
+@media (max-width: 420px) {
+  .tabs { display: flex; width: 100%; }
+  .tab { flex: 1 1 auto; padding: 9px 12px; font-size: 0.88rem; text-align: center; }
+}
 /* ============================================================
    AD VISIBILITY TOGGLE
    ------------------------------------------------------------

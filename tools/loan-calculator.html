@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Loan Calculator", "url": "https://usfreetools.com/tools/loan-calculator.html", "description": "Estimate your monthly loan payment, total interest, and total cost based on loan amount, interest rate, and term. Useful for car loans, personal loans, and more", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is the monthly payment calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Using the standard amortization formula based on principal, monthly rate, and number of payments."}}, {"@type": "Question", "name": "Why do I pay so much interest early on?", "acceptedAnswer": {"@type": "Answer", "text": "Interest is charged on the larger remaining balance, so early payments are mostly interest; principal grows over time."}}, {"@type": "Question", "name": "Does a shorter term save money?", "acceptedAnswer": {"@type": "Answer", "text": "Usually \u2014 higher monthly payments but far less total interest, since you borrow for less time."}}, {"@type": "Question", "name": "Why compare total interest instead of the monthly payment?", "acceptedAnswer": {"@type": "Answer", "text": "The monthly payment hides the full cost. A longer term lowers the payment but can add far more total interest, so total cost reveals the better deal."}}, {"@type": "Question", "name": "Are these results financial advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. The calculator provides estimates to help you compare scenarios. For decisions, consult a qualified financial professional."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is a monthly loan payment calculated?", "acceptedAnswer": {"@type": "Answer", "text": "It is based on the loan amount, the interest rate, and the term, spread into equal monthly installments through a process called amortization. Each payment covers that month's interest plus a portion of the principal."}}, {"@type": "Question", "name": "Why does a longer term cost more overall?", "acceptedAnswer": {"@type": "Answer", "text": "Because you pay interest for more years. A longer term lowers each monthly payment but increases the total interest, so the loan costs more in total even though it feels easier month to month."}}, {"@type": "Question", "name": "Should I compare loans by monthly payment or total cost?", "acceptedAnswer": {"@type": "Answer", "text": "By total cost. Two loans with similar monthly payments can differ greatly in total interest. Looking at the full cost reveals which loan is genuinely cheaper."}}, {"@type": "Question", "name": "Does this include fees?", "acceptedAnswer": {"@type": "Answer", "text": "No. The estimate covers principal and interest. Real loans may include origination fees or other charges, so confirm the full terms with the lender for an exact figure."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
 
@@ -49,107 +49,37 @@
         <div id="toolContainer" data-impl="loanCalc"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Loan Calculator?</h2>
-          <p style="color:#374151;line-height:1.7;">Before signing for a loan, the number that matters is the monthly payment — and how much of your money goes to interest versus principal over the life of the loan. This calculator computes your monthly payment, total interest, and total cost from the loan amount, interest rate, and term.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Loan Calculator</h2>
-          
-          <p class="tool-intro-lead">Enter the principal, annual rate, and length, and see exactly what you'll pay each month and overall. It turns loan offers into comparable numbers so you can borrow with your eyes open. This is for estimation and education, not financial advice.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Estimating a monthly loan payment</li>
-            <li>Comparing loan offers with different rates</li>
-            <li>Seeing total interest paid over a loan's life</li>
-            <li>Planning a budget around repayment</li>
-            <li>Evaluating auto or personal loan terms</li>
-            <li>Understanding how rate affects total cost</li>
-            <li>Testing different loan terms and amounts</li>
-            <li>Deciding how much to borrow</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>This tool provides estimates for educational purposes and is not financial advice.</li>
-            <li>Amortizing loans front-load interest.</li>
-            <li>A lower rate or shorter term both reduce total interest.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>How is the monthly payment calculated?</h3>
-          <p class="tool-intro-lead">Using the standard amortization formula based on principal, monthly rate, and number of payments.</p>
-          <h3>Why do I pay so much interest early on?</h3>
-          <p class="tool-intro-lead">Interest is charged on the larger remaining balance, so early payments are mostly interest; principal grows over time.</p>
-          <h3>Does a shorter term save money?</h3>
-          <p class="tool-intro-lead">Usually — higher monthly payments but far less total interest, since you borrow for less time.</p>
-        
-          <h3>Why compare total interest instead of the monthly payment?</h3>
-          <p class="tool-intro-lead">The monthly payment hides the full cost. A longer term lowers the payment but can add far more total interest, so total cost reveals the better deal.</p>
-          <h3>Are these results financial advice?</h3>
-          <p class="tool-intro-lead">No. The calculator provides estimates to help you compare scenarios. For decisions, consult a qualified financial professional.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Putting the Numbers in Context</h2>
-          <p>Everyday math problems — percentages, averages, ratios, interest, time spans — share a common trait: the arithmetic is simple, but the setup is where mistakes happen. Choosing the wrong base for a percentage, forgetting to weight an average, or mismatching units in a ratio produces answers that look plausible but are wrong. A good calculator does not just compute; it enforces the correct structure so the result you get is the result you meant.</p>
-          <p>These calculations show up constantly in financial decisions, academic work, cooking, fitness, and planning. Because the stakes can be real — a loan estimate, a grade, a budget — accuracy and clarity matter more than raw speed. A calculator that runs instantly in your browser, with no data leaving your device, lets you test scenarios freely: change an input, see the effect immediately, and build intuition for how the numbers move.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Working out a tip, discount, or sale price quickly and correctly.</li>
-            <li>Estimating loan or savings outcomes before making a financial commitment.</li>
-            <li>Checking a grade, average, or ratio for school or work.</li>
-            <li>Planning time, dates, or durations for scheduling and deadlines.</li>
-          </ul>
-          <p>The point of any calculator is confidence. By handling the mechanics correctly and letting you focus on the inputs, it turns a potentially error-prone task into a quick, reliable check you can trust for decisions that matter.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions, Answered</h2>
-          <p>One of the most common sources of error is the base of a percentage. A change from 10 to 15 is a five percentage-point rise but a 50% relative increase, and the two are not interchangeable. Whenever you calculate a percentage change, name the original value explicitly as your base — that single habit prevents most percentage mistakes, including the classic error of using the new value as the denominator.</p>
-          <p>Averages raise their own questions. The mean is sensitive to outliers, so a single extreme value can pull it far from what is typical; for skewed data like incomes or prices, the median often represents the center more honestly. And weighted averages — like a GPA — require multiplying each value by its weight, not simply averaging the raw numbers. Choosing the right kind of average is as important as the arithmetic itself.</p>
-          <p>For financial calculations, people often ask why the monthly payment is not the whole story. The total interest paid over the life of a loan can dwarf differences in the monthly figure, so comparing offers on total cost rather than monthly payment alone leads to far better decisions. These tools provide estimates to inform that comparison, not financial advice.</p>
-          <h3>Tips for the best results</h3>
-          <p>Name your base before calculating any percentage, choose the average that fits your data, and compare loans on total cost rather than the monthly payment alone.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Compare total interest, not just the monthly payment, across offers.</li>
-            <li>A shorter term raises the payment but cuts total interest sharply.</li>
-            <li>Understand that early payments are mostly interest.</li>
-            <li>Use it to test scenarios before talking to a lender.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Judging a loan by its monthly payment alone.</li>
-            <li>Ignoring how much total interest a long term adds.</li>
-            <li>Forgetting fees and insurance beyond principal and interest.</li>
-            <li>Treating an estimate as a binding quote.</li>
-          </ul>
-          <p class="tool-intro-lead">The monthly payment is only half the story — the total interest over a loan's life is what really reveals its cost. Amortizing loans front-load interest, so a longer term can dramatically increase what you pay overall. Comparing offers on total cost, not just the monthly figure, leads to far better borrowing decisions. This is an estimate, not financial advice.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="mortgage-calculator.html">mortgage calculator</a> to calculate home loans, or use the <a href="compound-interest-calculator.html">compound interest calculator</a> to project savings growth. You can also use the <a href="percentage-calculator.html">percentage calculator</a> to work out rates.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Calculator Does</h2>
+<p>This calculator estimates the monthly payment on a loan, along with the total you will pay over its life and how much of that is interest. Enter the loan amount, the interest rate, and the term, and it breaks down what the loan really costs. It works for personal loans, auto loans, and other fixed-rate, fixed-term borrowing, turning the abstract numbers of a loan offer into figures you can actually plan around.</p><p>A loan's headline figures — the amount and the rate — do not by themselves tell you what it costs you each month or in total. This calculator fills in that gap, so before you commit you can see the monthly payment your budget has to absorb and the full price of borrowing, including all the interest.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How Loan Payments Work</h2>
+<p>A fixed-rate loan is repaid in equal monthly installments over its term. Each payment covers two things: the interest accrued that month, and a portion of the original amount borrowed (the principal). Early in the loan, more of each payment goes toward interest because the balance is large; as the balance shrinks, more goes toward principal. This process is called amortization, and it is why the total interest you pay depends heavily on the term length.</p><p>Two factors drive the cost. A higher interest rate raises both your monthly payment and the total interest, as you would expect. The term length is more subtle: a longer term lowers the monthly payment, which can look attractive, but it means paying interest for more years, so the total cost is higher. A shorter term raises the monthly payment but saves substantially on total interest. The calculator lets you see this trade-off directly by adjusting the term and watching how the monthly and total figures move in opposite directions.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Using the Numbers to Borrow Wisely</h2>
+<p>The most useful thing this calculator reveals is the true cost of a loan beyond its monthly payment. It is tempting to shop for a loan by monthly payment alone — picking whatever fits the budget most comfortably — but that can be a costly habit. A lower monthly payment achieved by stretching the term often means paying thousands more in interest over the life of the loan. Seeing the total interest figure alongside the monthly payment helps you weigh affordability now against cost overall.</p><p>Comparing offers becomes much clearer this way too. Two loans with similar monthly payments can have very different total costs depending on their rates and terms. By running each offer through the same calculation, you can compare them on equal footing and see which is genuinely cheaper. It is also worth remembering that this estimate covers principal and interest; a real loan may include fees or other costs, so treat the result as a strong planning figure and confirm the exact terms with the lender. As with any significant financial decision, the numbers here are a tool to inform your thinking, not financial advice.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>A longer term lowers the monthly payment but increases the total interest you pay.</li><li>Compare loan offers by total cost, not just the monthly payment.</li><li>Even a small difference in interest rate can add up to a large difference over the full term.</li><li>Remember the estimate covers principal and interest; fees may add to the real cost.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How is a monthly loan payment calculated?</h3><p>It is based on the loan amount, the interest rate, and the term, spread into equal monthly installments through a process called amortization. Each payment covers that month's interest plus a portion of the principal.</p><h3>Why does a longer term cost more overall?</h3><p>Because you pay interest for more years. A longer term lowers each monthly payment but increases the total interest, so the loan costs more in total even though it feels easier month to month.</p><h3>Should I compare loans by monthly payment or total cost?</h3><p>By total cost. Two loans with similar monthly payments can differ greatly in total interest. Looking at the full cost reveals which loan is genuinely cheaper.</p><h3>Does this include fees?</h3><p>No. The estimate covers principal and interest. Real loans may include origination fees or other charges, so confirm the full terms with the lender for an exact figure.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>A Planning Tool, Free to Use</h2>
+<p>This calculator runs entirely in your browser and gives estimates to help you plan — it is not financial advice. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use as often as you need.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more financial calculations, the <a href="mortgage-calculator.html">mortgage calculator</a> handles home loans, the <a href="compound-interest-calculator.html">compound interest calculator</a> shows how savings grow, and the <a href="percentage-calculator.html">percentage calculator</a> handles rate-related math.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Compound Interest Calculator", "url": "https://usfreetools.com/tools/compound-interest-calculator.html", "description": "Calculate how your savings or investment grows over time with compound interest, including regular contributions.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Simple vs compound interest?", "acceptedAnswer": {"@type": "Answer", "text": "Simple interest is earned only on principal; compound interest is earned on principal plus accumulated interest, so it accelerates."}}, {"@type": "Question", "name": "Does compounding frequency matter?", "acceptedAnswer": {"@type": "Answer", "text": "More frequent compounding slightly increases growth because interest is added and starts earning sooner."}}, {"@type": "Question", "name": "Why is starting early so powerful?", "acceptedAnswer": {"@type": "Answer", "text": "Compounding rewards time exponentially \u2014 money invested earlier has more cycles to grow."}}, {"@type": "Question", "name": "What is the Rule of 72?", "acceptedAnswer": {"@type": "Answer", "text": "Divide 72 by the annual interest rate to estimate how many years an investment takes to double. At 6%, that is roughly 12 years."}}, {"@type": "Question", "name": "Why does starting early matter so much?", "acceptedAnswer": {"@type": "Answer", "text": "Compounding earns interest on previous interest, so time has an outsized effect. Starting early can outweigh contributing more money later."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is compound interest?", "acceptedAnswer": {"@type": "Answer", "text": "It is interest calculated on both your original money and the interest you have already earned. Because each period's interest is added to the balance, future interest is earned on a larger and larger amount, producing accelerating growth over time."}}, {"@type": "Question", "name": "How does compounding frequency affect growth?", "acceptedAnswer": {"@type": "Answer", "text": "More frequent compounding \u2014 monthly versus annually, for example \u2014 produces slightly faster growth, because interest begins earning its own interest sooner. The difference is real but usually smaller than the effect of the interest rate and the length of time."}}, {"@type": "Question", "name": "What is the Rule of 72?", "acceptedAnswer": {"@type": "Answer", "text": "Divide 72 by your annual interest rate to estimate how many years it takes your money to double. At 6%, that is about twelve years. It is a quick approximation, not an exact figure, but it builds useful intuition."}}, {"@type": "Question", "name": "Does this account for inflation?", "acceptedAnswer": {"@type": "Answer", "text": "No. The projection shows nominal growth based on your inputs. Because prices rise over time, a future balance buys less than the same number of dollars today, so factor inflation into your real-world planning."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
 
@@ -49,107 +49,38 @@
         <div id="toolContainer" data-impl="compoundInterest"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Compound Interest Calculator?</h2>
-          <p style="color:#374151;line-height:1.7;">Compound interest is the engine of long-term wealth — interest earning interest, growth building on growth. This calculator projects how an investment or savings balance grows over time given a starting amount, contribution, rate, and compounding frequency, showing the powerful difference time makes.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Compound Interest Calculator</h2>
-          
-          <p class="tool-intro-lead">Enter your principal, expected return, time horizon, and any regular contributions to see the projected future value. It illustrates why starting early matters so much. This is an educational projection, not financial advice or a guaranteed return.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Projecting retirement savings growth</li>
-            <li>Seeing the effect of regular contributions</li>
-            <li>Comparing different interest rates over time</li>
-            <li>Understanding the power of compounding</li>
-            <li>Planning long-term savings goals</li>
-            <li>Illustrating why starting early matters</li>
-            <li>Estimating investment growth scenarios</li>
-            <li>Modeling a savings plan</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>Compound interest grows exponentially — the curve steepens over long periods.</li>
-            <li>This is an educational projection; real investments carry risk and this is not financial advice.</li>
-            <li>The 'Rule of 72' estimates doubling time: divide 72 by the annual rate.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Simple vs compound interest?</h3>
-          <p class="tool-intro-lead">Simple interest is earned only on principal; compound interest is earned on principal plus accumulated interest, so it accelerates.</p>
-          <h3>Does compounding frequency matter?</h3>
-          <p class="tool-intro-lead">More frequent compounding slightly increases growth because interest is added and starts earning sooner.</p>
-          <h3>Why is starting early so powerful?</h3>
-          <p class="tool-intro-lead">Compounding rewards time exponentially — money invested earlier has more cycles to grow.</p>
-        
-          <h3>What is the Rule of 72?</h3>
-          <p class="tool-intro-lead">Divide 72 by the annual interest rate to estimate how many years an investment takes to double. At 6%, that is roughly 12 years.</p>
-          <h3>Why does starting early matter so much?</h3>
-          <p class="tool-intro-lead">Compounding earns interest on previous interest, so time has an outsized effect. Starting early can outweigh contributing more money later.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Putting the Numbers in Context</h2>
-          <p>Everyday math problems — percentages, averages, ratios, interest, time spans — share a common trait: the arithmetic is simple, but the setup is where mistakes happen. Choosing the wrong base for a percentage, forgetting to weight an average, or mismatching units in a ratio produces answers that look plausible but are wrong. A good calculator does not just compute; it enforces the correct structure so the result you get is the result you meant.</p>
-          <p>These calculations show up constantly in financial decisions, academic work, cooking, fitness, and planning. Because the stakes can be real — a loan estimate, a grade, a budget — accuracy and clarity matter more than raw speed. A calculator that runs instantly in your browser, with no data leaving your device, lets you test scenarios freely: change an input, see the effect immediately, and build intuition for how the numbers move.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Working out a tip, discount, or sale price quickly and correctly.</li>
-            <li>Estimating loan or savings outcomes before making a financial commitment.</li>
-            <li>Checking a grade, average, or ratio for school or work.</li>
-            <li>Planning time, dates, or durations for scheduling and deadlines.</li>
-          </ul>
-          <p>The point of any calculator is confidence. By handling the mechanics correctly and letting you focus on the inputs, it turns a potentially error-prone task into a quick, reliable check you can trust for decisions that matter.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions, Answered</h2>
-          <p>One of the most common sources of error is the base of a percentage. A change from 10 to 15 is a five percentage-point rise but a 50% relative increase, and the two are not interchangeable. Whenever you calculate a percentage change, name the original value explicitly as your base — that single habit prevents most percentage mistakes, including the classic error of using the new value as the denominator.</p>
-          <p>Averages raise their own questions. The mean is sensitive to outliers, so a single extreme value can pull it far from what is typical; for skewed data like incomes or prices, the median often represents the center more honestly. And weighted averages — like a GPA — require multiplying each value by its weight, not simply averaging the raw numbers. Choosing the right kind of average is as important as the arithmetic itself.</p>
-          <p>For financial calculations, people often ask why the monthly payment is not the whole story. The total interest paid over the life of a loan can dwarf differences in the monthly figure, so comparing offers on total cost rather than monthly payment alone leads to far better decisions. These tools provide estimates to inform that comparison, not financial advice.</p>
-          <h3>Tips for the best results</h3>
-          <p>Name your base before calculating any percentage, choose the average that fits your data, and compare loans on total cost rather than the monthly payment alone.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Start early — compounding rewards time exponentially.</li>
-            <li>Add regular contributions to see how they accelerate growth.</li>
-            <li>Compare compounding frequencies to see their modest effect.</li>
-            <li>Use the Rule of 72 to estimate doubling time.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Underestimating how much early contributions matter.</li>
-            <li>Confusing simple with compound interest.</li>
-            <li>Assuming projected returns are guaranteed.</li>
-            <li>Ignoring inflation when interpreting long-term figures.</li>
-          </ul>
-          <p class="tool-intro-lead">Compound interest grows exponentially because each period's interest earns interest of its own — which is why starting early can outweigh contributing more later. The Rule of 72 (divide 72 by the rate to estimate doubling years) makes the power tangible. These are projections, not guarantees; real returns vary and this is not financial advice.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="loan-calculator.html">loan calculator</a> to calculate loan costs, or use the <a href="mortgage-calculator.html">mortgage calculator</a> to estimate mortgages. You can also use the <a href="percentage-calculator.html">percentage calculator</a> to work with rates.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What Compound Interest Really Means</h2>
+<p>This calculator shows how an investment or savings balance grows over time when interest earns its own interest. You enter your starting amount, the interest rate, how long you are investing, and how often interest compounds — and it projects what your balance becomes. It turns the abstract idea of “money growing” into concrete numbers you can plan around.</p><p>Compound interest is often called the most powerful force in personal finance, and the reason is simple: you earn interest not just on your original money but on all the interest you have already earned. Over years, that snowball effect produces growth that simple interest never could. Seeing the actual figures is usually what makes people take long-term saving seriously.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How the Growth Is Calculated</h2>
+<p>The balance grows according to your principal, the interest rate, the number of times interest compounds each year, and the number of years. Each compounding period, interest is added to the balance, and the next period's interest is calculated on that larger amount. More frequent compounding — monthly rather than annually, say — produces slightly faster growth, because interest starts earning its own interest sooner.</p><p>The effect of time is the part that surprises people. Because growth compounds, the later years contribute far more than the early ones. An investment left to grow for thirty years does not simply earn three times what it would in ten years — it earns dramatically more, because the balance doing the earning is so much larger by then. This is why starting early matters more than almost anything else in long-term investing.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>The Rule of 72, and Why Time Beats Timing</h2>
+<p>A handy mental shortcut for compound growth is the Rule of 72: divide 72 by your annual interest rate to estimate how many years it takes your money to double. At 6% a year, money doubles in roughly twelve years; at 8%, in about nine. It is an approximation, but it gives you an intuitive feel for how rate and time interact without reaching for a calculator.</p><p>The deeper lesson the numbers teach is that time in the market usually matters more than the exact rate or perfect timing. A modest amount invested early and left alone often ends up worth more than a larger amount invested later, purely because it had more years to compound. The calculator makes this visible: try the same contribution over twenty years versus thirty and watch how disproportionately the longer period grows.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Reading the Results Honestly</h2>
+<p>Projections like these are powerful planning tools, but they rest on assumptions worth keeping in mind. A fixed interest rate is a simplification — real investment returns vary year to year, and a steady rate is an average rather than a guarantee. The calculator shows the mathematical outcome of the inputs you give it, which is ideal for comparing scenarios and understanding the mechanics, not a promise of any specific real-world return.</p><p>Inflation is the other factor to remember. A balance that looks large in future dollars buys less than the same number today, because prices rise over time. None of this diminishes the value of compounding — it simply means you should treat the projection as a clear illustration of how your choices play out, and pair it with realistic, conservative assumptions when making actual financial decisions.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>What is compound interest?</h3><p>It is interest calculated on both your original money and the interest you have already earned. Because each period's interest is added to the balance, future interest is earned on a larger and larger amount, producing accelerating growth over time.</p><h3>How does compounding frequency affect growth?</h3><p>More frequent compounding — monthly versus annually, for example — produces slightly faster growth, because interest begins earning its own interest sooner. The difference is real but usually smaller than the effect of the interest rate and the length of time.</p><h3>What is the Rule of 72?</h3><p>Divide 72 by your annual interest rate to estimate how many years it takes your money to double. At 6%, that is about twelve years. It is a quick approximation, not an exact figure, but it builds useful intuition.</p><h3>Does this account for inflation?</h3><p>No. The projection shows nominal growth based on your inputs. Because prices rise over time, a future balance buys less than the same number of dollars today, so factor inflation into your real-world planning.</p>
+</article>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips for Compounding</h2>
+<ul><li>Start early — time is the single biggest driver of compound growth.</li><li>Use the Rule of 72 (72 divided by the rate) to estimate how long money takes to double.</li><li>More frequent compounding helps, but its effect is smaller than the rate and time horizon.</li><li>Projections are nominal — factor in inflation when judging a future balance.</li></ul>
+<h2>Why You Can Rely on This Tool</h2><p>Every calculation runs entirely in your browser, so nothing you enter is uploaded or stored. The page loads over a secure connection, needs no account or download, and returns the same accurate result every time. It is free to use without limits.</p>
+</article>
+      <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For related financial math, the <a href="percentage-calculator.html">percentage calculator</a> handles any percentage question, the <a href="percentage-increase-calculator.html">percentage increase calculator</a> measures growth between two values, and the <a href="average-calculator.html">average calculator</a> averages a series of figures.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

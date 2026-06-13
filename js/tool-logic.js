@@ -1074,6 +1074,98 @@ Dana</textarea>
       <div id="ws_out" style="font-family:var(--font-head);font-size:2.2rem;font-weight:800;color:var(--accent);text-align:center;margin-top:18px;padding:28px;background:var(--primary-light);border-radius:12px;min-height:40px;">—</div>`);
     window.WS={spin(){const items=$('ws_in').value.split(/\n/).map(s=>s.trim()).filter(Boolean);if(!items.length){$('ws_out').textContent='Add some options';return;}let n=0;const max=18+Math.floor(Math.random()*8);const iv=setInterval(()=>{$('ws_out').textContent=items[Math.floor(Math.random()*items.length)];if(++n>=max){clearInterval(iv);$('ws_out').textContent='🎉 '+items[Math.floor(Math.random()*items.length)];}},80);}};
   },
+
+  // ─── PROFIT MARGIN CALCULATOR ───
+  profitMargin(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group"><label>Cost ($)</label><input type="number" id="pm_cost" value="40" oninput="RUN()"></div>
+        <div class="form-group"><label>Revenue / Selling Price ($)</label><input type="number" id="pm_rev" value="100" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats" style="margin-top:8px;">
+        <div class="stat-box"><strong id="pm_profit">—</strong><span>Profit</span></div>
+        <div class="stat-box"><strong id="pm_margin">—</strong><span>Margin</span></div>
+        <div class="stat-box"><strong id="pm_markup">—</strong><span>Markup</span></div>
+      </div>`);
+    window.RUN=()=>{
+      const cost=+$('pm_cost').value||0, rev=+$('pm_rev').value||0;
+      const profit=rev-cost;
+      const margin=rev?(profit/rev*100):0;
+      const markup=cost?(profit/cost*100):0;
+      $('pm_profit').textContent='$'+profit.toFixed(2);
+      $('pm_margin').textContent=margin.toFixed(1)+'%';
+      $('pm_markup').textContent=markup.toFixed(1)+'%';
+    };
+    RUN();
+  },
+
+  // ─── PAY RAISE CALCULATOR ───
+  payRaise(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group"><label>Current Salary ($)</label><input type="number" id="pr_cur" value="50000" oninput="RUN()"></div>
+        <div class="form-group"><label>Raise (%)</label><input type="number" id="pr_pct" value="5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats" style="margin-top:8px;">
+        <div class="stat-box"><strong id="pr_new">—</strong><span>New Salary</span></div>
+        <div class="stat-box"><strong id="pr_inc">—</strong><span>Annual Increase</span></div>
+        <div class="stat-box"><strong id="pr_month">—</strong><span>Extra per Month</span></div>
+      </div>`);
+    window.RUN=()=>{
+      const cur=+$('pr_cur').value||0, pct=+$('pr_pct').value||0;
+      const inc=cur*pct/100, nw=cur+inc;
+      $('pr_new').textContent='$'+nw.toLocaleString(undefined,{maximumFractionDigits:0});
+      $('pr_inc').textContent='$'+inc.toLocaleString(undefined,{maximumFractionDigits:0});
+      $('pr_month').textContent='$'+(inc/12).toLocaleString(undefined,{maximumFractionDigits:0});
+    };
+    RUN();
+  },
+
+  // ─── FREELANCE HOURLY RATE CALCULATOR ───
+  freelanceRate(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group"><label>Desired Annual Income ($)</label><input type="number" id="fr_income" value="80000" oninput="RUN()"></div>
+        <div class="form-group"><label>Annual Business Expenses ($)</label><input type="number" id="fr_exp" value="10000" oninput="RUN()"></div>
+        <div class="form-group"><label>Billable Hours per Week</label><input type="number" id="fr_hours" value="25" oninput="RUN()"></div>
+        <div class="form-group"><label>Working Weeks per Year</label><input type="number" id="fr_weeks" value="48" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats" style="margin-top:8px;">
+        <div class="stat-box"><strong id="fr_rate">—</strong><span>Hourly Rate</span></div>
+        <div class="stat-box"><strong id="fr_day">—</strong><span>Day Rate (8h)</span></div>
+        <div class="stat-box"><strong id="fr_total">—</strong><span>Billable Hrs/Yr</span></div>
+      </div>`);
+    window.RUN=()=>{
+      const income=+$('fr_income').value||0, exp=+$('fr_exp').value||0;
+      const hours=+$('fr_hours').value||0, weeks=+$('fr_weeks').value||0;
+      const billable=hours*weeks;
+      const rate=billable?((income+exp)/billable):0;
+      $('fr_rate').textContent='$'+rate.toFixed(2);
+      $('fr_day').textContent='$'+(rate*8).toFixed(2);
+      $('fr_total').textContent=billable.toLocaleString();
+    };
+    RUN();
+  },
+
+  // ─── CPM CALCULATOR ───
+  cpmCalc(){
+    ui(`
+      <p style="color:var(--gray);font-size:.88rem;margin-bottom:10px;">Enter any two values and the third is calculated. CPM = cost per 1,000 impressions.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+        <div class="form-group"><label>Total Cost ($)</label><input type="number" id="cpm_cost" value="500" oninput="CPM.calc('cost')"></div>
+        <div class="form-group"><label>Impressions</label><input type="number" id="cpm_imp" value="100000" oninput="CPM.calc('imp')"></div>
+        <div class="form-group"><label>CPM ($)</label><input type="number" id="cpm_cpm" value="5" oninput="CPM.calc('cpm')"></div>
+      </div>
+      <div id="cpm_out" style="font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--primary);text-align:center;margin-top:14px;padding:16px;background:var(--primary-light);border-radius:12px;"></div>`);
+    window.CPM={calc(changed){
+      let cost=+$('cpm_cost').value||0, imp=+$('cpm_imp').value||0, cpm=+$('cpm_cpm').value||0;
+      // recompute the field NOT being edited, preferring to solve for the empty/derived one
+      if(changed==='cost'||changed==='imp'){ if(imp>0){ cpm=cost/imp*1000; $('cpm_cpm').value=cpm.toFixed(2);} }
+      else if(changed==='cpm'){ if(imp>0){ cost=cpm*imp/1000; $('cpm_cost').value=cost.toFixed(2);} }
+      $('cpm_out').textContent=`CPM $${cpm.toFixed(2)} · ${imp.toLocaleString()} impressions · $${cost.toFixed(2)} total`;
+    }};
+    CPM.calc('cost');
+  },
 };
 
 // ─── Shared UI builders ───
