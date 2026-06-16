@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Image Resizer", "url": "https://usfreetools.com/tools/image-resizer.html", "description": "Resize images online for free. Change width and height, keep aspect ratio, and download instantly. Processed in your browser \u2014 private, no upload.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are my images uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Resizing happens entirely in your browser using the canvas, so your images never leave your device \u2014 fully private."}}, {"@type": "Question", "name": "Will resizing reduce image quality?", "acceptedAnswer": {"@type": "Answer", "text": "Reducing dimensions keeps quality high. Enlarging beyond the original size can introduce softness, since there is no extra detail to add."}}, {"@type": "Question", "name": "Does it keep the aspect ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, by default. With the lock enabled, changing one dimension updates the other automatically so the image is not distorted."}}, {"@type": "Question", "name": "What formats can I resize?", "acceptedAnswer": {"@type": "Answer", "text": "Any image your browser can open \u2014 including JPG, PNG, WebP, and GIF \u2014 and the result downloads as a PNG."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I resize an image without distorting it?", "acceptedAnswer": {"@type": "Answer", "text": "Keep the aspect ratio \u2014 the width-to-height relationship \u2014 locked, so the image scales proportionally. Changing width and height independently stretches or squashes the image out of shape."}}, {"@type": "Question", "name": "Will enlarging an image reduce its quality?", "acceptedAnswer": {"@type": "Answer", "text": "It can. Enlarging means inventing pixels that were not in the original, which can soften or blur the result if pushed too far. Shrinking, by contrast, generally stays sharp."}}, {"@type": "Question", "name": "Are my images uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. The resizing happens entirely in your browser, so your images never leave your device. This makes it both private and fast \u2014 nothing is sent to a server."}}, {"@type": "Question", "name": "Why resize images for a website?", "acceptedAnswer": {"@type": "Answer", "text": "To match the display size and improve performance. Serving an oversized image that the browser scales down wastes bandwidth and slows the page, so resizing to the actual needed dimensions is good practice."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖼️</text></svg>">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfreetools.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usfreetools.com/tools.html"}, {"@type": "ListItem", "position": 3, "name": "Image Resizer", "item": "https://usfreetools.com/tools/image-resizer.html"}]}</script>
@@ -47,109 +47,37 @@
         <p>Resize any image to exact dimensions right in your browser. Keep the aspect ratio locked or set custom width and height — nothing is uploaded.</p>
         <div id="toolContainer" data-impl="imageResizer"></div>
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Image Resizer?</h2>
-          <p style="color:#374151;line-height:1.7;">This image resizer changes the pixel dimensions of any image — JPG, PNG, WebP, and more — to the exact width and height you choose. It works entirely in your browser using the HTML canvas, so your photo never leaves your device and resizing happens instantly.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Image Resizer</h2>
-          <p class="tool-intro-lead">Upload an image, enter your target width or height, and download the resized result. Keep the aspect-ratio lock on to scale proportionally without distortion, or turn it off to set exact dimensions. Because all processing is local, even large images resize in moments with complete privacy — no server upload, no waiting, no watermark.</p>
-          <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or upload your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Resizing photos for social media profile pictures and posts</li>
-            <li>Shrinking images to meet upload size limits</li>
-            <li>Preparing images for websites and email</li>
-            <li>Creating thumbnails from larger photos</li>
-            <li>Standardizing image dimensions for a gallery</li>
-            <li>Reducing dimensions to save storage space</li>
-            <li>Fitting images into document or slide layouts</li>
-            <li>Preparing product photos for online listings</li>
-          </ul>
-          <h2>Good to Know</h2>
-          <ul>
-            <li>The aspect-ratio lock prevents stretching or squashing your image.</li>
-            <li>All processing happens locally, so your images are never uploaded.</li>
-            <li>Output is saved as a PNG, which preserves quality without compression artifacts.</li>
-          </ul>
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2>
-          <h3>Are my images uploaded to a server?</h3>
-          <p class="tool-intro-lead">No. Resizing happens entirely in your browser using the canvas, so your images never leave your device — fully private.</p>
-          <h3>Will resizing reduce image quality?</h3>
-          <p class="tool-intro-lead">Reducing dimensions keeps quality high. Enlarging beyond the original size can introduce softness, since there is no extra detail to add.</p>
-          <h3>Does it keep the aspect ratio?</h3>
-          <p class="tool-intro-lead">Yes, by default. With the lock enabled, changing one dimension updates the other automatically so the image is not distorted.</p>
-          <h3>What formats can I resize?</h3>
-          <p class="tool-intro-lead">Any image your browser can open — including JPG, PNG, WebP, and GIF — and the result downloads as a PNG.</p>
-                  <h3>Can I resize images on my phone?</h3>
-          <p class="tool-intro-lead">Yes. Because the resizer runs in your browser, it works on phones, tablets, and computers alike with no app to install. Upload from your device, set the dimensions, and the resized image downloads straight to your downloads folder.</p>
+<h2>What This Tool Does</h2>
+<p>This tool resizes images to the exact dimensions you need, right in your browser. Upload an image, set a new width and height, and it produces a resized version you can download. It is the quick, private way to make an image fit a specific size requirement — for a profile picture, a web page, an upload limit, or anywhere a particular dimension is needed.</p><p>Because the resizing happens entirely on your device, your images are never uploaded to a server. That makes this both faster and more private than tools that send your files away to process them — your photos stay with you, and the resize is instant.</p>
 </article>
-
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions From Developers</h2>
-          <p>A question that comes up constantly is the difference between encoding, encryption, and hashing. Encoding like Base64 is fully reversible and offers no security — it only makes data safe for text-only channels. Encryption is reversible with a key and does protect data. Hashing is one-way and is used to verify integrity, not to hide information. Confusing these leads to real security mistakes, like using Base64 to 'protect' a secret that anyone can decode instantly.</p>
-          <p>Another frequent concern is handling edge cases correctly. UTF-8 characters, escaped sequences, trailing commas in JSON, and quoting in CSV are where naive transformations silently break. A good tool handles these correctly and reports errors clearly rather than producing output that looks right but is subtly malformed — which is far harder to debug later.</p>
-          <p>Developers also ask why a browser tool beats a quick script. For one-off inspection and transformation while debugging, a fast client-side tool keeps sensitive payloads off external servers and saves you from remembering exact command syntax. It removes a small but constant point of friction without compromising on correctness or privacy.</p>
-          <h3>Tips for the best results</h3>
-          <p>Never confuse encoding with encryption, validate structure and edge cases before relying on transformed data, and prefer client-side tools so payloads stay private.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Keep the aspect-ratio lock on to avoid distorting your image.</li>
-            <li>Resize down rather than up whenever possible to preserve quality.</li>
-            <li>Note the original dimensions shown after upload before choosing a new size.</li>
-            <li>For web use, match the dimensions to the space the image will fill.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Enlarging a small image and expecting added detail — quality softens.</li>
-            <li>Turning off the aspect lock and accidentally stretching the image.</li>
-            <li>Resizing far larger than needed, wasting file size.</li>
-            <li>Assuming the image was uploaded somewhere — it stays on your device.</li>
-          </ul>
-          <p class="tool-intro-lead">Resizing in the browser via the canvas is both private and instant because the pixels are redrawn locally at the new dimensions. The key principle is that downscaling preserves quality while upscaling cannot invent detail that was never captured, so the best results come from starting with an image larger than your target. Keeping the aspect ratio locked avoids the distortion that plagues careless resizing.</p>
-        </article>
-
-                <article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Understanding Image Resizing and Resolution</h2>
-          <p>Image resizing changes the number of pixels in an image, and understanding how it works helps you get the best results. Every digital image is a grid of pixels; resizing recalculates that grid to new dimensions. Reducing size discards pixels intelligently and almost always looks clean, while enlarging must invent pixels through interpolation, which is why upscaling can look soft.</p>
-          <p>Resolution and dimensions are often confused. For screens, what matters is pixel dimensions — a 1920×1080 image fills a typical monitor regardless of its &#x27;DPI&#x27; setting, which only affects print. When preparing images for the web, sizing them to the exact pixels they will occupy is the single biggest factor in fast page loads, since oversized images waste bandwidth and slow everything down.</p>
-          <h3>When image resizing matters</h3>
-          <ul>
-            <li>Fitting profile pictures to platform requirements</li>
-            <li>Meeting maximum upload dimensions or file sizes</li>
-            <li>Creating consistent thumbnails for a gallery</li>
-            <li>Optimizing images so web pages load quickly</li>
-            <li>Preparing photos for documents and presentations</li>
-          </ul>
-          <p>Resizing well is mostly about respecting the source: start with an image larger than your target and scale down for crisp results, and keep the aspect ratio locked to avoid distortion. Because this resizer works entirely in your browser using the canvas, your images stay completely private while you dial in the exact dimensions your project needs.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="image-compressor.html">image compressor</a> to reduce file size, or use the <a href="png-to-jpg.html">PNG to JPG converter</a> to change the format. You can also use the <a href="jpg-to-png.html">JPG to PNG converter</a> to convert to PNG.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How Image Resizing Works</h2>
+<p>An image is a grid of pixels, and its dimensions are simply how many pixels wide and tall it is. Resizing changes that pixel count — making an image smaller discards pixels, while making it larger adds them by estimating the in-between values. Shrinking generally looks clean because you are removing detail the eye does not miss; enlarging is trickier, because the tool has to invent pixels that were not there, which can soften or blur the result if you push it too far.</p><p>The most important concept in resizing is the <strong>aspect ratio</strong> — the relationship between width and height. If you change width and height independently without keeping that ratio, the image stretches or squashes, making people look too wide or too thin and generally looking wrong. Keeping the aspect ratio locked means the image stays proportional, just at a different size. This is why resizing tools emphasize proportional scaling: it is almost always what you actually want.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Resizing Images for Real Uses</h2>
+<p>Web and social media are the most common reasons to resize. Platforms have specific dimensions for profile pictures, banners, posts, and thumbnails, and an image that is the wrong size gets awkwardly cropped or scaled by the platform. Resizing to the right dimensions yourself keeps you in control of how the image looks. For websites, correctly sized images also matter for performance — serving a giant image scaled down in the browser wastes bandwidth and slows the page, so resizing to the actual display size is good practice.</p><p>Resizing also helps with practical limits and consistency. Upload forms often cap image dimensions or file size, and resizing brings an oversized image within bounds. When you need a set of images to be uniform — product photos, team headshots, gallery thumbnails — resizing them all to the same dimensions creates a clean, consistent look. Throughout, keeping the aspect ratio matters: if your target dimensions have a different ratio than the original, decide whether to accept some cropping or to fit within the bounds, rather than stretching the image out of shape.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Keep the aspect ratio locked to avoid stretching or squashing the image out of proportion.</li><li>Shrinking an image looks clean; enlarging it too much can soften or blur the result.</li><li>Resize to the actual display size for web use, so you are not serving an oversized file.</li><li>For a uniform set of images, resize them all to the same dimensions.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How do I resize an image without distorting it?</h3><p>Keep the aspect ratio — the width-to-height relationship — locked, so the image scales proportionally. Changing width and height independently stretches or squashes the image out of shape.</p><h3>Will enlarging an image reduce its quality?</h3><p>It can. Enlarging means inventing pixels that were not in the original, which can soften or blur the result if pushed too far. Shrinking, by contrast, generally stays sharp.</p><h3>Are my images uploaded anywhere?</h3><p>No. The resizing happens entirely in your browser, so your images never leave your device. This makes it both private and fast — nothing is sent to a server.</p><h3>Why resize images for a website?</h3><p>To match the display size and improve performance. Serving an oversized image that the browser scales down wastes bandwidth and slows the page, so resizing to the actual needed dimensions is good practice.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This tool resizes images entirely in your browser, so your files are never uploaded or stored anywhere. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use without limits.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more image tools, the <a href="image-compressor.html">image compressor</a> reduces file size, the <a href="jpg-to-png.html">JPG to PNG converter</a> changes format, and the <a href="png-to-jpg.html">PNG to JPG converter</a> handles the reverse.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
     <div class="tool-sidebar">
       <div><div class="ad-label">Advertisement</div><div class="ad-banner ad-banner-side"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense<br>300×250</p></div></div></div>

@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HTML Encoder & Decoder", "url": "https://usfreetools.com/tools/html-encode-decode.html", "description": "Convert special HTML characters (like <, >, &) into safe HTML entities, or decode entities back into characters. Prevents rendering issues and XSS.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which characters get encoded?", "acceptedAnswer": {"@type": "Answer", "text": "The key ones: < (&lt;), > (&gt;), & (&amp;), \" (&quot;), and ' (&#39;)."}}, {"@type": "Question", "name": "Does HTML encoding prevent XSS?", "acceptedAnswer": {"@type": "Answer", "text": "Encoding user input before display is a core defense against cross-site scripting."}}, {"@type": "Question", "name": "Difference between &lt; and <?", "acceptedAnswer": {"@type": "Answer", "text": "&lt; displays as a literal < on the page; an unencoded < is read as the start of a tag."}}, {"@type": "Question", "name": "Which characters need HTML encoding?", "acceptedAnswer": {"@type": "Answer", "text": "The five key characters are < > & \" and '. Encoding them prevents the browser from interpreting user input as markup or script."}}, {"@type": "Question", "name": "How does HTML encoding prevent XSS?", "acceptedAnswer": {"@type": "Answer", "text": "By converting characters like < into &lt;, the browser displays them as text instead of running them as code, which blocks injected scripts."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is HTML encoding?", "acceptedAnswer": {"@type": "Answer", "text": "It is converting characters that have special meaning in HTML \u2014 like angle brackets and ampersands \u2014 into entity codes such as &lt; and &amp;, so they display as text instead of being interpreted as markup."}}, {"@type": "Question", "name": "Why do I need to encode certain characters?", "acceptedAnswer": {"@type": "Answer", "text": "Because characters like  structure HTML. To show them as literal text rather than have the browser treat them as tags, you must encode them as entities. Otherwise the page can break or display incorrectly."}}, {"@type": "Question", "name": "How does encoding relate to security?", "acceptedAnswer": {"@type": "Answer", "text": "Encoding user-submitted content before displaying it prevents cross-site scripting, where malicious input is executed as code. Encoding ensures special characters are treated as harmless text, not active markup."}}, {"@type": "Question", "name": "Is my text safe to paste here?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All encoding and decoding happen in your browser, so nothing you enter is uploaded or stored. You can work with private content safely."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
 
@@ -49,110 +49,37 @@
         <div id="toolContainer" data-impl="htmlEncoder"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is HTML Encoder &amp; Decoder?</h2>
-          <p style="color:#374151;line-height:1.7;">Displaying code or special characters on a web page is tricky — a literal &lt; starts a tag and a stray quote can break an attribute. HTML encoding converts these into safe entities (&lt; becomes &amp;lt;) so they display as text instead of being interpreted as markup.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About HTML Encoder &amp; Decoder</h2>
-          
-          <p class="tool-intro-lead">This encoder/decoder converts both directions: encode text to show it safely or prevent injection, or decode entities back to readable characters. It's a staple for handling user-generated content or documenting code.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Displaying code snippets as text on a page</li>
-            <li>Escaping user input to prevent HTML injection</li>
-            <li>Encoding special characters for safe rendering</li>
-            <li>Decoding entities back to readable text</li>
-            <li>Preparing content for an HTML-interpreting CMS</li>
-            <li>Escaping quotes inside HTML attributes</li>
-            <li>Documenting markup in tutorials</li>
-            <li>Cleaning entity-encoded text from exports</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>Encoding the five characters &lt; &gt; &amp; " ' covers the vast majority of HTML-safety needs.</li>
-            <li>Escaping output is a primary XSS defense — never render raw user input as HTML.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Which characters get encoded?</h3>
-          <p class="tool-intro-lead">The key ones: &lt; (&amp;lt;), &gt; (&amp;gt;), &amp; (&amp;amp;), " (&amp;quot;), and ' (&amp;#39;).</p>
-          <h3>Does HTML encoding prevent XSS?</h3>
-          <p class="tool-intro-lead">Encoding user input before display is a core defense against cross-site scripting.</p>
-          <h3>Difference between &amp;lt; and &lt;?</h3>
-          <p class="tool-intro-lead">&amp;lt; displays as a literal &lt; on the page; an unencoded &lt; is read as the start of a tag.</p>
-        
-          <h3>Which characters need HTML encoding?</h3>
-          <p class="tool-intro-lead">The five key characters are &lt; &gt; &amp; " and '. Encoding them prevents the browser from interpreting user input as markup or script.</p>
-          <h3>How does HTML encoding prevent XSS?</h3>
-          <p class="tool-intro-lead">By converting characters like &lt; into &amp;lt;, the browser displays them as text instead of running them as code, which blocks injected scripts.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>A Developer’s Perspective</h2>
-          <p>Developers live in a world of formats, encodings, and transformations — JSON and CSV, Base64 and hex, minified and pretty-printed code, timestamps and tokens. Moving cleanly between these representations is a constant, low-level need, and doing it by hand is both slow and error-prone. Dedicated tools turn these chores into instant, reliable operations that keep you in flow.</p>
-          <p>The best developer utilities share a few traits: they run entirely client-side so sensitive payloads never leave the browser, they handle edge cases like UTF-8 and escaping correctly, and they fail loudly with clear errors rather than producing silently wrong output. For debugging, inspecting, and quick transformations, a fast browser tool often beats both a heavyweight IDE plugin and a command-line one-liner you have to remember.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Formatting, validating, or converting data while debugging an API.</li>
-            <li>Encoding or decoding payloads, tokens, and parameters safely.</li>
-            <li>Cleaning or transforming code and configuration files.</li>
-            <li>Inspecting structure and catching syntax errors before they ship.</li>
-          </ul>
-          <p>For everyday development chores, a focused tool that is fast, correct, and private is worth more than a clever script. It removes a small point of friction dozens of times a day, which adds up to real time and fewer mistakes.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions From Developers</h2>
-          <p>A question that comes up constantly is the difference between encoding, encryption, and hashing. Encoding like Base64 is fully reversible and offers no security — it only makes data safe for text-only channels. Encryption is reversible with a key and does protect data. Hashing is one-way and is used to verify integrity, not to hide information. Confusing these leads to real security mistakes, like using Base64 to 'protect' a secret that anyone can decode instantly.</p>
-          <p>Another frequent concern is handling edge cases correctly. UTF-8 characters, escaped sequences, trailing commas in JSON, and quoting in CSV are where naive transformations silently break. A good tool handles these correctly and reports errors clearly rather than producing output that looks right but is subtly malformed — which is far harder to debug later.</p>
-          <p>Developers also ask why a browser tool beats a quick script. For one-off inspection and transformation while debugging, a fast client-side tool keeps sensitive payloads off external servers and saves you from remembering exact command syntax. It removes a small but constant point of friction without compromising on correctness or privacy.</p>
-          <h3>Tips for the best results</h3>
-          <p>Never confuse encoding with encryption, validate structure and edge cases before relying on transformed data, and prefer client-side tools so payloads stay private.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Encode user input before displaying it to prevent script injection.</li>
-            <li>Escape the five key characters: &lt; &gt; &amp; " '.</li>
-            <li>Use it to show code snippets as text on a page.</li>
-            <li>Decode entity-encoded exports back to readable characters.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Rendering raw user input as HTML, opening an XSS hole.</li>
-            <li>Forgetting to escape quotes inside attributes.</li>
-            <li>Encoding text that is then encoded again, garbling entities.</li>
-            <li>Assuming only &lt; and &gt; need escaping.</li>
-          </ul>
-          <p class="tool-intro-lead">HTML encoding is a frontline defense against cross-site scripting: by converting characters like &lt; into &amp;lt;, the browser displays them as text instead of executing them as markup. Any time untrusted input reaches a page, escaping it is essential. Escaping the five special characters covers nearly every case.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="url-encode-decode.html">URL encoder</a> to encode for URLs, or use the <a href="base64-encode-decode.html">Base64 encoder</a> to encode data. You can also use the <a href="html-to-markdown.html">HTML to Markdown</a> to convert HTML to Markdown.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool encodes and decodes HTML entities. Paste text with special characters and it converts them into their safe HTML entity form; paste encoded text full of entities and it decodes it back to readable characters. It is an everyday helper for web developers handling content that needs to display correctly on a page without breaking the HTML around it.</p><p>Certain characters have special meaning in HTML, so when you want them to appear as literal text rather than be interpreted as markup, they must be encoded. This tool handles that conversion both ways, saving you from doing it by hand and from the display bugs and security issues that incorrect encoding can cause.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How HTML Encoding Works</h2>
+<p>HTML uses certain characters structurally — the angle brackets that wrap tags, the ampersand that begins entities, and quotation marks around attributes. If you want one of these to appear as actual text on the page, you cannot just type it, because the browser would try to interpret it as markup. Instead you use an HTML entity: the less-than sign becomes &lt;, the greater-than sign &gt;, the ampersand &amp;, and quotation marks have their own entities too.</p><p>Decoding reverses this, turning entities back into the characters they represent. The need arises constantly because text frequently contains these special characters — think of displaying code on a page, showing a mathematical expression with angle brackets, or rendering user-submitted text that might contain any character. Encoding ensures the characters display as intended rather than disrupting the page, while decoding lets you read or process encoded content. Getting this right is what keeps content displaying correctly and safely.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Why HTML Encoding Matters for Display and Security</h2>
+<p>The most visible reason to encode is correct display. If you want to show a snippet of HTML code on a web page — say, in a tutorial — you must encode the angle brackets, or the browser will try to render the code as actual elements instead of showing it as text. The same applies to any content containing characters that HTML treats specially: encoding them ensures they appear exactly as written rather than corrupting the surrounding page structure.</p><p>There is also an important security dimension. When a web application displays text that came from users, failing to encode it properly can open the door to cross-site scripting, where malicious input containing script tags gets executed by the browser instead of being shown as harmless text. Encoding user-supplied content before displaying it is a core defensive practice that neutralizes this risk by ensuring any special characters are treated as text, not markup. While frameworks often handle this automatically, understanding HTML encoding — and being able to encode or decode content directly — remains a genuinely useful part of web development.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Encode angle brackets when you want to display HTML code as text rather than have it render.</li><li>The key entities are &lt; for <, &gt; for >, and &amp; for & — the characters HTML treats specially.</li><li>Always encode user-submitted content before displaying it, to prevent cross-site scripting.</li><li>Decoding turns entities back into readable characters for reading or processing content.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>What is HTML encoding?</h3><p>It is converting characters that have special meaning in HTML — like angle brackets and ampersands — into entity codes such as &lt; and &amp;, so they display as text instead of being interpreted as markup.</p><h3>Why do I need to encode certain characters?</h3><p>Because characters like < and > structure HTML. To show them as literal text rather than have the browser treat them as tags, you must encode them as entities. Otherwise the page can break or display incorrectly.</p><h3>How does encoding relate to security?</h3><p>Encoding user-submitted content before displaying it prevents cross-site scripting, where malicious input is executed as code. Encoding ensures special characters are treated as harmless text, not active markup.</p><h3>Is my text safe to paste here?</h3><p>Yes. All encoding and decoding happen in your browser, so nothing you enter is uploaded or stored. You can work with private content safely.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This tool runs entirely in your browser, so anything you encode or decode stays on your device. It works instantly, needs no account or download, and runs anywhere. Like every tool here, it is free to use as often as you need.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more developer tools, the <a href="url-encode-decode.html">URL encoder and decoder</a> handles web-address encoding, the <a href="base64-encode-decode.html">Base64 encoder and decoder</a> handles a common data encoding, and the <a href="json-formatter.html">JSON formatter</a> formats JSON.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

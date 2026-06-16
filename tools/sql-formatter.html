@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "SQL Formatter", "url": "https://usfreetools.com/tools/sql-formatter.html", "description": "Format and beautify messy SQL queries with proper indentation and keyword casing for readability.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does it change what my query does?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 formatting only adjusts whitespace, breaks, and keyword casing; logic and results are unchanged."}}, {"@type": "Question", "name": "Which dialects does it support?", "acceptedAnswer": {"@type": "Answer", "text": "Standard SQL common to MySQL, PostgreSQL, SQL Server, and others; dialect-specific functions are preserved."}}, {"@type": "Question", "name": "Why capitalize keywords?", "acceptedAnswer": {"@type": "Answer", "text": "Uppercasing SELECT, FROM, WHERE visually separates SQL structure from your table and column names."}}, {"@type": "Question", "name": "Does formatting change my query results?", "acceptedAnswer": {"@type": "Answer", "text": "No. Formatting only adjusts whitespace and keyword casing for readability. The query logic and its results are completely unchanged."}}, {"@type": "Question", "name": "Why uppercase SQL keywords?", "acceptedAnswer": {"@type": "Answer", "text": "Uppercasing keywords like SELECT and WHERE visually separates the SQL structure from your table and column names, making complex queries easier to read."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does formatting SQL do?", "acceptedAnswer": {"@type": "Answer", "text": "It lays out a query with consistent indentation and line breaks, putting major clauses on their own lines. The query itself is unchanged \u2014 only its presentation becomes clearer and easier to read."}}, {"@type": "Question", "name": "Does formatting change how my query runs?", "acceptedAnswer": {"@type": "Answer", "text": "No. Formatting only affects whitespace and layout, not the query's logic or results. The database ignores the extra spacing; it is purely for human readability."}}, {"@type": "Question", "name": "Why is formatting important for complex queries?", "acceptedAnswer": {"@type": "Answer", "text": "Complex queries with multiple joins, subqueries, and conditions become hard to follow when crammed together. Formatting reveals their structure, making them easier to understand, debug, and maintain."}}, {"@type": "Question", "name": "Is my query safe to paste here?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All formatting happens in your browser, so your SQL is never uploaded or stored. You can format queries containing sensitive logic safely."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗃️</text></svg>">
 
@@ -49,110 +49,37 @@
         <div id="toolContainer" data-impl="sqlFormatter"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is SQL Formatter?</h2>
-          <p style="color:#374151;line-height:1.7;">A complex SQL query crammed onto one line is a debugging nightmare. This SQL formatter restructures queries with proper line breaks, indentation, and capitalized keywords, turning a dense string into readable, reviewable SQL where every clause stands on its own.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About SQL Formatter</h2>
-          
-          <p class="tool-intro-lead">Paste your query — a tangled SELECT with joins and subqueries, or a long INSERT — and get clean, formatted SQL back. It makes code reviews easier, helps you spot logic errors, and produces query text worth committing.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Formatting a complex query for review</li>
-            <li>Making nested subqueries readable</li>
-            <li>Cleaning up SQL copied from logs</li>
-            <li>Standardizing query style across a team</li>
-            <li>Debugging joins by seeing clause structure</li>
-            <li>Preparing SQL for documentation</li>
-            <li>Reformatting auto-generated queries</li>
-            <li>Tidying a query before committing</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>Uppercase keywords are a long-standing SQL readability convention.</li>
-            <li>Consistent formatting makes version-control diffs cleaner and easier to review.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Does it change what my query does?</h3>
-          <p class="tool-intro-lead">No — formatting only adjusts whitespace, breaks, and keyword casing; logic and results are unchanged.</p>
-          <h3>Which dialects does it support?</h3>
-          <p class="tool-intro-lead">Standard SQL common to MySQL, PostgreSQL, SQL Server, and others; dialect-specific functions are preserved.</p>
-          <h3>Why capitalize keywords?</h3>
-          <p class="tool-intro-lead">Uppercasing SELECT, FROM, WHERE visually separates SQL structure from your table and column names.</p>
-        
-          <h3>Does formatting change my query results?</h3>
-          <p class="tool-intro-lead">No. Formatting only adjusts whitespace and keyword casing for readability. The query logic and its results are completely unchanged.</p>
-          <h3>Why uppercase SQL keywords?</h3>
-          <p class="tool-intro-lead">Uppercasing keywords like SELECT and WHERE visually separates the SQL structure from your table and column names, making complex queries easier to read.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>A Developer’s Perspective</h2>
-          <p>Developers live in a world of formats, encodings, and transformations — JSON and CSV, Base64 and hex, minified and pretty-printed code, timestamps and tokens. Moving cleanly between these representations is a constant, low-level need, and doing it by hand is both slow and error-prone. Dedicated tools turn these chores into instant, reliable operations that keep you in flow.</p>
-          <p>The best developer utilities share a few traits: they run entirely client-side so sensitive payloads never leave the browser, they handle edge cases like UTF-8 and escaping correctly, and they fail loudly with clear errors rather than producing silently wrong output. For debugging, inspecting, and quick transformations, a fast browser tool often beats both a heavyweight IDE plugin and a command-line one-liner you have to remember.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Formatting, validating, or converting data while debugging an API.</li>
-            <li>Encoding or decoding payloads, tokens, and parameters safely.</li>
-            <li>Cleaning or transforming code and configuration files.</li>
-            <li>Inspecting structure and catching syntax errors before they ship.</li>
-          </ul>
-          <p>For everyday development chores, a focused tool that is fast, correct, and private is worth more than a clever script. It removes a small point of friction dozens of times a day, which adds up to real time and fewer mistakes.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions From Developers</h2>
-          <p>A question that comes up constantly is the difference between encoding, encryption, and hashing. Encoding like Base64 is fully reversible and offers no security — it only makes data safe for text-only channels. Encryption is reversible with a key and does protect data. Hashing is one-way and is used to verify integrity, not to hide information. Confusing these leads to real security mistakes, like using Base64 to 'protect' a secret that anyone can decode instantly.</p>
-          <p>Another frequent concern is handling edge cases correctly. UTF-8 characters, escaped sequences, trailing commas in JSON, and quoting in CSV are where naive transformations silently break. A good tool handles these correctly and reports errors clearly rather than producing output that looks right but is subtly malformed — which is far harder to debug later.</p>
-          <p>Developers also ask why a browser tool beats a quick script. For one-off inspection and transformation while debugging, a fast client-side tool keeps sensitive payloads off external servers and saves you from remembering exact command syntax. It removes a small but constant point of friction without compromising on correctness or privacy.</p>
-          <h3>Tips for the best results</h3>
-          <p>Never confuse encoding with encryption, validate structure and edge cases before relying on transformed data, and prefer client-side tools so payloads stay private.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Format queries before code review so logic is easy to follow.</li>
-            <li>Uppercase keywords to separate SQL structure from your identifiers.</li>
-            <li>Use it to untangle nested subqueries and complex joins.</li>
-            <li>Consistent formatting keeps version-control diffs clean.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Assuming formatting changes query results — it never does.</li>
-            <li>Leaving dense one-line queries in shared code.</li>
-            <li>Inconsistent style across a team's queries.</li>
-            <li>Confusing formatting with query optimization.</li>
-          </ul>
-          <p class="tool-intro-lead">A formatted query is a reviewable query. Breaking clauses onto their own lines and uppercasing keywords makes joins, subqueries, and conditions visible at a glance, which is where logic errors hide. Formatting changes only whitespace and casing — never behavior — so it is purely a readability and maintainability win.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="json-formatter.html">JSON formatter</a> to format JSON, or use the <a href="xml-formatter.html">XML formatter</a> to format XML. You can also use the <a href="regex-tester.html">regex tester</a> to test patterns for queries.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool formats SQL queries, taking a cramped or run-on query and laying it out with clean indentation and line breaks so it is easy to read. Paste a query that is all on one line or inconsistently formatted, and it returns a tidy, properly structured version. For anyone who writes or reviews SQL, readable formatting is the difference between a query you can quickly understand and one you have to puzzle over.</p><p>SQL queries have a habit of growing long and tangled, especially with multiple joins, conditions, and subqueries. When they are written all on one line or with haphazard spacing, even a query you wrote yourself becomes hard to follow later. This formatter imposes a consistent, readable structure, which makes queries easier to understand, debug, and maintain.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Why Formatting SQL Matters</h2>
+<p>SQL describes what data you want using clauses — SELECT, FROM, WHERE, JOIN, GROUP BY, and others — and well-formatted SQL puts these key clauses on their own lines with consistent indentation. This visual structure mirrors the logical structure of the query, so you can see at a glance what is being selected, from where, under what conditions, and how tables are joined. A query laid out this way is far quicker to read and reason about than the same query crammed onto one line.</p><p>The benefit grows with complexity. A simple query is readable in almost any format, but real-world SQL often involves several joins, nested subqueries, and long lists of conditions. In those cases, consistent formatting is what keeps the query comprehensible — it reveals the relationships between parts, makes it obvious where one clause ends and another begins, and helps you spot mistakes like a misplaced condition or a missing join. For queries that will be read, reviewed, or maintained by others (or by you, months later), good formatting is a real aid to clarity.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Readable SQL in Real Work</h2>
+<p>In day-to-day database work, formatting is most valuable for debugging and collaboration. When a query is not returning what you expect, a clean layout helps you trace the logic clause by clause and find the problem — a condition in the wrong place, a join that is too broad, a grouping that does not match the selection. Trying to debug a one-line query is genuinely harder, because the structure that would guide your eye is collapsed. Formatting first often makes the bug visible.</p><p>Formatting also matters whenever SQL is shared. Code reviews, documentation, team codebases, and saved query libraries all benefit from consistent, readable SQL, because the next person to read it can understand it quickly. Many teams adopt a shared formatting style for exactly this reason. Beyond readability, the act of formatting a query you have pasted from elsewhere — a log, an application, a colleague — is often the first step to understanding and adapting it. A formatter turns that into an instant operation rather than tedious manual reindenting.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Put major clauses like SELECT, FROM, WHERE, and JOIN on their own lines for readability.</li><li>Format a query before debugging it — the structure makes logic errors easier to spot.</li><li>Consistent formatting helps the next person (or future you) understand a query quickly.</li><li>Formatting is often the first step to understanding a query pasted from a log or application.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>What does formatting SQL do?</h3><p>It lays out a query with consistent indentation and line breaks, putting major clauses on their own lines. The query itself is unchanged — only its presentation becomes clearer and easier to read.</p><h3>Does formatting change how my query runs?</h3><p>No. Formatting only affects whitespace and layout, not the query's logic or results. The database ignores the extra spacing; it is purely for human readability.</p><h3>Why is formatting important for complex queries?</h3><p>Complex queries with multiple joins, subqueries, and conditions become hard to follow when crammed together. Formatting reveals their structure, making them easier to understand, debug, and maintain.</p><h3>Is my query safe to paste here?</h3><p>Yes. All formatting happens in your browser, so your SQL is never uploaded or stored. You can format queries containing sensitive logic safely.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This tool runs entirely in your browser, so the SQL you paste never leaves your device. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use without limits.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more developer tools, the <a href="json-formatter.html">JSON formatter</a> formats JSON data, the <a href="xml-formatter.html">XML formatter</a> handles XML, and the <a href="csv-to-json.html">CSV to JSON converter</a> transforms tabular data.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

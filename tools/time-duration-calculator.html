@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Time Duration Calculator", "url": "https://usfreetools.com/tools/time-duration-calculator.html", "description": "Calculate the duration in hours and minutes between two times \u2014 perfect for timesheets and scheduling.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why can't I just subtract the times?", "acceptedAnswer": {"@type": "Answer", "text": "Time is base-60 for minutes, so 1:45 to 2:30 isn't simple decimal subtraction \u2014 the tool handles the rollover."}}, {"@type": "Question", "name": "Can it handle times crossing midnight?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 an end time earlier than the start is treated as crossing into the next day."}}, {"@type": "Question", "name": "Does it give decimal hours for payroll?", "acceptedAnswer": {"@type": "Answer", "text": "Hours and minutes convert to decimal hours (1:30 = 1.5 hours) for time-based billing."}}, {"@type": "Question", "name": "How do I convert 1 hour 30 minutes to decimal?", "acceptedAnswer": {"@type": "Answer", "text": "Ninety minutes is 1.5 hours. Divide the minutes by 60 \u2014 30/60 is 0.5 \u2014 which is the form payroll and billing systems usually need."}}, {"@type": "Question", "name": "Can it handle times crossing midnight?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It correctly calculates durations that span midnight, such as a shift from 10 PM to 6 AM totaling eight hours."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is the duration between two times calculated?", "acceptedAnswer": {"@type": "Answer", "text": "The calculator finds the elapsed time between a start and end time, correctly handling the base-60 nature of minutes and spans that cross midnight, giving an accurate hours-and-minutes result."}}, {"@type": "Question", "name": "Why can't I just subtract the times?", "acceptedAnswer": {"@type": "Answer", "text": "Because time is base-60, not base-10 \u2014 there are 60 minutes in an hour. Naively subtracting the numbers gives wrong answers, especially when the end minutes are fewer than the start minutes, which requires borrowing across the hour."}}, {"@type": "Question", "name": "Does it handle times that cross midnight?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. For a span that starts in the evening and ends after midnight, the calculator accounts for the day boundary, avoiding the negative result a naive subtraction would produce."}}, {"@type": "Question", "name": "Is my information private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All calculation happens in your browser, so nothing you enter is uploaded or stored. You can calculate durations privately."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏳</text></svg>">
 
@@ -49,106 +49,37 @@
         <div id="toolContainer" data-impl="timeDuration"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Time Duration Calculator?</h2>
-          <p style="color:#374151;line-height:1.7;">Adding up hours and minutes by hand is deceptively tricky — minutes roll over at 60, not 100. This duration calculator finds the time between a start and end time, or adds and subtracts durations, returning a clean total in hours and minutes.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Time Duration Calculator</h2>
-          
-          <p class="tool-intro-lead">Enter your times and get the duration instantly. It's built for timesheets, work logs, cooking, workouts, and any situation where you need to total or compare spans of time accurately.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Calculating hours worked for a timesheet</li>
-            <li>Totaling time across multiple tasks</li>
-            <li>Finding the duration between two times</li>
-            <li>Tracking workout or activity length</li>
-            <li>Adding up billable hours</li>
-            <li>Planning schedules and time blocks</li>
-            <li>Measuring cooking or process times</li>
-            <li>Computing total meeting time</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>Minutes roll over at 60, so time math isn't ordinary decimal subtraction.</li>
-            <li>For payroll, 45 minutes is 0.75 of an hour.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Why can't I just subtract the times?</h3>
-          <p class="tool-intro-lead">Time is base-60 for minutes, so 1:45 to 2:30 isn't simple decimal subtraction — the tool handles the rollover.</p>
-          <h3>Can it handle times crossing midnight?</h3>
-          <p class="tool-intro-lead">Yes — an end time earlier than the start is treated as crossing into the next day.</p>
-          <h3>Does it give decimal hours for payroll?</h3>
-          <p class="tool-intro-lead">Hours and minutes convert to decimal hours (1:30 = 1.5 hours) for time-based billing.</p>
-        
-          <h3>How do I convert 1 hour 30 minutes to decimal?</h3>
-          <p class="tool-intro-lead">Ninety minutes is 1.5 hours. Divide the minutes by 60 — 30/60 is 0.5 — which is the form payroll and billing systems usually need.</p>
-          <h3>Can it handle times crossing midnight?</h3>
-          <p class="tool-intro-lead">Yes. It correctly calculates durations that span midnight, such as a shift from 10 PM to 6 AM totaling eight hours.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Putting the Numbers in Context</h2>
-          <p>Everyday math problems — percentages, averages, ratios, interest, time spans — share a common trait: the arithmetic is simple, but the setup is where mistakes happen. Choosing the wrong base for a percentage, forgetting to weight an average, or mismatching units in a ratio produces answers that look plausible but are wrong. A good calculator does not just compute; it enforces the correct structure so the result you get is the result you meant.</p>
-          <p>These calculations show up constantly in financial decisions, academic work, cooking, fitness, and planning. Because the stakes can be real — a loan estimate, a grade, a budget — accuracy and clarity matter more than raw speed. A calculator that runs instantly in your browser, with no data leaving your device, lets you test scenarios freely: change an input, see the effect immediately, and build intuition for how the numbers move.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Working out a tip, discount, or sale price quickly and correctly.</li>
-            <li>Estimating loan or savings outcomes before making a financial commitment.</li>
-            <li>Checking a grade, average, or ratio for school or work.</li>
-            <li>Planning time, dates, or durations for scheduling and deadlines.</li>
-          </ul>
-          <p>The point of any calculator is confidence. By handling the mechanics correctly and letting you focus on the inputs, it turns a potentially error-prone task into a quick, reliable check you can trust for decisions that matter.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions, Answered</h2>
-          <p>One of the most common sources of error is the base of a percentage. A change from 10 to 15 is a five percentage-point rise but a 50% relative increase, and the two are not interchangeable. Whenever you calculate a percentage change, name the original value explicitly as your base — that single habit prevents most percentage mistakes, including the classic error of using the new value as the denominator.</p>
-          <p>Averages raise their own questions. The mean is sensitive to outliers, so a single extreme value can pull it far from what is typical; for skewed data like incomes or prices, the median often represents the center more honestly. And weighted averages — like a GPA — require multiplying each value by its weight, not simply averaging the raw numbers. Choosing the right kind of average is as important as the arithmetic itself.</p>
-          <p>For financial calculations, people often ask why the monthly payment is not the whole story. The total interest paid over the life of a loan can dwarf differences in the monthly figure, so comparing offers on total cost rather than monthly payment alone leads to far better decisions. These tools provide estimates to inform that comparison, not financial advice.</p>
-          <h3>Tips for the best results</h3>
-          <p>Name your base before calculating any percentage, choose the average that fits your data, and compare loans on total cost rather than the monthly payment alone.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Remember minutes roll over at 60, not 100.</li>
-            <li>Convert hours-and-minutes to decimal hours for payroll (1:30 = 1.5).</li>
-            <li>It handles spans that cross midnight.</li>
-            <li>Total multiple tasks by adding their durations.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Subtracting times as if they were decimals.</li>
-            <li>Mishandling spans that cross midnight.</li>
-            <li>Confusing 1:30 (an hour thirty) with 1.30 (1.5 hours) for billing.</li>
-            <li>Forgetting to convert to decimal hours when needed.</li>
-          </ul>
-          <p class="tool-intro-lead">Time arithmetic trips people because minutes are base-60, not base-10 — so 1:45 to 2:30 is not a simple decimal subtraction. Durations that cross midnight add another wrinkle. For billing, converting hours-and-minutes into decimal hours (45 minutes = 0.75) is the step that makes payroll math line up correctly.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="time-converter.html">time converter</a> to convert time units, or use the <a href="date-difference-calculator.html">date difference calculator</a> to count days between dates. You can also use the <a href="age-calculator.html">age calculator</a> to calculate age.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Calculator Does</h2>
+<p>This calculator finds the duration between two times — how many hours and minutes lie between a start time and an end time. Enter the two times and it works out the elapsed duration, handling the awkward arithmetic of time, including spans that cross midnight. It is the quick, reliable way to calculate how long something lasted or will last, without counting on a clock by hand.</p><p>Working out the time between two clock times is more error-prone than it seems, because time is not decimal — there are 60 minutes in an hour, not 100, so you cannot just subtract the numbers. This calculator handles that correctly, giving you an accurate duration for timesheets, schedules, planning, and any situation where you need to know exactly how much time elapsed.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Why Time Arithmetic Is Tricky</h2>
+<p>The difficulty with calculating durations comes from time's base-60 structure. Minutes go from 0 to 59 before rolling over to the next hour, so subtracting times means borrowing across that boundary rather than the familiar base-10 borrowing — the gap from 1:45 to 2:30 is 45 minutes, not the 15 you might get by naively subtracting the minute figures. This trips people up constantly, especially when the minutes of the end time are fewer than those of the start time.</p><p>Crossing midnight adds another layer. If something starts in the evening and ends in the early morning, the end time's number is smaller than the start's, and a naive subtraction gives a nonsensical negative result. The correct calculation accounts for the day boundary, recognizing that the duration wraps around midnight. These two complications — base-60 minutes and the midnight wrap — are exactly the kind of thing that is easy to get wrong by hand and easy for a calculator to get right every time, which is why a tool is genuinely useful here.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Where Duration Calculation Helps</h2>
+<p>Tracking work hours is one of the most common uses. Calculating how long a shift lasted, totaling hours for a timesheet, or working out billable time all require finding the duration between a start and end time accurately — and since this often affects pay, getting it right matters. The base-60 arithmetic and shifts that cross midnight (like overnight work) are precisely where manual calculations go wrong, so a calculator that handles them reliably is valuable for anyone logging hours, whether for employment, freelancing, or their own records.</p><p>Duration calculation helps with planning and everyday timing too. Working out how long an event, journey, activity, or appointment will last; figuring out how much time you have between two commitments; planning schedules where durations need to add up; or simply answering “how long was that?” all rely on the same arithmetic. It is useful for cooking and activities timed by the clock, for understanding how long you spent on something, and for coordinating schedules. Because the calculator handles the tricky parts — the minute boundaries and the midnight crossing — automatically, it turns a fiddly mental calculation into an instant, dependable answer.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Time is base-60, so you cannot simply subtract the numbers — the calculator handles the minute boundaries.</li><li>For spans crossing midnight, the calculator accounts for the day boundary automatically.</li><li>Use it for timesheets and shifts, where accurate hours often affect pay.</li><li>It is reliable for any “how long between these times?” question, planning or past.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How is the duration between two times calculated?</h3><p>The calculator finds the elapsed time between a start and end time, correctly handling the base-60 nature of minutes and spans that cross midnight, giving an accurate hours-and-minutes result.</p><h3>Why can't I just subtract the times?</h3><p>Because time is base-60, not base-10 — there are 60 minutes in an hour. Naively subtracting the numbers gives wrong answers, especially when the end minutes are fewer than the start minutes, which requires borrowing across the hour.</p><h3>Does it handle times that cross midnight?</h3><p>Yes. For a span that starts in the evening and ends after midnight, the calculator accounts for the day boundary, avoiding the negative result a naive subtraction would produce.</p><h3>Is my information private?</h3><p>Yes. All calculation happens in your browser, so nothing you enter is uploaded or stored. You can calculate durations privately.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Accurate, Instant, and Free</h2>
+<p>This calculator runs entirely in your browser, handling time arithmetic correctly the moment you enter values. It needs no account or download and works on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more time tools, the <a href="date-difference-calculator.html">date difference calculator</a> finds spans between dates, the <a href="time-converter.html">time converter</a> converts time units, and the <a href="stopwatch.html">stopwatch</a> measures elapsed time live.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

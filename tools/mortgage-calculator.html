@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Mortgage Calculator", "url": "https://usfreetools.com/tools/mortgage-calculator.html", "description": "Estimate your monthly mortgage payment including principal and interest based on loan amount, rate, and term.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does this include taxes and insurance?", "acceptedAnswer": {"@type": "Answer", "text": "This estimates principal and interest; actual payments add property taxes, insurance, and possibly PMI and HOA fees."}}, {"@type": "Question", "name": "How does the down payment affect my payment?", "acceptedAnswer": {"@type": "Answer", "text": "A larger down payment reduces the loan, lowering payments and total interest, and may avoid PMI."}}, {"@type": "Question", "name": "Why does a 30-year loan cost more than a 15-year?", "acceptedAnswer": {"@type": "Answer", "text": "Lower payments over twice the time mean far more total interest."}}, {"@type": "Question", "name": "Does the estimate include taxes and insurance?", "acceptedAnswer": {"@type": "Answer", "text": "The core figure is principal and interest. Real payments also include property taxes, homeowners insurance, and sometimes PMI and HOA dues."}}, {"@type": "Question", "name": "How does the down payment affect the loan?", "acceptedAnswer": {"@type": "Answer", "text": "A larger down payment lowers both the monthly payment and total interest, and a 20% down payment typically lets you avoid private mortgage insurance."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is a mortgage payment calculated?", "acceptedAnswer": {"@type": "Answer", "text": "It is based on the loan amount, interest rate, and term, spread into equal monthly payments through amortization. Each payment covers that month's interest plus a portion of the principal, with the mix shifting over time."}}, {"@type": "Question", "name": "Why does a 30-year mortgage cost more than a 15-year one?", "acceptedAnswer": {"@type": "Answer", "text": "Because you borrow for twice as long, accumulating far more interest, even though the monthly payment is lower. A shorter term costs more per month but can save a large sum in total interest."}}, {"@type": "Question", "name": "Does this include taxes and insurance?", "acceptedAnswer": {"@type": "Answer", "text": "No. The estimate covers principal and interest only. Real mortgage payments usually also include property taxes and homeowners insurance, and sometimes mortgage insurance, so budget additional amounts beyond this figure."}}, {"@type": "Question", "name": "How much will I pay in total interest?", "acceptedAnswer": {"@type": "Answer", "text": "Over a long mortgage, total interest can approach or exceed the amount borrowed, depending on the rate and term. The calculator shows this total so you can see the true long-term cost before committing."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
 
@@ -49,107 +49,37 @@
         <div id="toolContainer" data-impl="mortgageCalc"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Mortgage Calculator?</h2>
-          <p style="color:#374151;line-height:1.7;">A mortgage is likely the biggest loan you'll ever take, and small differences in rate or term translate to tens of thousands of dollars over decades. This calculator estimates your monthly mortgage payment and total interest from the home price, down payment, interest rate, and loan term.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Mortgage Calculator</h2>
-          
-          <p class="tool-intro-lead">Enter your numbers to see the monthly principal-and-interest payment and the long-term cost. It helps you understand affordability and compare scenarios before talking to a lender. This is an estimate for planning, not financial advice.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Estimating a monthly mortgage payment</li>
-            <li>Comparing 15-year versus 30-year terms</li>
-            <li>Seeing how the down payment affects payments</li>
-            <li>Understanding total interest over the loan</li>
-            <li>Testing affordability before house hunting</li>
-            <li>Comparing the impact of different rates</li>
-            <li>Planning a home-buying budget</li>
-            <li>Evaluating refinancing scenarios</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>This estimate covers principal and interest only — real payments add taxes, insurance, sometimes PMI and HOA.</li>
-            <li>A 20% down payment typically avoids private mortgage insurance.</li>
-            <li>Over 30 years, total interest can approach the original loan amount.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Does this include taxes and insurance?</h3>
-          <p class="tool-intro-lead">This estimates principal and interest; actual payments add property taxes, insurance, and possibly PMI and HOA fees.</p>
-          <h3>How does the down payment affect my payment?</h3>
-          <p class="tool-intro-lead">A larger down payment reduces the loan, lowering payments and total interest, and may avoid PMI.</p>
-          <h3>Why does a 30-year loan cost more than a 15-year?</h3>
-          <p class="tool-intro-lead">Lower payments over twice the time mean far more total interest.</p>
-        
-          <h3>Does the estimate include taxes and insurance?</h3>
-          <p class="tool-intro-lead">The core figure is principal and interest. Real payments also include property taxes, homeowners insurance, and sometimes PMI and HOA dues.</p>
-          <h3>How does the down payment affect the loan?</h3>
-          <p class="tool-intro-lead">A larger down payment lowers both the monthly payment and total interest, and a 20% down payment typically lets you avoid private mortgage insurance.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Putting the Numbers in Context</h2>
-          <p>Everyday math problems — percentages, averages, ratios, interest, time spans — share a common trait: the arithmetic is simple, but the setup is where mistakes happen. Choosing the wrong base for a percentage, forgetting to weight an average, or mismatching units in a ratio produces answers that look plausible but are wrong. A good calculator does not just compute; it enforces the correct structure so the result you get is the result you meant.</p>
-          <p>These calculations show up constantly in financial decisions, academic work, cooking, fitness, and planning. Because the stakes can be real — a loan estimate, a grade, a budget — accuracy and clarity matter more than raw speed. A calculator that runs instantly in your browser, with no data leaving your device, lets you test scenarios freely: change an input, see the effect immediately, and build intuition for how the numbers move.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Working out a tip, discount, or sale price quickly and correctly.</li>
-            <li>Estimating loan or savings outcomes before making a financial commitment.</li>
-            <li>Checking a grade, average, or ratio for school or work.</li>
-            <li>Planning time, dates, or durations for scheduling and deadlines.</li>
-          </ul>
-          <p>The point of any calculator is confidence. By handling the mechanics correctly and letting you focus on the inputs, it turns a potentially error-prone task into a quick, reliable check you can trust for decisions that matter.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions, Answered</h2>
-          <p>One of the most common sources of error is the base of a percentage. A change from 10 to 15 is a five percentage-point rise but a 50% relative increase, and the two are not interchangeable. Whenever you calculate a percentage change, name the original value explicitly as your base — that single habit prevents most percentage mistakes, including the classic error of using the new value as the denominator.</p>
-          <p>Averages raise their own questions. The mean is sensitive to outliers, so a single extreme value can pull it far from what is typical; for skewed data like incomes or prices, the median often represents the center more honestly. And weighted averages — like a GPA — require multiplying each value by its weight, not simply averaging the raw numbers. Choosing the right kind of average is as important as the arithmetic itself.</p>
-          <p>For financial calculations, people often ask why the monthly payment is not the whole story. The total interest paid over the life of a loan can dwarf differences in the monthly figure, so comparing offers on total cost rather than monthly payment alone leads to far better decisions. These tools provide estimates to inform that comparison, not financial advice.</p>
-          <h3>Tips for the best results</h3>
-          <p>Name your base before calculating any percentage, choose the average that fits your data, and compare loans on total cost rather than the monthly payment alone.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Remember real payments add taxes, insurance, and sometimes PMI and HOA.</li>
-            <li>A larger down payment lowers both the payment and total interest.</li>
-            <li>Compare 15- versus 30-year terms on total cost.</li>
-            <li>A 20% down payment typically avoids PMI.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Assuming the principal-and-interest figure is your full payment.</li>
-            <li>Overlooking how much interest a 30-year term adds.</li>
-            <li>Forgetting PMI on low down payments.</li>
-            <li>Treating the estimate as a lender's quote.</li>
-          </ul>
-          <p class="tool-intro-lead">A mortgage estimate that shows only principal and interest understates the real monthly cost, which also includes property taxes, insurance, and possibly PMI and HOA dues. Because the loan runs for decades, small rate or term differences compound into tens of thousands of dollars — making scenario comparison invaluable before you ever talk to a lender. This is an estimate, not financial advice.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="loan-calculator.html">loan calculator</a> to calculate other loans, or use the <a href="compound-interest-calculator.html">compound interest calculator</a> to project investments. You can also use the <a href="percentage-calculator.html">percentage calculator</a> to calculate rates.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Calculator Does</h2>
+<p>This calculator estimates the monthly payment on a home mortgage, along with the total you will pay over the life of the loan and how much of that is interest. Enter the loan amount, interest rate, and term, and it breaks down what the mortgage really costs. For one of the largest financial commitments most people make, seeing these numbers clearly is essential to understanding what you are taking on.</p><p>A mortgage's headline figures — the amount borrowed and the rate — do not by themselves tell you the monthly payment your budget must cover or the staggering total that decades of interest can add up to. This calculator fills that gap, turning the abstract terms of a mortgage offer into concrete figures you can plan around and compare. As with any major financial decision, treat the results as a planning guide, not financial advice.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How Mortgage Payments Work</h2>
+<p>A fixed-rate mortgage is repaid in equal monthly payments over its term, commonly 15 or 30 years. Each payment covers the interest accrued that month plus a portion of the principal (the amount borrowed). Early on, because the balance is large, most of each payment goes to interest; over time the balance shrinks and more goes to principal. This gradual shift is called amortization, and it is why, in the early years of a long mortgage, you build equity slowly — a fact that surprises many first-time buyers.</p><p>Because mortgages run for so long, small differences in the terms have outsized effects on the total cost. A slightly higher interest rate adds up enormously over 30 years. The term length is a major lever: a 30-year mortgage has lower monthly payments than a 15-year one but costs far more in total interest, because you are borrowing for twice as long. The calculator lets you see these trade-offs directly, showing how changing the rate or term moves both your monthly payment and the total amount you will pay over the life of the loan.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Using the Numbers to Plan Wisely</h2>
+<p>The most valuable insight this calculator offers is the true long-term cost of a mortgage, beyond the monthly payment. Over decades, the total interest can approach or even exceed the amount originally borrowed, which is sobering but important to see before committing. Comparing a 15-year and a 30-year term is especially eye-opening: the shorter term has higher monthly payments but can save an enormous sum in total interest. Seeing both the monthly figure and the lifetime total helps you weigh what you can afford now against what the mortgage truly costs.</p><p>A crucial caveat is that this estimate covers principal and interest only — the core of the payment, but not the whole picture. A real mortgage payment usually also includes property taxes and homeowners insurance, and may include mortgage insurance and other costs, which can add substantially to the monthly total. So treat this calculator's figure as the principal-and-interest baseline, and budget additional amounts for those other costs when planning. Used this way, it is a powerful tool for understanding and comparing mortgage options, but it informs your thinking rather than replacing professional advice. For a decision this large, confirming the full details with lenders and, where helpful, a financial professional is wise.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>A 30-year term means lower monthly payments but far more total interest than a 15-year term.</li><li>Even a small difference in interest rate adds up enormously over decades.</li><li>This estimate is principal and interest only — budget extra for taxes, insurance, and other costs.</li><li>Compare options by total cost over the loan's life, not just the monthly payment.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How is a mortgage payment calculated?</h3><p>It is based on the loan amount, interest rate, and term, spread into equal monthly payments through amortization. Each payment covers that month's interest plus a portion of the principal, with the mix shifting over time.</p><h3>Why does a 30-year mortgage cost more than a 15-year one?</h3><p>Because you borrow for twice as long, accumulating far more interest, even though the monthly payment is lower. A shorter term costs more per month but can save a large sum in total interest.</p><h3>Does this include taxes and insurance?</h3><p>No. The estimate covers principal and interest only. Real mortgage payments usually also include property taxes and homeowners insurance, and sometimes mortgage insurance, so budget additional amounts beyond this figure.</p><h3>How much will I pay in total interest?</h3><p>Over a long mortgage, total interest can approach or exceed the amount borrowed, depending on the rate and term. The calculator shows this total so you can see the true long-term cost before committing.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>A Planning Tool, Free to Use</h2>
+<p>This calculator runs entirely in your browser and gives estimates to help you plan — it is not financial advice. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use as often as you need.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more financial calculations, the <a href="loan-calculator.html">loan calculator</a> handles other loans, the <a href="compound-interest-calculator.html">compound interest calculator</a> shows how savings grow, and the <a href="percentage-calculator.html">percentage calculator</a> handles rate math.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Whitespace Remover", "url": "https://usfreetools.com/tools/whitespace-remover.html", "description": "Remove extra spaces, leading/trailing whitespace, tabs, and blank lines to clean up messy text instantly.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What counts as whitespace?", "acceptedAnswer": {"@type": "Answer", "text": "Spaces, tabs, and line breaks. The tool can collapse runs, trim line edges, and remove empty lines."}}, {"@type": "Question", "name": "Will it remove spaces between words?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 it collapses multiple consecutive spaces into one, keeping words separated."}}, {"@type": "Question", "name": "Why do double spaces matter?", "acceptedAnswer": {"@type": "Answer", "text": "Double spaces after periods are a typewriter relic; modern typography uses single spaces."}}, {"@type": "Question", "name": "What counts as whitespace?", "acceptedAnswer": {"@type": "Answer", "text": "Whitespace includes spaces, tabs, line breaks, and other invisible spacing characters. The tool can collapse extra spaces, trim edges, and remove blank lines."}}, {"@type": "Question", "name": "Why do trailing spaces cause problems?", "acceptedAnswer": {"@type": "Answer", "text": "Invisible trailing spaces break exact text comparisons, lookups, and data matching, so removing them prevents subtle bugs that are hard to spot."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What whitespace does this remove?", "acceptedAnswer": {"@type": "Answer", "text": "It collapses multiple spaces into one, trims spaces from the start and end of lines, removes extra blank lines, and cleans up stray tabs \u2014 all the common whitespace clutter that makes text messy."}}, {"@type": "Question", "name": "Why does extra whitespace cause problems?", "acceptedAnswer": {"@type": "Answer", "text": "Because much of it is invisible. A trailing space can make data entries mismatch, irregular spacing disrupts formatting and looks unprofessional, and inconsistent whitespace can cause errors in structured text or code."}}, {"@type": "Question", "name": "When should I clean whitespace?", "acceptedAnswer": {"@type": "Answer", "text": "Especially after pasting text from web pages, PDFs, or emails, which often carries irregular spacing, and when preparing data where invisible spaces could cause entries to mismatch or lookups to fail."}}, {"@type": "Question", "name": "Is my text private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All processing happens in your browser, so nothing you paste is uploaded or stored. You can clean private text safely."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>␣</text></svg>">
 
@@ -49,110 +49,37 @@
         <div id="toolContainer" data-impl="whitespaceRemover"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Whitespace Remover?</h2>
-          <p style="color:#374151;line-height:1.7;">Extra spaces, tabs, and blank lines sneak into text from copy-paste and merged documents — breaking formatting, inflating counts, and causing comparison mismatches. This whitespace remover cleans them: collapse multiple spaces into one, trim line ends, and strip blank lines.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Whitespace Remover</h2>
-          
-          <p class="tool-intro-lead">Paste messy text and get a tidy version back instantly. It's the go-to fix before importing data, comparing strings, or publishing content where stray whitespace would show.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Collapsing multiple spaces into one</li>
-            <li>Trimming trailing spaces from each line</li>
-            <li>Removing blank lines from a list</li>
-            <li>Cleaning data before a CSV import</li>
-            <li>Normalizing text before comparison</li>
-            <li>Fixing double spaces after periods</li>
-            <li>Tidying copy-pasted content</li>
-            <li>Preparing clean input for code or config files</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>Trailing whitespace is invisible but can break string comparisons and lookups.</li>
-            <li>The single-space-after-period rule is the modern standard in virtually all style guides.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>What counts as whitespace?</h3>
-          <p class="tool-intro-lead">Spaces, tabs, and line breaks. The tool can collapse runs, trim line edges, and remove empty lines.</p>
-          <h3>Will it remove spaces between words?</h3>
-          <p class="tool-intro-lead">No — it collapses multiple consecutive spaces into one, keeping words separated.</p>
-          <h3>Why do double spaces matter?</h3>
-          <p class="tool-intro-lead">Double spaces after periods are a typewriter relic; modern typography uses single spaces.</p>
-        
-          <h3>What counts as whitespace?</h3>
-          <p class="tool-intro-lead">Whitespace includes spaces, tabs, line breaks, and other invisible spacing characters. The tool can collapse extra spaces, trim edges, and remove blank lines.</p>
-          <h3>Why do trailing spaces cause problems?</h3>
-          <p class="tool-intro-lead">Invisible trailing spaces break exact text comparisons, lookups, and data matching, so removing them prevents subtle bugs that are hard to spot.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Working With Text Effectively</h2>
-          <p>Text is the raw material of communication online, and shaping it well — counting it, cleaning it, transforming it, or formatting it — is a surprisingly common need. Writers track length against platform limits, developers clean and reformat data, students check their work, and marketers optimize for search and social. The common thread is that small, repetitive text operations are tedious by hand and instant with the right tool.</p>
-          <p>What distinguishes a good text tool is that it does exactly one thing predictably and fast, processing your text in the browser so nothing is uploaded or stored. That privacy matters when the text is a draft, a password, client data, or anything you would not paste into an unknown server. Instant, local processing means you can iterate freely — paste, transform, copy, repeat — without friction or risk.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Checking content length against character or word limits before publishing.</li>
-            <li>Cleaning up text copied from PDFs, emails, or spreadsheets.</li>
-            <li>Transforming case, format, or structure for code, data, or design.</li>
-            <li>Analyzing text for readability, keyword usage, or repetition.</li>
-          </ul>
-          <p>Good text tools respect both your time and your privacy. By doing one job well and keeping everything local, they let you move quickly through the small editing and analysis tasks that otherwise interrupt real work.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions About Text Tools</h2>
-          <p>A frequent question is why character counts differ between tools and platforms. The reason is that platforms count differently: some include spaces and others do not, emoji often count as two characters because of how they are encoded, and certain services count links as a fixed length regardless of the real URL. When a limit matters, count against the specific platform's rules rather than assuming all counts are equal.</p>
-          <p>Another common issue is invisible characters. Text copied from PDFs, emails, or web pages often carries hidden line breaks, trailing spaces, or non-breaking spaces that break comparisons, inflate counts, or disrupt formatting. Cleaning these is exactly what tools for whitespace, line breaks, and duplicates are for, and normalizing text before further processing prevents subtle, hard-to-spot errors.</p>
-          <p>People also ask about privacy. Because drafts, passwords, and client data are sensitive, it matters that a good text tool processes everything in your browser without uploading anything. Local processing means you can paste freely and transform text without worrying about where it goes — a meaningful distinction from tools that send your input to a server.</p>
-          <h3>Tips for the best results</h3>
-          <p>Count against your target platform's specific rules, clean invisible characters before processing, and favor tools that work locally so your text never leaves your device.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Collapse multiple spaces into one to fix copy-paste artifacts.</li>
-            <li>Trim trailing spaces that silently break comparisons and lookups.</li>
-            <li>Remove blank lines to tidy list data before importing.</li>
-            <li>Apply the single-space-after-period standard for modern typography.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Removing the spaces between words instead of just collapsing extras.</li>
-            <li>Leaving invisible trailing whitespace that breaks data matching.</li>
-            <li>Confusing whitespace cleanup with line-break removal.</li>
-            <li>Forgetting that tabs are whitespace too.</li>
-          </ul>
-          <p class="tool-intro-lead">Stray whitespace is invisible but consequential — trailing spaces break string comparisons, double spaces disrupt justified text, and blank lines inflate data. A whitespace remover normalizes all of it. The goal is uniformity: one space between words, no trailing spaces, no accidental blanks, matching modern typographic standards.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="remove-line-breaks.html">remove line breaks</a> to join wrapped lines, or use the <a href="remove-duplicate-lines.html">remove duplicate lines</a> to dedupe lines. You can also use the <a href="find-and-replace.html">find and replace</a> to clean specific patterns.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool removes extra whitespace from your text — the unwanted spaces, tabs, and blank lines that clutter pasted or messy content. It collapses multiple spaces into one, trims spaces from the start and end of lines, and removes empty lines, leaving clean, tidy text. It is the quick fix for text that has picked up irregular spacing from copying, formatting, or hand-editing.</p><p>Extra whitespace is one of those invisible problems that makes text look and behave badly — uneven spacing, stray blank lines, trailing spaces you cannot see. Cleaning it by hand is fiddly precisely because much of it is hard to spot. This tool removes it all at once, giving you text with clean, consistent spacing ready to use.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>The Whitespace Problems It Fixes</h2>
+<p>Several kinds of unwanted whitespace commonly clutter text. <strong>Multiple spaces</strong> between words — often from old typing habits or copying — should usually be single spaces. <strong>Leading and trailing spaces</strong> at the start or end of lines are invisible but can cause problems in data and formatting. <strong>Extra blank lines</strong> create unwanted gaps. <strong>Tabs</strong> mixed with spaces produce inconsistent alignment. Each of these makes text messier than it should be, and together they can make pasted content look broken.</p><p>The reason whitespace problems are worth fixing is that they cause real, if subtle, trouble. In data, a trailing space can make two otherwise-identical entries not match. In formatting, irregular spacing looks unprofessional and disrupts layout. In code and structured text, inconsistent whitespace can cause errors. And visually, text with erratic spacing simply reads poorly. Because much of this whitespace is invisible, an automated cleaner is far more reliable than trying to find and fix it by eye, which is why whitespace removal is a common and useful cleanup step.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Cleaning Text in Practice</h2>
+<p>The everyday trigger is pasted text. Content copied from web pages, documents, PDFs, emails, and other sources frequently arrives with irregular spacing — double spaces, stray tabs, trailing whitespace, extra blank lines — that was invisible or harmless in its original home but causes problems when you paste it elsewhere. Running it through a whitespace cleaner gives you uniform, predictable spacing, which is usually the first step in making pasted text usable. It pairs naturally with removing line breaks for text that arrived badly formatted.</p><p>Whitespace cleaning is also important for data and consistency. When preparing lists or data for use, invisible leading and trailing spaces can cause entries to mismatch, lookups to fail, or duplicates to go undetected — trimming that whitespace is essential for the data to behave correctly. For anyone preparing text for publishing, formatting, or further processing, clean and consistent whitespace is a foundation that prevents a whole category of subtle problems. The tool handles all the common whitespace issues in one pass, turning messy spacing into clean, reliable text.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Use it on text pasted from web pages, PDFs, or emails, which often carries irregular spacing.</li><li>Trailing spaces are invisible but can make otherwise-identical data entries fail to match.</li><li>It collapses multiple spaces to one and removes stray blank lines in a single pass.</li><li>Pair it with removing line breaks to fully clean up badly formatted pasted text.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>What whitespace does this remove?</h3><p>It collapses multiple spaces into one, trims spaces from the start and end of lines, removes extra blank lines, and cleans up stray tabs — all the common whitespace clutter that makes text messy.</p><h3>Why does extra whitespace cause problems?</h3><p>Because much of it is invisible. A trailing space can make data entries mismatch, irregular spacing disrupts formatting and looks unprofessional, and inconsistent whitespace can cause errors in structured text or code.</p><h3>When should I clean whitespace?</h3><p>Especially after pasting text from web pages, PDFs, or emails, which often carries irregular spacing, and when preparing data where invisible spaces could cause entries to mismatch or lookups to fail.</p><h3>Is my text private?</h3><p>Yes. All processing happens in your browser, so nothing you paste is uploaded or stored. You can clean private text safely.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This tool runs entirely in your browser, so your text never leaves your device. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more text cleanup, the <a href="remove-line-breaks.html">remove line breaks tool</a> joins broken text, the <a href="remove-duplicate-lines.html">remove duplicate lines tool</a> deduplicates lists, and the <a href="find-and-replace.html">find and replace tool</a> makes bulk changes.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

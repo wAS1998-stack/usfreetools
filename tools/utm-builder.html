@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "UTM Link Builder", "url": "https://usfreetools.com/tools/utm-builder.html", "description": "Build trackable campaign URLs with UTM parameters for Google Analytics and marketing campaigns.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are the main UTM parameters?", "acceptedAnswer": {"@type": "Answer", "text": "utm_source, utm_medium, and utm_campaign are the core three; utm_term and utm_content are optional."}}, {"@type": "Question", "name": "Why keep UTM values consistent?", "acceptedAnswer": {"@type": "Answer", "text": "Analytics treats 'Facebook' and 'facebook' as different sources, so consistent lowercase naming prevents fragmented data."}}, {"@type": "Question", "name": "Do UTMs affect SEO?", "acceptedAnswer": {"@type": "Answer", "text": "They're for tracking, not ranking; avoid UTM links in internal navigation."}}, {"@type": "Question", "name": "What are the essential UTM parameters?", "acceptedAnswer": {"@type": "Answer", "text": "The three core ones are source, medium, and campaign. Together they tell your analytics where traffic came from and which campaign drove it."}}, {"@type": "Question", "name": "Should I add UTM tags to internal links?", "acceptedAnswer": {"@type": "Answer", "text": "No. Tagging internal links corrupts attribution by restarting sessions. Use UTMs only on inbound links from external sources."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are UTM parameters?", "acceptedAnswer": {"@type": "Answer", "text": "They are tracking tags added to a URL that tell your analytics where a click came from \u2014 the source, medium, and campaign. They let you see which of your marketing efforts actually drove traffic."}}, {"@type": "Question", "name": "Do UTM parameters change where the link goes?", "acceptedAnswer": {"@type": "Answer", "text": "No. They only add tracking information that analytics reads; the link still goes to the same page. The parameters simply label the visit with its origin."}}, {"@type": "Question", "name": "Why does consistency matter?", "acceptedAnswer": {"@type": "Answer", "text": "Because analytics treats different spellings or capitalizations as separate sources. Inconsistent labels split your data confusingly, so using a consistent naming convention is essential for clean tracking."}}, {"@type": "Question", "name": "Should I tag internal links?", "acceptedAnswer": {"@type": "Answer", "text": "No. Tag external campaign and promotional links, but not links within your own site. Tagging internal links can distort your analytics by misattributing the traffic source."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
 
@@ -49,111 +49,37 @@
         <div id="toolContainer" data-impl="utmBuilder"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is UTM Link Builder?</h2>
-          <p style="color:#374151;line-height:1.7;">UTM parameters are the tags you add to a URL so analytics can tell exactly where a click came from — which campaign, source, and medium. This builder constructs properly formatted UTM links from your inputs, so your traffic data stays clean and your marketing reporting is accurate.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About UTM Link Builder</h2>
-          
-          <p class="tool-intro-lead">Fill in the campaign source, medium, and name (plus optional term and content), and get a ready-to-share tracking URL. Consistent UTMs are the foundation of trustworthy campaign analytics.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Tracking clicks from an email campaign</li>
-            <li>Tagging social media post links</li>
-            <li>Measuring traffic from a specific ad</li>
-            <li>Comparing campaign performance in analytics</li>
-            <li>Tracking newsletter link clicks</li>
-            <li>Attributing conversions to a source</li>
-            <li>Building consistent campaign URLs</li>
-            <li>Measuring influencer or partner traffic</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>The three core UTM parameters are source, medium, and campaign.</li>
-            <li>Analytics is case-sensitive — standardize on lowercase.</li>
-            <li>Use UTMs on external/inbound links, not internal navigation.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>What are the main UTM parameters?</h3>
-          <p class="tool-intro-lead">utm_source, utm_medium, and utm_campaign are the core three; utm_term and utm_content are optional.</p>
-          <h3>Why keep UTM values consistent?</h3>
-          <p class="tool-intro-lead">Analytics treats 'Facebook' and 'facebook' as different sources, so consistent lowercase naming prevents fragmented data.</p>
-          <h3>Do UTMs affect SEO?</h3>
-          <p class="tool-intro-lead">They're for tracking, not ranking; avoid UTM links in internal navigation.</p>
-        
-          <h3>What are the essential UTM parameters?</h3>
-          <p class="tool-intro-lead">The three core ones are source, medium, and campaign. Together they tell your analytics where traffic came from and which campaign drove it.</p>
-          <h3>Should I add UTM tags to internal links?</h3>
-          <p class="tool-intro-lead">No. Tagging internal links corrupts attribution by restarting sessions. Use UTMs only on inbound links from external sources.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>The SEO Behind the Tool</h2>
-          <p>Search engine optimization is often treated as mysterious, but most of it comes down to clear, well-structured signals: titles and descriptions that match intent, clean URLs, relevant keywords used naturally, and content sized to fully answer a query. The small tasks these tools handle — counting a meta description, generating tags, checking keyword density, building a clean slug — are the unglamorous mechanics that make the difference between a page that ranks and one that does not.</p>
-          <p>What matters most in modern SEO is relevance and user experience, not tricks. These tools help you get the technical details right so search engines can understand your page and users want to click it. Because they run instantly in the browser, you can check and refine as you write rather than discovering problems after publishing — which is when they are far more expensive to fix.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Optimizing titles and meta descriptions to fit search display limits.</li>
-            <li>Generating valid, complete meta and social preview tags.</li>
-            <li>Checking keyword usage to stay relevant without over-optimizing.</li>
-            <li>Creating clean, readable URLs that both users and crawlers understand.</li>
-          </ul>
-          <p>Good SEO is mostly good craftsmanship. By getting the technical signals right and writing genuinely useful content, you give your pages the best chance to rank — and these tools handle the mechanical parts so you can focus on the substance.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions About SEO</h2>
-          <p>A frequent question is whether meta tags still matter. They do, though not as a magic ranking lever — a strong title and description heavily influence whether people click your result, and click-through behavior feeds into performance over time. Writing unique, intent-matched tags within the display limits is basic craftsmanship that pays off, while duplicated or truncated tags quietly cost you clicks.</p>
-          <p>People also ask about keyword density. Modern search engines prioritize genuine relevance over repetition, so chasing a specific density figure is counterproductive; stuffing reads as spam and can be penalized. The useful role of a density check today is defensive — confirming your topic is present while catching accidental over-optimization. Write naturally for people first, and let the keywords follow the substance.</p>
-          <p>Finally, a common question is how length affects ranking. Word count is a correlation, not a cause: longer pages often rank because they cover a topic thoroughly and earn links, not because length itself is rewarded. The right approach is to answer the query completely and then stop — depth where it genuinely helps, never padding for its own sake.</p>
-          <h3>Tips for the best results</h3>
-          <p>Write unique, intent-matched meta tags within display limits, treat keyword density as a guardrail rather than a target, and size content to fully answer the query rather than to hit a number.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Use the three core parameters consistently: source, medium, campaign.</li>
-            <li>Standardize on lowercase so analytics does not split 'Email' and 'email'.</li>
-            <li>Add UTMs to external inbound links, never internal navigation.</li>
-            <li>Keep a naming convention document so a team stays consistent.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Inconsistent capitalization fragmenting your analytics data.</li>
-            <li>Tagging internal links, which corrupts attribution.</li>
-            <li>Omitting required parameters like medium.</li>
-            <li>Using spaces or special characters that break the URL.</li>
-          </ul>
-          <p class="tool-intro-lead">UTM parameters are only as useful as they are consistent. Because analytics treats values case-sensitively, 'Facebook' and 'facebook' become two separate sources, splintering your data. Agree on a lowercase naming convention, apply UTMs only to inbound external links, and your campaign reporting stays clean and trustworthy.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="url-encode-decode.html">URL encoder</a> to encode URL parameters, or use the <a href="slug-generator.html">slug generator</a> to create clean URLs. You can also use the <a href="meta-tag-generator.html">meta tag generator</a> to generate meta tags.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool builds URLs with UTM parameters — the tracking tags that let you see exactly where your website traffic comes from in your analytics. Fill in details about a campaign, and it adds the right parameters to your link. When people click that tagged link, your analytics records the source, so you can tell which email, post, ad, or campaign actually drove the visit.</p><p>Without tracking parameters, all your traffic from links blurs together, and you cannot tell which of your efforts is working. UTM parameters solve this by labeling each link with its source, so your analytics can break down visits by exactly where they came from. This builder creates correctly formatted tagged URLs without you having to remember the parameter names or syntax.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How UTM Parameters Work</h2>
+<p>UTM parameters are extra pieces added to the end of a URL that carry information about the link's origin. The main ones are <strong>source</strong> (where the traffic comes from, like a newsletter or a specific site), <strong>medium</strong> (the type of channel, like email or social), and <strong>campaign</strong> (the specific initiative, like a product launch or sale). Optional ones cover the specific term or content variation. When someone clicks the link, analytics reads these parameters and attributes the visit accordingly.</p><p>The power of this comes from consistency. Because you define the labels, you can track any link from any channel in a uniform way — the same campaign promoted via email, social media, and an ad can each carry its own source and medium while sharing a campaign name, letting you compare which channel performed best. The parameters do not change where the link goes; they simply add tracking information that analytics tools understand. A builder ensures they are formatted correctly, which matters because a malformed parameter will not track properly.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Using UTM Tracking Effectively</h2>
+<p>The value of UTM tracking is clarity about what works. When you run marketing across multiple channels — email, social posts, paid ads, partnerships — UTM parameters let your analytics tell you precisely which drove traffic, engagement, and conversions. Instead of guessing whether your newsletter or your social campaign brought visitors, you see it in the data. This lets you invest more in what works and stop wasting effort on what does not, which is the whole point of measuring marketing.</p><p>Getting the most from UTM tracking depends on being consistent and organized. Decide on a naming convention and stick to it — analytics treats different capitalizations or spellings as separate sources, so “Facebook” and “facebook” would split your data confusingly. Use clear, consistent values for source and medium across all your links, and meaningful campaign names you will recognize later. Keep a record of the tagged links you create so your team uses the same labels. Tag links in campaigns and external promotions, but not your internal site links, which can distort your data. Used with this discipline, UTM parameters turn vague traffic numbers into a clear map of what is actually working.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Be consistent with capitalization and spelling — analytics treats “Facebook” and “facebook” as different sources.</li><li>Use source for where traffic comes from, medium for the channel type, and campaign for the initiative.</li><li>Keep a record of the tagged links you create so everyone uses the same labels.</li><li>Tag external campaign links, but not internal links within your own site.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>What are UTM parameters?</h3><p>They are tracking tags added to a URL that tell your analytics where a click came from — the source, medium, and campaign. They let you see which of your marketing efforts actually drove traffic.</p><h3>Do UTM parameters change where the link goes?</h3><p>No. They only add tracking information that analytics reads; the link still goes to the same page. The parameters simply label the visit with its origin.</p><h3>Why does consistency matter?</h3><p>Because analytics treats different spellings or capitalizations as separate sources. Inconsistent labels split your data confusingly, so using a consistent naming convention is essential for clean tracking.</p><h3>Should I tag internal links?</h3><p>No. Tag external campaign and promotional links, but not links within your own site. Tagging internal links can distort your analytics by misattributing the traffic source.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Built for Marketers, Free to Use</h2>
+<p>This builder runs entirely in your browser, creating correctly formatted tracking URLs instantly. It needs no account or download and works on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more web tools, the <a href="slug-generator.html">slug generator</a> creates clean URLs, the <a href="url-encode-decode.html">URL encoder and decoder</a> handles special characters, and the <a href="qr-code-generator.html">QR code generator</a> turns links into scannable codes.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

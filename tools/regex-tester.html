@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Regex Tester", "url": "https://usfreetools.com/tools/regex-tester.html", "description": "Build, test, and debug regular expressions in real time against your own sample text, with live match highlighting.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which regex flavor?", "acceptedAnswer": {"@type": "Answer", "text": "JavaScript's engine, so patterns behave as they would in browser and Node.js code."}}, {"@type": "Question", "name": "What do flags like g and i mean?", "acceptedAnswer": {"@type": "Answer", "text": "g matches all occurrences, i is case-insensitive, m treats each line separately. Combine as needed."}}, {"@type": "Question", "name": "Why isn't my pattern matching?", "acceptedAnswer": {"@type": "Answer", "text": "Common issues: unescaped special characters (. * + ?), missing flags, or overly strict anchors (^ $)."}}, {"@type": "Question", "name": "What does the global flag do?", "acceptedAnswer": {"@type": "Answer", "text": "The global flag finds all matches in the text rather than stopping at the first. Without it, methods like replace only affect the first occurrence."}}, {"@type": "Question", "name": "How do I match a literal dot?", "acceptedAnswer": {"@type": "Answer", "text": "Escape it with a backslash: \\. matches an actual period, while an unescaped dot matches any single character."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a regular expression?", "acceptedAnswer": {"@type": "Answer", "text": "It is a pattern that describes a set of strings, used to search, match, and extract text by its structure rather than exact content. A regex can find anything matching a described shape, like an email or a date."}}, {"@type": "Question", "name": "Why do I need to test a regex?", "acceptedAnswer": {"@type": "Answer", "text": "Because patterns are easy to get subtly wrong \u2014 matching too much, too little, or the wrong things. Testing against real sample text shows you exactly what a pattern matches so you can trust it before relying on it."}}, {"@type": "Question", "name": "What are regular expressions used for?", "acceptedAnswer": {"@type": "Answer", "text": "Validating input like emails and phone numbers, searching and replacing text by pattern, extracting data from larger text, and parsing logs and files. They are supported across most programming languages and tools."}}, {"@type": "Question", "name": "Is my text safe to paste here?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All testing happens in your browser, so your patterns and text are never uploaded or stored. You can test against private or sensitive text safely."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>">
 
@@ -49,110 +49,37 @@
         <div id="toolContainer" data-impl="regexTester"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Regex Tester?</h2>
-          <p style="color:#374151;line-height:1.7;">Regular expressions are powerful and notoriously easy to get wrong. This regex tester lets you write a pattern and see in real time which parts of your test text it matches — turning trial-and-error guesswork into immediate visual feedback so you can build the right pattern fast.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Regex Tester</h2>
-          
-          <p class="tool-intro-lead">Type your regex, paste sample text, and watch matches highlight as you refine. It's the fastest way to develop and debug patterns for validation, search-and-replace, data extraction, and parsing.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Building a pattern to validate email or phone formats</li>
-            <li>Testing a search-and-replace regex</li>
-            <li>Extracting data from log lines</li>
-            <li>Debugging a pattern that isn't matching</li>
-            <li>Learning regex syntax with instant feedback</li>
-            <li>Validating input format rules</li>
-            <li>Parsing structured text</li>
-            <li>Refining capture groups</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>Characters like . * + ? ( ) [ ] are special and must be escaped with a backslash to match literally.</li>
-            <li>The global flag (g) is required to find all matches rather than just the first.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Which regex flavor?</h3>
-          <p class="tool-intro-lead">JavaScript's engine, so patterns behave as they would in browser and Node.js code.</p>
-          <h3>What do flags like g and i mean?</h3>
-          <p class="tool-intro-lead">g matches all occurrences, i is case-insensitive, m treats each line separately. Combine as needed.</p>
-          <h3>Why isn't my pattern matching?</h3>
-          <p class="tool-intro-lead">Common issues: unescaped special characters (. * + ?), missing flags, or overly strict anchors (^ $).</p>
-        
-          <h3>What does the global flag do?</h3>
-          <p class="tool-intro-lead">The global flag finds all matches in the text rather than stopping at the first. Without it, methods like replace only affect the first occurrence.</p>
-          <h3>How do I match a literal dot?</h3>
-          <p class="tool-intro-lead">Escape it with a backslash: \. matches an actual period, while an unescaped dot matches any single character.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>A Developer’s Perspective</h2>
-          <p>Developers live in a world of formats, encodings, and transformations — JSON and CSV, Base64 and hex, minified and pretty-printed code, timestamps and tokens. Moving cleanly between these representations is a constant, low-level need, and doing it by hand is both slow and error-prone. Dedicated tools turn these chores into instant, reliable operations that keep you in flow.</p>
-          <p>The best developer utilities share a few traits: they run entirely client-side so sensitive payloads never leave the browser, they handle edge cases like UTF-8 and escaping correctly, and they fail loudly with clear errors rather than producing silently wrong output. For debugging, inspecting, and quick transformations, a fast browser tool often beats both a heavyweight IDE plugin and a command-line one-liner you have to remember.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Formatting, validating, or converting data while debugging an API.</li>
-            <li>Encoding or decoding payloads, tokens, and parameters safely.</li>
-            <li>Cleaning or transforming code and configuration files.</li>
-            <li>Inspecting structure and catching syntax errors before they ship.</li>
-          </ul>
-          <p>For everyday development chores, a focused tool that is fast, correct, and private is worth more than a clever script. It removes a small point of friction dozens of times a day, which adds up to real time and fewer mistakes.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions From Developers</h2>
-          <p>A question that comes up constantly is the difference between encoding, encryption, and hashing. Encoding like Base64 is fully reversible and offers no security — it only makes data safe for text-only channels. Encryption is reversible with a key and does protect data. Hashing is one-way and is used to verify integrity, not to hide information. Confusing these leads to real security mistakes, like using Base64 to 'protect' a secret that anyone can decode instantly.</p>
-          <p>Another frequent concern is handling edge cases correctly. UTF-8 characters, escaped sequences, trailing commas in JSON, and quoting in CSV are where naive transformations silently break. A good tool handles these correctly and reports errors clearly rather than producing output that looks right but is subtly malformed — which is far harder to debug later.</p>
-          <p>Developers also ask why a browser tool beats a quick script. For one-off inspection and transformation while debugging, a fast client-side tool keeps sensitive payloads off external servers and saves you from remembering exact command syntax. It removes a small but constant point of friction without compromising on correctness or privacy.</p>
-          <h3>Tips for the best results</h3>
-          <p>Never confuse encoding with encryption, validate structure and edge cases before relying on transformed data, and prefer client-side tools so payloads stay private.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Build your pattern incrementally, testing after each addition rather than writing it all at once.</li>
-            <li>Use anchors (^ and $) deliberately — they are powerful but easy to over-apply.</li>
-            <li>Name your intent in a comment when saving a complex pattern for later.</li>
-            <li>Test against edge cases (empty strings, unusual characters) not just the happy path.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Forgetting to escape special characters like . * + ? when you mean them literally.</li>
-            <li>Omitting the global flag and wondering why only the first match is found.</li>
-            <li>Writing greedy quantifiers that match more than intended — consider lazy quantifiers.</li>
-            <li>Assuming one regex flavor's syntax works identically everywhere.</li>
-          </ul>
-          <p class="tool-intro-lead">Regular expressions reward patience. The difference between a fragile pattern and a robust one is usually the edge cases you tested. Developing patterns against real sample data, one piece at a time, prevents the silent failures that regex is notorious for.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="find-and-replace.html">find and replace</a> to do simple text replacement, or use the <a href="sql-formatter.html">SQL formatter</a> to format queries. You can also use the <a href="json-formatter.html">JSON formatter</a> to format JSON.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool lets you test regular expressions against sample text and see what they match in real time. Enter a regex pattern and some text, and it highlights the matches as you go. Regular expressions are powerful but notoriously tricky to get right, and a tester that shows you exactly what a pattern matches turns trial-and-error guesswork into a quick, visual process.</p><p>Writing a regex without testing it is a recipe for frustration — patterns that look correct often match too much, too little, or not what you intended. Seeing matches highlighted against real sample text as you refine the pattern is by far the most effective way to build one that works, which is exactly what this tool provides.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>What Regular Expressions Do</h2>
+<p>A regular expression is a pattern that describes a set of strings — a compact way to search for, match, and extract text based on its structure rather than its exact content. Instead of searching for a specific word, a regex can find anything that looks like an email address, a phone number, a date, or any other pattern you can describe. They are built from ordinary characters plus special symbols that mean things like “any digit,” “one or more,” or “the start of a line,” combined to express surprisingly precise rules.</p><p>That power is also what makes them hard. The special syntax is terse and easy to get subtly wrong, and a small change to a pattern can dramatically change what it matches. A regex that seems right in your head may match unexpected things, miss edge cases, or behave differently than intended. This is why testing is essential rather than optional — you genuinely need to see a pattern run against real examples to trust it, which is the whole purpose of a tester.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Building Regular Expressions That Work</h2>
+<p>The effective way to build a regex is iteratively, with a tester. Start with a simple pattern, see what it matches against representative sample text, then refine it — tightening it where it matches too much, loosening it where it misses cases. Watching the highlights update as you adjust the pattern gives you immediate feedback, so you can converge on something correct far faster than by reasoning alone. Crucially, you should test against varied examples, including the tricky edge cases and the things that should NOT match, since a pattern that handles the obvious cases often stumbles on the unusual ones.</p><p>Regular expressions earn their keep across many tasks: validating input like emails or postal codes, searching and replacing text by pattern, extracting specific pieces of data from larger text, and filtering or parsing logs and files. They are supported in virtually every programming language and many tools, which makes the skill broadly transferable. But because regex behavior can vary slightly between environments and because complex patterns are hard to read later, it is wise to keep patterns as simple as the task allows and to test them thoroughly. A tester is the place to do that testing — to confirm a pattern does exactly what you need before you rely on it.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Build patterns iteratively — start simple, test against real text, and refine from there.</li><li>Test against edge cases and things that should NOT match, not just the obvious examples.</li><li>Keep patterns as simple as the task allows, since complex regex is hard to read and maintain.</li><li>Regex behavior can vary slightly between languages and tools, so verify in your target environment.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>What is a regular expression?</h3><p>It is a pattern that describes a set of strings, used to search, match, and extract text by its structure rather than exact content. A regex can find anything matching a described shape, like an email or a date.</p><h3>Why do I need to test a regex?</h3><p>Because patterns are easy to get subtly wrong — matching too much, too little, or the wrong things. Testing against real sample text shows you exactly what a pattern matches so you can trust it before relying on it.</p><h3>What are regular expressions used for?</h3><p>Validating input like emails and phone numbers, searching and replacing text by pattern, extracting data from larger text, and parsing logs and files. They are supported across most programming languages and tools.</p><h3>Is my text safe to paste here?</h3><p>Yes. All testing happens in your browser, so your patterns and text are never uploaded or stored. You can test against private or sensitive text safely.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This tool runs entirely in your browser, so your patterns and text stay on your device. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use without limits.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more developer tools, the <a href="find-and-replace.html">find and replace tool</a> does pattern-free text replacement, the <a href="json-formatter.html">JSON formatter</a> formats JSON, and the <a href="cron-expression-generator.html">cron expression generator</a> builds scheduling expressions.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

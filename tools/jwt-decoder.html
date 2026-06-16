@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JWT Decoder", "url": "https://usfreetools.com/tools/jwt-decoder.html", "description": "Decode JSON Web Tokens (JWT) to inspect the header and payload. Decoding happens entirely in your browser for safety.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does decoding verify the signature?", "acceptedAnswer": {"@type": "Answer", "text": "No. Decoding reveals contents but does not verify the signature \u2014 a decoded JWT is readable, not trusted."}}, {"@type": "Question", "name": "Is it safe to paste a JWT here?", "acceptedAnswer": {"@type": "Answer", "text": "Decoding is entirely in-browser; the token isn't sent anywhere. Still, treat production tokens carefully."}}, {"@type": "Question", "name": "Why can anyone read a JWT's payload?", "acceptedAnswer": {"@type": "Answer", "text": "Payloads are Base64-encoded, not encrypted. Never put secrets in a JWT payload."}}, {"@type": "Question", "name": "Is a decoded JWT verified?", "acceptedAnswer": {"@type": "Answer", "text": "No. Decoding only reveals the contents; it does not check the signature. Only verifying the signature with the correct key proves a token is authentic."}}, {"@type": "Question", "name": "Can anyone read a JWT payload?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The payload is only Base64-encoded, not encrypted, so anyone with the token can read it. Never store secrets inside a JWT."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a JWT?", "acceptedAnswer": {"@type": "Answer", "text": "A JSON Web Token \u2014 a compact, dot-separated token carrying a header, a payload of claims (like user identity and permissions), and a signature for verifying authenticity. It is widely used in web authentication."}}, {"@type": "Question", "name": "Is the data in a JWT encrypted?", "acceptedAnswer": {"@type": "Answer", "text": "No. The payload is Base64-encoded, not encrypted, so anyone can decode and read it without a key. Never put sensitive information in a JWT payload expecting it to be hidden \u2014 the signature proves authenticity but does not conceal data."}}, {"@type": "Question", "name": "Why decode a JWT?", "acceptedAnswer": {"@type": "Answer", "text": "To inspect its contents when developing or debugging authentication \u2014 seeing the claims, permissions, and expiration directly. It is often the fastest way to diagnose why a token-based system is behaving unexpectedly."}}, {"@type": "Question", "name": "Does decoding verify the token?", "acceptedAnswer": {"@type": "Answer", "text": "No. Decoding only reads the contents; it does not verify the signature or validate authenticity. A real application must verify the signature on its server using the secret key. This tool is for inspection, not security validation."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎫</text></svg>">
 
@@ -49,111 +49,37 @@
         <div id="toolContainer" data-impl="jwtDecoder"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is JWT Decoder?</h2>
-          <p style="color:#374151;line-height:1.7;">JSON Web Tokens (JWTs) carry authentication data between services, but they look like an opaque string of three dot-separated parts. This JWT decoder splits and decodes those parts — header, payload, and signature reference — into readable JSON so you can see exactly what claims a token carries.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About JWT Decoder</h2>
-          
-          <p class="tool-intro-lead">Paste a JWT to inspect its issuer, expiry, subject, and custom claims. Decoding happens entirely in your browser, which is essential because tokens are sensitive — yours never travels to a server here.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Inspecting the claims inside an auth token</li>
-            <li>Checking a JWT's expiry while debugging</li>
-            <li>Verifying which user or scope a token represents</li>
-            <li>Debugging authentication issues</li>
-            <li>Reading custom claims in an API token</li>
-            <li>Confirming the signing algorithm in the header</li>
-            <li>Learning how JWTs are structured</li>
-            <li>Troubleshooting single sign-on flows</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>A JWT has three dot-separated parts — header, payload, signature — all Base64URL-encoded.</li>
-            <li>The payload is readable by anyone with the token, so it must never contain secrets.</li>
-            <li>Only signature verification with the correct key proves a JWT is authentic.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Does decoding verify the signature?</h3>
-          <p class="tool-intro-lead">No. Decoding reveals contents but does not verify the signature — a decoded JWT is readable, not trusted.</p>
-          <h3>Is it safe to paste a JWT here?</h3>
-          <p class="tool-intro-lead">Decoding is entirely in-browser; the token isn't sent anywhere. Still, treat production tokens carefully.</p>
-          <h3>Why can anyone read a JWT's payload?</h3>
-          <p class="tool-intro-lead">Payloads are Base64-encoded, not encrypted. Never put secrets in a JWT payload.</p>
-        
-          <h3>Is a decoded JWT verified?</h3>
-          <p class="tool-intro-lead">No. Decoding only reveals the contents; it does not check the signature. Only verifying the signature with the correct key proves a token is authentic.</p>
-          <h3>Can anyone read a JWT payload?</h3>
-          <p class="tool-intro-lead">Yes. The payload is only Base64-encoded, not encrypted, so anyone with the token can read it. Never store secrets inside a JWT.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>A Developer’s Perspective</h2>
-          <p>Developers live in a world of formats, encodings, and transformations — JSON and CSV, Base64 and hex, minified and pretty-printed code, timestamps and tokens. Moving cleanly between these representations is a constant, low-level need, and doing it by hand is both slow and error-prone. Dedicated tools turn these chores into instant, reliable operations that keep you in flow.</p>
-          <p>The best developer utilities share a few traits: they run entirely client-side so sensitive payloads never leave the browser, they handle edge cases like UTF-8 and escaping correctly, and they fail loudly with clear errors rather than producing silently wrong output. For debugging, inspecting, and quick transformations, a fast browser tool often beats both a heavyweight IDE plugin and a command-line one-liner you have to remember.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Formatting, validating, or converting data while debugging an API.</li>
-            <li>Encoding or decoding payloads, tokens, and parameters safely.</li>
-            <li>Cleaning or transforming code and configuration files.</li>
-            <li>Inspecting structure and catching syntax errors before they ship.</li>
-          </ul>
-          <p>For everyday development chores, a focused tool that is fast, correct, and private is worth more than a clever script. It removes a small point of friction dozens of times a day, which adds up to real time and fewer mistakes.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions From Developers</h2>
-          <p>A question that comes up constantly is the difference between encoding, encryption, and hashing. Encoding like Base64 is fully reversible and offers no security — it only makes data safe for text-only channels. Encryption is reversible with a key and does protect data. Hashing is one-way and is used to verify integrity, not to hide information. Confusing these leads to real security mistakes, like using Base64 to 'protect' a secret that anyone can decode instantly.</p>
-          <p>Another frequent concern is handling edge cases correctly. UTF-8 characters, escaped sequences, trailing commas in JSON, and quoting in CSV are where naive transformations silently break. A good tool handles these correctly and reports errors clearly rather than producing output that looks right but is subtly malformed — which is far harder to debug later.</p>
-          <p>Developers also ask why a browser tool beats a quick script. For one-off inspection and transformation while debugging, a fast client-side tool keeps sensitive payloads off external servers and saves you from remembering exact command syntax. It removes a small but constant point of friction without compromising on correctness or privacy.</p>
-          <h3>Tips for the best results</h3>
-          <p>Never confuse encoding with encryption, validate structure and edge cases before relying on transformed data, and prefer client-side tools so payloads stay private.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Decode a token to inspect its claims and expiry while debugging.</li>
-            <li>Remember decoding does not verify the signature.</li>
-            <li>Never store secrets in a JWT payload — it is readable by anyone.</li>
-            <li>Check the algorithm in the header when troubleshooting.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Assuming a decoded token is a verified, trusted token.</li>
-            <li>Putting sensitive data in the payload, which is only encoded.</li>
-            <li>Confusing Base64 encoding with encryption.</li>
-            <li>Sharing production tokens carelessly.</li>
-          </ul>
-          <p class="tool-intro-lead">A JWT's three parts are merely Base64-encoded, not encrypted, so anyone holding the token can read its payload — which is why secrets must never live there. Decoding reveals the claims for debugging, but only signature verification with the correct key proves a token is authentic. Decoding and trusting are two very different things.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="base64-encode-decode.html">Base64 decoder</a> to decode Base64 manually, or use the <a href="hash-generator.html">hash generator</a> to hash data. You can also use the <a href="uuid-generator.html">UUID generator</a> to generate IDs.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool decodes JSON Web Tokens (JWTs), revealing the information packed inside them in a readable form. Paste a JWT and it shows you its contents — the header and the payload of claims — so you can see exactly what data the token carries. It is an everyday helper for developers working with the authentication systems that use JWTs throughout modern web applications. The decoding happens in your browser, so your tokens stay private.</p><p>JWTs appear constantly in web development as a way to carry authentication and identity information, but in their raw form they are an unreadable string of characters. Decoding one to inspect its contents is a routine need when building, debugging, or understanding a system that uses them, and doing it by hand is impractical.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>What a JWT Contains</h2>
+<p>A JSON Web Token is made of three parts separated by dots: a <strong>header</strong>, a <strong>payload</strong>, and a <strong>signature</strong>. The header describes the token type and the algorithm used to sign it. The payload contains the “claims” — the actual data, such as who the user is, what permissions they have, and when the token expires. The signature is used to verify that the token has not been tampered with. The header and payload are encoded (not encrypted) using Base64, which is why the raw token looks like gibberish but can be decoded back to readable JSON.</p><p>A crucial point for anyone working with JWTs is that the payload is encoded, not encrypted. Decoding it — exactly as this tool does — requires no secret key and reveals the contents to anyone. This means you must never put sensitive information in a JWT payload expecting it to be hidden, because it is trivially readable. The signature does not hide the data; it only proves the token is authentic and unaltered. Understanding this distinction is fundamental to using JWTs safely.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Working with JWTs as a Developer</h2>
+<p>Decoding tokens is a routine part of developing and debugging authentication. When something is not working as expected — a user lacks an expected permission, a session behaves oddly, a request is rejected — inspecting the JWT involved is often the fastest way to diagnose it. Decoding shows you exactly what claims the token carries: who it identifies, what roles or permissions it grants, and when it expires. Seeing this directly, rather than guessing, lets you pinpoint whether the token itself is the problem. Checking the expiration claim in particular resolves a great many “why am I logged out?” puzzles.</p><p>Beyond debugging, decoding helps developers understand and verify how a system uses tokens. When integrating with an authentication provider or building token-based auth, being able to see the structure and claims of real tokens makes the abstract concrete. It is important to remember, though, that decoding only reads a token — it does not verify the signature or validate the token's authenticity, which a real application must do on its server using the secret key. So a decoder is a tool for inspection and understanding, not for security validation. Used that way, it is something developers reach for constantly, and because it works locally, you can inspect tokens without sending them to any server.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>A JWT has three dot-separated parts: header, payload, and signature.</li><li>The payload is encoded, not encrypted — anyone can decode it, so never put secrets in it.</li><li>Check the expiration claim to debug many “why am I logged out?” issues.</li><li>Decoding only reads a token; verifying its signature is a separate step a server must do.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>What is a JWT?</h3><p>A JSON Web Token — a compact, dot-separated token carrying a header, a payload of claims (like user identity and permissions), and a signature for verifying authenticity. It is widely used in web authentication.</p><h3>Is the data in a JWT encrypted?</h3><p>No. The payload is Base64-encoded, not encrypted, so anyone can decode and read it without a key. Never put sensitive information in a JWT payload expecting it to be hidden — the signature proves authenticity but does not conceal data.</p><h3>Why decode a JWT?</h3><p>To inspect its contents when developing or debugging authentication — seeing the claims, permissions, and expiration directly. It is often the fastest way to diagnose why a token-based system is behaving unexpectedly.</p><h3>Does decoding verify the token?</h3><p>No. Decoding only reads the contents; it does not verify the signature or validate authenticity. A real application must verify the signature on its server using the secret key. This tool is for inspection, not security validation.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This tool decodes tokens entirely in your browser, so your JWTs are never uploaded or stored. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more developer tools, the <a href="base64-encode-decode.html">Base64 encoder and decoder</a> handles the encoding JWTs use, the <a href="json-formatter.html">JSON formatter</a> formats the decoded payload, and the <a href="hash-generator.html">hash generator</a> creates data fingerprints.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

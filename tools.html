@@ -14,6 +14,11 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"CollectionPage","name":"All Free Online Tools","url":"https://usfreetools.com/tools.html","description":"100+ free online tools."}
   </script>
+  <meta property="og:title" content="All 100+ Free Online Tools">
+  <meta property="og:description" content="Every tool is free, instant, and private. Calculators, converters, text and developer tools, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://usfreetools.com/tools.html">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
@@ -909,6 +914,9 @@
 <script>
 let activeCategory='all';
 function setCategory(cat){activeCategory=cat;document.querySelectorAll('#catFilters .btn').forEach(b=>{b.classList.toggle('btn-primary',b.dataset.cat===cat);b.classList.toggle('btn-outline',b.dataset.cat!==cat);});filterTools();}
+
+// Live filter as you type on the tools page
+document.addEventListener('DOMContentLoaded',function(){var s=document.getElementById('toolSearch');if(s){s.addEventListener('input',filterTools);}});
 function filterTools(){const q=document.getElementById('toolSearch').value.toLowerCase();let v=0;document.querySelectorAll('.tool-card').forEach(c=>{const n=c.dataset.name||'';const mc=activeCategory==='all'||c.dataset.cat===activeCategory;const mq=!q||n.includes(q);const s=mc&&mq;c.style.display=s?'':'none';if(s)v++;});document.getElementById('noResults').classList.toggle('hidden',v>0);}
 window.addEventListener('DOMContentLoaded',()=>{const p=new URLSearchParams(location.search);if(p.get('q'))document.getElementById('toolSearch').value=p.get('q');if(p.get('cat'))setCategory(p.get('cat'));filterTools();document.getElementById('toolSearch').addEventListener('input',filterTools);});
 </script>

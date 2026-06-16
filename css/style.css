@@ -464,7 +464,7 @@ h1 { font-weight: 700; }
   box-shadow: var(--shadow-xs); transition: var(--transition);
 }
 .hero-search input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-light); }
-.hero-search button { background: var(--ink); color: var(--paper); border: none; padding: 0 24px; border-radius: 13px; font-family: var(--font-body); font-weight: 600; cursor: pointer; transition: var(--transition); white-space: nowrap; }
+.hero-search button { background: var(--primary); color: var(--paper); border: none; padding: 0 24px; border-radius: 13px; font-family: var(--font-body); font-weight: 600; cursor: pointer; transition: var(--transition); white-space: nowrap; }
 .hero-search button:hover { background: var(--primary); transform: translateY(-2px); }
 
 /* hero stats */
@@ -589,6 +589,27 @@ html, body { overflow-x: hidden; }
   .hero-stat span { font-size: 0.74rem; }
 }
 
+
+
+/* ---- Live search autocomplete dropdown ---- */
+.search-suggest {
+  display: none; position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 200;
+  background: #fff; border: 1px solid var(--border-strong, #d7ccb8); border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.14); overflow: hidden; max-height: 380px; overflow-y: auto;
+  text-align: left;
+}
+.search-suggest.open { display: block; }
+.search-suggest-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 13px 18px; text-decoration: none; color: var(--ink);
+  border-bottom: 1px solid var(--border, #eee); transition: background 0.12s ease;
+}
+.search-suggest-item:last-child { border-bottom: none; }
+.search-suggest-item:hover, .search-suggest-item.active { background: var(--primary-light, #eef1ff); }
+.search-suggest-item .ss-name { font-weight: 600; font-size: 1rem; }
+.search-suggest-item .ss-name strong { color: var(--primary); }
+.search-suggest-item .ss-go { font-size: 0.8rem; color: var(--gray); font-weight: 600; flex-shrink: 0; }
+.search-suggest-empty { padding: 16px 18px; color: var(--gray); font-size: 0.92rem; }
 
 /* ---- Tools page search bar ---- */
 .search-bar { display: flex; gap: 10px; align-items: stretch; }

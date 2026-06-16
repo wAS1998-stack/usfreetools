@@ -18,11 +18,87 @@
 function initSearch() {
   const input = document.getElementById('heroSearch');
   if (!input) return;
-  input.addEventListener('keydown', e => {
-    if (e.key === 'Enter') doSearch(e.target.value);
-  });
   const btn = document.getElementById('heroSearchBtn');
   if (btn) btn.addEventListener('click', () => doSearch(input.value));
+
+  // Live autocomplete dropdown
+  let box = document.getElementById('searchSuggest');
+  if (!box) {
+    box = document.createElement('div');
+    box.id = 'searchSuggest';
+    box.className = 'search-suggest';
+    input.parentNode.style.position = 'relative';
+    input.parentNode.appendChild(box);
+  }
+  let activeIdx = -1;
+  let matches = [];
+
+  function render(q) {
+    const idx = window.TOOL_INDEX || [];
+    const query = q.trim().toLowerCase();
+    if (!query) { box.classList.remove('open'); box.innerHTML = ''; matches = []; return; }
+    // Score each tool by relevance; only keep genuinely relevant matches
+    const wordRe = new RegExp('(^|\\s)' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+    const scored = [];
+    idx.forEach(t => {
+      const name = t.n.toLowerCase();
+      const kw = t.k || '';
+      let score = 0;
+      if (name === query) score = 100;                  // exact name
+      else if (name.startsWith(query)) score = 90;       // name starts with query
+      else if (wordRe.test(name)) score = 80;            // query starts a word in the name
+      else if (wordRe.test(kw)) score = 60;              // query starts a keyword
+      else if (name.includes(query)) score = 40;         // name contains query somewhere
+      if (score > 0) scored.push({ t, score });
+    });
+    // Require query length >= 2 for the weakest substring matches to avoid noise
+    matches = scored
+      .filter(s => s.score >= 40 || query.length >= 2)
+      .sort((a, b) => b.score - a.score || a.t.n.localeCompare(b.t.n))
+      .slice(0, 8)
+      .map(s => s.t);
+    if (!matches.length) {
+      box.innerHTML = '<div class="search-suggest-empty">No tools match \u201c' + escapeHtml(q) + '\u201d</div>';
+      box.classList.add('open'); activeIdx = -1; return;
+    }
+    box.innerHTML = matches.map((t, i) =>
+      '<a href="' + t.u + '" class="search-suggest-item" data-i="' + i + '">' +
+      '<span class="ss-name">' + highlight(t.n, query) + '</span>' +
+      '<span class="ss-go">Open \u2192</span></a>'
+    ).join('');
+    box.classList.add('open'); activeIdx = -1;
+  }
+
+  function highlight(name, q) {
+    const i = name.toLowerCase().indexOf(q);
+    if (i < 0) return escapeHtml(name);
+    return escapeHtml(name.slice(0, i)) + '<strong>' + escapeHtml(name.slice(i, i + q.length)) + '</strong>' + escapeHtml(name.slice(i + q.length));
+  }
+  function escapeHtml(s) { return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+  input.addEventListener('input', e => render(e.target.value));
+  input.addEventListener('focus', e => { if (e.target.value.trim()) render(e.target.value); });
+
+  input.addEventListener('keydown', e => {
+    const items = box.querySelectorAll('.search-suggest-item');
+    if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, items.length - 1); updateActive(items); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); updateActive(items); }
+    else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (activeIdx >= 0 && matches[activeIdx]) window.location.href = matches[activeIdx].u;
+      else if (matches.length === 1) window.location.href = matches[0].u;
+      else doSearch(input.value);
+    } else if (e.key === 'Escape') { box.classList.remove('open'); }
+  });
+
+  function updateActive(items) {
+    items.forEach((it, i) => it.classList.toggle('active', i === activeIdx));
+    if (items[activeIdx]) items[activeIdx].scrollIntoView({ block: 'nearest' });
+  }
+
+  document.addEventListener('click', e => {
+    if (!input.parentNode.contains(e.target)) box.classList.remove('open');
+  });
 }
 
 function doSearch(q) {

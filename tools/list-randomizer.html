@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "List Randomizer", "url": "https://usfreetools.com/tools/list-randomizer.html", "description": "Paste any list and shuffle it into a random order \u2014 useful for fair ordering and sampling.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is the list shuffled?", "acceptedAnswer": {"@type": "Answer", "text": "Using a proper shuffle so every possible ordering is equally likely \u2014 not a partial rearrangement."}}, {"@type": "Question", "name": "Does it keep all my items?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 randomizing only changes order; every item appears exactly once."}}, {"@type": "Question", "name": "Difference from the random picker?", "acceptedAnswer": {"@type": "Answer", "text": "The picker selects one item; the randomizer shuffles the entire list."}}, {"@type": "Question", "name": "What is the difference from the random picker?", "acceptedAnswer": {"@type": "Answer", "text": "The list randomizer shuffles your entire list into a new order, while the random picker selects a single item. Use shuffle for orderings, pick for one winner."}}, {"@type": "Question", "name": "Is the shuffle truly random?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It uses a proper shuffle so every possible ordering is equally likely, with no bias toward an item's original position."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does the list randomizer work?", "acceptedAnswer": {"@type": "Answer", "text": "It shuffles your entire list into a random order using your browser's randomness, making every possible arrangement equally likely. Each item is treated equally regardless of its starting position."}}, {"@type": "Question", "name": "Is the shuffle genuinely fair?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A proper shuffle gives every ordering an equal chance, so an item at the bottom of your original list is just as likely to end up first as one at the top. There is no positional bias."}}, {"@type": "Question", "name": "How is this different from picking one name?", "acceptedAnswer": {"@type": "Answer", "text": "A name picker chooses a single item; the list randomizer rearranges the whole list into a random sequence. Use this when you need a fair order for everything, not just one winner."}}, {"@type": "Question", "name": "Is my list private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The shuffling happens entirely in your browser, so the items you enter are never uploaded or stored. You can shuffle private lists safely."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔀</text></svg>">
 
@@ -49,111 +49,37 @@
         <div id="toolContainer" data-impl="listRandomizer"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is List Randomizer?</h2>
-          <p style="color:#374151;line-height:1.7;">Sometimes you don't want to pick one item — you want to shuffle the whole list into a random order. This list randomizer takes your entries and rearranges them randomly, perfect for creating fair orderings, randomizing a playlist, assigning turns, or shuffling questions.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About List Randomizer</h2>
-          
-          <p class="tool-intro-lead">Paste your list, one item per line, and get it back in a randomized order. Every arrangement is equally likely, so the result is genuinely shuffled, not just lightly rearranged.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Randomizing the order of a list of names</li>
-            <li>Shuffling questions for a quiz</li>
-            <li>Creating a random turn order</li>
-            <li>Randomizing a playlist or content order</li>
-            <li>Assigning random presentation slots</li>
-            <li>Shuffling tasks or chores</li>
-            <li>Creating randomized test variations</li>
-            <li>Mixing up a list for fairness</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>A proper shuffle (like Fisher-Yates) makes every ordering equally probable.</li>
-            <li>Randomizing reorders without adding or removing items.</li>
-            <li>Use the picker to choose one, the randomizer to reorder all.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>How is the list shuffled?</h3>
-          <p class="tool-intro-lead">Using a proper shuffle so every possible ordering is equally likely — not a partial rearrangement.</p>
-          <h3>Does it keep all my items?</h3>
-          <p class="tool-intro-lead">Yes — randomizing only changes order; every item appears exactly once.</p>
-          <h3>Difference from the random picker?</h3>
-          <p class="tool-intro-lead">The picker selects one item; the randomizer shuffles the entire list.</p>
-        
-          <h3>What is the difference from the random picker?</h3>
-          <p class="tool-intro-lead">The list randomizer shuffles your entire list into a new order, while the random picker selects a single item. Use shuffle for orderings, pick for one winner.</p>
-          <h3>Is the shuffle truly random?</h3>
-          <p class="tool-intro-lead">Yes. It uses a proper shuffle so every possible ordering is equally likely, with no bias toward an item's original position.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Security and Randomness, Done Right</h2>
-          <p>Generating passwords, PINs, tokens, and random selections sounds trivial, but the details decide whether the result is genuinely secure or only appears to be. True unpredictability requires a cryptographically sound source of randomness, not a casual algorithm, and good security practice — length over complexity, uniqueness over reuse — is widely misunderstood. Getting these basics right is the single highest-leverage thing most people can do for their digital safety.</p>
-          <p>A trustworthy generator runs in your browser using the platform's secure cryptographic primitives, which means the value it produces is both unpredictable and never transmitted anywhere. That local-only design is essential: a password or key that travels to a server to be generated is no longer fully under your control. The same principle of fairness applies to random picks and draws, where genuine randomness ensures no hidden bias.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Creating a strong, unique password or PIN for an important account.</li>
-            <li>Generating tokens, keys, or unique identifiers for development.</li>
-            <li>Running a fair giveaway, draw, or random selection.</li>
-            <li>Testing how strong an existing password really is.</li>
-          </ul>
-          <p>Security rewards good defaults. By generating values that are genuinely random and keeping everything on your device, a well-built tool makes the secure choice the easy choice — which is exactly how good security should work.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions About Security</h2>
-          <p>The most important question is what actually makes a password strong. The answer is length far more than complexity: each additional character multiplies the effort required to crack it, while clever symbol substitutions in dictionary words add almost nothing because attackers' tools already anticipate them. A long, random passphrase beats a short, complicated one — and a password manager makes long, unique passwords practical for every account.</p>
-          <p>People also ask whether browser-based generation is safe. It is, provided the tool uses the platform's cryptographically secure randomness and runs entirely on your device. A value generated locally and never transmitted is fully under your control, unlike one produced by a remote server. That local-only design is what makes a generator genuinely trustworthy.</p>
-          <p>A final common question concerns reuse. Reusing even a strong password is dangerous, because a single breach exposes every account that shares it — a tactic attackers exploit at scale. Unique credentials per account, backed by two-factor authentication, contain the damage of any single leak and are the foundation of practical personal security.</p>
-          <h3>Tips for the best results</h3>
-          <p>Prioritize length over complexity, generate values locally with a secure tool, use a unique credential for every account, and enable two-factor authentication wherever possible.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Use it to create fair orderings, turn orders, and shuffled quizzes.</li>
-            <li>Every item appears exactly once — only the order changes.</li>
-            <li>One item per line keeps entries intact.</li>
-            <li>Use the picker instead when you only need one item.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Confusing shuffling the whole list with picking one item.</li>
-            <li>Expecting items to be added or removed.</li>
-            <li>Putting several items on a line.</li>
-            <li>Assuming a partial rearrangement is a true shuffle.</li>
-          </ul>
-          <p class="tool-intro-lead">A proper shuffle makes every possible ordering equally likely — not a light rearrangement, but a genuine randomization like the Fisher-Yates algorithm. It is the right tool for fair turn orders, randomized quiz questions, and unbiased sequencing. Use it when you need the whole list reordered; use the picker when you need just one.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="random-picker.html">random picker</a> to pick one instead, or use the <a href="random-number-generator.html">random number generator</a> to generate numbers. You can also use the <a href="dice-roller.html">dice roller</a> to roll dice.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool shuffles a list into a random order. Enter your items — names, tasks, options, anything — and it rearranges them randomly, giving you a fair, unpredictable sequence. Unlike picking a single winner, this randomizes the whole list, which is what you want for setting an order, creating a running sequence, or fairly arranging everything at once.</p><p>Putting a list in random order by hand is genuinely hard to do fairly — we unconsciously create patterns, and true shuffling is difficult to fake. This tool does it properly, giving every possible ordering an equal chance, so the resulting sequence is genuinely random and free of any bias you might introduce yourself.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How a Fair Shuffle Works</h2>
+<p>A proper shuffle rearranges your list so that every possible ordering is equally likely — not just the first position randomized, but the whole sequence genuinely scrambled. The tool uses your browser's randomness to achieve this, treating each item equally regardless of where it started. An item at the bottom of your original list is just as likely to end up first as one that started at the top.</p><p>This matters because naive shuffling is easy to get subtly wrong in ways that favor certain positions, producing a result that looks random but is actually biased. A correct shuffle avoids that, ensuring the randomness is even across the entire list. The result is a sequence you can trust to be fair — useful whenever the order itself needs to be impartial, not just the choice of a single item.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Where Shuffling a List Helps</h2>
+<p>Setting a fair order is the core use. When you have a group of people or items that need to go in some sequence — the order players take turns, the running order for presentations, the sequence in which tasks get done — shuffling decides it impartially. Nobody can claim the order was arranged to favor anyone, because it was genuinely random. This is valuable for anything from organizing a tournament bracket to deciding who presents first, where a fair sequence matters and a biased one would cause friction.</p><p>Randomizing a whole list is also useful for variety and sampling. If you have a set of questions, prompts, exercises, or content and want to go through them in a fresh order each time, shuffling provides that. Teachers shuffle question orders, trainers vary exercise sequences, and anyone working through a list benefits from mixing it up to avoid the predictability of always starting at the top. It is also a quick way to create a randomized playlist-style sequence from any list. Whenever the order should be random and fair rather than fixed, a list randomizer is the right tool.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Enter each item on its own line so the randomizer treats them separately.</li><li>A proper shuffle makes every possible order equally likely, not just the first position.</li><li>Use it to set a fair turn order or running sequence that favors no one.</li><li>Shuffle a list of questions or tasks to work through them in a fresh order each time.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How does the list randomizer work?</h3><p>It shuffles your entire list into a random order using your browser's randomness, making every possible arrangement equally likely. Each item is treated equally regardless of its starting position.</p><h3>Is the shuffle genuinely fair?</h3><p>Yes. A proper shuffle gives every ordering an equal chance, so an item at the bottom of your original list is just as likely to end up first as one at the top. There is no positional bias.</p><h3>How is this different from picking one name?</h3><p>A name picker chooses a single item; the list randomizer rearranges the whole list into a random sequence. Use this when you need a fair order for everything, not just one winner.</p><h3>Is my list private?</h3><p>Yes. The shuffling happens entirely in your browser, so the items you enter are never uploaded or stored. You can shuffle private lists safely.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Fair, Instant, and Free</h2>
+<p>This tool runs entirely in your browser, shuffling your list fairly the moment you need it. It needs no account or download and works on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more random tools, the <a href="random-name-picker.html">random name picker</a> chooses one item, the <a href="random-picker.html">random picker wheel</a> picks with a spin, and the <a href="random-number-generator.html">random number generator</a> produces numbers in any range.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

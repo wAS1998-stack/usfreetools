@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JavaScript Minifier", "url": "https://usfreetools.com/tools/js-minifier.html", "description": "Compress JavaScript by stripping comments and unnecessary whitespace to reduce bandwidth and speed up your website.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will minifying change behavior?", "acceptedAnswer": {"@type": "Answer", "text": "Safe minification preserves behavior by removing only whitespace and comments \u2014 always test the output."}}, {"@type": "Question", "name": "Minifying vs obfuscating?", "acceptedAnswer": {"@type": "Answer", "text": "Minifying shrinks code while keeping it functional; obfuscation deliberately makes code hard to read."}}, {"@type": "Question", "name": "Should I minify code I'm editing?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 minify only for production; keep readable source for development."}}, {"@type": "Question", "name": "Is minification the same as obfuscation?", "acceptedAnswer": {"@type": "Answer", "text": "No. Minification reduces size while keeping behavior; obfuscation deliberately makes code hard to read. Minified code is still logically the same as the original."}}, {"@type": "Question", "name": "Will minifying break my JavaScript?", "acceptedAnswer": {"@type": "Answer", "text": "Safe minification preserves behavior, but always test the result, especially for complex code. Source maps help you debug minified code in production."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does minifying JavaScript do?", "acceptedAnswer": {"@type": "Answer", "text": "It removes whitespace, line breaks, and comments the browser does not need, and may shorten internal names, shrinking the file. The code runs identically; only the size is reduced, so it loads faster."}}, {"@type": "Question", "name": "Does minifying change what my code does?", "acceptedAnswer": {"@type": "Answer", "text": "No. Minification preserves the code's behavior exactly. It only removes formatting and, where safe, shortens internal names, so the script runs the same from a smaller file."}}, {"@type": "Question", "name": "Why minify JavaScript?", "acceptedAnswer": {"@type": "Answer", "text": "Because scripts are often large and must download before they run, making the page interactive. A smaller file loads faster, improving the visitor experience and the page-speed metrics search engines consider."}}, {"@type": "Question", "name": "Should I keep my original code?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Keep the readable, commented version for editing and debugging, and serve a minified copy on the live site. Minified code is hard to read, so you maintain the original and minify for production."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
@@ -49,110 +49,37 @@
         <div id="toolContainer" data-impl="jsMinifier"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is JavaScript Minifier?</h2>
-          <p style="color:#374151;line-height:1.7;">JavaScript files often ship larger than necessary, padded with whitespace and comments. A minifier removes what the engine doesn't need, producing compact code that downloads and parses faster — directly improving load time on every page that includes it.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About JavaScript Minifier</h2>
-          
-          <p class="tool-intro-lead">Paste your script, minify it, and ship the smaller version. It's a quick, in-browser way to compress JavaScript for a manual deployment without a full build pipeline.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Compressing a script before deployment</li>
-            <li>Speeding up load by reducing JS size</li>
-            <li>Minifying a small library or widget</li>
-            <li>Cleaning comments out of shipped code</li>
-            <li>Reducing bandwidth on busy sites</li>
-            <li>Preparing inline scripts for embedding</li>
-            <li>Optimizing JS in a no-build workflow</li>
-            <li>Shrinking utility snippets for distribution</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>Minified JS plus gzip/Brotli yields the smallest transfer size.</li>
-            <li>Source maps let you debug minified code by mapping it back to your original source.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Will minifying change behavior?</h3>
-          <p class="tool-intro-lead">Safe minification preserves behavior by removing only whitespace and comments — always test the output.</p>
-          <h3>Minifying vs obfuscating?</h3>
-          <p class="tool-intro-lead">Minifying shrinks code while keeping it functional; obfuscation deliberately makes code hard to read.</p>
-          <h3>Should I minify code I'm editing?</h3>
-          <p class="tool-intro-lead">No — minify only for production; keep readable source for development.</p>
-        
-          <h3>Is minification the same as obfuscation?</h3>
-          <p class="tool-intro-lead">No. Minification reduces size while keeping behavior; obfuscation deliberately makes code hard to read. Minified code is still logically the same as the original.</p>
-          <h3>Will minifying break my JavaScript?</h3>
-          <p class="tool-intro-lead">Safe minification preserves behavior, but always test the result, especially for complex code. Source maps help you debug minified code in production.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>A Developer’s Perspective</h2>
-          <p>Developers live in a world of formats, encodings, and transformations — JSON and CSV, Base64 and hex, minified and pretty-printed code, timestamps and tokens. Moving cleanly between these representations is a constant, low-level need, and doing it by hand is both slow and error-prone. Dedicated tools turn these chores into instant, reliable operations that keep you in flow.</p>
-          <p>The best developer utilities share a few traits: they run entirely client-side so sensitive payloads never leave the browser, they handle edge cases like UTF-8 and escaping correctly, and they fail loudly with clear errors rather than producing silently wrong output. For debugging, inspecting, and quick transformations, a fast browser tool often beats both a heavyweight IDE plugin and a command-line one-liner you have to remember.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Formatting, validating, or converting data while debugging an API.</li>
-            <li>Encoding or decoding payloads, tokens, and parameters safely.</li>
-            <li>Cleaning or transforming code and configuration files.</li>
-            <li>Inspecting structure and catching syntax errors before they ship.</li>
-          </ul>
-          <p>For everyday development chores, a focused tool that is fast, correct, and private is worth more than a clever script. It removes a small point of friction dozens of times a day, which adds up to real time and fewer mistakes.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions From Developers</h2>
-          <p>A question that comes up constantly is the difference between encoding, encryption, and hashing. Encoding like Base64 is fully reversible and offers no security — it only makes data safe for text-only channels. Encryption is reversible with a key and does protect data. Hashing is one-way and is used to verify integrity, not to hide information. Confusing these leads to real security mistakes, like using Base64 to 'protect' a secret that anyone can decode instantly.</p>
-          <p>Another frequent concern is handling edge cases correctly. UTF-8 characters, escaped sequences, trailing commas in JSON, and quoting in CSV are where naive transformations silently break. A good tool handles these correctly and reports errors clearly rather than producing output that looks right but is subtly malformed — which is far harder to debug later.</p>
-          <p>Developers also ask why a browser tool beats a quick script. For one-off inspection and transformation while debugging, a fast client-side tool keeps sensitive payloads off external servers and saves you from remembering exact command syntax. It removes a small but constant point of friction without compromising on correctness or privacy.</p>
-          <h3>Tips for the best results</h3>
-          <p>Never confuse encoding with encryption, validate structure and edge cases before relying on transformed data, and prefer client-side tools so payloads stay private.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Minify only for production and keep your readable source for development.</li>
-            <li>Test minified output, especially with complex logic.</li>
-            <li>Pair with gzip/Brotli for the smallest transfer size.</li>
-            <li>Consider source maps to debug minified code in production.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Minifying code you are still actively editing.</li>
-            <li>Shipping without testing the minified result.</li>
-            <li>Confusing minification with obfuscation.</li>
-            <li>Losing the original readable source.</li>
-          </ul>
-          <p class="tool-intro-lead">JavaScript minification trims whitespace and comments to speed downloads and parsing on every page that loads the script. Safe minification preserves behavior, but complex code should always be tested afterward. For production debugging, source maps let you trace minified code back to your original — a worthwhile addition to any deployment.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="css-minifier.html">CSS minifier</a> to minify your stylesheets, or use the <a href="json-formatter.html">JSON formatter</a> to format JSON data. You can also use the <a href="html-encode-decode.html">HTML encoder</a> to escape HTML.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool minifies JavaScript, removing the spaces, line breaks, and comments that browsers do not need, to make your script smaller. Paste your JavaScript and it returns a compact version that runs identically but loads faster. Because JavaScript files can be large and must download before they run, minifying them is a standard part of making a website fast.</p><p>The JavaScript you write is formatted and commented so people can read and maintain it, but none of that formatting matters to the browser running the code. Minifying strips it away, producing a smaller file that downloads more quickly. For any site that uses JavaScript — nearly all of them — serving minified scripts is a simple and effective performance improvement.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>How JavaScript Minification Works</h2>
+<p>Minification removes everything in your JavaScript that exists for human readability rather than for execution. That means whitespace and indentation, line breaks, and comments — all of which help people read and understand the code but are ignored by the browser, which runs the logic regardless of formatting. Stripping these out collapses the script into a compact form that behaves exactly the same when run, just in a smaller file.</p><p>More advanced minification can go further, such as shortening internal variable names to single letters where it is safe to do so, squeezing out additional size. The savings can be significant, especially for large scripts where formatting and descriptive names add up. Throughout, the behavior of the code is preserved — minified JavaScript does precisely what the original did. This is why minifying is safe to apply to production code: the user gets identical functionality from a smaller, faster-loading file, while developers keep the readable original for editing.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Why Minify JavaScript</h2>
+<p>Performance is the driving reason. JavaScript files are often among the larger resources a page loads, and they typically must be downloaded before the script can run and the page becomes fully interactive. A smaller JavaScript file downloads faster, so the page becomes ready sooner — improving the experience for visitors and helping with the page-speed metrics that search engines consider. Minifying JavaScript sits alongside minifying CSS and compressing images as one of the core, well-established optimizations for a fast website.</p><p>As with CSS, the sensible workflow keeps both forms of the code. You develop and maintain readable, well-commented JavaScript, because that is what makes it possible to understand, debug, and extend. For the live site, you serve a minified version to get the performance benefit. Many modern development setups handle minification automatically when building the site, bundling and minifying scripts as part of the process. But for quick optimizations, simple projects, or one-off needs, minifying directly with a tool is fast and convenient. The guiding principle stays the same: readable code for developers, minified code for the browser.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Develop in readable, commented JavaScript and serve the minified version live.</li><li>Minifying preserves behavior exactly — the code runs the same, just from a smaller file.</li><li>Minify JavaScript along with CSS and images for a comprehensively faster site.</li><li>Keep your original readable code for editing; minify a copy for production.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>What does minifying JavaScript do?</h3><p>It removes whitespace, line breaks, and comments the browser does not need, and may shorten internal names, shrinking the file. The code runs identically; only the size is reduced, so it loads faster.</p><h3>Does minifying change what my code does?</h3><p>No. Minification preserves the code's behavior exactly. It only removes formatting and, where safe, shortens internal names, so the script runs the same from a smaller file.</p><h3>Why minify JavaScript?</h3><p>Because scripts are often large and must download before they run, making the page interactive. A smaller file loads faster, improving the visitor experience and the page-speed metrics search engines consider.</p><h3>Should I keep my original code?</h3><p>Yes. Keep the readable, commented version for editing and debugging, and serve a minified copy on the live site. Minified code is hard to read, so you maintain the original and minify for production.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This tool runs entirely in your browser, so your code never leaves your device. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more developer tools, the <a href="css-minifier.html">CSS minifier</a> minifies stylesheets, the <a href="json-formatter.html">JSON formatter</a> formats JSON, and the <a href="html-encode-decode.html">HTML encoder and decoder</a> handles HTML entities.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

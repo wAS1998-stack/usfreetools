@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Random Number Generator", "url": "https://usfreetools.com/tools/random-number-generator.html", "description": "Generate truly random numbers within any min/max range. Great for giveaways, raffles, games, and statistical sampling.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I set the range?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 choose any minimum and maximum; the result falls within that inclusive range."}}, {"@type": "Question", "name": "Are the numbers truly random?", "acceptedAnswer": {"@type": "Answer", "text": "They use the browser's generator, unpredictable enough for games and draws; cryptographic needs use dedicated secure generators."}}, {"@type": "Question", "name": "Can I generate several at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 generate multiple numbers in one go, such as drawing several winners."}}, {"@type": "Question", "name": "Is the range inclusive?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both the minimum and maximum you set can be drawn, so a range of 1 to 10 can produce either 1 or 10."}}, {"@type": "Question", "name": "Is this suitable for cryptographic keys?", "acceptedAnswer": {"@type": "Answer", "text": "For giveaways, games, and sampling it is perfectly fair. For security keys and tokens, use a dedicated cryptographically secure generator instead."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How random are the numbers?", "acceptedAnswer": {"@type": "Answer", "text": "They use your browser's random generation, giving every number in your range an equal chance with no pattern or bias. Each is generated independently, so the results are genuinely unpredictable."}}, {"@type": "Question", "name": "Why do I sometimes get repeats or clusters?", "acceptedAnswer": {"@type": "Answer", "text": "Because that is how true randomness behaves. Genuine random numbers are not evenly spread in the short term \u2014 clusters, gaps, and occasional repeats are normal and actually expected over small sets."}}, {"@type": "Question", "name": "How do I pick a winner fairly?", "acceptedAnswer": {"@type": "Answer", "text": "Assign each entry a number, then generate a random number in that range. The matching entry is your winner. It is a simple, transparent, and unbiased method for contests and draws."}}, {"@type": "Question", "name": "Are the minimum and maximum included?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both the minimum and maximum you set are included as possible results, so the generator can return either end of your range."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>">
 
@@ -49,111 +49,37 @@
         <div id="toolContainer" data-impl="randomNumber"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Random Number Generator?</h2>
-          <p style="color:#374151;line-height:1.7;">When you need a number you can't predict — for a giveaway, a game, a sample, a decision, or testing — a random number generator delivers it instantly. This tool produces random numbers within any range you set, using your browser's randomness so the result is genuinely unbiased.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Random Number Generator</h2>
-          
-          <p class="tool-intro-lead">Set your minimum and maximum, generate, and get a random number in that range. It's the fair, fast way to pick, sample, or decide when you want chance to choose.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Picking a winner for a giveaway</li>
-            <li>Generating random numbers for a game</li>
-            <li>Drawing a random sample from a range</li>
-            <li>Making an unbiased decision</li>
-            <li>Creating test data with random values</li>
-            <li>Rolling custom-range numbers</li>
-            <li>Selecting a random item by index</li>
-            <li>Generating lottery-style picks</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>For giveaways and games, standard randomness is more than fair.</li>
-            <li>For security-critical randomness, cryptographically secure generators are required.</li>
-            <li>An inclusive range means both the minimum and maximum can be drawn.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Can I set the range?</h3>
-          <p class="tool-intro-lead">Yes — choose any minimum and maximum; the result falls within that inclusive range.</p>
-          <h3>Are the numbers truly random?</h3>
-          <p class="tool-intro-lead">They use the browser's generator, unpredictable enough for games and draws; cryptographic needs use dedicated secure generators.</p>
-          <h3>Can I generate several at once?</h3>
-          <p class="tool-intro-lead">Yes — generate multiple numbers in one go, such as drawing several winners.</p>
-        
-          <h3>Is the range inclusive?</h3>
-          <p class="tool-intro-lead">Yes. Both the minimum and maximum you set can be drawn, so a range of 1 to 10 can produce either 1 or 10.</p>
-          <h3>Is this suitable for cryptographic keys?</h3>
-          <p class="tool-intro-lead">For giveaways, games, and sampling it is perfectly fair. For security keys and tokens, use a dedicated cryptographically secure generator instead.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Security and Randomness, Done Right</h2>
-          <p>Generating passwords, PINs, tokens, and random selections sounds trivial, but the details decide whether the result is genuinely secure or only appears to be. True unpredictability requires a cryptographically sound source of randomness, not a casual algorithm, and good security practice — length over complexity, uniqueness over reuse — is widely misunderstood. Getting these basics right is the single highest-leverage thing most people can do for their digital safety.</p>
-          <p>A trustworthy generator runs in your browser using the platform's secure cryptographic primitives, which means the value it produces is both unpredictable and never transmitted anywhere. That local-only design is essential: a password or key that travels to a server to be generated is no longer fully under your control. The same principle of fairness applies to random picks and draws, where genuine randomness ensures no hidden bias.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Creating a strong, unique password or PIN for an important account.</li>
-            <li>Generating tokens, keys, or unique identifiers for development.</li>
-            <li>Running a fair giveaway, draw, or random selection.</li>
-            <li>Testing how strong an existing password really is.</li>
-          </ul>
-          <p>Security rewards good defaults. By generating values that are genuinely random and keeping everything on your device, a well-built tool makes the secure choice the easy choice — which is exactly how good security should work.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions About Security</h2>
-          <p>The most important question is what actually makes a password strong. The answer is length far more than complexity: each additional character multiplies the effort required to crack it, while clever symbol substitutions in dictionary words add almost nothing because attackers' tools already anticipate them. A long, random passphrase beats a short, complicated one — and a password manager makes long, unique passwords practical for every account.</p>
-          <p>People also ask whether browser-based generation is safe. It is, provided the tool uses the platform's cryptographically secure randomness and runs entirely on your device. A value generated locally and never transmitted is fully under your control, unlike one produced by a remote server. That local-only design is what makes a generator genuinely trustworthy.</p>
-          <p>A final common question concerns reuse. Reusing even a strong password is dangerous, because a single breach exposes every account that shares it — a tactic attackers exploit at scale. Unique credentials per account, backed by two-factor authentication, contain the damage of any single leak and are the foundation of practical personal security.</p>
-          <h3>Tips for the best results</h3>
-          <p>Prioritize length over complexity, generate values locally with a secure tool, use a unique credential for every account, and enable two-factor authentication wherever possible.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Set an inclusive range — both min and max can be drawn.</li>
-            <li>Generate a batch when you need several numbers at once.</li>
-            <li>Use it for fair draws, sampling, and decisions.</li>
-            <li>For security keys, use a cryptographically secure generator instead.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Assuming standard randomness is suitable for cryptographic keys.</li>
-            <li>Forgetting the range is inclusive of both ends.</li>
-            <li>Expecting no repeats across multiple draws unless you remove them.</li>
-            <li>Confusing random selection with shuffling a list.</li>
-          </ul>
-          <p class="tool-intro-lead">For giveaways, games, and sampling, ordinary random number generation is more than fair. The important caveat is security: cryptographic uses like keys and tokens require a cryptographically secure generator, not a general-purpose one. For everyday fairness, though, an inclusive range and a quick draw are exactly what you want.</p>
-        </article>
-                <article class="content-inner privacy-note-block" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Private, Instant, and Free</h2>
-          <p>Everything on this page runs entirely in your browser using standard web technologies — your input is processed on your own device and is never uploaded, logged, or stored on any server. That local-first design means the tool works instantly with no waiting on a network round-trip, keeps your data completely private, and remains usable even on a slow or intermittent connection. There is no account to create, no email to hand over, and no usage limit; you can use it as many times as you like, entirely free. You can return to it any time, bookmark it for quick access, and rely on it to behave the same way on every device and browser without any setup. This combination of speed, privacy, and zero friction is exactly what an everyday utility should offer, and it is why a well-built browser tool is often the right choice over installing dedicated software for an occasional task.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="random-picker.html">random picker</a> to pick from a list, or use the <a href="dice-roller.html">dice roller</a> to roll dice. You can also use the <a href="coin-flip.html">coin flip</a> to flip a coin.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool generates random numbers within any range you choose. Set a minimum and maximum, and it produces a genuinely unpredictable number between them — for one number or several at once. It is the go-to for any situation that needs a fair, unbiased random pick: drawing a winner, making a decision, choosing a sample, or adding randomness to a game.</p><p>People are surprisingly bad at picking numbers “randomly” in their heads — we favor certain digits and avoid others, producing patterns that are anything but random. A proper random number generator removes that bias entirely, giving every number in your range an equal chance, which is exactly what you want when fairness matters.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>What Makes the Numbers Random</h2>
+<p>The generator uses your browser's built-in randomness to produce each number, giving every value in your chosen range an equal probability. There is no pattern, no bias toward particular numbers, and no memory of previous results — each number is generated independently. This is true in a way human “random” choices never are, since we unconsciously lean toward some numbers and steer away from others.</p><p>An important point about randomness is that it does not mean evenly spread in the short term. If you generate ten numbers between 1 and 100, they will not be neatly distributed — you may get clusters, gaps, or even a repeat. This surprises people, but it is exactly how genuine randomness behaves; an absence of clusters would actually suggest the numbers were not truly random. Over many draws the distribution evens out, but any individual set can look lumpy, and that is correct.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Where Random Numbers Are Useful</h2>
+<p>The most common everyday use is fair selection. Drawing a raffle or giveaway winner, picking a name by assigning everyone a number, choosing a random sample from a group, or selecting which option to go with — all need a method nobody can predict or bias. A random number generator provides that, which is why it is trusted for contests and decisions where fairness must be demonstrable. Assigning each entry a number and generating a random one is a simple, transparent way to pick fairly.</p><p>Random numbers also drive games, learning, and creativity. Board games and tabletop games use them in place of dice or spinners; teachers use them to call on students or assign groups without favoritism; researchers use them to randomize samples and conditions. Programmers and designers use random numbers constantly for testing, simulations, and generating varied content. And on a simple level, when you just cannot decide between options, assigning each a number and generating one is a quick, impartial way to settle it. Whatever the purpose, the value is the same: an unpredictable, unbiased number you can trust.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>Set your range carefully — the minimum and maximum are both included as possible results.</li><li>Genuine randomness can produce clusters or repeats in a small set; that is normal, not a flaw.</li><li>For fair selection, assign each option or person a number, then generate one.</li><li>Generate several numbers at once when you need multiple picks.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How random are the numbers?</h3><p>They use your browser's random generation, giving every number in your range an equal chance with no pattern or bias. Each is generated independently, so the results are genuinely unpredictable.</p><h3>Why do I sometimes get repeats or clusters?</h3><p>Because that is how true randomness behaves. Genuine random numbers are not evenly spread in the short term — clusters, gaps, and occasional repeats are normal and actually expected over small sets.</p><h3>How do I pick a winner fairly?</h3><p>Assign each entry a number, then generate a random number in that range. The matching entry is your winner. It is a simple, transparent, and unbiased method for contests and draws.</p><h3>Are the minimum and maximum included?</h3><p>Yes. Both the minimum and maximum you set are included as possible results, so the generator can return either end of your range.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Fair, Instant, and Free</h2>
+<p>This generator runs entirely in your browser, producing unbiased random numbers the moment you need them. It needs no account or download and works on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more random tools, the <a href="random-name-picker.html">random name picker</a> chooses from a list, the <a href="dice-roller.html">dice roller</a> rolls virtual dice, and the <a href="coin-flip.html">coin flip</a> settles two-way decisions.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">

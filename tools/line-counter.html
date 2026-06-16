@@ -16,7 +16,7 @@
   <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Line Counter", "url": "https://usfreetools.com/tools/line-counter.html", "description": "Quickly count the total number of lines in any block of text \u2014 useful for code, lists, and documents.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does it count empty lines?", "acceptedAnswer": {"@type": "Answer", "text": "It shows both the total line count and the count of non-empty lines, so you can see how many blanks are present."}}, {"@type": "Question", "name": "How is a line defined?", "acceptedAnswer": {"@type": "Answer", "text": "Any text separated by a line break. The final line counts even without a trailing break."}}, {"@type": "Question", "name": "Can it handle large files?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 counting is local, so tens of thousands of lines count almost instantly."}}, {"@type": "Question", "name": "Does a blank line count as a line?", "acceptedAnswer": {"@type": "Answer", "text": "You can see both totals \u2014 all lines and non-empty lines \u2014 so you can decide whether blank lines should be included for your purpose."}}, {"@type": "Question", "name": "Does the last line count without a final line break?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The final line is counted whether or not it ends with a line break, matching how most editors display line numbers."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does the line counter work?", "acceptedAnswer": {"@type": "Answer", "text": "It counts the lines in your text, treating each line break as a new line, and shows words and characters alongside. Everything updates in real time as you type or paste."}}, {"@type": "Question", "name": "When should I use line count instead of word count?", "acceptedAnswer": {"@type": "Answer", "text": "When the structure matters \u2014 counting items in a list, records in data, or lines in code. Line count answers \u201chow many lines,\u201d while word count answers \u201chow many words\u201d; different tasks need different measures."}}, {"@type": "Question", "name": "Can I count items in a list this way?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If your list has one item per line, the line count is the number of items. It is faster and more reliable than counting by eye, especially for long lists."}}, {"@type": "Question", "name": "Is my text private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All counting happens in your browser, so nothing you paste is uploaded or stored. You can work with private text safely."}}]}</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📏</text></svg>">
 
@@ -49,106 +49,37 @@
         <div id="toolContainer" data-impl="wordCounter"></div>
 
       </div>
-        <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
-          <h2>What is Line Counter?</h2>
-          <p style="color:#374151;line-height:1.7;">When you need to know how many lines are in a log file, a CSV, a code snippet, or a list of email addresses, counting by hand invites mistakes. This line counter gives you the total instantly, plus how many lines actually contain text versus how many are blank.</p>
-        </div>
-
-        <div class="ad-label" style="margin-top:24px;">Advertisement</div>
-        <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>About Line Counter</h2>
-          
-          <p class="tool-intro-lead">It's the fast way to verify a paste came through completely, confirm a list has the expected number of rows, or check an exported file matches what you sent. Everything is counted in your browser, so even large files stay private.</p>
-        <h2>How to Use It</h2>
-          <ul>
-            <li><strong>Step 1 —</strong> Enter or paste your input into the tool above.</li>
-            <li><strong>Step 2 —</strong> Adjust any available options to fit what you need.</li>
-            <li><strong>Step 3 —</strong> Get your result instantly, updated as you work.</li>
-            <li><strong>Step 4 —</strong> Copy or download the output, or clear and start again.</li>
-          </ul>
-
-          <h2>Common Use Cases</h2>
-          <ul>
-            <li>Counting rows in a pasted CSV before importing</li>
-            <li>Verifying a list of URLs or emails is complete</li>
-            <li>Checking line count in a code snippet for review</li>
-            <li>Confirming a log excerpt has the expected entries</li>
-            <li>Counting items in a to-do or inventory list</li>
-            <li>Measuring file length for documentation</li>
-            <li>Spotting unexpected blank lines in data</li>
-            <li>Validating exported records line-for-line</li>
-          </ul>
-
-          <h2>Good to Know</h2>
-          <ul>
-            <li>A trailing newline can make some counters report one extra line; this counts visible lines.</li>
-            <li>Windows uses CRLF line endings, Mac/Linux use LF — both count correctly here.</li>
-          </ul>
-
-          <h2>Why You Can Trust This Tool</h2>
-          <p>Everything runs locally in your browser, so your input is never uploaded or stored. The page loads over HTTPS, needs no permissions or downloads, and gives consistent, reliable results every time — free, with no signup and no limits.</p>
-        </article>
-
-        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Frequently Asked Questions</h2><!--data-faq-extended-->
-          <h3>Does it count empty lines?</h3>
-          <p class="tool-intro-lead">It shows both the total line count and the count of non-empty lines, so you can see how many blanks are present.</p>
-          <h3>How is a line defined?</h3>
-          <p class="tool-intro-lead">Any text separated by a line break. The final line counts even without a trailing break.</p>
-          <h3>Can it handle large files?</h3>
-          <p class="tool-intro-lead">Yes — counting is local, so tens of thousands of lines count almost instantly.</p>
-        
-          <h3>Does a blank line count as a line?</h3>
-          <p class="tool-intro-lead">You can see both totals — all lines and non-empty lines — so you can decide whether blank lines should be included for your purpose.</p>
-          <h3>Does the last line count without a final line break?</h3>
-          <p class="tool-intro-lead">Yes. The final line is counted whether or not it ends with a line break, matching how most editors display line numbers.</p>
-        </article>
-                <article class="content-inner indepth-section" style="margin-top:22px;">
-          <h2>Working With Text Effectively</h2>
-          <p>Text is the raw material of communication online, and shaping it well — counting it, cleaning it, transforming it, or formatting it — is a surprisingly common need. Writers track length against platform limits, developers clean and reformat data, students check their work, and marketers optimize for search and social. The common thread is that small, repetitive text operations are tedious by hand and instant with the right tool.</p>
-          <p>What distinguishes a good text tool is that it does exactly one thing predictably and fast, processing your text in the browser so nothing is uploaded or stored. That privacy matters when the text is a draft, a password, client data, or anything you would not paste into an unknown server. Instant, local processing means you can iterate freely — paste, transform, copy, repeat — without friction or risk.</p>
-          <h3>Where this comes up in practice</h3>
-          <ul>
-            <li>Checking content length against character or word limits before publishing.</li>
-            <li>Cleaning up text copied from PDFs, emails, or spreadsheets.</li>
-            <li>Transforming case, format, or structure for code, data, or design.</li>
-            <li>Analyzing text for readability, keyword usage, or repetition.</li>
-          </ul>
-          <p>Good text tools respect both your time and your privacy. By doing one job well and keeping everything local, they let you move quickly through the small editing and analysis tasks that otherwise interrupt real work.</p>
-        </article>
-                <article class="content-inner deepfaq-section" style="margin-top:22px;">
-          <h2>Common Questions About Text Tools</h2>
-          <p>A frequent question is why character counts differ between tools and platforms. The reason is that platforms count differently: some include spaces and others do not, emoji often count as two characters because of how they are encoded, and certain services count links as a fixed length regardless of the real URL. When a limit matters, count against the specific platform's rules rather than assuming all counts are equal.</p>
-          <p>Another common issue is invisible characters. Text copied from PDFs, emails, or web pages often carries hidden line breaks, trailing spaces, or non-breaking spaces that break comparisons, inflate counts, or disrupt formatting. Cleaning these is exactly what tools for whitespace, line breaks, and duplicates are for, and normalizing text before further processing prevents subtle, hard-to-spot errors.</p>
-          <p>People also ask about privacy. Because drafts, passwords, and client data are sensitive, it matters that a good text tool processes everything in your browser without uploading anything. Local processing means you can paste freely and transform text without worrying about where it goes — a meaningful distinction from tools that send your input to a server.</p>
-          <h3>Tips for the best results</h3>
-          <p>Count against your target platform's specific rules, clean invisible characters before processing, and favor tools that work locally so your text never leaves your device.</p>
-        </article>
-        <article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Expert Tips</h2>
-          <ul>
-            <li>Check non-empty line count to see how many blanks are padding your data.</li>
-            <li>Verify a pasted list has the expected number of rows before importing.</li>
-            <li>Use it to confirm a log excerpt is complete.</li>
-            <li>Remember the final line counts even without a trailing break.</li>
-          </ul>
-          <h2>Common Mistakes to Avoid</h2>
-          <ul>
-            <li>Counting blank lines as data when they should be excluded.</li>
-            <li>Assuming a trailing newline does or does not add a line without checking.</li>
-            <li>Confusing line count with row count in quoted CSV (a quoted field can span lines).</li>
-            <li>Mixing CRLF and LF assumptions.</li>
-          </ul>
-          <p class="tool-intro-lead">Line counting sounds trivial until edge cases appear: trailing newlines, blank lines, and CSV fields that contain line breaks inside quotes. For plain lists it is straightforward and instant; for structured data, remember that a 'line' and a 'record' are not always the same thing.</p>
-        </article>
-        <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
-          <h2>Related Tools</h2>
-          <p class="tool-intro-lead">If this tool helped, try our <a href="word-counter.html">word counter</a> to count words and characters, or use the <a href="character-counter.html">character counter</a> to tally characters. You can also use the <a href="paragraph-counter.html">paragraph counter</a> to count paragraphs.</p>
-        </article>
-      <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<h2>What This Tool Does</h2>
+<p>This tool counts the lines in your text, along with words and characters, updating as you type or paste. It is a focused way to measure text by line — useful when you are working with lists, code, data, or any content where the number of lines matters. Where a word counter measures length, a line counter answers a different, specific question: how many lines is this?</p><p>Counting lines by hand is tedious and error-prone, especially in long content, and many practical situations genuinely need an accurate line count. This tool gives it instantly, with the related word and character counts alongside, so you get a complete picture of your text's size at a glance.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>When Line Count Matters</h2>
+<p>Line count is the right measure in plenty of situations. When working with lists — names, items, entries, one per line — the line count tells you how many items you have without counting them yourself. For data in line-based formats, the number of lines often equals the number of records. For code, line count is a rough measure of size and is sometimes referenced directly. And for any content with a per-line limit or requirement, knowing your exact line count keeps you within bounds.</p><p>The distinction from word count matters because they answer different questions. A piece of text might have many words on few lines, or few words on many lines, depending on how it is structured. A list of single words has as many lines as items but a low word count; a dense paragraph has one line (or a few) but many words. So when the structure is what counts — items in a list, records in data, lines in code — the line count is the figure you need, and this tool provides it accurately.</p>
+</article>
+<div class="ad-label">Advertisement</div>
+<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+<article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Where a Line Counter Helps</h2>
+<p>Working with lists is the most common use. If you have a list with one item per line — email addresses, names, products, tasks — the line count instantly tells you how many you have. This is handy for verifying you have the expected number of entries, checking against a limit, or simply knowing the size of your list. Pasting a list and reading off the count is far faster and more reliable than counting by eye, especially as the list grows long.</p><p>Beyond lists, line counting supports data and technical work. Line-based data files often have one record per line, so the line count gives you the record count. Programmers reference line counts when discussing the size of code or locating issues by line number. People preparing content with line-based constraints — certain forms, displays, or formats that limit lines — use it to stay within those limits. Seeing line count together with word and character counts gives a rounded view of the text, letting you measure it by whichever dimension your task actually depends on.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>For a list with one item per line, the line count is your item count.</li><li>Line count and word count answer different questions — choose the one your task needs.</li><li>Use it to verify a list has the expected number of entries.</li><li>Word and character counts are shown alongside for a complete picture.</li></ul>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How does the line counter work?</h3><p>It counts the lines in your text, treating each line break as a new line, and shows words and characters alongside. Everything updates in real time as you type or paste.</p><h3>When should I use line count instead of word count?</h3><p>When the structure matters — counting items in a list, records in data, or lines in code. Line count answers “how many lines,” while word count answers “how many words”; different tasks need different measures.</p><h3>Can I count items in a list this way?</h3><p>Yes. If your list has one item per line, the line count is the number of items. It is faster and more reliable than counting by eye, especially for long lists.</p><h3>Is my text private?</h3><p>Yes. All counting happens in your browser, so nothing you paste is uploaded or stored. You can work with private text safely.</p>
+</article>
+<article class="content-inner depth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Private, Instant, and Free</h2>
+<p>This tool runs entirely in your browser, so your text never leaves your device. It works instantly, needs no account or download, and runs on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+<article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For more text tools, the <a href="word-counter.html">word counter</a> gives detailed counts, the <a href="remove-duplicate-lines.html">remove duplicate lines tool</a> cleans up lists, and the <a href="sentence-counter.html">sentence counter</a> counts sentences.</p>
+</article>
+      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
     </div>
 
     <div class="tool-sidebar">
