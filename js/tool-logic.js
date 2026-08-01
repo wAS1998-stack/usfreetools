@@ -606,6 +606,1104 @@ const IMPL = {
   loanCalc(){ loanImpl('Loan'); },
   mortgageCalc(){ loanImpl('Mortgage'); },
 
+
+
+
+
+
+
+
+
+
+  // ─── DECK BOARDS ───
+  deckBoardCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Deck length (ft)</label><input type="number" id="db_l" value="16" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Deck width (ft)</label><input type="number" id="db_w" value="12" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Board width (in)</label><input type="number" id="db_bw" value="5.5" min="1" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label>Gap (in)</label><input type="number" id="db_gap" value="0.25" min="0" step="0.125" oninput="RUN()"></div>
+        <div class="form-group"><label>Joist spacing (in)</label><input type="number" id="db_joist" value="16" min="8" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="db_boards">26</strong><span>Boards (deck length)</span></div>
+        <div class="stat-box"><strong id="db_lf">416 lin ft</strong><span>Total linear feet</span></div>
+        <div class="stat-box"><strong id="db_screws">~676</strong><span>Screws (2 per joist)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Boards run the deck length. Add 5-10% (15% diagonal). 5/4×6 boards are 5.5" wide.</p>`);
+    window.RUN=()=>{
+      const l=+$('db_l').value||0,w=+$('db_w').value||0;
+      const bw=+$('db_bw').value||5.5,g=+$('db_gap').value||0,js=Math.max(+$('db_joist').value||16,8);
+      const rows=w>0?Math.ceil(w*12/(bw+g)):0;
+      const joists=Math.floor(l*12/js)+1;
+      $('db_boards').textContent=rows;
+      $('db_lf').textContent=(rows*l).toFixed(0)+' lin ft';
+      $('db_screws').textContent='~'+(rows*joists*2);
+    };
+    RUN();
+  },
+
+  // ─── FIREWOOD ───
+  firewoodCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Stack length (ft)</label><input type="number" id="fw_l" value="8" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Stack height (ft)</label><input type="number" id="fw_h" value="4" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Stack depth (ft)</label><input type="number" id="fw_d" value="4" min="0" step="0.25" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="fw_cords">1.00</strong><span>Cords</span></div>
+        <div class="stat-box"><strong id="fw_cuft">128</strong><span>Cubic feet (stacked)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">1 cord = 128 cu ft stacked (8×4×4). A face cord of 16" logs = 1/3 cord. Verify deliveries after stacking.</p>`);
+    window.RUN=()=>{
+      const l=+$('fw_l').value||0,hh=+$('fw_h').value||0,d=+$('fw_d').value||0;
+      const cf=l*hh*d;
+      $('fw_cords').textContent=(cf/128).toFixed(2);
+      $('fw_cuft').textContent=cf.toFixed(0);
+    };
+    RUN();
+  },
+
+  // ─── TOPSOIL ───
+  topsoilCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Area (sq ft)</label><input type="number" id="ts2_area" value="100" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Depth (inches)</label><input type="number" id="ts2_depth" value="6" min="0" step="0.25" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ts2_yd">1.85</strong><span>Cubic yards</span></div>
+        <div class="stat-box"><strong id="ts2_tons">~2.0</strong><span>Tons (approx)</span></div>
+        <div class="stat-box"><strong id="ts2_bags">67</strong><span>Bags (0.75 cu ft)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">New lawns 4-6", beds 6-12", topdressing 1/4-1/2". Order 5-10% extra for settling.</p>`);
+    window.RUN=()=>{
+      const a=+$('ts2_area').value||0, d=+$('ts2_depth').value||0;
+      const cf=a*d/12, yd=cf/27;
+      $('ts2_yd').textContent=yd.toFixed(2);
+      $('ts2_tons').textContent='~'+(yd*1.1).toFixed(1);
+      $('ts2_bags').textContent=Math.ceil(cf/0.75);
+    };
+    RUN();
+  },
+
+  // ─── PROPANE ───
+  propaneCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Tank size</label><select id="pr_tank" onchange="RUN()">
+          <option value="430000" selected>20 lb (grill standard, ~430k BTU)</option>
+          <option value="645000">30 lb (~645k BTU)</option>
+          <option value="860000">40 lb (~860k BTU)</option>
+          <option value="2150000">100 lb (~2.15M BTU)</option>
+        </select></div>
+        <div class="form-group"><label>Appliance rating (BTU/hr)</label><input type="number" id="pr_btu" value="30000" min="1000" step="1000" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pr_hours">14.3 hrs</strong><span>Burn time (full output)</span></div>
+        <div class="stat-box"><strong id="pr_half">~28.7 hrs</strong><span>At half setting</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Check remaining fuel by weight: scale reading − stamped TW = propane lbs (× 21,500 BTU).</p>`);
+    window.RUN=()=>{
+      const tank=parseFloat($('pr_tank').value), btu=Math.max(+$('pr_btu').value||1,1);
+      const hrs=tank/btu;
+      $('pr_hours').textContent=hrs.toFixed(1)+' hrs';
+      $('pr_half').textContent='~'+(hrs*2).toFixed(1)+' hrs';
+    };
+    RUN();
+  },
+
+  // ─── PAVER ───
+  paverCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Area (sq ft)</label><input type="number" id="pv2_area" value="120" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Waste (%)</label><input type="number" id="pv2_waste" value="10" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Paver width (in)</label><input type="number" id="pv2_w" value="12" min="1" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Paver height (in)</label><input type="number" id="pv2_h" value="12" min="1" step="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pv2_count">132</strong><span>Pavers to buy</span></div>
+        <div class="stat-box"><strong id="pv2_base">1.5 yd³</strong><span>Base gravel (4")</span></div>
+        <div class="stat-box"><strong id="pv2_sand">0.37 yd³</strong><span>Bedding sand (1")</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Section: 4-6" compacted gravel, 1" sand, pavers, edge restraint. Keep spare pavers.</p>`);
+    window.RUN=()=>{
+      const a=+$('pv2_area').value||0, ws=+$('pv2_waste').value||0;
+      const w=Math.max(+$('pv2_w').value||1,0.5), hh=Math.max(+$('pv2_h').value||1,0.5);
+      const base=Math.ceil(a*144/(w*hh));
+      $('pv2_count').textContent=Math.ceil(base*(1+ws/100));
+      $('pv2_base').textContent=(a*4/12/27).toFixed(1)+' yd³';
+      $('pv2_sand').textContent=(a*1/12/27).toFixed(2)+' yd³';
+    };
+    RUN();
+  },
+
+  // ─── WALLPAPER ───
+  wallpaperCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Total wall length (ft)</label><input type="number" id="wp_len" value="40" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Wall height (ft)</label><input type="number" id="wp_h" value="8" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Roll type</label><select id="wp_roll" onchange="RUN()">
+          <option value="28" selected>US single roll (~28 sq ft usable)</option>
+          <option value="50">European roll (~50 sq ft usable)</option>
+        </select></div>
+        <div class="form-group"><label>Doors</label><input type="number" id="wp_d" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Windows</label><input type="number" id="wp_w" value="1" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="wp_area">284 sq ft</strong><span>Paperable area</span></div>
+        <div class="stat-box"><strong id="wp_rolls">11</strong><span>Rolls to buy</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Large pattern repeats waste more — add a roll for bold repeats. Buy all rolls + 1 spare from one batch.</p>`);
+    window.RUN=()=>{
+      const len=+$('wp_len').value||0,hh=+$('wp_h').value||0;
+      const d=+$('wp_d').value||0,w=+$('wp_w').value||0,cov=parseFloat($('wp_roll').value);
+      const area=Math.max(len*hh - d*21 - w*15, 0);
+      $('wp_area').textContent=area.toFixed(0)+' sq ft';
+      $('wp_rolls').textContent=area>0?Math.ceil(area/cov):0;
+    };
+    RUN();
+  },
+
+  // ─── SOD ───
+  sodCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Lawn area (sq ft)</label><input type="number" id="sd_area" value="2000" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Waste margin (%)</label><input type="number" id="sd_waste" value="10" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="sd_rolls">220</strong><span>Rolls (10 sq ft each)</span></div>
+        <div class="stat-box"><strong id="sd_pallets">4.9</strong><span>Pallets (~450 sq ft)</span></div>
+        <div class="stat-box"><strong id="sd_wt">~4.4 tons</strong><span>Approx. weight</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Confirm your farm\u2019s pallet size (400-500 sq ft). Prep first; lay the same day it arrives.</p>`);
+    window.RUN=()=>{
+      const a=+$('sd_area').value||0, ws=+$('sd_waste').value||0;
+      const total=a*(1+ws/100);
+      $('sd_rolls').textContent=Math.ceil(total/10);
+      $('sd_pallets').textContent=(total/450).toFixed(1);
+      $('sd_wt').textContent='~'+(Math.ceil(total/10)*40/2000).toFixed(1)+' tons';
+    };
+    RUN();
+  },
+
+  // ─── ROOF PITCH ───
+  roofPitchCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Rise (inches per 12" run)</label><input type="number" id="rp_rise" value="6" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Footprint area (sq ft, optional)</label><input type="number" id="rp_area" value="" min="0" placeholder="1500" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="rp_deg">26.6°</strong><span>Angle</span></div>
+        <div class="stat-box"><strong id="rp_factor">1.118</strong><span>Pitch factor</span></div>
+        <div class="stat-box"><strong id="rp_true">—</strong><span>True roof area</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Walkable to ~6/12 with care. Shingles need ≥2/12. Add 10-15% waste for the roof style.</p>`);
+    window.RUN=()=>{
+      const r=+$('rp_rise').value||0, a=+$('rp_area').value||0;
+      const deg=Math.atan(r/12)*180/Math.PI;
+      const f=Math.sqrt(r*r+144)/12;
+      $('rp_deg').textContent=deg.toFixed(1)+'°';
+      $('rp_factor').textContent=f.toFixed(3);
+      $('rp_true').textContent=a>0?Math.round(a*f).toLocaleString('en-US')+' sq ft':'—';
+    };
+    RUN();
+  },
+
+  // ─── HEAT INDEX ───
+  heatIndexCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Air temperature (°F)</label><input type="number" id="hi_t" value="90" step="1" oninput="RUN()"></div>
+        <div class="form-group"><label>Relative humidity (%)</label><input type="number" id="hi_r" value="70" min="0" max="100" step="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="hi_val">105°F</strong><span>Heat index (NWS)</span></div>
+        <div class="stat-box"><strong id="hi_cat">Danger</strong><span>NWS category</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;" >Designed for ≥80°F and ≥40% RH, in shade — full sun can add up to 15°F.</p>`);
+    window.RUN=()=>{
+      const T=+$('hi_t').value, R=+$('hi_r').value||0;
+      if(T>=80&&R>=40){
+        let HI=-42.379+2.04901523*T+10.14333127*R-0.22475541*T*R-0.00683783*T*T-0.05481717*R*R+0.00122874*T*T*R+0.00085282*T*R*R-0.00000199*T*T*R*R;
+        const v=Math.round(HI);
+        $('hi_val').textContent=v+'°F';
+        $('hi_cat').textContent=v>=125?'Extreme danger':v>=103?'Danger':v>=90?'Extreme caution':'Caution';
+      } else {
+        $('hi_val').textContent='N/A';
+        $('hi_cat').textContent='Outside index range';
+      }
+    };
+    RUN();
+  },
+
+  // ─── DRYWALL ───
+  drywallCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Length (ft)</label><input type="number" id="dw_l" value="12" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Width (ft)</label><input type="number" id="dw_w" value="12" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Wall height (ft)</label><input type="number" id="dw_h" value="8" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Doors</label><input type="number" id="dw_d" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Windows</label><input type="number" id="dw_win" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Sheet size</label><select id="dw_sheet" onchange="RUN()">
+          <option value="32" selected>4×8 (32 sq ft)</option>
+          <option value="48">4×12 (48 sq ft)</option>
+        </select></div>
+      </div>
+      <div class="form-group"><label><input type="checkbox" id="dw_ceil" checked onchange="RUN()"> Include ceiling</label></div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="dw_area">492 sq ft</strong><span>Total surface</span></div>
+        <div class="stat-box"><strong id="dw_sheets">16</strong><span>Sheets needed</span></div>
+        <div class="stat-box"><strong id="dw_screws">~512</strong><span>Screws (approx)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Add 5-10% for cuts. Ceilings: 5/8" board; hang ceilings first, stagger joints.</p>`);
+    window.RUN=()=>{
+      const l=+$('dw_l').value||0,w=+$('dw_w').value||0,hh=+$('dw_h').value||0;
+      const d=+$('dw_d').value||0,win=+$('dw_win').value||0,sheet=parseFloat($('dw_sheet').value);
+      let area=Math.max(2*(l+w)*hh - d*21 - win*15,0);
+      if($('dw_ceil').checked) area+=l*w;
+      const sheets=area>0?Math.ceil(area/sheet):0;
+      $('dw_area').textContent=area.toFixed(0)+' sq ft';
+      $('dw_sheets').textContent=sheets;
+      $('dw_screws').textContent='~'+(sheets*(sheet===32?32:48));
+    };
+    RUN();
+  },
+
+  // ─── POOL VOLUME ───
+  poolVolumeCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Shape</label><select id="pv_shape" onchange="PVSHAPE();RUN()">
+          <option value="rect">Rectangular</option><option value="round">Round</option>
+        </select></div>
+        <div class="form-group"><label>Average depth (ft)</label><input type="number" id="pv_d" value="5" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group" id="pv_lwrap"><label>Length (ft)</label><input type="number" id="pv_l" value="32" min="0" oninput="RUN()"></div>
+        <div class="form-group" id="pv_wwrap"><label id="pv_wlbl">Width (ft)</label><input type="number" id="pv_w" value="16" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pv_gal">19,148</strong><span>Gallons</span></div>
+        <div class="stat-box"><strong id="pv_lit">72,475</strong><span>Liters</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Sloped pools: average depth = (shallow + deep) ÷ 2. Chemical labels dose per 10,000 gallons.</p>`);
+    window.PVSHAPE=()=>{
+      const round=$('pv_shape').value==='round';
+      $('pv_lwrap').style.display=round?'none':'';
+      $('pv_wlbl').textContent=round?'Diameter (ft)':'Width (ft)';
+    };
+    window.RUN=()=>{
+      const shape=$('pv_shape').value, d=+$('pv_d').value||0;
+      let area=0;
+      if(shape==='rect') area=(+$('pv_l').value||0)*(+$('pv_w').value||0);
+      else { const r=(+$('pv_w').value||0)/2; area=Math.PI*r*r; }
+      const gal=area*d*7.48;
+      $('pv_gal').textContent=Math.round(gal).toLocaleString('en-US');
+      $('pv_lit').textContent=Math.round(gal*3.785).toLocaleString('en-US');
+    };
+    RUN();
+  },
+
+  // ─── STAIR ───
+  stairCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Total rise (inches)</label><input type="number" id="st2_rise" value="108" min="0" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label>Tread depth (inches)</label><input type="number" id="st2_tread" value="10" min="8" step="0.25" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="st2_n">14</strong><span>Risers (steps)</span></div>
+        <div class="stat-box"><strong id="st2_h">7.71"</strong><span>Riser height</span></div>
+        <div class="stat-box"><strong id="st2_run">130"</strong><span>Total run</span></div>
+        <div class="stat-box"><strong id="st2_comfort">17.7</strong><span>Riser + tread (aim 17-18)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">US residential code: risers ≤ 7.75", treads ≥ 10", variation ≤ 3/8". Check local amendments.</p>`);
+    window.RUN=()=>{
+      const rise=+$('st2_rise').value||0, tread=Math.max(+$('st2_tread').value||10,1);
+      if(rise>0){
+        const n=Math.ceil(rise/7.75), hh=rise/n, treads=n-1;
+        $('st2_n').textContent=n;
+        $('st2_h').textContent=hh.toFixed(2)+'"';
+        $('st2_run').textContent=(treads*tread).toFixed(0)+'" ('+treads+' treads)';
+        $('st2_comfort').textContent=(hh+tread).toFixed(1);
+      }
+    };
+    RUN();
+  },
+
+  // ─── DOWN PAYMENT ───
+  downPaymentCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Home price ($)</label><input type="number" id="dp_price" value="400000" min="0" step="1000" oninput="RUN()"></div>
+        <div class="form-group"><label>Down payment (%)</label><input type="number" id="dp_pct" value="20" min="0" max="100" step="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="dp_amt">$80,000</strong><span>Down payment</span></div>
+        <div class="stat-box"><strong id="dp_loan">$320,000</strong><span>Loan amount</span></div>
+        <div class="stat-box"><strong id="dp_pmi">No PMI (≥20%)</strong><span>PMI status</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Budget 2-5% of price for closing costs on top. General information, not financial advice.</p>`);
+    window.RUN=()=>{
+      const p=+$('dp_price').value||0, pct=+$('dp_pct').value||0;
+      const dpv=p*pct/100;
+      $('dp_amt').textContent='$'+Math.round(dpv).toLocaleString('en-US');
+      $('dp_loan').textContent='$'+Math.round(p-dpv).toLocaleString('en-US');
+      $('dp_pmi').textContent=pct>=20?'No PMI (≥20%)':'PMI likely (<20%)';
+    };
+    RUN();
+  },
+
+  // ─── GRASS SEED ───
+  grassSeedCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Lawn area (sq ft)</label><input type="number" id="gs_area" value="5000" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Seeding rate</label><select id="gs_rate" onchange="RUN()">
+          <option value="8" selected>Tall fescue — new lawn (8 lb/1000)</option>
+          <option value="4">Tall fescue — overseed (4 lb/1000)</option>
+          <option value="3">Kentucky bluegrass — new (3 lb/1000)</option>
+          <option value="9">Perennial rye — new (9 lb/1000)</option>
+          <option value="2">Bermuda — new (2 lb/1000)</option>
+        </select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="gs_lbs">40.0 lbs</strong><span>Seed needed</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">If your seed bag lists a rate, use the bag&#39;s number. More than the rate grows weaker turf, not thicker.</p>`);
+    window.RUN=()=>{
+      const a=+$('gs_area').value||0, r=parseFloat($('gs_rate').value);
+      $('gs_lbs').textContent=(a/1000*r).toFixed(1)+' lbs';
+    };
+    RUN();
+  },
+
+  // ─── WIND CHILL ───
+  windChillCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Air temperature (°F)</label><input type="number" id="wc_t" value="20" step="1" oninput="RUN()"></div>
+        <div class="form-group"><label>Wind speed (mph)</label><input type="number" id="wc_v" value="15" min="0" step="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="wc_chill">6°F</strong><span>Wind chill (NWS)</span></div>
+        <div class="stat-box"><strong id="wc_c">−14°C</strong><span>In Celsius</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Valid for ≤50°F and ≥3 mph. Frostbite: ~30 min exposed skin at −18°F chill.</p>`);
+    window.RUN=()=>{
+      const t=+$('wc_t').value, v=+$('wc_v').value||0;
+      if(t<=50&&v>=3){
+        const wc=35.74+0.6215*t-35.75*Math.pow(v,0.16)+0.4275*t*Math.pow(v,0.16);
+        $('wc_chill').textContent=Math.round(wc)+'°F';
+        $('wc_c').textContent=((Math.round(wc)-32)*5/9).toFixed(0).replace('-','−')+'°C';
+      } else {
+        $('wc_chill').textContent='N/A';
+        $('wc_c').textContent='—';
+      }
+    };
+    RUN();
+  },
+
+  // ─── GRAVEL ───
+  gravelCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Area (sq ft)</label><input type="number" id="gv_area" value="100" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Depth (inches)</label><input type="number" id="gv_depth" value="3" min="0" step="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="gv_yd">0.93</strong><span>Cubic yards</span></div>
+        <div class="stat-box"><strong id="gv_tons">1.30</strong><span>Tons (approx)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~1.4 tons per cubic yard. Depths: 2-3\" decorative, 3-4\" paths, 6-12\" driveways (layered).</p>`);
+    window.RUN=()=>{
+      const a=+$('gv_area').value||0, d=+$('gv_depth').value||0;
+      const yd=a*d/12/27;
+      $('gv_yd').textContent=yd.toFixed(2);
+      $('gv_tons').textContent=(yd*1.4).toFixed(2);
+    };
+    RUN();
+  },
+
+  // ─── TILE ───
+  tileCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Area (sq ft)</label><input type="number" id="tl_area" value="120" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Waste (%)</label><input type="number" id="tl_waste" value="10" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Tile width (in)</label><input type="number" id="tl_w" value="12" min="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Tile height (in)</label><input type="number" id="tl_h" value="12" min="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="tl_base">120</strong><span>Tiles (exact)</span></div>
+        <div class="stat-box"><strong id="tl_total">132</strong><span>Buy (with waste)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Use 10% waste for straight lay, 15% for diagonal or herringbone. Round up to whole boxes.</p>`);
+    window.RUN=()=>{
+      const a=+$('tl_area').value||0, ws=+$('tl_waste').value||0;
+      const tw=+$('tl_w').value||1, th=+$('tl_h').value||1;
+      const base=Math.ceil(a*144/(tw*th));
+      $('tl_base').textContent=base;
+      $('tl_total').textContent=Math.ceil(base*(1+ws/100));
+    };
+    RUN();
+  },
+
+  // ─── FENCE ───
+  fenceCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Fence length (ft)</label><input type="number" id="fc_len" value="100" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Post spacing (ft)</label><input type="number" id="fc_sp" value="8" min="1" oninput="RUN()"></div>
+        <div class="form-group"><label>Rails per section</label><input type="number" id="fc_rails" value="2" min="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="fc_sections">13</strong><span>Sections</span></div>
+        <div class="stat-box"><strong id="fc_posts">14</strong><span>Posts</span></div>
+        <div class="stat-box"><strong id="fc_railtotal">26</strong><span>Rails</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Corners share posts between runs; gates add posts. Bury 1/3 of height, 2 ft minimum.</p>`);
+    window.RUN=()=>{
+      const len=+$('fc_len').value||0, sp=Math.max(+$('fc_sp').value||8,1), r=Math.max(+$('fc_rails').value||2,1);
+      const sec=Math.ceil(len/sp);
+      $('fc_sections').textContent=sec;
+      $('fc_posts').textContent=sec>0?sec+1:0;
+      $('fc_railtotal').textContent=sec*r;
+    };
+    RUN();
+  },
+
+  // ─── BOARD FOOT ───
+  boardFootCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Thickness (in)</label><input type="number" id="bf_t" value="1" min="0" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label>Width (in)</label><input type="number" id="bf_w" value="6" min="0" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label>Length (ft)</label><input type="number" id="bf_l" value="8" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Quantity</label><input type="number" id="bf_q" value="10" min="1" oninput="RUN()"></div>
+      </div>
+      <div class="form-group"><label>Price per board foot ($, optional)</label><input type="number" id="bf_p" value="" min="0" step="0.01" placeholder="8.50" oninput="RUN()"></div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="bf_each">4.0</strong><span>Board feet each</span></div>
+        <div class="stat-box"><strong id="bf_total">40.0</strong><span>Total board feet</span></div>
+        <div class="stat-box"><strong id="bf_cost">—</strong><span>Total cost</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Use actual dimensions (4/4 = 1\"). Add 20-30% waste for hardwood projects.</p>`);
+    window.RUN=()=>{
+      const t=+$('bf_t').value||0,w=+$('bf_w').value||0,l=+$('bf_l').value||0,q=Math.max(+$('bf_q').value||1,1),p=+$('bf_p').value||0;
+      const each=t*w*l/12, tot=each*q;
+      $('bf_each').textContent=each.toFixed(1);
+      $('bf_total').textContent=tot.toFixed(1);
+      $('bf_cost').textContent=p>0?'$'+(tot*p).toFixed(2):'—';
+    };
+    RUN();
+  },
+
+  // ─── DOG AGE ───
+  dogAgeCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+        <div class="form-group"><label>Dog's age (years)</label><input type="number" id="da_age" value="5" min="0.5" step="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="da_sci">57</strong><span>Human years (research formula)</span></div>
+        <div class="stat-box"><strong id="da_myth">35</strong><span>Old ×7 myth (for comparison)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Formula: 16 × ln(age) + 31, from 2020 epigenetic research on Labradors. Breed size shifts the picture; your vet knows your dog best.</p>`);
+    window.RUN=()=>{
+      const a=Math.max(+$('da_age').value||0.5,0.5);
+      $('da_sci').textContent=Math.round(16*Math.log(a)+31);
+      $('da_myth').textContent=Math.round(a*7);
+    };
+    RUN();
+  },
+
+  // ─── TIRE SIZE ───
+  tireSizeCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Tire 1 width (mm)</label><input type="number" id="ts_w1" value="225" oninput="RUN()"></div>
+        <div class="form-group"><label>Aspect (%)</label><input type="number" id="ts_a1" value="45" oninput="RUN()"></div>
+        <div class="form-group"><label>Wheel (in)</label><input type="number" id="ts_r1" value="17" oninput="RUN()"></div>
+        <div class="form-group"><label>Tire 2 width (mm)</label><input type="number" id="ts_w2" value="235" oninput="RUN()"></div>
+        <div class="form-group"><label>Aspect (%)</label><input type="number" id="ts_a2" value="40" oninput="RUN()"></div>
+        <div class="form-group"><label>Wheel (in)</label><input type="number" id="ts_r2" value="18" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ts_d1">25.0 in</strong><span>Tire 1 diameter</span></div>
+        <div class="stat-box"><strong id="ts_d2">25.4 in</strong><span>Tire 2 diameter</span></div>
+        <div class="stat-box"><strong id="ts_diff">+1.7%</strong><span>Difference</span></div>
+        <div class="stat-box"><strong id="ts_speed">60 → 61.0</strong><span>Speedo reads 60, true speed</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Guideline: keep the new diameter within ~3% of original.</p>`);
+    window.RUN=()=>{
+      const d=(w,a,r)=>r*25.4+2*(w*a/100);
+      const d1=d(+$('ts_w1').value||0,+$('ts_a1').value||0,+$('ts_r1').value||0);
+      const d2=d(+$('ts_w2').value||0,+$('ts_a2').value||0,+$('ts_r2').value||0);
+      if(d1>0&&d2>0){
+        $('ts_d1').textContent=(d1/25.4).toFixed(1)+' in';
+        $('ts_d2').textContent=(d2/25.4).toFixed(1)+' in';
+        const pct=(d2-d1)/d1*100;
+        $('ts_diff').textContent=(pct>=0?'+':'')+pct.toFixed(1)+'%';
+        $('ts_speed').textContent='60 → '+(60*d2/d1).toFixed(1);
+      }
+    };
+    RUN();
+  },
+
+  // ─── MULCH ───
+  mulchCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Bed area (sq ft)</label><input type="number" id="mu_area" value="100" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Depth (inches)</label><input type="number" id="mu_depth" value="3" min="0" step="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="mu_cuft">25.0</strong><span>Cubic feet</span></div>
+        <div class="stat-box"><strong id="mu_yd">0.93</strong><span>Cubic yards</span></div>
+        <div class="stat-box"><strong id="mu_bags">13</strong><span>Bags (2 cu ft)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Use 2-4 inch depth; keep mulch off trunks and stems.</p>`);
+    window.RUN=()=>{
+      const a=+$('mu_area').value||0, dep=+$('mu_depth').value||0;
+      const cf=a*dep/12;
+      $('mu_cuft').textContent=cf.toFixed(1);
+      $('mu_yd').textContent=(cf/27).toFixed(2);
+      $('mu_bags').textContent=Math.ceil(cf/2);
+    };
+    RUN();
+  },
+
+  // ─── CONCRETE ───
+  concreteCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Length (ft)</label><input type="number" id="cc_l" value="10" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Width (ft)</label><input type="number" id="cc_w" value="10" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Thickness (in)</label><input type="number" id="cc_t" value="4" min="0" step="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="cc_yd">1.23</strong><span>Cubic yards</span></div>
+        <div class="stat-box"><strong id="cc_b80">56</strong><span>80 lb bags</span></div>
+        <div class="stat-box"><strong id="cc_b60">75</strong><span>60 lb bags</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Order 5-10% extra. Past ~1 yard, consider ready-mix delivery.</p>`);
+    window.RUN=()=>{
+      const l=+$('cc_l').value||0,w=+$('cc_w').value||0,t=+$('cc_t').value||0;
+      const cf=l*w*t/12;
+      $('cc_yd').textContent=(cf/27).toFixed(2);
+      $('cc_b80').textContent=Math.ceil(cf/0.6);
+      $('cc_b60').textContent=Math.ceil(cf/0.45);
+    };
+    RUN();
+  },
+
+  // ─── ACREAGE ───
+  acreageCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Length (ft)</label><input type="number" id="ac_l" value="660" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Width (ft)</label><input type="number" id="ac_w" value="66" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ac_sqft">43,560</strong><span>Square feet</span></div>
+        <div class="stat-box"><strong id="ac_acres">1.00</strong><span>Acres</span></div>
+        <div class="stat-box"><strong id="ac_ha">0.40</strong><span>Hectares</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">1 acre = 43,560 sq ft ≈ a square 209 ft per side. Legal boundaries: see the plat/surveyor.</p>`);
+    window.RUN=()=>{
+      const l=+$('ac_l').value||0,w=+$('ac_w').value||0;
+      const sf=l*w;
+      $('ac_sqft').textContent=Math.round(sf).toLocaleString('en-US');
+      $('ac_acres').textContent=(sf/43560).toFixed(2);
+      $('ac_ha').textContent=(sf/43560*0.404686).toFixed(2);
+    };
+    RUN();
+  },
+
+  // ─── BTU ───
+  btuCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Room area (sq ft)</label><input type="number" id="bt_area" value="300" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Sun exposure</label><select id="bt_sun" onchange="RUN()">
+          <option value="0.9">Heavily shaded (−10%)</option>
+          <option value="1" selected>Average</option>
+          <option value="1.1">Very sunny (+10%)</option>
+        </select></div>
+        <div class="form-group"><label>Typical occupants</label><input type="number" id="bt_ppl" value="2" min="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="bt_btu">6,000 BTU</strong><span>Recommended capacity</span></div>
+        <div class="stat-box"><strong id="bt_ton">0.50</strong><span>Tons</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Rule-of-thumb for room units (+~4,000 BTU if it is a kitchen). Whole homes need a Manual J calculation.</p>`);
+    window.RUN=()=>{
+      const a=+$('bt_area').value||0, sun=parseFloat($('bt_sun').value), ppl=Math.max(+$('bt_ppl').value||2,1);
+      let btu=a*20*sun + Math.max(ppl-2,0)*600;
+      $('bt_btu').textContent=Math.round(btu).toLocaleString('en-US')+' BTU';
+      $('bt_ton').textContent=(btu/12000).toFixed(2);
+    };
+    RUN();
+  },
+
+  // ─── SALES TAX ───
+  salesTaxCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Mode</label><select id="st_mode" onchange="RUN()">
+          <option value="add">Add tax to price</option><option value="remove">Back out tax from total</option>
+        </select></div>
+        <div class="form-group"><label id="st_lbl">Price ($)</label><input type="number" id="st_amt" value="50" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label>Tax rate (%)</label><input type="number" id="st_rate" value="8.25" min="0" step="0.01" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="st_pre">$50.00</strong><span>Pre-tax price</span></div>
+        <div class="stat-box"><strong id="st_tax">$4.13</strong><span>Sales tax</span></div>
+        <div class="stat-box"><strong id="st_total">$54.13</strong><span>Total</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Rates combine state + local and vary by location — check your local rate. Not tax advice.</p>`);
+    window.RUN=()=>{
+      const mode=$('st_mode').value, a=parseFloat($('st_amt').value)||0, r=(parseFloat($('st_rate').value)||0)/100;
+      $('st_lbl').textContent = mode==='add'?'Price ($)':'Total paid ($)';
+      let pre, tax, total;
+      if(mode==='add'){ pre=a; tax=a*r; total=a+tax; }
+      else { pre=a/(1+r); tax=a-pre; total=a; }
+      $('st_pre').textContent='$'+pre.toFixed(2);
+      $('st_tax').textContent='$'+tax.toFixed(2);
+      $('st_total').textContent='$'+total.toFixed(2);
+    };
+    RUN();
+  },
+
+  // ─── HOURLY TO SALARY ───
+  hourlySalaryCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Mode</label><select id="hs_mode" onchange="RUN()">
+          <option value="h2s">Hourly → Salary</option><option value="s2h">Salary → Hourly</option>
+        </select></div>
+        <div class="form-group"><label id="hs_lbl">Hourly rate ($)</label><input type="number" id="hs_amt" value="25" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label>Hours per week</label><input type="number" id="hs_hrs" value="40" min="1" oninput="RUN()"></div>
+        <div class="form-group"><label>Weeks per year</label><input type="number" id="hs_wks" value="52" min="1" max="52" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="hs_hr">$25.00</strong><span>Hourly</span></div>
+        <div class="stat-box"><strong id="hs_wk">$1,000</strong><span>Weekly</span></div>
+        <div class="stat-box"><strong id="hs_mo">$4,333</strong><span>Monthly</span></div>
+        <div class="stat-box"><strong id="hs_yr">$52,000</strong><span>Annual</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Gross pay (before taxes and deductions).</p>`);
+    const money=(n)=>'$'+Math.round(n).toLocaleString('en-US');
+    window.RUN=()=>{
+      const mode=$('hs_mode').value, a=parseFloat($('hs_amt').value)||0;
+      const hrs=parseFloat($('hs_hrs').value)||40, wks=parseFloat($('hs_wks').value)||52;
+      $('hs_lbl').textContent = mode==='h2s'?'Hourly rate ($)':'Annual salary ($)';
+      let hourly, annual;
+      if(mode==='h2s'){ hourly=a; annual=a*hrs*wks; }
+      else { annual=a; hourly=a/(hrs*wks); }
+      $('hs_hr').textContent='$'+hourly.toFixed(2);
+      $('hs_wk').textContent=money(hourly*hrs);
+      $('hs_mo').textContent=money(annual/12);
+      $('hs_yr').textContent=money(annual);
+    };
+    RUN();
+  },
+
+  // ─── OVERTIME ───
+  overtimePayCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Hourly rate ($)</label><input type="number" id="ot_rate" value="20" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label>Regular hours</label><input type="number" id="ot_reg" value="40" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Overtime hours</label><input type="number" id="ot_hrs" value="8" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Multiplier</label><select id="ot_mult" onchange="RUN()">
+          <option value="1.5">Time and a half (1.5x)</option><option value="2">Double time (2x)</option>
+        </select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ot_orate">$30.00</strong><span>Overtime rate</span></div>
+        <div class="stat-box"><strong id="ot_opay">$240</strong><span>Overtime pay</span></div>
+        <div class="stat-box"><strong id="ot_total">$1,040</strong><span>Total pay</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">General FLSA baseline: 1.5x beyond 40 hrs/week for non-exempt roles. Not legal advice.</p>`);
+    window.RUN=()=>{
+      const r=parseFloat($('ot_rate').value)||0, reg=parseFloat($('ot_reg').value)||0;
+      const oh=parseFloat($('ot_hrs').value)||0, m=parseFloat($('ot_mult').value)||1.5;
+      const orate=r*m, opay=orate*oh, total=r*reg+opay;
+      $('ot_orate').textContent='$'+orate.toFixed(2);
+      $('ot_opay').textContent='$'+Math.round(opay).toLocaleString('en-US');
+      $('ot_total').textContent='$'+Math.round(total).toLocaleString('en-US');
+    };
+    RUN();
+  },
+
+  // ─── MPG ───
+  mpgCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Miles driven</label><input type="number" id="mp_mi" value="342" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Gallons used</label><input type="number" id="mp_gal" value="11.4" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Gas price ($/gal)</label><input type="number" id="mp_price" value="3.50" min="0" step="0.01" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="mp_mpg">30.0</strong><span>MPG</span></div>
+        <div class="stat-box"><strong id="mp_cpm">11.7¢</strong><span>Cost per mile</span></div>
+        <div class="stat-box"><strong id="mp_trip">$39.90</strong><span>Fuel cost (this tank)</span></div>
+      </div>`);
+    window.RUN=()=>{
+      const mi=parseFloat($('mp_mi').value)||0, g=parseFloat($('mp_gal').value)||0, p=parseFloat($('mp_price').value)||0;
+      if(mi>0&&g>0){
+        const mpg=mi/g;
+        $('mp_mpg').textContent=mpg.toFixed(1);
+        $('mp_cpm').textContent=p>0?(p/mpg*100).toFixed(1)+'¢':'—';
+        $('mp_trip').textContent=p>0?'$'+(g*p).toFixed(2):'—';
+      } else { $('mp_mpg').textContent='—';$('mp_cpm').textContent='—';$('mp_trip').textContent='—'; }
+    };
+    RUN();
+  },
+
+  // ─── SQUARE FOOTAGE ───
+  sqftCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Length (ft)</label><input type="number" id="sf_l" value="12.5" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label>Width (ft)</label><input type="number" id="sf_w" value="10.25" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label>Price per sq ft ($, optional)</label><input type="number" id="sf_p" value="" min="0" step="0.01" placeholder="4.50" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="sf_sqft">128.1 sq ft</strong><span>Square feet</span></div>
+        <div class="stat-box"><strong id="sf_sqyd">14.2 sq yd</strong><span>Square yards</span></div>
+        <div class="stat-box"><strong id="sf_sqm">11.9 m²</strong><span>Square meters</span></div>
+        <div class="stat-box"><strong id="sf_cost">—</strong><span>Total cost</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Tip: inches ÷ 12 = decimal feet (6" = 0.5'). Buy ~10% extra material.</p>`);
+    window.RUN=()=>{
+      const l=parseFloat($('sf_l').value)||0, w=parseFloat($('sf_w').value)||0, p=parseFloat($('sf_p').value)||0;
+      const sqft=l*w;
+      $('sf_sqft').textContent=sqft.toFixed(1)+' sq ft';
+      $('sf_sqyd').textContent=(sqft/9).toFixed(1)+' sq yd';
+      $('sf_sqm').textContent=(sqft*0.092903).toFixed(1)+' m²';
+      $('sf_cost').textContent=p>0?'$'+(sqft*p).toFixed(2):'—';
+    };
+    RUN();
+  },
+
+  // ─── PIZZA DOUGH ───
+  pizzaDoughCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Flour (g)</label><input type="number" id="pd_flour" value="500" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Hydration (%)</label><input type="number" id="pd_hyd" value="65" min="40" max="100" oninput="RUN()"></div>
+        <div class="form-group"><label>Salt (%)</label><input type="number" id="pd_salt" value="2" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Instant yeast (%)</label><input type="number" id="pd_yeast" value="0.3" min="0" step="0.1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pd_water">325 g</strong><span>Water</span></div>
+        <div class="stat-box"><strong id="pd_saltg">10 g</strong><span>Salt</span></div>
+        <div class="stat-box"><strong id="pd_yeastg">1.5 g</strong><span>Yeast</span></div>
+        <div class="stat-box"><strong id="pd_total">836.5 g</strong><span>Total dough</span></div>
+      </div>`);
+    window.RUN=()=>{
+      const f=parseFloat($('pd_flour').value)||0,h=parseFloat($('pd_hyd').value)||0,s=parseFloat($('pd_salt').value)||0,y=parseFloat($('pd_yeast').value)||0;
+      const w=f*h/100, sg=f*s/100, yg=f*y/100;
+      $('pd_water').textContent=w.toFixed(0)+' g';
+      $('pd_saltg').textContent=sg.toFixed(1).replace(/\.0$/,'')+' g';
+      $('pd_yeastg').textContent=yg.toFixed(1).replace(/\.0$/,'')+' g';
+      $('pd_total').textContent=(f+w+sg+yg).toFixed(1).replace(/\.0$/,'')+' g';
+    };
+    RUN();
+  },
+
+  // ─── CALORIE DEFICIT ───
+  calorieDeficitCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Weight (kg)</label><input type="number" id="cd_wt" value="70" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Height (cm)</label><input type="number" id="cd_ht" value="170" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Age</label><input type="number" id="cd_age" value="30" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Sex</label><select id="cd_sex" onchange="RUN()"><option value="m">Male</option><option value="f">Female</option></select></div>
+      </div>
+      <div class="form-group"><label>Activity level</label><select id="cd_act" onchange="RUN()">
+        <option value="1.2">Sedentary (little exercise)</option>
+        <option value="1.375">Light (1-3 days/week)</option>
+        <option value="1.55" selected>Moderate (3-5 days/week)</option>
+        <option value="1.725">Very active (6-7 days/week)</option>
+      </select></div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="cd_tdee">0</strong><span>Maintenance (TDEE)</span></div>
+        <div class="stat-box"><strong id="cd_mild">0</strong><span>Mild -250 (~0.25 kg/wk)</span></div>
+        <div class="stat-box"><strong id="cd_mod">0</strong><span>Moderate -500 (~0.5 kg/wk)</span></div>
+        <div class="stat-box"><strong id="cd_agg">0</strong><span>Aggressive -750 (~0.75 kg/wk)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Mifflin-St Jeor estimate. General guidance for healthy adults — not medical advice.</p>`);
+    window.RUN=()=>{
+      const w=parseFloat($('cd_wt').value)||0,h=parseFloat($('cd_ht').value)||0,a=parseFloat($('cd_age').value)||0;
+      const s=$('cd_sex').value, act=parseFloat($('cd_act').value);
+      const bmr=10*w+6.25*h-5*a+(s==='m'?5:-161);
+      const tdee=Math.round(bmr*act);
+      $('cd_tdee').textContent=tdee+' kcal';
+      $('cd_mild').textContent=Math.max(tdee-250,0)+' kcal';
+      $('cd_mod').textContent=Math.max(tdee-500,0)+' kcal';
+      $('cd_agg').textContent=Math.max(tdee-750,0)+' kcal';
+    };
+    RUN();
+  },
+
+  // ─── IDEAL WEIGHT ───
+  idealWeightCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Height (cm)</label><input type="number" id="iw_ht" value="170" min="120" oninput="RUN()"></div>
+        <div class="form-group"><label>Sex</label><select id="iw_sex" onchange="RUN()"><option value="m">Male</option><option value="f">Female</option></select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="iw_dev">0</strong><span>Devine formula</span></div>
+        <div class="stat-box"><strong id="iw_rob">0</strong><span>Robinson formula</span></div>
+        <div class="stat-box"><strong id="iw_bmi">0</strong><span>Healthy BMI range</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Formula estimates for general reference — build and muscle matter more. Not medical advice.</p>`);
+    window.RUN=()=>{
+      const ht=parseFloat($('iw_ht').value)||0, s=$('iw_sex').value;
+      const inches=ht/2.54, over=Math.max(inches-60,0), m2=(ht/100)*(ht/100);
+      const dev=(s==='m'?50:45.5)+2.3*over;
+      const rob=(s==='m'?52+1.9*over:49+1.7*over);
+      const lo=18.5*m2, hi=24.9*m2;
+      const kg2lb=(k)=>Math.round(k*2.20462);
+      $('iw_dev').textContent=dev.toFixed(1)+' kg ('+kg2lb(dev)+' lb)';
+      $('iw_rob').textContent=rob.toFixed(1)+' kg ('+kg2lb(rob)+' lb)';
+      $('iw_bmi').textContent=lo.toFixed(0)+'-'+hi.toFixed(0)+' kg';
+    };
+    RUN();
+  },
+
+  // ─── PPI ───
+  ppiCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Width (px)</label><input type="number" id="pp_w" value="2560" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Height (px)</label><input type="number" id="pp_h" value="1440" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Diagonal (inches)</label><input type="number" id="pp_d" value="27" min="0" step="0.1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pp_ppi">109</strong><span>PPI</span></div>
+        <div class="stat-box"><strong id="pp_total">3.7 MP</strong><span>Total pixels</span></div>
+        <div class="stat-box"><strong id="pp_ar">16:9</strong><span>Aspect ratio</span></div>
+      </div>`);
+    const gcd=(a,b)=>b?gcd(b,a%b):a;
+    window.RUN=()=>{
+      const w=parseFloat($('pp_w').value)||0,h=parseFloat($('pp_h').value)||0,d=parseFloat($('pp_d').value)||0;
+      if(w>0&&h>0&&d>0){
+        const diagpx=Math.sqrt(w*w+h*h);
+        $('pp_ppi').textContent=Math.round(diagpx/d);
+        $('pp_total').textContent=((w*h)/1e6).toFixed(1)+' MP';
+        const g=gcd(Math.round(w),Math.round(h));
+        $('pp_ar').textContent=(Math.round(w)/g)+':'+(Math.round(h)/g);
+      }
+    };
+    RUN();
+  },
+
+  // ─── PAINT ───
+  paintCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Length (m)</label><input type="number" id="pt_l" value="4" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Width (m)</label><input type="number" id="pt_w" value="3" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Wall height (m)</label><input type="number" id="pt_h" value="2.4" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Doors</label><input type="number" id="pt_doors" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Windows</label><input type="number" id="pt_win" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Coats</label><input type="number" id="pt_coats" value="2" min="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pt_area">0 m²</strong><span>Paintable area</span></div>
+        <div class="stat-box"><strong id="pt_lit">0 L</strong><span>Paint needed</span></div>
+        <div class="stat-box"><strong id="pt_gal">0 gal</strong><span>US gallons</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~10 m²/L coverage, 1.6 m² per door, 1.4 m² per window. Buy ~10% extra.</p>`);
+    window.RUN=()=>{
+      const l=parseFloat($('pt_l').value)||0,w=parseFloat($('pt_w').value)||0,h=parseFloat($('pt_h').value)||0;
+      const d=parseInt($('pt_doors').value)||0,wi=parseInt($('pt_win').value)||0,c=Math.max(parseInt($('pt_coats').value)||1,1);
+      const area=Math.max(2*(l+w)*h - d*1.6 - wi*1.4, 0);
+      const liters=area*c/10;
+      $('pt_area').textContent=area.toFixed(1)+' m²';
+      $('pt_lit').textContent=liters.toFixed(1)+' L';
+      $('pt_gal').textContent=(liters/3.78541).toFixed(1)+' gal';
+    };
+    RUN();
+  },
+
+  // ─── RICE RATIO ───
+  riceRatioCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Rice (cups)</label><input type="number" id="rr_rice" value="1" min="0" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label>Rice type</label><select id="rr_type" onchange="RUN()">
+          <option value="2">White long-grain (1:2)</option>
+          <option value="1.5">Jasmine (1:1.5)</option>
+          <option value="1.5">Basmati (1:1.5)</option>
+          <option value="2.5">Brown (1:2.5)</option>
+          <option value="1.25">Sushi (1:1.25)</option>
+        </select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="rr_cups">2 cups</strong><span>Water needed</span></div>
+        <div class="stat-box"><strong id="rr_ml">473 ml</strong><span>In milliliters</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Stovetop guideline. Rice cookers often need slightly less — adjust once for your setup.</p>`);
+    window.RUN=()=>{
+      const r=parseFloat($('rr_rice').value)||0, ratio=parseFloat($('rr_type').value)||2;
+      const cups=r*ratio;
+      $('rr_cups').textContent=cups.toFixed(2).replace(/\.00$/,'')+' cups';
+      $('rr_ml').textContent=Math.round(cups*236.588)+' ml';
+    };
+    RUN();
+  },
+
+  // ─── PACE ───
+  paceCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Distance</label><input type="number" id="pc_dist" value="5" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Unit</label><select id="pc_unit" onchange="RUN()"><option value="km">km</option><option value="mi">miles</option></select></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Hours</label><input type="number" id="pc_h" value="0" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Minutes</label><input type="number" id="pc_m" value="30" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Seconds</label><input type="number" id="pc_s" value="0" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pc_km">6:00</strong><span>Pace / km</span></div>
+        <div class="stat-box"><strong id="pc_mi">9:39</strong><span>Pace / mile</span></div>
+        <div class="stat-box"><strong id="pc_speed">10.0 km/h</strong><span>Speed</span></div>
+      </div>`);
+    const fmt=(sec)=>{if(!isFinite(sec)||sec<=0)return'—';const m=Math.floor(sec/60),s=Math.round(sec%60);return m+':'+String(s).padStart(2,'0');};
+    window.RUN=()=>{
+      let d=parseFloat($('pc_dist').value)||0; const u=$('pc_unit').value;
+      const t=(parseFloat($('pc_h').value)||0)*3600+(parseFloat($('pc_m').value)||0)*60+(parseFloat($('pc_s').value)||0);
+      const km=u==='mi'?d*1.60934:d;
+      if(km>0&&t>0){
+        $('pc_km').textContent=fmt(t/km);
+        $('pc_mi').textContent=fmt(t/(km/1.60934));
+        const kmh=km/(t/3600);
+        $('pc_speed').textContent=kmh.toFixed(1)+' km/h ('+(kmh/1.60934).toFixed(1)+' mph)';
+      } else { $('pc_km').textContent='—';$('pc_mi').textContent='—';$('pc_speed').textContent='—'; }
+    };
+    RUN();
+  },
+
+  // ─── GPA TO PERCENTAGE ───
+  gpaPercentCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>GPA / CGPA</label><input type="number" id="gp_val" value="8.0" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label>Scale</label><select id="gp_scale" onchange="RUN()">
+          <option value="9.5" selected>10-point CGPA (x 9.5)</option>
+          <option value="25">4.0 scale (x 25)</option>
+          <option value="20">5.0 scale (x 20)</option>
+        </select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="gp_pct">76%</strong><span>Percentage</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Standard conversion formulas. If your institution publishes its own formula, use theirs.</p>`);
+    window.RUN=()=>{
+      const v=parseFloat($('gp_val').value)||0, m=parseFloat($('gp_scale').value);
+      const max=m===25?4:(m===20?5:10);
+      const pct=Math.min(v*m,100);
+      $('gp_pct').textContent=(v>max?'GPA exceeds scale':pct.toFixed(1).replace(/\.0$/,'')+'%');
+    };
+    RUN();
+  },
+
+  // ─── WATER INTAKE ───
+  waterIntakeCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Weight</label><input type="number" id="wi_wt" value="70" oninput="RUN()"></div>
+        <div class="form-group"><label>Unit</label><select id="wi_unit" onchange="RUN()"><option value="kg">kg</option><option value="lb">lbs</option></select></div>
+        <div class="form-group"><label>Exercise (min/day)</label><input type="number" id="wi_ex" value="30" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="wi_l">0 L</strong><span>Liters / day</span></div>
+        <div class="stat-box"><strong id="wi_oz">0 oz</strong><span>Fluid ounces</span></div>
+        <div class="stat-box"><strong id="wi_cups">0</strong><span>Cups (8 oz)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">General guideline (~33 ml per kg + ~350 ml per 30 min exercise). Not medical advice.</p>`);
+    window.RUN=()=>{
+      let w=parseFloat($('wi_wt').value)||0; const u=$('wi_unit').value, ex=parseFloat($('wi_ex').value)||0;
+      const kg=u==='lb'?w*0.453592:w;
+      const ml=kg*33+(ex/30)*350;
+      $('wi_l').textContent=(ml/1000).toFixed(2)+' L';
+      $('wi_oz').textContent=Math.round(ml/29.5735)+' oz';
+      $('wi_cups').textContent=(ml/236.588).toFixed(1);
+    };
+    RUN();
+  },
+
+  // ─── ASPECT RATIO ───
+  aspectRatioCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Original width</label><input type="number" id="ar_w1" value="1920" oninput="AR('w1')"></div>
+        <div class="form-group"><label>Original height</label><input type="number" id="ar_h1" value="1080" oninput="AR('h1')"></div>
+        <div class="form-group"><label>New width</label><input type="number" id="ar_w2" value="1280" oninput="AR('w2')"></div>
+        <div class="form-group"><label>New height</label><input type="number" id="ar_h2" value="720" oninput="AR('h2')"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ar_ratio">16:9</strong><span>Aspect ratio</span></div>
+        <div class="stat-box"><strong id="ar_dims">1280 × 720</strong><span>New size</span></div>
+      </div>`);
+    const gcd=(a,b)=>b?gcd(b,a%b):a;
+    window.AR=(src)=>{
+      const w1=parseFloat($('ar_w1').value)||0,h1=parseFloat($('ar_h1').value)||0;
+      let w2=parseFloat($('ar_w2').value)||0,h2=parseFloat($('ar_h2').value)||0;
+      if(w1>0&&h1>0){
+        if(src==='w2'&&w2>0){h2=Math.round(w2*h1/w1);$('ar_h2').value=h2;}
+        else if(src==='h2'&&h2>0){w2=Math.round(h2*w1/h1);$('ar_w2').value=w2;}
+        else if((src==='w1'||src==='h1')&&w2>0){h2=Math.round(w2*h1/w1);$('ar_h2').value=h2;}
+        const g=gcd(Math.round(w1),Math.round(h1));
+        $('ar_ratio').textContent=g?`${Math.round(w1)/g}:${Math.round(h1)/g}`:'—';
+        $('ar_dims').textContent=`${w2||'?'} × ${h2||'?'}`;
+      }
+    };
+    AR('w2');
+  },
+
+  // ─── COFFEE RATIO ───
+  coffeeRatioCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Water (ml)</label><input type="number" id="cf_water" value="240" oninput="RUN()"></div>
+        <div class="form-group"><label>Ratio (1:X)</label><select id="cf_ratio" onchange="RUN()">
+          <option value="15">1:15 — strong</option><option value="16" selected>1:16 — balanced</option>
+          <option value="17">1:17 — lighter</option><option value="14">1:14 — French press</option>
+        </select></div>
+        <div class="form-group"><label>Cups (240 ml)</label><input type="number" id="cf_cups" value="1" min="0" step="0.5" oninput="CUPS()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="cf_coffee">15 g</strong><span>Coffee needed</span></div>
+        <div class="stat-box"><strong id="cf_tbsp">~2.5</strong><span>Tablespoons (approx)</span></div>
+      </div>`);
+    window.RUN=()=>{
+      const w=parseFloat($('cf_water').value)||0,r=parseFloat($('cf_ratio').value)||16;
+      const g=w/r;
+      $('cf_coffee').textContent=g.toFixed(1)+' g';
+      $('cf_tbsp').textContent='~'+(g/6).toFixed(1);
+      $('cf_cups').value=(w/240).toFixed(1).replace(/\.0$/,'');
+    };
+    window.CUPS=()=>{
+      const c=parseFloat($('cf_cups').value)||0;
+      $('cf_water').value=Math.round(c*240); RUN();
+    };
+    RUN();
+  },
+
   // ─── TIP ───
   tipCalc(){
     ui(`

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPG Calculator – Gas Mileage & Fuel Cost Per Mile | USFreeTools</title>
+  <meta name="description" content="Calculate your car’s real gas mileage (MPG) from miles driven and gallons used, plus your fuel cost per mile and per trip at current gas prices.">
+  <meta name="keywords" content="tip calculator, gratuity calculator, calculate tip, split bill calculator, restaurant tip calculator">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://usfreetools.com/tools/mpg-calculator">
+  <meta property="og:title" content="MPG Calculator">
+  <meta property="og:description" content="Calculate your car’s real gas mileage (MPG) from miles driven and gallons used, plus your fuel cost per mile and per trip at current gas prices.">
+  <meta property="og:url" content="https://usfreetools.com/tools/mpg-calculator">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "MPG Calculator", "url": "https://usfreetools.com/tools/mpg-calculator", "description": "Calculate your car\u2019s real gas mileage (MPG) from miles driven and gallons used, plus your fuel cost per mile and per trip at current gas prices.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate my car's MPG?", "acceptedAnswer": {"@type": "Answer", "text": "Divide miles driven by gallons used. Fill the tank, reset the trip odometer, drive normally, refill, and divide the trip miles by the gallons of the refill \u2014 342 miles on 11.4 gallons is exactly 30 MPG. That fill-up method measures your real-world mileage."}}, {"@type": "Question", "name": "Why is my real MPG lower than the sticker rating?", "acceptedAnswer": {"@type": "Answer", "text": "EPA ratings come from standardized lab cycles; real driving adds cold starts, traffic, air conditioning, cargo, terrain, and driving style. A gap of 10-20% below the sticker is common and normal \u2014 your measured number is the honest one for budgeting."}}, {"@type": "Question", "name": "What does fuel cost per mile mean?", "acceptedAnswer": {"@type": "Answer", "text": "Gas price divided by MPG. At $3.50/gallon and 30 MPG, driving costs about 11.7 cents per mile \u2014 a 400-mile trip is roughly $47 in fuel. It is the most practical number for comparing vehicles and budgeting trips."}}, {"@type": "Question", "name": "How can I improve my gas mileage?", "acceptedAnswer": {"@type": "Answer", "text": "The big levers are driving style and maintenance: smooth acceleration, steady highway speeds (economy drops notably above ~65 mph), proper tire pressure, and removing unneeded weight and roof racks. Tracking MPG per tank shows whether changes actually help."}}]}</script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfreetools.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usfreetools.com/tools"}, {"@type": "ListItem", "position": 3, "name": "MPG Calculator", "item": "https://usfreetools.com/tools/mpg-calculator"}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VEWWXK5D2Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VEWWXK5D2Z');
+</script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+    <a href="../index.html" class="nav-logo">🔧 USFree<span>Tools</span></a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">All Tools</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../tools.html" class="nav-cta">Browse 100+ Tools →</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div></nav>
+<div class="tool-page"><div class="tool-page-inner">
+  <div class="tool-breadcrumb">
+    <a href="../index.html">Home</a> › <a href="../tools.html">Tools</a> › <a href="../tools.html?cat=math">Calculators</a> › Tip Calculator
+  </div>
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+  <div class="tool-page-layout">
+    <div>
+      <div class="tool-main-card">
+        <h1>⛽ MPG Calculator</h1>
+        <p>Enter miles driven and gallons used to get your real-world MPG — plus, with a gas price, your fuel cost per mile and for the whole tank.</p>
+        <div id="toolContainer" data-impl="mpgCalc"></div>
+
+      </div>
+        <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>What This Calculator Does</h2>
+<p>This calculator turns a tank of gas into your car's real fuel economy. Enter the miles driven and the gallons it took to refill, and it gives your actual MPG. Add your local gas price and it also shows what driving costs you — per mile and for the whole tank. It replaces the optimistic window-sticker number with the one your car actually delivers.</p><p>Fuel is one of the biggest ongoing costs of owning a car, and MPG is the number that governs it. Measuring yours takes one fill-up cycle and this bit of division — and once you know it, trip costs, vehicle comparisons, and “is something wrong with my car?” all become answerable.</p>
+</article>
+
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Measuring Real-World MPG</h2>
+<p>The reliable method is the fill-up test. Fill the tank completely and reset the trip odometer (or note the mileage). Drive normally until the next fill-up, fill completely again, and note the gallons the pump shows and the miles on the trip meter. Miles divided by gallons is your true MPG for that tank — 342 miles on 11.4 gallons is 30.0 MPG. One tank gives a good estimate; averaging three or four tanks smooths out unusual trips and gives a dependable baseline.</p><p>Expect your measured figure to sit below the EPA sticker, often by 10-20%. The ratings come from controlled laboratory cycles, while real life includes cold starts, stop-and-go traffic, climate control, passengers, cargo, hills, and your right foot. City driving lands well under the highway figure. None of this means anything is broken — it means the measured number, not the sticker, is the one to budget with. A sudden <em>drop</em> in your own measured MPG, though, is a genuinely useful early warning of tire, maintenance, or mechanical issues.</p>
+</article>
+
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>From MPG to Real Money</h2>
+<p>Cost per mile is where MPG becomes practical. Divide the gas price by your MPG: at $3.50/gallon, a 30 MPG car costs about 11.7 cents per mile, a 20 MPG truck 17.5 cents, a 40 MPG hybrid 8.75 cents. Multiply by any distance and you have the fuel cost of a commute, a road trip, or a year of driving — 12,000 annual miles costs about $1,400 in the 30 MPG car versus $2,100 in the truck at those prices. Those per-mile pennies compound into real money.</p><p>This framing sharpens decisions. Comparing two vehicles by annual fuel cost (your yearly miles × the per-mile difference) shows what an efficiency gap is truly worth in dollars. Budgeting a road trip becomes trip miles × cost per mile, done before you leave. And tracking MPG per tank over time tells you whether the fuel-saving changes — tire pressure, smoother driving, ditching the roof box — are actually working, because the number will move. The calculator makes each of these a ten-second check.</p>
+</article>
+
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>What Actually Moves Your MPG</h2>
+<p>Fuel economy is not one number but a range your habits select from. Speed is the biggest highway factor: aerodynamic drag grows with the square of speed, so economy falls off notably above roughly 65 mph — the same car can lose several MPG between 65 and 80. In town, the killers are hard acceleration and braking, which is why smooth, anticipatory driving reliably improves city figures. Idling burns fuel at zero MPG; short trips on a cold engine run rich and inefficient; and climate control, roof boxes, open windows at speed, and a trunk full of weight each shave their share. None of these requires a different car — they are the difference between the pessimistic and optimistic ends of your own vehicle's range.</p><p>Maintenance quietly matters as much as habits. Underinflated tires increase rolling resistance and can cost a few percent of economy on their own — pressure checked monthly against the door-jamb sticker is the cheapest MPG upgrade there is. Misalignment, dragging brakes, old spark plugs, and a clogged air filter each take a toll; a dashboard check-engine light frequently announces a sensor problem with a real fuel penalty. This is why tracking your MPG per tank is more than curiosity: a stable baseline that suddenly drops two or three MPG, with no change in driving, is your car telling you something specific is wrong — often before any other symptom appears. Measured regularly, fuel economy doubles as a free diagnostic gauge.</p>
+</article>
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Quick Tips</h2>
+<ul><li>MPG = miles driven ÷ gallons to refill; average 3-4 tanks for a solid baseline.</li><li>Cost per mile = gas price ÷ MPG — the most practical budgeting number.</li><li>Real-world MPG typically runs 10-20% below the EPA sticker.</li><li>A sudden drop in your measured MPG is an early warning worth investigating.</li></ul>
+</article>
+
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Frequently Asked Questions</h2>
+<h3>How do I calculate my car's MPG?</h3><p>Divide miles driven by gallons used. Fill the tank, reset the trip odometer, drive normally, refill, and divide the trip miles by the gallons of the refill — 342 miles on 11.4 gallons is exactly 30 MPG. That fill-up method measures your real-world mileage.</p><h3>Why is my real MPG lower than the sticker rating?</h3><p>EPA ratings come from standardized lab cycles; real driving adds cold starts, traffic, air conditioning, cargo, terrain, and driving style. A gap of 10-20% below the sticker is common and normal — your measured number is the honest one for budgeting.</p><h3>What does fuel cost per mile mean?</h3><p>Gas price divided by MPG. At $3.50/gallon and 30 MPG, driving costs about 11.7 cents per mile — a 400-mile trip is roughly $47 in fuel. It is the most practical number for comparing vehicles and budgeting trips.</p><h3>How can I improve my gas mileage?</h3><p>The big levers are driving style and maintenance: smooth acceleration, steady highway speeds (economy drops notably above ~65 mph), proper tire pressure, and removing unneeded weight and roof racks. Tracking MPG per tank shows whether changes actually help.</p>
+</article>
+
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Practical, Instant, and Free</h2>
+<p>This calculator runs entirely in your browser, doing the division the moment you type. It needs no account or download and works on any device. Like every tool here, it is free to use as often as you like.</p>
+</article>
+
+<article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Related Tools</h2>
+<p class="tool-intro-lead">For related tools, the <a href="liters-to-gallons.html">liters to gallons converter</a> handles fuel units, the <a href="km-to-miles.html">km to miles converter</a> converts distances, and the <a href="percentage-calculator.html">percentage calculator</a> compares costs.</p>
+</article>
+
+      <div class="tool-sidebar">
+      <div><div class="ad-label">Advertisement</div><div class="ad-banner ad-banner-side"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense<br>300×250</p></div></div></div>
+      <div class="sidebar-widget">
+        <h4>Related Calculators</h4>
+        <a href="percentage-calculator.html" class="related-tool"><span class="related-tool-icon">%</span><span>Percentage Calculator</span></a>
+          <a href="average-calculator.html" class="related-tool"><span class="related-tool-icon">➗</span><span>Average Calculator (Mean)</span></a>
+          <a href="bmi-calculator.html" class="related-tool"><span class="related-tool-icon">⚖️</span><span>BMI Calculator</span></a>
+          <a href="age-calculator.html" class="related-tool"><span class="related-tool-icon">🎂</span><span>Age Calculator</span></a>
+          <a href="loan-calculator.html" class="related-tool"><span class="related-tool-icon">🏦</span><span>Loan Calculator</span></a>
+      </div>
+      <div class="sidebar-widget">
+        <h4>🧮 Calculators</h4>
+        <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free calculators — all instant, private, and free with no signup required.</p>
+        <a href="../tools.html?cat=math" class="btn btn-outline btn-full" style="margin-top:10px;">View All Calculators →</a>
+      </div>
+      <div><div class="ad-label">Advertisement</div><div class="ad-banner ad-banner-side"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense<br>300×250</p></div></div></div>
+    </div>
+  </div>
+</div></div>
+<footer class="footer"><div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" style="color:white;margin-bottom:12px;display:inline-flex;">🔧 USFree<span style="color:#FF4D00">Tools</span></a>
+        <p>100+ free online tools for everyone. No signup, no downloads, 100% free forever. Built with care in the USA.</p>
+      </div>
+      <div class="footer-col"><h4>Popular Tools</h4>
+        <a href="../tools/word-counter.html">Word Counter</a>
+        <a href="../tools/password-generator.html">Password Generator</a>
+        <a href="../tools/json-formatter.html">JSON Formatter</a>
+        <a href="../tools/percentage-calculator.html">Percentage Calculator</a>
+        <a href="../tools/qr-code-generator.html">QR Code Generator</a>
+      </div>
+      <div class="footer-col"><h4>Categories</h4>
+        <a href="../tools.html?cat=text">Text Tools</a>
+        <a href="../tools.html?cat=developer">Developer Tools</a>
+        <a href="../tools.html?cat=security">Security Tools</a>
+        <a href="../tools.html?cat=converter">Converters</a>
+        <a href="../tools.html?cat=seo">SEO Tools</a>
+        <a href="../tools.html?cat=math">Calculators</a>
+        <a href="../tools.html?cat=unit">Unit Converters</a>
+      </div>
+      <div class="footer-col"><h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../sitemap.html">Sitemap</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 USFreeTools.com · All Rights Reserved · Made in the USA</p>
+      <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
+    </div>
+  </div></footer>
+<script src="../js/main.js"></script>
+<script src="../js/tool-logic.js"></script>
+</body>
+</html>
