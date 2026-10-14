@@ -526,6 +526,7 @@ const IMPL = {
         </div>
       </div>`);
     initTabsIn($('toolContainer'));
+    const _pc=$('toolContainer');if(_pc&&_pc.getAttribute('data-p')){$('pa_p').value=_pc.getAttribute('data-p');$('pa_n').value=_pc.getAttribute('data-n');}
     window.PA=()=>{$('pa_r').textContent=`${$('pa_p').value}% of ${$('pa_n').value} = ${(($('pa_p').value*$('pa_n').value)/100).toLocaleString()}`;};
     window.PB=()=>{const r=($('pb_x').value/$('pb_y').value*100);$('pb_r').textContent=`${$('pb_x').value} is ${isFinite(r)?r.toFixed(2):0}% of ${$('pb_y').value}`;};
     window.PC=()=>{const a=parseFloat($('pc_a').value),b=parseFloat($('pc_b').value),r=((b-a)/a*100);$('pc_r').textContent=`Change: ${isFinite(r)?(r>0?'+':'')+r.toFixed(2):0}% (${r>=0?'increase':'decrease'})`;};
