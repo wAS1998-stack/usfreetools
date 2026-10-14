@@ -8,9 +8,9 @@
     toggle.addEventListener('click', () => links.classList.toggle('open'));
   }
   // Active nav link
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const path = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
   document.querySelectorAll('.nav-links a').forEach(a => {
-    if (a.getAttribute('href') === path) a.classList.add('active');
+    if ((a.getAttribute('href') || '').replace(/\/$/, '') === (path === '/' ? '/' : path)) a.classList.add('active');
   });
 })();
 
@@ -103,7 +103,7 @@ function initSearch() {
 
 function doSearch(q) {
   if (!q.trim()) return;
-  window.location.href = `tools.html?q=${encodeURIComponent(q.trim())}`;
+  window.location.href = `/tools?q=${encodeURIComponent(q.trim())}`;
 }
 
 // ─── COPY TO CLIPBOARD ──────────────────────────
