@@ -21,14 +21,15 @@ All 100 tool pages now include the full premium SEO template:
 - **3 in-depth blog posts** (original content for AdSense approval)
 - All required legal/trust pages: About, Contact, Privacy, Terms, Disclaimer, Sitemap
 - Flagship top-1% SEO page (Word Counter) with full schema, FAQ, comparison tables, AI-search "Quick Answer" blocks
-- `sitemap.xml` (112 URLs), `robots.txt`, `ads.txt`, custom `404.html`
+- `sitemap.xml` (178 URLs with lastmod), `robots.txt`, `_redirects`, `_headers`, custom `404.html`
 
 ## 📁 Structure
 ```
 usfreetools/
 ├── index.html, tools.html, blog.html
 ├── about.html, contact.html, privacy.html, terms.html, disclaimer.html
-├── sitemap.html, sitemap.xml, robots.txt, ads.txt, 404.html
+├── sitemap.html, sitemap.xml, robots.txt, _redirects, _headers, 404.html
+├── og/           (per-tool Open Graph images, generated)
 ├── css/style.css
 ├── js/main.js
 ├── tools/        (100+ tool pages)
@@ -57,6 +58,8 @@ git push -u origin main
 Connect the GitHub repo in the Amplify console; it auto-deploys static files on every push. Add your custom domain under Domain Management.
 
 ## 💰 Google AdSense Setup
+
+> Ads are fully removed from the HTML for now (no loader script, no placeholder boxes). Add them back only after approval; re-add `ads.txt` with your real publisher ID at the same time.
 
 1. **Apply** at https://www.google.com/adsense and get your Publisher ID (`ca-pub-XXXXXXXXXXXXXXXX`)
 2. **Edit `ads.txt`** — replace the placeholder with your real ID:

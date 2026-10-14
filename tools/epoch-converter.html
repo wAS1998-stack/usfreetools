@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FF4D00">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="USFreeTools">
+  <meta name="twitter:image" content="https://usfreetools.com/og/epoch-converter.png">
+  <meta property="og:image" content="https://usfreetools.com/og/epoch-converter.png">
   <title>Epoch Converter – Unix Timestamp to Date | USFreeTools</title>
   <meta name="description" content="Convert Unix epoch timestamps to human-readable dates and times, and back… Free, no signup required.">
-  <meta name="keywords" content="unix timestamp converter, epoch converter, timestamp to date, epoch time converter, unix time">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/epoch-converter">
   <meta property="og:title" content="Epoch Converter – Unix Timestamp to Date">
@@ -13,14 +17,12 @@
   <meta property="og:url" content="https://usfreetools.com/tools/epoch-converter">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Unix Timestamp Converter", "url": "https://usfreetools.com/tools/epoch-converter.html", "description": "Convert Unix epoch timestamps to human-readable dates and times, and back again.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Unix Timestamp Converter", "url": "https://usfreetools.com/tools/epoch-converter.html", "description": "Convert Unix epoch timestamps to human-readable dates and times, and back again.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/epoch-converter.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a Unix timestamp?", "acceptedAnswer": {"@type": "Answer", "text": "It is the number of seconds since the Unix epoch \u2014 midnight UTC on January 1, 1970. Every moment in time has a single timestamp, making it an efficient way for computers to store and compare times."}}, {"@type": "Question", "name": "Why do systems store time as a number?", "acceptedAnswer": {"@type": "Answer", "text": "Because a single number is easy to store, sort, compare, and do arithmetic with, and it avoids the complications of time zones and date formats. It represents an absolute moment in universal time."}}, {"@type": "Question", "name": "What time zone are timestamps in?", "acceptedAnswer": {"@type": "Answer", "text": "Unix timestamps are in universal time (UTC). To display the correct local time to a user, you convert the timestamp and adjust for their time zone, since the timestamp itself is zone-independent."}}, {"@type": "Question", "name": "How do I find the time between two timestamps?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract one from the other \u2014 the result is the number of seconds between them. Because timestamps are just counts of seconds, durations are simple arithmetic."}}]}</script>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕐</text></svg>">
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfreetools.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usfreetools.com/tools.html"}, {"@type": "ListItem", "position": 3, "name": "Unix Timestamp Converter", "item": "https://usfreetools.com/tools/epoch-converter.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfreetools.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usfreetools.com/tools"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://usfreetools.com/tools?cat=developer"}, {"@type": "ListItem", "position": 4, "name": "Unix Timestamp Converter", "item": "https://usfreetools.com/tools/epoch-converter"}]}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEWWXK5D2Z"></script>
 <script>
@@ -32,24 +34,22 @@
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-    <a href="../index.html" class="nav-logo">🔧 USFree<span>Tools</span></a>
+    <a href="/" class="nav-logo">🔧 USFree<span>Tools</span></a>
     <div class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../tools.html">All Tools</a>
-      <a href="../blog.html">Blog</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-      <a href="../tools.html" class="nav-cta">Browse 100+ Tools →</a>
+      <a href="/">Home</a>
+      <a href="/tools">All Tools</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/tools" class="nav-cta">Browse 100+ Tools →</a>
     </div>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div></nav>
 <div class="tool-page"><div class="tool-page-inner">
   <div class="tool-breadcrumb">
-    <a href="../index.html">Home</a> › <a href="../tools.html">Tools</a> › <a href="../tools.html?cat=developer">Developer Tools</a> › Unix Timestamp Converter
+    <a href="/">Home</a> › <a href="/tools">Tools</a> › <a href="/tools?cat=developer">Developer Tools</a> › Unix Timestamp Converter
   </div>
-  <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-  <div class="tool-page-layout">
+<div class="tool-page-layout">
     <div>
       <div class="tool-main-card">
         <h1>🕐 Unix Timestamp Converter</h1>
@@ -65,8 +65,6 @@
 <h2>What a Unix Timestamp Is</h2>
 <p>A Unix timestamp is the number of seconds that have elapsed since a specific reference moment known as the Unix epoch: midnight UTC on January 1, 1970. So a timestamp of 0 is that exact moment, and every timestamp since is simply how many seconds have passed. This gives every point in time a single, unambiguous number — for example, a timestamp around 1.7 billion corresponds to a date in the mid-2020s, since that many seconds have accumulated since 1970.</p><p>The appeal of this system for computers is its simplicity. A single number is easy to store, compare, sort, and do arithmetic with — finding the time between two events is just subtraction. It is also free of the complications of time zones, months of different lengths, and date formats, because it represents an absolute moment in universal time. The trade-off is that the number means nothing to a human at a glance, which is why converting it back to a readable date is so frequently necessary.</p>
 </article>
-<div class="ad-label">Advertisement</div>
-<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
 <article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Where Epoch Conversion Comes Up</h2>
 <p>Developers encounter Unix timestamps constantly. Server logs record events with timestamps, databases store dates as timestamps for efficiency, and APIs frequently return times in this format. When debugging an issue, you often need to know exactly when something happened, which means converting a timestamp from a log into a readable date. When building or testing software, you may need to generate a timestamp for a specific date, or check what date a given timestamp represents. This back-and-forth is a routine part of working with any system that handles time.</p><p>Understanding timestamps also helps with reasoning about time in software. Because a timestamp is just a count of seconds, calculating durations, scheduling future events, and comparing times all become straightforward arithmetic. Knowing that timestamps are in universal time (UTC) is important too, since displaying them correctly to users means accounting for their time zone. A converter that shows the human-readable date for a timestamp — and produces a timestamp from a date — removes the friction from all of this, letting you move between how machines store time and how people read it. It is one of those small tools that developers reach for again and again.</p>
@@ -85,68 +83,70 @@
 </article>
 <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Related Tools</h2>
-<p class="tool-intro-lead">For more time and developer tools, the <a href="date-difference-calculator.html">date difference calculator</a> finds spans between dates, the <a href="time-converter.html">time converter</a> converts time units, and the <a href="json-formatter.html">JSON formatter</a> formats data that often contains timestamps.</p>
+<p class="tool-intro-lead">For more time and developer tools, the <a href="/tools/date-difference-calculator">date difference calculator</a> finds spans between dates, the <a href="/tools/time-converter">time converter</a> converts time units, and the <a href="/tools/json-formatter">JSON formatter</a> formats data that often contains timestamps.</p>
 </article>
-      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+</div></div>
     </div>
 
     <div class="tool-sidebar">
-      <div><div class="ad-label">Advertisement</div><div class="ad-banner ad-banner-side"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense<br>300×250</p></div></div></div>
+      <div>
+</div>
       <div class="sidebar-widget">
         <h4>Related Developer Tools</h4>
-        <a href="json-formatter.html" class="related-tool"><span class="related-tool-icon">📋</span><span>JSON Formatter &amp; Validator</span></a>
-          <a href="base64-encode-decode.html" class="related-tool"><span class="related-tool-icon">🔢</span><span>Base64 Encoder &amp; Decoder</span></a>
-          <a href="url-encode-decode.html" class="related-tool"><span class="related-tool-icon">🔗</span><span>URL Encoder &amp; Decoder</span></a>
-          <a href="html-encode-decode.html" class="related-tool"><span class="related-tool-icon">🌐</span><span>HTML Encoder &amp; Decoder</span></a>
-          <a href="hash-generator.html" class="related-tool"><span class="related-tool-icon">#️⃣</span><span>Hash Generator (SHA-256)</span></a>
+        <a href="/tools/json-formatter" class="related-tool"><span class="related-tool-icon">📋</span><span>JSON Formatter &amp; Validator</span></a>
+          <a href="/tools/base64-encode-decode" class="related-tool"><span class="related-tool-icon">🔢</span><span>Base64 Encoder &amp; Decoder</span></a>
+          <a href="/tools/url-encode-decode" class="related-tool"><span class="related-tool-icon">🔗</span><span>URL Encoder &amp; Decoder</span></a>
+          <a href="/tools/html-encode-decode" class="related-tool"><span class="related-tool-icon">🌐</span><span>HTML Encoder &amp; Decoder</span></a>
+          <a href="/tools/hash-generator" class="related-tool"><span class="related-tool-icon">#️⃣</span><span>Hash Generator (SHA-256)</span></a>
       </div>
       <div class="sidebar-widget">
         <h4>💻 Developer Tools</h4>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free developer tools — all instant, private, and free with no signup required.</p>
-        <a href="../tools.html?cat=developer" class="btn btn-outline btn-full" style="margin-top:10px;">View All Developer Tools →</a>
+        <a href="/tools?cat=developer" class="btn btn-outline btn-full" style="margin-top:10px;">View All Developer Tools →</a>
       </div>
-      <div><div class="ad-label">Advertisement</div><div class="ad-banner ad-banner-side"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense<br>300×250</p></div></div></div>
+      <div>
+</div>
     </div>
   </div>
 </div></div>
 <footer class="footer"><div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="../index.html" class="nav-logo" style="color:white;margin-bottom:12px;display:inline-flex;">🔧 USFree<span style="color:#FF4D00">Tools</span></a>
-        <p>100+ free online tools for everyone. No signup, no downloads, 100% free forever. Built with care in the USA.</p>
+        <a href="/" class="nav-logo" style="color:white;margin-bottom:12px;display:inline-flex;">🔧 USFree<span style="color:#FF4D00">Tools</span></a>
+        <p>100+ free online tools for everyone. No signup, no downloads, 100% free forever. Built with care for the open web.</p>
       </div>
       <div class="footer-col"><h4>Popular Tools</h4>
-        <a href="../tools/word-counter.html">Word Counter</a>
-        <a href="../tools/password-generator.html">Password Generator</a>
-        <a href="../tools/json-formatter.html">JSON Formatter</a>
-        <a href="../tools/percentage-calculator.html">Percentage Calculator</a>
-        <a href="../tools/qr-code-generator.html">QR Code Generator</a>
+        <a href="/tools/word-counter">Word Counter</a>
+        <a href="/tools/password-generator">Password Generator</a>
+        <a href="/tools/json-formatter">JSON Formatter</a>
+        <a href="/tools/percentage-calculator">Percentage Calculator</a>
+        <a href="/tools/qr-code-generator">QR Code Generator</a>
       </div>
       <div class="footer-col"><h4>Categories</h4>
-        <a href="../tools.html?cat=text">Text Tools</a>
-        <a href="../tools.html?cat=developer">Developer Tools</a>
-        <a href="../tools.html?cat=security">Security Tools</a>
-        <a href="../tools.html?cat=converter">Converters</a>
-        <a href="../tools.html?cat=seo">SEO Tools</a>
-        <a href="../tools.html?cat=math">Calculators</a>
-        <a href="../tools.html?cat=unit">Unit Converters</a>
+        <a href="/tools?cat=text">Text Tools</a>
+        <a href="/tools?cat=developer">Developer Tools</a>
+        <a href="/tools?cat=security">Security Tools</a>
+        <a href="/tools?cat=converter">Converters</a>
+        <a href="/tools?cat=seo">SEO Tools</a>
+        <a href="/tools?cat=math">Calculators</a>
+        <a href="/tools?cat=unit">Unit Converters</a>
       </div>
       <div class="footer-col"><h4>Company</h4>
-        <a href="../about.html">About Us</a>
-        <a href="../blog.html">Blog</a>
-        <a href="../contact.html">Contact</a>
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="../terms.html">Terms of Service</a>
-        <a href="../disclaimer.html">Disclaimer</a>
-        <a href="../sitemap.html">Sitemap</a>
+        <a href="/about">About Us</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 USFreeTools.com · All Rights Reserved · Made in the USA</p>
+      <p>© 2026 USFreeTools.com · All Rights Reserved</p>
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="../js/main.js"></script>
-<script src="../js/tool-logic.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/tool-logic.js"></script>
 </body>
 </html>

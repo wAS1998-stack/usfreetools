@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FF4D00">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="USFreeTools">
+  <meta name="twitter:image" content="https://usfreetools.com/og/color-converter.png">
+  <meta property="og:image" content="https://usfreetools.com/og/color-converter.png">
   <title>Color Converter – Convert Hex, RGB & HSL Online | USFreeTools</title>
   <meta name="description" content="Convert colors between HEX, RGB, and HSL formats instantly with a live color preview. Essential for designers and front-end… Free, no signup required.">
-  <meta name="keywords" content="color converter, hex to rgb, rgb to hex, hsl converter, color code converter, hex to hsl">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/color-converter">
   <meta property="og:title" content="Color Converter – Convert Hex, RGB & HSL Online">
@@ -13,14 +17,12 @@
   <meta property="og:url" content="https://usfreetools.com/tools/color-converter">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Color Converter (HEX RGB HSL)", "url": "https://usfreetools.com/tools/color-converter.html", "description": "Convert colors between HEX, RGB, and HSL formats instantly with a live color preview. Essential for designers and front-end developers.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Color Converter (HEX RGB HSL)", "url": "https://usfreetools.com/tools/color-converter.html", "description": "Convert colors between HEX, RGB, and HSL formats instantly with a live color preview. Essential for designers and front-end developers.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/color-converter.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between HEX, RGB, and HSL?", "acceptedAnswer": {"@type": "Answer", "text": "HEX and RGB describe a color by its red, green, and blue light, in different notations. HSL describes it by hue, saturation, and lightness \u2014 closer to how people perceive color and easier to adjust intuitively."}}, {"@type": "Question", "name": "When should I use HSL?", "acceptedAnswer": {"@type": "Answer", "text": "When creating or adjusting colors. Lowering lightness darkens a color, lowering saturation mutes it, and changing hue shifts it around the color wheel \u2014 all far more intuitive than editing RGB values."}}, {"@type": "Question", "name": "Do these formats describe the same colors?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. HEX, RGB, and HSL are different ways of writing the same colors, so converting between them never changes the actual color \u2014 only how it is expressed."}}, {"@type": "Question", "name": "Which format should I use in CSS?", "acceptedAnswer": {"@type": "Answer", "text": "All three are valid in modern CSS. HEX is the most common for its compactness, RGB when you need transparency, and HSL when you want to adjust colors readably in your stylesheet."}}]}</script>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfreetools.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usfreetools.com/tools.html"}, {"@type": "ListItem", "position": 3, "name": "Color Converter (HEX RGB HSL)", "item": "https://usfreetools.com/tools/color-converter.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfreetools.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usfreetools.com/tools"}, {"@type": "ListItem", "position": 3, "name": "Converters", "item": "https://usfreetools.com/tools?cat=converter"}, {"@type": "ListItem", "position": 4, "name": "Color Converter (HEX RGB HSL)", "item": "https://usfreetools.com/tools/color-converter"}]}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEWWXK5D2Z"></script>
 <script>
@@ -32,24 +34,22 @@
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-    <a href="../index.html" class="nav-logo">🔧 USFree<span>Tools</span></a>
+    <a href="/" class="nav-logo">🔧 USFree<span>Tools</span></a>
     <div class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../tools.html">All Tools</a>
-      <a href="../blog.html">Blog</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-      <a href="../tools.html" class="nav-cta">Browse 100+ Tools →</a>
+      <a href="/">Home</a>
+      <a href="/tools">All Tools</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/tools" class="nav-cta">Browse 100+ Tools →</a>
     </div>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div></nav>
 <div class="tool-page"><div class="tool-page-inner">
   <div class="tool-breadcrumb">
-    <a href="../index.html">Home</a> › <a href="../tools.html">Tools</a> › <a href="../tools.html?cat=converter">Converters</a> › Color Converter (HEX RGB HSL)
+    <a href="/">Home</a> › <a href="/tools">Tools</a> › <a href="/tools?cat=converter">Converters</a> › Color Converter (HEX RGB HSL)
   </div>
-  <div class="ad-label">Advertisement</div>
-  <div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-  <div class="tool-page-layout">
+<div class="tool-page-layout">
     <div>
       <div class="tool-main-card">
         <h1>🎨 Color Converter (HEX RGB HSL)</h1>
@@ -65,8 +65,6 @@
 <h2>HEX, RGB, and HSL Explained</h2>
 <p><strong>HEX</strong> and <strong>RGB</strong> both describe a color by its red, green, and blue components — hex as a compact base-16 string like #3498DB, RGB as three numbers from 0 to 255. They are two notations for the same thing. <strong>HSL</strong> takes a different, often more intuitive approach: it describes a color by its hue (its position on the color wheel, 0 to 360 degrees), its saturation (how vivid or grey it is), and its lightness (how light or dark).</p><p>HSL is valuable precisely because it matches how people think about color. If you want a slightly darker version of a color, you lower the lightness; for a more muted version, you reduce the saturation; to shift toward a neighboring color, you change the hue. Doing the same adjustments in HEX or RGB is far less intuitive, because those formats describe color by light mixture rather than by the qualities we perceive. Having all three formats together lets you pick a color in whichever way suits the task and read off the others instantly.</p>
 </article>
-<div class="ad-label">Advertisement</div>
-<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
 <article class="content-inner indepth-section" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>When Each Format Is Most Useful</h2>
 <p>The format you reach for depends on what you are doing. HEX is ideal for sharing and storing colors — it is compact, universally recognized, and the default in CSS and brand guidelines. RGB is useful when you need to work with individual color channels or add transparency through its rgba() extension. Each has a clear home, and converting between them is a frequent necessity as a color moves from a design file to code to a shared palette.</p><p>HSL shines when you are creating or adjusting colors rather than just recording them. Building a harmonious palette is much easier in HSL: keep the saturation and lightness steady and rotate the hue to find colors that work together, or hold the hue and vary the lightness to make tints and shades of a single color. This is how many designers construct color schemes. Because this tool shows HSL alongside HEX and RGB, you can adjust a color intuitively in HSL terms and immediately get the hex or RGB code you need to actually use it — bridging the gap between how we think about color and how tools expect it.</p>
@@ -85,68 +83,70 @@
 </article>
 <article class="content-inner related-prose" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Related Tools</h2>
-<p class="tool-intro-lead">For more color tools, the <a href="color-picker.html">color picker</a> lets you choose colors visually, the <a href="color-palette-generator.html">color palette generator</a> builds color schemes, and the <a href="hex-to-rgb.html">HEX to RGB converter</a> focuses on that specific pair.</p>
+<p class="tool-intro-lead">For more color tools, the <a href="/tools/color-picker">color picker</a> lets you choose colors visually, the <a href="/tools/color-palette-generator">color palette generator</a> builds color schemes, and the <a href="/tools/hex-to-rgb">HEX to RGB converter</a> focuses on that specific pair.</p>
 </article>
-      <div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
+</div></div>
     </div>
 
     <div class="tool-sidebar">
-      <div><div class="ad-label">Advertisement</div><div class="ad-banner ad-banner-side"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense<br>300×250</p></div></div></div>
+      <div>
+</div>
       <div class="sidebar-widget">
         <h4>Related Converters</h4>
-        <a href="temperature-converter.html" class="related-tool"><span class="related-tool-icon">🌡️</span><span>Temperature Converter</span></a>
-          <a href="number-base-converter.html" class="related-tool"><span class="related-tool-icon">🔣</span><span>Number Base Converter</span></a>
-          <a href="roman-numeral-converter.html" class="related-tool"><span class="related-tool-icon">🏛️</span><span>Roman Numeral Converter</span></a>
-          <a href="rgb-to-hex.html" class="related-tool"><span class="related-tool-icon">🎨</span><span>RGB to HEX Converter</span></a>
-          <a href="hex-to-rgb.html" class="related-tool"><span class="related-tool-icon">🌈</span><span>HEX to RGB Converter</span></a>
+        <a href="/tools/temperature-converter" class="related-tool"><span class="related-tool-icon">🌡️</span><span>Temperature Converter</span></a>
+          <a href="/tools/number-base-converter" class="related-tool"><span class="related-tool-icon">🔣</span><span>Number Base Converter</span></a>
+          <a href="/tools/roman-numeral-converter" class="related-tool"><span class="related-tool-icon">🏛️</span><span>Roman Numeral Converter</span></a>
+          <a href="/tools/rgb-to-hex" class="related-tool"><span class="related-tool-icon">🎨</span><span>RGB to HEX Converter</span></a>
+          <a href="/tools/hex-to-rgb" class="related-tool"><span class="related-tool-icon">🌈</span><span>HEX to RGB Converter</span></a>
       </div>
       <div class="sidebar-widget">
         <h4>🔄 Converters</h4>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free converters — all instant, private, and free with no signup required.</p>
-        <a href="../tools.html?cat=converter" class="btn btn-outline btn-full" style="margin-top:10px;">View All Converters →</a>
+        <a href="/tools?cat=converter" class="btn btn-outline btn-full" style="margin-top:10px;">View All Converters →</a>
       </div>
-      <div><div class="ad-label">Advertisement</div><div class="ad-banner ad-banner-side"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense<br>300×250</p></div></div></div>
+      <div>
+</div>
     </div>
   </div>
 </div></div>
 <footer class="footer"><div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="../index.html" class="nav-logo" style="color:white;margin-bottom:12px;display:inline-flex;">🔧 USFree<span style="color:#FF4D00">Tools</span></a>
-        <p>100+ free online tools for everyone. No signup, no downloads, 100% free forever. Built with care in the USA.</p>
+        <a href="/" class="nav-logo" style="color:white;margin-bottom:12px;display:inline-flex;">🔧 USFree<span style="color:#FF4D00">Tools</span></a>
+        <p>100+ free online tools for everyone. No signup, no downloads, 100% free forever. Built with care for the open web.</p>
       </div>
       <div class="footer-col"><h4>Popular Tools</h4>
-        <a href="../tools/word-counter.html">Word Counter</a>
-        <a href="../tools/password-generator.html">Password Generator</a>
-        <a href="../tools/json-formatter.html">JSON Formatter</a>
-        <a href="../tools/percentage-calculator.html">Percentage Calculator</a>
-        <a href="../tools/qr-code-generator.html">QR Code Generator</a>
+        <a href="/tools/word-counter">Word Counter</a>
+        <a href="/tools/password-generator">Password Generator</a>
+        <a href="/tools/json-formatter">JSON Formatter</a>
+        <a href="/tools/percentage-calculator">Percentage Calculator</a>
+        <a href="/tools/qr-code-generator">QR Code Generator</a>
       </div>
       <div class="footer-col"><h4>Categories</h4>
-        <a href="../tools.html?cat=text">Text Tools</a>
-        <a href="../tools.html?cat=developer">Developer Tools</a>
-        <a href="../tools.html?cat=security">Security Tools</a>
-        <a href="../tools.html?cat=converter">Converters</a>
-        <a href="../tools.html?cat=seo">SEO Tools</a>
-        <a href="../tools.html?cat=math">Calculators</a>
-        <a href="../tools.html?cat=unit">Unit Converters</a>
+        <a href="/tools?cat=text">Text Tools</a>
+        <a href="/tools?cat=developer">Developer Tools</a>
+        <a href="/tools?cat=security">Security Tools</a>
+        <a href="/tools?cat=converter">Converters</a>
+        <a href="/tools?cat=seo">SEO Tools</a>
+        <a href="/tools?cat=math">Calculators</a>
+        <a href="/tools?cat=unit">Unit Converters</a>
       </div>
       <div class="footer-col"><h4>Company</h4>
-        <a href="../about.html">About Us</a>
-        <a href="../blog.html">Blog</a>
-        <a href="../contact.html">Contact</a>
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="../terms.html">Terms of Service</a>
-        <a href="../disclaimer.html">Disclaimer</a>
-        <a href="../sitemap.html">Sitemap</a>
+        <a href="/about">About Us</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 USFreeTools.com · All Rights Reserved · Made in the USA</p>
+      <p>© 2026 USFreeTools.com · All Rights Reserved</p>
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="../js/main.js"></script>
-<script src="../js/tool-logic.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/tool-logic.js"></script>
 </body>
 </html>

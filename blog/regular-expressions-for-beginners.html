@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FF4D00">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="USFreeTools">
+  <meta name="twitter:image" content="https://usfreetools.com/og-image.png">
+  <meta property="og:image" content="https://usfreetools.com/og-image.png">
   <title>Regular Expressions for Beginners: A Gentle Introduction | USFreeTools Blog</title>
   <meta name="description" content="Learn what regular expressions are, the core syntax, and how to build patterns step by step. A beginner-friendly guide to regex with practical examples.">
-  <meta name="keywords" content="regular expressions, regex tutorial, regex for beginners, regex syntax, how to use regex">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/blog/regular-expressions-for-beginners">
   <meta property="og:title" content="Regular Expressions for Beginners: A Gentle Introduction">
   <meta property="og:description" content="Learn what regular expressions are, the core syntax, and how to build patterns step by step. A beginner-friendly guide to regex with practical examples.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://usfreetools.com/blog/regular-expressions-for-beginners">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔣</text></svg>">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Regular Expressions for Beginners: A Gentle Introduction", "description": "Learn what regular expressions are, the core syntax, and how to build patterns step by step. A beginner-friendly guide to regex with practical examples.", "datePublished": "2026-02-18", "dateModified": "2026-02-18", "author": {"@type": "Organization", "name": "USFreeTools"}, "publisher": {"@type": "Organization", "name": "USFreeTools"}, "mainEntityOfPage": "https://usfreetools.com/blog/regular-expressions-for-beginners.html"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between * and + in regex?", "acceptedAnswer": {"@type": "Answer", "text": "The asterisk means zero or more of the preceding element, so it matches even when the element is absent. The plus means one or more, requiring at least one occurrence. Choosing the wrong one is a common source of patterns that match too much or too little."}}, {"@type": "Question", "name": "Why do I need to escape the dot?", "acceptedAnswer": {"@type": "Answer", "text": "A bare dot is a metacharacter that matches any single character. To match a literal period, you escape it with a backslash. Forgetting to escape the dot is one of the most common beginner mistakes, producing patterns that match far more than intended."}}, {"@type": "Question", "name": "What does the global flag do?", "acceptedAnswer": {"@type": "Answer", "text": "The global flag makes the regex find all matches in the text rather than stopping at the first one. Omitting it when you expect multiple matches is a frequent oversight, leaving you with only the first result when you wanted them all."}}, {"@type": "Question", "name": "Are regular expressions the same in every language?", "acceptedAnswer": {"@type": "Answer", "text": "Mostly, but flavors differ in small ways between languages and tools. Core syntax like character classes and quantifiers is widely shared, but advanced features and some escaping rules vary, so a pattern that works in one language may need minor adjustment in another."}}, {"@type": "Question", "name": "How should I learn to write complex patterns?", "acceptedAnswer": {"@type": "Answer", "text": "Build incrementally and test after each addition rather than writing a complex pattern all at once. Start with the simplest part, confirm it matches your sample text, then add one piece at a time. Testing edge cases, not just obvious examples, prevents silent failures."}}]}</script>
@@ -26,14 +29,11 @@
 </script>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><a href="../index.html" class="nav-logo">🔧 USFree<span>Tools</span></a><div class="nav-links"><a href="../index.html">Home</a><a href="../tools.html">All Tools</a><a href="../blog.html" class="active">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../tools.html" class="nav-cta">Browse 100+ Tools →</a></div><button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+<nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo">🔧 USFree<span>Tools</span></a><div class="nav-links"><a href="/">Home</a><a href="/tools">All Tools</a><a href="/blog" class="active">Blog</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/tools" class="nav-cta">Browse 100+ Tools →</a></div><button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
 <div class="content-page"><div class="content-inner">
-<div class="tool-breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › Article</div>
+<div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/blog">Blog</a> › Article</div>
 <h1>Regular Expressions for Beginners: A Gentle Introduction</h1>
 <p class="lead">Regular expressions look intimidating but follow learnable rules. Here is a beginner-friendly path into one of the most useful skills in programming.</p>
-<div class="ad-label">Advertisement</div>
-<div class="ad-banner ad-banner-in"><div><div class="ad-label">Advertisement</div><p style="font-size:.9rem;">Google AdSense — 728×90 Leaderboard</p></div></div>
-
 <h2>What Is a Regular Expression?</h2>
 <p>A regular expression, usually shortened to regex, is a pattern that describes a set of strings. Instead of searching for one exact word, a regex lets you describe a shape of text — "any three digits followed by a dash and four more digits," for example, to match a phone number. This makes regex extraordinarily powerful for searching, validating, and transforming text. It appears in nearly every programming language, in text editors, and in command-line tools, so learning it once pays off across countless contexts. The syntax looks cryptic at first, but it is built from a small set of learnable pieces.</p>
 
@@ -56,7 +56,7 @@
 <p>Several characters have special meaning in regex — the dot, asterisk, plus, question mark, parentheses, and others. When you want to match these literally, you must escape them with a backslash. A bare dot matches any character, but an escaped dot (\.) matches only a literal period. Forgetting to escape metacharacters is one of the most common beginner mistakes, producing patterns that match far more than intended. When in doubt about whether a character is special, escaping it is usually safe for punctuation you mean literally.</p>
 
 <h2>Testing Your Patterns</h2>
-<p>Regex rewards experimentation, and the best way to learn is to try patterns against real text and see what matches. Our <a href="../tools/regex-tester.html">regex tester</a> lets you write a pattern and immediately see which parts of your sample text it matches, making the abstract rules concrete. Build your pattern incrementally there, testing edge cases like empty strings and unusual characters, not just the obvious examples. For simple find-and-replace needs that do not require full regex, the <a href="../tools/find-and-replace.html">find and replace tool</a> handles straightforward substitutions, and the <a href="../tools/json-formatter.html">JSON formatter</a> is handy when your text is structured data you want to inspect first.</p>
+<p>Regex rewards experimentation, and the best way to learn is to try patterns against real text and see what matches. Our <a href="/tools/regex-tester">regex tester</a> lets you write a pattern and immediately see which parts of your sample text it matches, making the abstract rules concrete. Build your pattern incrementally there, testing edge cases like empty strings and unusual characters, not just the obvious examples. For simple find-and-replace needs that do not require full regex, the <a href="/tools/find-and-replace">find and replace tool</a> handles straightforward substitutions, and the <a href="/tools/json-formatter">JSON formatter</a> is handy when your text is structured data you want to inspect first.</p>
 
 <h2>Common Beginner Mistakes</h2>
 <ul>
@@ -91,8 +91,8 @@
 
 <div class="divider"></div>
 <p style="color:var(--gray);font-size:0.85rem;">Published 2026-02-18 · USFreeTools Editorial Team</p>
-<p style="margin-top:12px;"><a href="../tools.html" class="btn btn-primary">Browse all free tools →</a></p>
+<p style="margin-top:12px;"><a href="/tools" class="btn btn-primary">Browse all free tools →</a></p>
 </div></div>
-<footer class="footer"><div class="footer-inner"><div class="footer-bottom" style="border-top:none;padding-top:0;"><p>© 2025 USFreeTools.com · <a href="../privacy.html" style="color:rgba(251,248,241,0.7);">Privacy</a> · <a href="../terms.html" style="color:rgba(251,248,241,0.7);">Terms</a></p></div></div></footer>
-<script src="../js/main.js"></script>
+<footer class="footer"><div class="footer-inner"><div class="footer-bottom" style="border-top:none;padding-top:0;"><p>© 2026 USFreeTools.com · <a href="/privacy" style="color:rgba(251,248,241,0.7);">Privacy</a> · <a href="/terms" style="color:rgba(251,248,241,0.7);">Terms</a></p></div></div></footer>
+<script src="/js/main.js"></script>
 </body></html>
