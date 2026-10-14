@@ -365,6 +365,7 @@ const IMPL = {
         <div class="form-group"><label>Fahrenheit °F</label><input type="number" id="tf" value="32" oninput="TT('f')"></div>
         <div class="form-group"><label>Kelvin K</label><input type="number" id="tk" value="273.15" oninput="TT('k')"></div>
       </div>`);
+    const _c=$('toolContainer'),_pv=_c&&_c.getAttribute('data-value'),_pf=_c&&_c.getAttribute('data-from');
     window.TT=function(src){
       let c;
       if(src==='c')c=parseFloat($('tc').value);
@@ -375,6 +376,7 @@ const IMPL = {
       if(src!=='f')$('tf').value=Math.round((c*9/5+32)*100)/100;
       if(src!=='k')$('tk').value=Math.round((c+273.15)*100)/100;
     };
+    if(_pv!==null&&_pv!==''){const id=_pf==='f'?'tf':'tc';$(id).value=_pv;TT(_pf==='f'?'f':'c');}
   },
 
   // ─── NUMBER BASE ───
@@ -2321,9 +2323,10 @@ function unitConv(type){
   const cont=$('toolContainer');
   const df=(cont&&cont.getAttribute('data-from'))||keys[0];
   const dt=(cont&&cont.getAttribute('data-to'))||keys[1];
+  const dv=(cont&&cont.getAttribute('data-value'))||'1';
   ui(`
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
-      <div class="form-group"><label>From</label><input type="number" id="uc_v" value="1" oninput="RUN()"><select id="uc_f" onchange="RUN()" style="margin-top:8px;">${keys.map(k=>`<option ${k===df?'selected':''}>${k}</option>`).join('')}</select></div>
+      <div class="form-group"><label>From</label><input type="number" id="uc_v" value="${dv}" oninput="RUN()"><select id="uc_f" onchange="RUN()" style="margin-top:8px;">${keys.map(k=>`<option ${k===df?'selected':''}>${k}</option>`).join('')}</select></div>
       <div class="form-group"><label>To</label><input type="text" id="uc_o" readonly><select id="uc_t" onchange="RUN()" style="margin-top:8px;">${keys.map(k=>`<option ${k===dt?'selected':''}>${k}</option>`).join('')}</select></div>
     </div>`);
   window.RUN=()=>{const v=parseFloat($('uc_v').value)||0;const base=v*u[$('uc_f').value];$('uc_o').value=(base/u[$('uc_t').value]).toLocaleString(undefined,{maximumFractionDigits:6});};
