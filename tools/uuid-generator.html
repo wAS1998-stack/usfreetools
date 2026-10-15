@@ -75,6 +75,13 @@
 <h2>Quick Tips</h2>
 <ul><li>Version 4 UUIDs are random and the most commonly used — ideal for general-purpose unique IDs.</li><li>UUIDs let independent systems generate IDs with no coordination and effectively no risk of collision.</li><li>Unlike sequential numbers, UUIDs do not reveal record counts or ordering.</li><li>Generate as many as you need for testing, database keys, file names, or configuration.</li></ul>
 </article>
+<article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Embed this UUID Generator on your site</h2>
+<p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
+<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/uuid-generator&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;UUID Generator&quot;&gt;&lt;/iframe&gt;
+&lt;p style=&quot;font-size:13px&quot;&gt;UUID Generator by &lt;a href=&quot;https://usfreetools.com/tools/uuid-generator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
+<button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
+</article>
 <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Frequently Asked Questions</h2>
 <h3>What is a UUID?</h3><p>A universally unique identifier — a 128-bit value, usually shown as 32 hexadecimal digits in five hyphen-separated groups. It is used to label things uniquely across software systems without needing a central authority.</p><h3>Are UUIDs really unique?</h3><p>For practical purposes, yes. A version 4 UUID is generated from random numbers across a space so vast that the odds of two ever colliding are effectively zero, even across independent systems generating them simultaneously.</p><h3>Why use a UUID instead of a sequential number?</h3><p>Because UUIDs can be generated anywhere without coordination, which suits distributed systems, and they do not reveal how many records exist or their order. Sequential numbers require a central counter and leak that information.</p><h3>What is a version 4 UUID?</h3><p>It is the most common type, generated almost entirely from random data. Its randomness is what makes it effectively collision-free and suitable for most general-purpose identifier needs.</p>

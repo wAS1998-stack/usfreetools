@@ -75,6 +75,13 @@
 <h2>Quick Tips</h2>
 <ul><li>Put major clauses like SELECT, FROM, WHERE, and JOIN on their own lines for readability.</li><li>Format a query before debugging it — the structure makes logic errors easier to spot.</li><li>Consistent formatting helps the next person (or future you) understand a query quickly.</li><li>Formatting is often the first step to understanding a query pasted from a log or application.</li></ul>
 </article>
+<article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Embed this SQL Formatter on your site</h2>
+<p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
+<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/sql-formatter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;SQL Formatter&quot;&gt;&lt;/iframe&gt;
+&lt;p style=&quot;font-size:13px&quot;&gt;SQL Formatter by &lt;a href=&quot;https://usfreetools.com/tools/sql-formatter&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
+<button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
+</article>
 <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Frequently Asked Questions</h2>
 <h3>What does formatting SQL do?</h3><p>It lays out a query with consistent indentation and line breaks, putting major clauses on their own lines. The query itself is unchanged — only its presentation becomes clearer and easier to read.</p><h3>Does formatting change how my query runs?</h3><p>No. Formatting only affects whitespace and layout, not the query's logic or results. The database ignores the extra spacing; it is purely for human readability.</p><h3>Why is formatting important for complex queries?</h3><p>Complex queries with multiple joins, subqueries, and conditions become hard to follow when crammed together. Formatting reveals their structure, making them easier to understand, debug, and maintain.</p><h3>Is my query safe to paste here?</h3><p>Yes. All formatting happens in your browser, so your SQL is never uploaded or stored. You can format queries containing sensitive logic safely.</p>

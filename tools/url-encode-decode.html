@@ -75,6 +75,13 @@
 <h2>Quick Tips</h2>
 <ul><li>Always encode user input or arbitrary text before putting it in a URL, so special characters do not break the link.</li><li>Watch for double-encoding — if you see %2520, a %20 was encoded a second time.</li><li>Decode a suspicious URL to see exactly what data it carries; it is a useful debugging step.</li><li>Spaces become %20, and the encoding is what lets symbols travel safely in a web address.</li></ul>
 </article>
+<article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Embed this URL Encoder &amp; Decoder on your site</h2>
+<p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
+<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/url-encode-decode&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;URL Encoder &amp;amp; Decoder&quot;&gt;&lt;/iframe&gt;
+&lt;p style=&quot;font-size:13px&quot;&gt;URL Encoder &amp;amp; Decoder by &lt;a href=&quot;https://usfreetools.com/tools/url-encode-decode&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
+<button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
+</article>
 <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Frequently Asked Questions</h2>
 <h3>What is URL encoding?</h3><p>It is the process of replacing characters that are unsafe or have special meaning in a URL with a percent sign and two hexadecimal digits. A space becomes %20, for example, so the character can travel safely in a web address.</p><h3>Why do spaces turn into %20?</h3><p>Because spaces are not allowed in URLs. Percent-encoding replaces the space with %20 — the percent sign plus the hex value for a space — so it can be carried in the URL without breaking it.</p><h3>What is double-encoding?</h3><p>It happens when text is encoded twice, turning a %20 into %2520. It is a common bug that breaks links, and decoding the URL reveals it. Encode each value once, at the right step.</p><h3>When do I need to encode a URL?</h3><p>Whenever you put arbitrary text — user input, search terms, names, or anything with special characters — into a URL. Encoding ensures those characters are treated as data, not as parts of the URL's structure.</p>

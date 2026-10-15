@@ -75,6 +75,13 @@
 <h2>Quick Tips</h2>
 <ul><li>Format minified XML first so its nesting structure becomes visible before you try to read or debug it.</li><li>Every opening tag needs a matching closing tag, properly nested — the most common source of errors.</li><li>Watch for special characters that need escaping, which can otherwise break parsing.</li><li>Use validation to locate structural problems that produce unhelpful errors elsewhere.</li></ul>
 </article>
+<article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Embed this XML Formatter on your site</h2>
+<p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
+<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/xml-formatter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;XML Formatter&quot;&gt;&lt;/iframe&gt;
+&lt;p style=&quot;font-size:13px&quot;&gt;XML Formatter by &lt;a href=&quot;https://usfreetools.com/tools/xml-formatter&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
+<button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
+</article>
 <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Frequently Asked Questions</h2>
 <h3>What does formatting XML do?</h3><p>It adds indentation and line breaks so the nested structure is readable, turning a dense single line into a clear tree. The data is unchanged — only its presentation becomes easier to follow.</p><h3>Why is my XML invalid?</h3><p>Common causes are an unclosed tag, mismatched or improperly nested tags, or unescaped special characters. Any of these makes the whole document invalid; formatting and validation help you locate the problem.</p><h3>What is the difference between XML and JSON?</h3><p>Both structure data hierarchically, but XML uses tags and is more verbose, while JSON uses a lighter syntax. XML remains common in configuration, documents, and older systems; JSON dominates modern web APIs.</p><h3>Is my data safe to paste here?</h3><p>Yes. All formatting and validation happen in your browser, so your XML is never uploaded or stored. You can work with private data safely.</p>

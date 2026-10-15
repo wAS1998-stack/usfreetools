@@ -75,6 +75,13 @@
 <h2>Quick Tips</h2>
 <ul><li>Time is base-60, so you cannot simply subtract the numbers — the calculator handles the minute boundaries.</li><li>For spans crossing midnight, the calculator accounts for the day boundary automatically.</li><li>Use it for timesheets and shifts, where accurate hours often affect pay.</li><li>It is reliable for any “how long between these times?” question, planning or past.</li></ul>
 </article>
+<article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Embed this Time Duration Calculator on your site</h2>
+<p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
+<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/time-duration-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Time Duration Calculator&quot;&gt;&lt;/iframe&gt;
+&lt;p style=&quot;font-size:13px&quot;&gt;Time Duration Calculator by &lt;a href=&quot;https://usfreetools.com/tools/time-duration-calculator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
+<button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
+</article>
 <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Frequently Asked Questions</h2>
 <h3>How is the duration between two times calculated?</h3><p>The calculator finds the elapsed time between a start and end time, correctly handling the base-60 nature of minutes and spans that cross midnight, giving an accurate hours-and-minutes result.</p><h3>Why can't I just subtract the times?</h3><p>Because time is base-60, not base-10 — there are 60 minutes in an hour. Naively subtracting the numbers gives wrong answers, especially when the end minutes are fewer than the start minutes, which requires borrowing across the hour.</p><h3>Does it handle times that cross midnight?</h3><p>Yes. For a span that starts in the evening and ends after midnight, the calculator accounts for the day boundary, avoiding the negative result a naive subtraction would produce.</p><h3>Is my information private?</h3><p>Yes. All calculation happens in your browser, so nothing you enter is uploaded or stored. You can calculate durations privately.</p>
