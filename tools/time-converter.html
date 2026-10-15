@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Time Converter", "url": "https://usfreetools.com/tools/time-converter.html", "description": "Convert time between seconds, minutes, hours, days, and weeks instantly.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/time-converter.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many seconds are in a day?", "acceptedAnswer": {"@type": "Answer", "text": "There are 86,400 seconds in a day \u2014 60 seconds times 60 minutes times 24 hours. The converter handles this and other time conversions instantly."}}, {"@type": "Question", "name": "How many hours are in a week?", "acceptedAnswer": {"@type": "Answer", "text": "A full week is 168 hours (24 hours times 7 days). A standard 40-hour work week covers five 8-hour days."}}, {"@type": "Question", "name": "How does the converter handle months?", "acceptedAnswer": {"@type": "Answer", "text": "Because months vary from 28 to 31 days, the converter uses an average month length. This is accurate for general conversions but not for exact spans between specific calendar dates."}}, {"@type": "Question", "name": "How do I find the exact time between two dates?", "acceptedAnswer": {"@type": "Answer", "text": "For precise spans between specific dates, use a date difference calculator, which accounts for actual month lengths and leap years. Unit conversion is best for general durations."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -59,7 +63,7 @@
       <div class="tool-main-card">
         <h1>⏱️ Time Converter</h1>
         <p>Convert time between seconds, minutes, hours, days, and weeks instantly.</p>
-        <div id="toolContainer" data-impl="timeConverter"></div>
+        <div id="toolContainer" data-impl="timeConverter" style="--h-m:448px;--h-d:248px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -81,7 +85,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Time Converter on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/time-converter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Time Converter&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/time-converter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Time Converter&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Time Converter by &lt;a href=&quot;https://usfreetools.com/tools/time-converter&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -104,14 +108,14 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Unit Converters</h4>
+        <h3>Related Unit Converters</h3>
         <a href="/tools/length-converter" class="related-tool"><span class="related-tool-icon">📐</span><span>Length Converter</span></a>
           <a href="/tools/weight-converter" class="related-tool"><span class="related-tool-icon">🏋️</span><span>Weight Converter</span></a>
           <a href="/tools/speed-converter" class="related-tool"><span class="related-tool-icon">🚀</span><span>Speed Converter</span></a>
           <a href="/tools/data-storage-converter" class="related-tool"><span class="related-tool-icon">💾</span><span>Data Storage Converter</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>📏 Unit Converters</h4>
+        <h3>📏 Unit Converters</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free unit converters — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=unit" class="btn btn-outline btn-full" style="margin-top:10px;">View All Unit Converters →</a>
       </div>
@@ -157,7 +161,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Whitespace Remover", "url": "https://usfreetools.com/tools/whitespace-remover.html", "description": "Remove extra spaces, leading/trailing whitespace, tabs, and blank lines to clean up messy text instantly.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/whitespace-remover.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What whitespace does this remove?", "acceptedAnswer": {"@type": "Answer", "text": "It collapses multiple spaces into one, trims spaces from the start and end of lines, removes extra blank lines, and cleans up stray tabs \u2014 all the common whitespace clutter that makes text messy."}}, {"@type": "Question", "name": "Why does extra whitespace cause problems?", "acceptedAnswer": {"@type": "Answer", "text": "Because much of it is invisible. A trailing space can make data entries mismatch, irregular spacing disrupts formatting and looks unprofessional, and inconsistent whitespace can cause errors in structured text or code."}}, {"@type": "Question", "name": "When should I clean whitespace?", "acceptedAnswer": {"@type": "Answer", "text": "Especially after pasting text from web pages, PDFs, or emails, which often carries irregular spacing, and when preparing data where invisible spaces could cause entries to mismatch or lookups to fail."}}, {"@type": "Question", "name": "Is my text private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All processing happens in your browser, so nothing you paste is uploaded or stored. You can clean private text safely."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>␣ Whitespace Remover</h1>
         <p>Remove extra spaces, leading/trailing whitespace, tabs, and blank lines to clean up messy text instantly.</p>
-        <div id="toolContainer" data-impl="whitespaceRemover"></div>
+        <div id="toolContainer" data-impl="whitespaceRemover" style="--h-m:716px;--h-d:614px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -78,7 +82,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Whitespace Remover on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/whitespace-remover&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Whitespace Remover&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/whitespace-remover&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Whitespace Remover&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Whitespace Remover by &lt;a href=&quot;https://usfreetools.com/tools/whitespace-remover&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -101,7 +105,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Text Tools</h4>
+        <h3>Related Text Tools</h3>
         <a href="/tools/word-counter" class="related-tool"><span class="related-tool-icon">📊</span><span>Word Counter</span></a>
           <a href="/tools/character-counter" class="related-tool"><span class="related-tool-icon">🔡</span><span>Character Counter</span></a>
           <a href="/tools/case-converter" class="related-tool"><span class="related-tool-icon">🔤</span><span>Case Converter</span></a>
@@ -109,7 +113,7 @@
           <a href="/tools/text-reverser" class="related-tool"><span class="related-tool-icon">↩️</span><span>Text Reverser</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>📝 Text Tools</h4>
+        <h3>📝 Text Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free text tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=text" class="btn btn-outline btn-full" style="margin-top:10px;">View All Text Tools →</a>
       </div>
@@ -158,7 +162,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

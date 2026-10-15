@@ -19,6 +19,10 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CPM Calculator", "url": "https://usfreetools.com/tools/cpm-calculator.html", "description": "Calculate CPM (cost per 1,000 impressions), total cost, or impressions for ad campaigns. Free CPM calculator for advertisers and creators — instant, no signup.", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/cpm-calculator.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does CPM mean?", "acceptedAnswer": {"@type": "Answer", "text": "CPM stands for cost per mille, or cost per 1,000 impressions. It is the standard pricing metric in digital advertising, calculated as total cost divided by impressions, multiplied by 1,000. A $500 cost for 100,000 impressions is a $5 CPM."}}, {"@type": "Question", "name": "How do I calculate CPM?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the total campaign cost by the number of impressions, then multiply by 1,000. For $500 and 100,000 impressions, that is $500 / 100,000 \u00d7 1,000 = $5.00 CPM. This calculator also works backwards to find cost or impressions if you know the CPM."}}, {"@type": "Question", "name": "What is the difference between CPM and CPC?", "acceptedAnswer": {"@type": "Answer", "text": "CPM charges per 1,000 impressions (times the ad is shown), while CPC charges per click. CPM suits awareness campaigns where reach matters, and CPC suits performance campaigns where clicks matter. They measure different things and are not directly comparable."}}, {"@type": "Question", "name": "What is a good CPM?", "acceptedAnswer": {"@type": "Answer", "text": "It varies widely by platform, audience, format, and season \u2014 a niche, highly targeted audience commands a higher CPM than a broad one. Rather than a universal benchmark, compare CPMs across the specific options you are considering for the same audience and goal."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfreetools.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usfreetools.com/tools"}, {"@type": "ListItem", "position": 3, "name": "Business Calculators", "item": "https://usfreetools.com/tools?cat=business"}, {"@type": "ListItem", "position": 4, "name": "CPM Calculator", "item": "https://usfreetools.com/tools/cpm-calculator"}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -43,7 +47,7 @@
       <div class="tool-main-card">
         <h1>📣 CPM Calculator</h1>
         <p>Enter any two of cost, impressions, and CPM, and the third is calculated instantly. Essential for planning and comparing advertising campaigns.</p>
-        <div id="toolContainer" data-impl="cpmCalc"></div>
+        <div id="toolContainer" data-impl="cpmCalc" style="--h-m:594px;--h-d:282px"></div>
       </div>
         <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
           <h2>Tool Overview</h2>
@@ -81,7 +85,7 @@
         <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this CPM Calculator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/cpm-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;CPM Calculator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/cpm-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;CPM Calculator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;CPM Calculator by &lt;a href=&quot;https://usfreetools.com/tools/cpm-calculator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -110,19 +114,19 @@
     <div class="tool-sidebar">
       <div>
 </div>
-      <div class="sidebar-widget"><h4>Related Tools</h4>
+      <div class="sidebar-widget"><h3>Related Tools</h3>
           <a href="/tools/freelance-rate-calculator" class="related-tool"><span class="related-tool-icon">🧑‍💻</span><span>Freelance Rate Calculator</span></a>
           <a href="/tools/profit-margin-calculator" class="related-tool"><span class="related-tool-icon">📈</span><span>Profit Margin Calculator</span></a>
           <a href="/tools/pay-raise-calculator" class="related-tool"><span class="related-tool-icon">💰</span><span>Pay Raise Calculator</span></a>
           <a href="/tools/percentage-calculator" class="related-tool"><span class="related-tool-icon">%</span><span>Percentage Calculator</span></a>
       </div>
-      <div class="sidebar-widget"><h4>📣 Business Calculators</h4><p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free calculators — all instant, private, and free with no signup required.</p><a href="/tools?cat=math" class="btn btn-outline btn-full" style="margin-top:10px;">View All Tools →</a></div>
+      <div class="sidebar-widget"><h3>📣 Business Calculators</h3><p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free calculators — all instant, private, and free with no signup required.</p><a href="/tools?cat=math" class="btn btn-outline btn-full" style="margin-top:10px;">View All Tools →</a></div>
       <div>
 </div>
     </div>
   </div>
 </div></div>
 <footer class="footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-brand"><a href="/" class="nav-logo" style="color:white;margin-bottom:12px;display:inline-flex;">🔧 USFree<span style="color:#FF4D00">Tools</span></a><p>100+ free online tools for everyone. No signup, no downloads, 100% free forever. Built with care for the open web.</p></div><div class="footer-col"><h4>Popular Tools</h4><a href="/tools/word-counter">Word Counter</a><a href="/tools/password-generator">Password Generator</a><a href="/tools/percentage-calculator">Percentage Calculator</a><a href="/tools/profit-margin-calculator">Profit Margin Calculator</a></div><div class="footer-col"><h4>Categories</h4><a href="/tools?cat=text">Text Tools</a><a href="/tools?cat=math">Calculators</a><a href="/tools?cat=developer">Developer Tools</a><a href="/tools?cat=converter">Converters</a></div><div class="footer-col"><h4>Company</h4><a href="/about">About Us</a><a href="/blog">Blog</a><a href="/contact">Contact</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms</a></div></div><div class="footer-bottom"><p>© 2026 USFreeTools.com · All Rights Reserved</p><div class="footer-badges"><span>100% Free</span><span>No Signup</span><span>Ad-Supported</span></div></div></div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body></html>

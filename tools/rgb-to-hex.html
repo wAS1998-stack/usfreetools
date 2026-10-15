@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "RGB to HEX Converter", "url": "https://usfreetools.com/tools/rgb-to-hex.html", "description": "Convert RGB color values into HEX color codes instantly for use in CSS and design tools.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/rgb-to-hex.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert RGB to HEX?", "acceptedAnswer": {"@type": "Answer", "text": "Convert each of the three values (0\u2013255) to two hexadecimal characters and join them after a hash. rgb(52, 152, 219) becomes #3498DB. This tool does it instantly and exactly."}}, {"@type": "Question", "name": "Why convert RGB to a hex code?", "acceptedAnswer": {"@type": "Answer", "text": "Hex is the compact, standard format for sharing colors and using them in CSS and design tools. Converting from RGB gives you the single tidy code that is easy to copy and communicate."}}, {"@type": "Question", "name": "What is rgb(255, 255, 255) in hex?", "acceptedAnswer": {"@type": "Answer", "text": "It is #FFFFFF \u2014 pure white, with all three channels at maximum. Likewise, rgb(0, 0, 0) is #000000, pure black."}}, {"@type": "Question", "name": "Why is a hex code six characters?", "acceptedAnswer": {"@type": "Answer", "text": "Because each of the three RGB channels becomes exactly two hexadecimal characters. Two characters each for red, green, and blue makes six in total, after the hash."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🎨 RGB to HEX Converter</h1>
         <p>Convert RGB color values into HEX color codes instantly for use in CSS and design tools.</p>
-        <div id="toolContainer" data-impl="colorConverter"></div>
+        <div id="toolContainer" data-impl="colorConverter" style="--h-m:476px;--h-d:476px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -78,7 +82,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this RGB to HEX Converter on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/rgb-to-hex&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;RGB to HEX Converter&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/rgb-to-hex&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;RGB to HEX Converter&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;RGB to HEX Converter by &lt;a href=&quot;https://usfreetools.com/tools/rgb-to-hex&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -101,7 +105,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Converters</h4>
+        <h3>Related Converters</h3>
         <a href="/tools/color-converter" class="related-tool"><span class="related-tool-icon">🎨</span><span>Color Converter (HEX RGB HSL)</span></a>
           <a href="/tools/temperature-converter" class="related-tool"><span class="related-tool-icon">🌡️</span><span>Temperature Converter</span></a>
           <a href="/tools/number-base-converter" class="related-tool"><span class="related-tool-icon">🔣</span><span>Number Base Converter</span></a>
@@ -109,7 +113,7 @@
           <a href="/tools/hex-to-rgb" class="related-tool"><span class="related-tool-icon">🌈</span><span>HEX to RGB Converter</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🔄 Converters</h4>
+        <h3>🔄 Converters</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free converters — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=converter" class="btn btn-outline btn-full" style="margin-top:10px;">View All Converters →</a>
       </div>
@@ -158,7 +162,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

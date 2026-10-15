@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Temperature Converter", "url": "https://usfreetools.com/tools/temperature-converter.html", "description": "Convert temperatures instantly between Celsius, Fahrenheit, and Kelvin. Useful for cooking, science, weather, and travel.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/temperature-converter.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert Celsius to Fahrenheit?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the Celsius value by 9/5 and add 32. So 20\u00b0C is 68\u00b0F. The reverse subtracts 32 first, then multiplies by 5/9. The converter does both instantly, avoiding the common mix-up of the steps."}}, {"@type": "Question", "name": "What is Kelvin and why is it used?", "acceptedAnswer": {"@type": "Answer", "text": "Kelvin is the scientific temperature scale starting at absolute zero, the coldest possible temperature. It shares Celsius's degree size and is used in science because its absolute starting point makes many physical calculations cleaner."}}, {"@type": "Question", "name": "At what temperature do Celsius and Fahrenheit match?", "acceptedAnswer": {"@type": "Answer", "text": "At minus 40 degrees, the two scales read the same: \u221240\u00b0C equals \u221240\u00b0F. It is the single point where their different formulas produce an identical number."}}, {"@type": "Question", "name": "Why convert temperatures?", "acceptedAnswer": {"@type": "Answer", "text": "Because different countries and fields use different scales \u2014 Fahrenheit in US daily life, Celsius most elsewhere, Kelvin in science. Travel, cooking with foreign recipes, and study all require converting between them."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🌡️ Temperature Converter</h1>
         <p>Convert temperatures instantly between Celsius, Fahrenheit, and Kelvin. Useful for cooking, science, weather, and travel.</p>
-        <div id="toolContainer" data-impl="temperature"></div>
+        <div id="toolContainer" data-impl="temperature" style="--h-m:408px;--h-d:168px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -78,7 +82,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Temperature Converter on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/temperature-converter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Temperature Converter&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/temperature-converter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Temperature Converter&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Temperature Converter by &lt;a href=&quot;https://usfreetools.com/tools/temperature-converter&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -101,7 +105,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Converters</h4>
+        <h3>Related Converters</h3>
         <a href="/tools/color-converter" class="related-tool"><span class="related-tool-icon">🎨</span><span>Color Converter (HEX RGB HSL)</span></a>
           <a href="/tools/number-base-converter" class="related-tool"><span class="related-tool-icon">🔣</span><span>Number Base Converter</span></a>
           <a href="/tools/roman-numeral-converter" class="related-tool"><span class="related-tool-icon">🏛️</span><span>Roman Numeral Converter</span></a>
@@ -109,7 +113,7 @@
           <a href="/tools/hex-to-rgb" class="related-tool"><span class="related-tool-icon">🌈</span><span>HEX to RGB Converter</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🔄 Converters</h4>
+        <h3>🔄 Converters</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free converters — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=converter" class="btn btn-outline btn-full" style="margin-top:10px;">View All Converters →</a>
       </div>
@@ -158,7 +162,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

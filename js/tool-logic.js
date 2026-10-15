@@ -11,7 +11,11 @@ function copyText(text, btn){
 window.copyText = copyText;
 
 // Helper to build standard input/output UI
-function ui(html){ const c=$('toolContainer'); if(c) c.innerHTML=html; }
+function ui(html){ const c=$('toolContainer'); if(!c) return; c.innerHTML=html;
+  c.querySelectorAll('input,select,textarea').forEach((el,i)=>{ if(!el.id) el.id='tc_f'+i;
+    const g=el.closest('.form-group'), l=g&&g.querySelector('label');
+    if(l&&!l.htmlFor&&!l.contains(el)) l.htmlFor=el.id;
+    else if(!(l&&(l.htmlFor===el.id||l.contains(el)))&&!el.getAttribute('aria-label')) el.setAttribute('aria-label',(el.placeholder||(g&&g.textContent.trim())||el.id).slice(0,60)); }); }
 
 const IMPL = {
 

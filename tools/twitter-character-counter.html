@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Twitter Character Counter", "url": "https://usfreetools.com/tools/twitter-character-counter.html", "description": "Count characters in real time to stay within the 280-character limit for posts on X (Twitter).", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/twitter-character-counter.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the character limit for a post on X?", "acceptedAnswer": {"@type": "Answer", "text": "Standard posts have a 280-character limit, counting letters, spaces, punctuation, and most symbols. This counter tracks your text against that limit as you write."}}, {"@type": "Question", "name": "How are links counted?", "acceptedAnswer": {"@type": "Answer", "text": "Links count as a fixed length regardless of how long the actual URL is, because the platform automatically shortens them. So a long link does not consume proportionally more of your limit."}}, {"@type": "Question", "name": "Why might emoji affect my count more than expected?", "acceptedAnswer": {"@type": "Answer", "text": "Because of how text is encoded, many emoji and some characters count as more than one character. An emoji-heavy post reaches the limit faster than its visible length suggests, which the counter reflects."}}, {"@type": "Question", "name": "What if my thought is too long for one post?", "acceptedAnswer": {"@type": "Answer", "text": "Break it into a connected series of posts, each within the limit and building on the last. This is the accepted way to share a longer thought while respecting the character limit."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🐦 Twitter Character Counter</h1>
         <p>Count characters in real time to stay within the 280-character limit for posts on X (Twitter).</p>
-        <div id="toolContainer" data-impl="wordCounter"></div>
+        <div id="toolContainer" data-impl="wordCounter" style="--h-m:770px;--h-d:568px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -78,7 +82,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Twitter Character Counter on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/twitter-character-counter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Twitter Character Counter&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/twitter-character-counter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Twitter Character Counter&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Twitter Character Counter by &lt;a href=&quot;https://usfreetools.com/tools/twitter-character-counter&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -101,7 +105,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related SEO Tools</h4>
+        <h3>Related SEO Tools</h3>
         <a href="/tools/meta-tag-generator" class="related-tool"><span class="related-tool-icon">🏷️</span><span>Meta Tag Generator</span></a>
           <a href="/tools/slug-generator" class="related-tool"><span class="related-tool-icon">🐌</span><span>URL Slug Generator</span></a>
           <a href="/tools/keyword-density-checker" class="related-tool"><span class="related-tool-icon">📈</span><span>Keyword Density Checker</span></a>
@@ -109,7 +113,7 @@
           <a href="/tools/word-to-pdf-info" class="related-tool"><span class="related-tool-icon">📰</span><span>Text Case for Headlines</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🔍 SEO Tools</h4>
+        <h3>🔍 SEO Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free seo tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=seo" class="btn btn-outline btn-full" style="margin-top:10px;">View All SEO Tools →</a>
       </div>
@@ -158,7 +162,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

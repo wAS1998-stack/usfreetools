@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Length Converter", "url": "https://usfreetools.com/tools/length-converter.html", "description": "Convert length and distance between metric and imperial units — meters, kilometers, feet, inches, miles, and more.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/length-converter.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many centimeters are in an inch?", "acceptedAnswer": {"@type": "Answer", "text": "One inch equals exactly 2.54 centimeters. This is a defined, exact relationship, so conversions between the systems are precise rather than approximate."}}, {"@type": "Question", "name": "How many feet are in a meter?", "acceptedAnswer": {"@type": "Answer", "text": "One meter is about 3.28 feet. So a 2-meter doorway is roughly 6 feet 7 inches. The converter gives the exact figure for any value."}}, {"@type": "Question", "name": "How are the metric length units related?", "acceptedAnswer": {"@type": "Answer", "text": "They scale by tens: 10 millimeters make a centimeter, 100 centimeters make a meter, and 1,000 meters make a kilometer. This simple pattern makes metric conversions straightforward."}}, {"@type": "Question", "name": "How many feet are in a mile?", "acceptedAnswer": {"@type": "Answer", "text": "A mile is 5,280 feet, or 1,760 yards. In metric terms, it is about 1.609 kilometers. The converter handles all these relationships instantly."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -59,7 +63,7 @@
       <div class="tool-main-card">
         <h1>📐 Length Converter</h1>
         <p>Convert length and distance between metric and imperial units — meters, kilometers, feet, inches, miles, and more.</p>
-        <div id="toolContainer" data-impl="lengthConverter"></div>
+        <div id="toolContainer" data-impl="lengthConverter" style="--h-m:448px;--h-d:248px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -81,7 +85,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Length Converter on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/length-converter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Length Converter&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/length-converter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Length Converter&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Length Converter by &lt;a href=&quot;https://usfreetools.com/tools/length-converter&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -111,14 +115,14 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Unit Converters</h4>
+        <h3>Related Unit Converters</h3>
         <a href="/tools/weight-converter" class="related-tool"><span class="related-tool-icon">🏋️</span><span>Weight Converter</span></a>
           <a href="/tools/speed-converter" class="related-tool"><span class="related-tool-icon">🚀</span><span>Speed Converter</span></a>
           <a href="/tools/data-storage-converter" class="related-tool"><span class="related-tool-icon">💾</span><span>Data Storage Converter</span></a>
           <a href="/tools/time-converter" class="related-tool"><span class="related-tool-icon">⏱️</span><span>Time Converter</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>📏 Unit Converters</h4>
+        <h3>📏 Unit Converters</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free unit converters — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=unit" class="btn btn-outline btn-full" style="margin-top:10px;">View All Unit Converters →</a>
       </div>
@@ -164,7 +168,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

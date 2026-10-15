@@ -1,0 +1,762 @@
+{
+"files": {
+"tools/acreage-calculator.html": {
+"412": 571,
+"1280": 306
+},
+"tools/age-calculator.html": {
+"412": 316,
+"1280": 212
+},
+"tools/aspect-ratio-calculator.html": {
+"412": 663,
+"1280": 393
+},
+"tools/average-calculator.html": {
+"412": 597,
+"1280": 371
+},
+"tools/base64-encode-decode.html": {
+"412": 597,
+"1280": 511
+},
+"tools/binary-translator.html": {
+"412": 554,
+"1280": 511
+},
+"tools/bmi-calculator.html": {
+"412": 468,
+"1280": 324
+},
+"tools/board-foot-calculator.html": {
+"412": 890,
+"1280": 527
+},
+"tools/btu-calculator.html": {
+"412": 643,
+"1280": 308
+},
+"tools/calorie-deficit-calculator.html": {
+"412": 936,
+"1280": 552
+},
+"tools/case-converter.html": {
+"412": 890,
+"1280": 584
+},
+"tools/celsius-to-fahrenheit.html": {
+"412": 408,
+"1280": 168
+},
+"tools/character-counter.html": {
+"412": 770,
+"1280": 568
+},
+"tools/cm-to-inches.html": {
+"412": 448,
+"1280": 248
+},
+"tools/coffee-ratio-calculator.html": {
+"412": 536,
+"1280": 275
+},
+"tools/coin-flip.html": {
+"412": 251,
+"1280": 251
+},
+"tools/color-converter.html": {
+"412": 476,
+"1280": 476
+},
+"tools/color-palette-generator.html": {
+"412": 946,
+"1280": 303
+},
+"tools/color-picker.html": {
+"412": 476,
+"1280": 476
+},
+"tools/compound-interest-calculator.html": {
+"412": 633,
+"1280": 393
+},
+"tools/concrete-calculator.html": {
+"412": 669,
+"1280": 306
+},
+"tools/countdown-timer.html": {
+"412": 589,
+"1280": 358
+},
+"tools/cpm-calculator.html": {
+"412": 594,
+"1280": 282
+},
+"tools/cron-expression-generator.html": {
+"412": 715,
+"1280": 260
+},
+"tools/css-minifier.html": {
+"412": 511,
+"1280": 511
+},
+"tools/csv-to-json.html": {
+"412": 583,
+"1280": 583
+},
+"tools/data-storage-converter.html": {
+"412": 448,
+"1280": 248
+},
+"tools/date-difference-calculator.html": {
+"412": 316,
+"1280": 212
+},
+"tools/deck-board-calculator.html": {
+"412": 950,
+"1280": 425
+},
+"tools/dice-roller.html": {
+"412": 444,
+"1280": 324
+},
+"tools/discount-calculator.html": {
+"412": 393,
+"1280": 273
+},
+"tools/dog-age-calculator.html": {
+"412": 415,
+"1280": 328
+},
+"tools/down-payment-calculator.html": {
+"412": 601,
+"1280": 306
+},
+"tools/drywall-calculator.html": {
+"412": 1086,
+"1280": 483
+},
+"tools/duplicate-word-finder.html": {
+"412": 322,
+"1280": 322
+},
+"tools/epoch-converter.html": {
+"412": 301,
+"1280": 301
+},
+"tools/fahrenheit-to-celsius.html": {
+"412": 408,
+"1280": 168
+},
+"tools/fence-calculator.html": {
+"412": 669,
+"1280": 306
+},
+"tools/find-and-replace.html": {
+"412": 840,
+"1280": 721
+},
+"tools/firewood-cord-calculator.html": {
+"412": 611,
+"1280": 306
+},
+"tools/fraction-calculator.html": {
+"412": 287,
+"1280": 215
+},
+"tools/freelance-rate-calculator.html": {
+"412": 720,
+"1280": 383
+},
+"tools/gpa-calculator.html": {
+"412": 683,
+"1280": 437
+},
+"tools/gpa-to-percentage-converter.html": {
+"412": 472,
+"1280": 308
+},
+"tools/grade-calculator.html": {
+"412": 572,
+"1280": 283
+},
+"tools/grass-seed-calculator.html": {
+"412": 472,
+"1280": 308
+},
+"tools/gravel-calculator.html": {
+"412": 470,
+"1280": 306
+},
+"tools/hash-generator.html": {
+"412": 533,
+"1280": 533
+},
+"tools/heat-index-calculator.html": {
+"412": 448,
+"1280": 306
+},
+"tools/hex-to-rgb.html": {
+"412": 476,
+"1280": 476
+},
+"tools/hourly-to-salary-calculator.html": {
+"412": 768,
+"1280": 427
+},
+"tools/html-encode-decode.html": {
+"412": 554,
+"1280": 511
+},
+"tools/html-to-markdown.html": {
+"412": 554,
+"1280": 511
+},
+"tools/ideal-weight-calculator.html": {
+"412": 603,
+"1280": 308
+},
+"tools/image-compressor.html": {
+"412": 101,
+"1280": 101
+},
+"tools/image-resizer.html": {
+"412": 115,
+"1280": 115
+},
+"tools/inches-to-cm.html": {
+"412": 448,
+"1280": 248
+},
+"tools/italic-text-generator.html": {
+"412": 343,
+"1280": 343
+},
+"tools/jpg-to-png.html": {
+"412": 101,
+"1280": 101
+},
+"tools/js-minifier.html": {
+"412": 511,
+"1280": 511
+},
+"tools/json-formatter.html": {
+"412": 789,
+"1280": 419
+},
+"tools/json-to-csv.html": {
+"412": 583,
+"1280": 583
+},
+"tools/jwt-decoder.html": {
+"412": 535,
+"1280": 535
+},
+"tools/keyword-density-checker.html": {
+"412": 322,
+"1280": 322
+},
+"tools/kg-to-lbs.html": {
+"412": 448,
+"1280": 248
+},
+"tools/km-to-miles.html": {
+"412": 448,
+"1280": 248
+},
+"tools/length-converter.html": {
+"412": 448,
+"1280": 248
+},
+"tools/line-counter.html": {
+"412": 770,
+"1280": 568
+},
+"tools/list-randomizer.html": {
+"412": 530,
+"1280": 530
+},
+"tools/liters-to-gallons.html": {
+"412": 448,
+"1280": 248
+},
+"tools/loan-calculator.html": {
+"412": 614,
+"1280": 273
+},
+"tools/lorem-ipsum-generator.html": {
+"412": 694,
+"1280": 574
+},
+"tools/lorem-pixel-info.html": {
+"412": 770,
+"1280": 568
+},
+"tools/lowercase-converter.html": {
+"412": 890,
+"1280": 584
+},
+"tools/markdown-preview.html": {
+"412": 624,
+"1280": 372
+},
+"tools/meta-description-counter.html": {
+"412": 770,
+"1280": 568
+},
+"tools/meta-tag-generator.html": {
+"412": 901,
+"1280": 901
+},
+"tools/miles-to-km.html": {
+"412": 448,
+"1280": 248
+},
+"tools/morse-code-translator.html": {
+"412": 554,
+"1280": 511
+},
+"tools/mortgage-calculator.html": {
+"412": 614,
+"1280": 273
+},
+"tools/mpg-calculator.html": {
+"412": 635,
+"1280": 273
+},
+"tools/mulch-calculator.html": {
+"412": 549,
+"1280": 306
+},
+"tools/number-base-converter.html": {
+"412": 528,
+"1280": 288
+},
+"tools/open-graph-generator.html": {
+"412": 901,
+"1280": 901
+},
+"tools/overtime-pay-calculator.html": {
+"412": 813,
+"1280": 427
+},
+"tools/pace-calculator.html": {
+"412": 901,
+"1280": 411
+},
+"tools/paint-calculator.html": {
+"412": 1028,
+"1280": 425
+},
+"tools/paragraph-counter.html": {
+"412": 770,
+"1280": 568
+},
+"tools/password-generator.html": {
+"412": 573,
+"1280": 441
+},
+"tools/password-strength-checker.html": {
+"412": 235,
+"1280": 235
+},
+"tools/paver-calculator.html": {
+"412": 788,
+"1280": 425
+},
+"tools/pay-raise-calculator.html": {
+"412": 484,
+"1280": 265
+},
+"tools/percentage-calculator.html": {
+"412": 584,
+"1280": 326
+},
+"tools/percentage-increase-calculator.html": {
+"412": 584,
+"1280": 326
+},
+"tools/pin-generator.html": {
+"412": 332,
+"1280": 332
+},
+"tools/pizza-dough-hydration-calculator.html": {
+"412": 734,
+"1280": 393
+},
+"tools/png-to-jpg.html": {
+"412": 101,
+"1280": 101
+},
+"tools/pool-volume-calculator.html": {
+"412": 712,
+"1280": 427
+},
+"tools/pounds-to-kg.html": {
+"412": 448,
+"1280": 248
+},
+"tools/ppi-calculator.html": {
+"412": 614,
+"1280": 273
+},
+"tools/profit-margin-calculator.html": {
+"412": 484,
+"1280": 265
+},
+"tools/propane-tank-duration-calculator.html": {
+"412": 493,
+"1280": 308
+},
+"tools/qr-code-generator.html": {
+"412": 450,
+"1280": 450
+},
+"tools/random-color-generator.html": {
+"412": 324,
+"1280": 324
+},
+"tools/random-name-picker.html": {
+"412": 426,
+"1280": 426
+},
+"tools/random-number-generator.html": {
+"412": 578,
+"1280": 338
+},
+"tools/random-picker.html": {
+"412": 396,
+"1280": 396
+},
+"tools/ratio-calculator.html": {
+"412": 211,
+"1280": 211
+},
+"tools/reading-time-calculator.html": {
+"412": 580,
+"1280": 479
+},
+"tools/regex-tester.html": {
+"412": 538,
+"1280": 538
+},
+"tools/remove-duplicate-lines.html": {
+"412": 554,
+"1280": 511
+},
+"tools/remove-line-breaks.html": {
+"412": 716,
+"1280": 614
+},
+"tools/rgb-to-hex.html": {
+"412": 476,
+"1280": 476
+},
+"tools/rice-to-water-ratio-calculator.html": {
+"412": 450,
+"1280": 308
+},
+"tools/robots-txt-generator.html": {
+"412": 447,
+"1280": 447
+},
+"tools/roman-numeral-converter.html": {
+"412": 288,
+"1280": 168
+},
+"tools/roof-pitch-calculator.html": {
+"412": 549,
+"1280": 306
+},
+"tools/sales-tax-calculator.html": {
+"412": 693,
+"1280": 308
+},
+"tools/scientific-calculator.html": {
+"412": 1345,
+"1280": 365
+},
+"tools/sentence-counter.html": {
+"412": 770,
+"1280": 568
+},
+"tools/slug-generator.html": {
+"412": 274,
+"1280": 274
+},
+"tools/sod-calculator.html": {
+"412": 570,
+"1280": 306
+},
+"tools/speed-converter.html": {
+"412": 448,
+"1280": 248
+},
+"tools/sql-formatter.html": {
+"412": 511,
+"1280": 511
+},
+"tools/square-footage-calculator.html": {
+"412": 699,
+"1280": 306
+},
+"tools/square-root-calculator.html": {
+"412": 251,
+"1280": 251
+},
+"tools/stair-calculator.html": {
+"412": 601,
+"1280": 336
+},
+"tools/stopwatch.html": {
+"412": 397,
+"1280": 270
+},
+"tools/strikethrough-text.html": {
+"412": 343,
+"1280": 343
+},
+"tools/temperature-converter.html": {
+"412": 408,
+"1280": 168
+},
+"tools/text-repeater.html": {
+"412": 835,
+"1280": 716
+},
+"tools/text-reverser.html": {
+"412": 511,
+"1280": 511
+},
+"tools/text-to-handwriting-info.html": {
+"412": 343,
+"1280": 343
+},
+"tools/tile-calculator.html": {
+"412": 710,
+"1280": 425
+},
+"tools/time-converter.html": {
+"412": 448,
+"1280": 248
+},
+"tools/time-duration-calculator.html": {
+"412": 342,
+"1280": 238
+},
+"tools/tip-calculator.html": {
+"412": 614,
+"1280": 273
+},
+"tools/tire-size-calculator.html": {
+"412": 1079,
+"1280": 447
+},
+"tools/title-case-converter.html": {
+"412": 890,
+"1280": 584
+},
+"tools/topsoil-calculator.html": {
+"412": 549,
+"1280": 306
+},
+"tools/twitter-character-counter.html": {
+"412": 770,
+"1280": 568
+},
+"tools/uppercase-converter.html": {
+"412": 890,
+"1280": 584
+},
+"tools/url-encode-decode.html": {
+"412": 554,
+"1280": 511
+},
+"tools/username-generator.html": {
+"412": 308,
+"1280": 308
+},
+"tools/utm-builder.html": {
+"412": 722,
+"1280": 482
+},
+"tools/uuid-generator.html": {
+"412": 481,
+"1280": 481
+},
+"tools/wallpaper-calculator.html": {
+"412": 832,
+"1280": 427
+},
+"tools/water-intake-calculator.html": {
+"412": 671,
+"1280": 308
+},
+"tools/weight-converter.html": {
+"412": 448,
+"1280": 248
+},
+"tools/whitespace-remover.html": {
+"412": 716,
+"1280": 614
+},
+"tools/wind-chill-calculator.html": {
+"412": 448,
+"1280": 306
+},
+"tools/word-frequency-counter.html": {
+"412": 322,
+"1280": 322
+},
+"tools/word-to-pdf-info.html": {
+"412": 890,
+"1280": 584
+},
+"tools/xml-formatter.html": {
+"412": 511,
+"1280": 511
+}
+},
+"keys": {
+" data-impl=\"weightConverter\" data-from=\"oz\" data-to=\"g\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"in\" data-to=\"mm\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"weightConverter\" data-from=\"kg\" data-to=\"lb\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"volumeConverter\" data-from=\"L\" data-to=\"gal\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"m\" data-to=\"ft\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"mi\" data-to=\"km\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"mm\" data-to=\"in\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"temperature\" data-from=\"c\" data-to=\"f\" ": {
+"412": 408,
+"1280": 168
+},
+" data-impl=\"temperature\" data-from=\"f\" data-to=\"c\" ": {
+"412": 408,
+"1280": 168
+},
+" data-impl=\"lengthConverter\" data-from=\"km\" data-to=\"mi\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"cm\" data-to=\"in\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"ft\" data-to=\"m\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"weightConverter\" data-from=\"g\" data-to=\"oz\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"in\" data-to=\"cm\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"speedConverter\" data-from=\"km/h\" data-to=\"mph\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"weightConverter\" data-from=\"lb\" data-to=\"kg\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"speedConverter\" data-from=\"mph\" data-to=\"km/h\" ": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"temperature\" data-from=\"c\" data-to=\"f\"": {
+"412": 408,
+"1280": 168
+},
+" data-impl=\"lengthConverter\" data-from=\"cm\" data-to=\"in\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"temperature\" data-from=\"f\" data-to=\"c\"": {
+"412": 408,
+"1280": 168
+},
+" data-impl=\"lengthConverter\" data-from=\"ft\" data-to=\"m\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"weightConverter\" data-from=\"g\" data-to=\"oz\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"in\" data-to=\"cm\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"in\" data-to=\"mm\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"weightConverter\" data-from=\"kg\" data-to=\"lb\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"km\" data-to=\"mi\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"speedConverter\" data-from=\"km/h\" data-to=\"mph\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"weightConverter\" data-from=\"lb\" data-to=\"kg\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"volumeConverter\" data-from=\"L\" data-to=\"gal\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"m\" data-to=\"ft\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"mi\" data-to=\"km\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"lengthConverter\" data-from=\"mm\" data-to=\"in\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"speedConverter\" data-from=\"mph\" data-to=\"km/h\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"weightConverter\" data-from=\"oz\" data-to=\"g\"": {
+"412": 448,
+"1280": 248
+},
+" data-impl=\"percentage\"  ": {
+"412": 584,
+"1280": 326
+}
+}
+}
