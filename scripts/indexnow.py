@@ -16,4 +16,4 @@ for i in range(0, len(urls), 10000):
     try:
         r = urllib.request.urlopen(req, timeout=60); print("batch", i, "->", r.status)
     except urllib.error.HTTPError as e:
-        print("batch", i, "->", e.code, e.read()[:200]); 
+        print("batch", i, "->", e.code, e.read()[:200]); sys.exit(1)
