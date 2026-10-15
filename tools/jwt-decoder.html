@@ -75,6 +75,13 @@
 <h2>Quick Tips</h2>
 <ul><li>A JWT has three dot-separated parts: header, payload, and signature.</li><li>The payload is encoded, not encrypted — anyone can decode it, so never put secrets in it.</li><li>Check the expiration claim to debug many “why am I logged out?” issues.</li><li>Decoding only reads a token; verifying its signature is a separate step a server must do.</li></ul>
 </article>
+<article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Embed this JWT Decoder on your site</h2>
+<p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
+<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/jwt-decoder&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;JWT Decoder&quot;&gt;&lt;/iframe&gt;
+&lt;p style=&quot;font-size:13px&quot;&gt;JWT Decoder by &lt;a href=&quot;https://usfreetools.com/tools/jwt-decoder&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
+<button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
+</article>
 <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Frequently Asked Questions</h2>
 <h3>What is a JWT?</h3><p>A JSON Web Token — a compact, dot-separated token carrying a header, a payload of claims (like user identity and permissions), and a signature for verifying authenticity. It is widely used in web authentication.</p><h3>Is the data in a JWT encrypted?</h3><p>No. The payload is Base64-encoded, not encrypted, so anyone can decode and read it without a key. Never put sensitive information in a JWT payload expecting it to be hidden — the signature proves authenticity but does not conceal data.</p><h3>Why decode a JWT?</h3><p>To inspect its contents when developing or debugging authentication — seeing the claims, permissions, and expiration directly. It is often the fastest way to diagnose why a token-based system is behaving unexpectedly.</p><h3>Does decoding verify the token?</h3><p>No. Decoding only reads the contents; it does not verify the signature or validate authenticity. A real application must verify the signature on its server using the secret key. This tool is for inspection, not security validation.</p>

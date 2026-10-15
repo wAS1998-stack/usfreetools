@@ -75,6 +75,13 @@
 <h2>Quick Tips</h2>
 <ul><li>A Unix timestamp counts seconds since January 1, 1970, at midnight UTC — timestamp 0 is that moment.</li><li>Timestamps are in universal time (UTC), so account for time zones when displaying them to users.</li><li>The time between two events is just the difference between their timestamps.</li><li>Convert timestamps from logs to readable dates when debugging when something happened.</li></ul>
 </article>
+<article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
+<h2>Embed this Unix Timestamp Converter on your site</h2>
+<p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
+<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/epoch-converter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Unix Timestamp Converter&quot;&gt;&lt;/iframe&gt;
+&lt;p style=&quot;font-size:13px&quot;&gt;Unix Timestamp Converter by &lt;a href=&quot;https://usfreetools.com/tools/epoch-converter&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
+<button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
+</article>
 <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Frequently Asked Questions</h2>
 <h3>What is a Unix timestamp?</h3><p>It is the number of seconds since the Unix epoch — midnight UTC on January 1, 1970. Every moment in time has a single timestamp, making it an efficient way for computers to store and compare times.</p><h3>Why do systems store time as a number?</h3><p>Because a single number is easy to store, sort, compare, and do arithmetic with, and it avoids the complications of time zones and date formats. It represents an absolute moment in universal time.</p><h3>What time zone are timestamps in?</h3><p>Unix timestamps are in universal time (UTC). To display the correct local time to a user, you convert the timestamp and adjust for their time zone, since the timestamp itself is zone-independent.</p><h3>How do I find the time between two timestamps?</h3><p>Subtract one from the other — the result is the number of seconds between them. Because timestamps are just counts of seconds, durations are simple arithmetic.</p>
