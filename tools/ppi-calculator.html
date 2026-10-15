@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Screen PPI Calculator", "url": "https://usfreetools.com/tools/ppi-calculator", "description": "Calculate your screen’s pixel density (PPI) from its resolution and diagonal size. See pixels per inch, total pixels, and aspect ratio for any monitor, phone, or TV.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/ppi-calculator.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is PPI?", "acceptedAnswer": {"@type": "Answer", "text": "Pixels per inch \u2014 how densely a screen packs its pixels. It is calculated from the resolution and the physical diagonal: the diagonal pixel count divided by the diagonal inches. Higher PPI means finer detail and sharper text at the same viewing distance."}}, {"@type": "Question", "name": "How is PPI calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Take the square root of (horizontal pixels squared plus vertical pixels squared) \u2014 the diagonal in pixels \u2014 and divide by the diagonal size in inches. A 27-inch 2560x1440 monitor works out to about 109 PPI."}}, {"@type": "Question", "name": "What is a good PPI for a monitor?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly 90-110 PPI is comfortable for desktop monitors at arm's length; 140-220+ gives the 'retina'-class sharpness of high-DPI displays. Phones, viewed much closer, commonly run 300-500+ PPI. Viewing distance is what decides how much PPI you can actually perceive."}}, {"@type": "Question", "name": "Does higher PPI always look better?", "acceptedAnswer": {"@type": "Answer", "text": "Only up to what your eyes can resolve at your viewing distance \u2014 beyond that, extra density is invisible. Higher PPI also means more pixels for the graphics hardware to drive, so the practical sweet spot balances sharpness, performance, and cost."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🖥️ Screen PPI Calculator</h1>
         <p>Enter your screen’s resolution and diagonal size to get its pixel density (PPI), total pixel count, and aspect ratio — for any monitor, laptop, phone, or TV.</p>
-        <div id="toolContainer" data-impl="ppiCalc"></div>
+        <div id="toolContainer" data-impl="ppiCalc" style="--h-m:614px;--h-d:273px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -86,7 +90,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Screen PPI Calculator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/ppi-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Screen PPI Calculator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/ppi-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Screen PPI Calculator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Screen PPI Calculator by &lt;a href=&quot;https://usfreetools.com/tools/ppi-calculator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -109,7 +113,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Calculators</h4>
+        <h3>Related Calculators</h3>
         <a href="/tools/percentage-calculator" class="related-tool"><span class="related-tool-icon">%</span><span>Percentage Calculator</span></a>
           <a href="/tools/average-calculator" class="related-tool"><span class="related-tool-icon">➗</span><span>Average Calculator (Mean)</span></a>
           <a href="/tools/bmi-calculator" class="related-tool"><span class="related-tool-icon">⚖️</span><span>BMI Calculator</span></a>
@@ -117,7 +121,7 @@
           <a href="/tools/loan-calculator" class="related-tool"><span class="related-tool-icon">🏦</span><span>Loan Calculator</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🧮 Calculators</h4>
+        <h3>🧮 Calculators</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free calculators — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=math" class="btn btn-outline btn-full" style="margin-top:10px;">View All Calculators →</a>
       </div>
@@ -166,7 +170,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

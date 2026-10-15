@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Sod Calculator", "url": "https://usfreetools.com/tools/sod-calculator", "description": "Calculate how much sod your lawn needs: rolls and pallets from the area, with waste margin, weight planning, and same-day installation guidance.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/sod-calculator.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much sod do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Measure the area in square feet and add about 5-10% for cuts and edges. Standard US sod rolls cover about 10 sq ft (2 x 5 ft), and a pallet typically carries 450 sq ft (400-500 by farm). A 2,000 sq ft lawn is about 200 rolls \u2014 roughly 4.5 pallets."}}, {"@type": "Question", "name": "How much does sod weigh?", "acceptedAnswer": {"@type": "Answer", "text": "A single roll runs 30-45 lbs depending on moisture, and a pallet weighs 1,500-3,000 lbs. That is why pallets ship by truck with a forklift, and why placement of the delivery matters \u2014 pallets do not move twice."}}, {"@type": "Question", "name": "How fast must sod be installed?", "acceptedAnswer": {"@type": "Answer", "text": "Same day, ideally within 24 hours of harvest. Sod is living turf; stacked rolls heat up and yellow within a day or two (faster in summer). Schedule delivery for the morning of installation, with the ground prepped in advance."}}, {"@type": "Question", "name": "Is sod better than seeding?", "acceptedAnswer": {"@type": "Answer", "text": "Sod buys instant, weed-resistant coverage and works nearly year-round, at several times the material cost of seed. Seed is far cheaper and offers more variety but needs weeks of babying and the right season. Slopes and high-traffic deadlines favor sod; budgets and patience favor seed."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🟩 Sod Calculator</h1>
         <p>Enter your lawn area to see the sod you need — in standard rolls and pallets — with the waste margin and weight numbers that make delivery day go smoothly.</p>
-        <div id="toolContainer" data-impl="sodCalc"></div>
+        <div id="toolContainer" data-impl="sodCalc" style="--h-m:570px;--h-d:306px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -87,7 +91,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Sod Calculator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/sod-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Sod Calculator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/sod-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Sod Calculator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Sod Calculator by &lt;a href=&quot;https://usfreetools.com/tools/sod-calculator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -110,7 +114,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Calculators</h4>
+        <h3>Related Calculators</h3>
         <a href="/tools/percentage-calculator" class="related-tool"><span class="related-tool-icon">%</span><span>Percentage Calculator</span></a>
           <a href="/tools/average-calculator" class="related-tool"><span class="related-tool-icon">➗</span><span>Average Calculator (Mean)</span></a>
           <a href="/tools/bmi-calculator" class="related-tool"><span class="related-tool-icon">⚖️</span><span>BMI Calculator</span></a>
@@ -118,7 +122,7 @@
           <a href="/tools/loan-calculator" class="related-tool"><span class="related-tool-icon">🏦</span><span>Loan Calculator</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🧮 Calculators</h4>
+        <h3>🧮 Calculators</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free calculators — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=math" class="btn btn-outline btn-full" style="margin-top:10px;">View All Calculators →</a>
       </div>
@@ -167,7 +171,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

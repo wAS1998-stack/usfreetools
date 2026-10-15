@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Online Dice Roller", "url": "https://usfreetools.com/tools/dice-roller.html", "description": "Roll one or many virtual dice online with fair, random results — perfect for board games and tabletop RPGs.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/dice-roller.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are the dice rolls truly random?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each roll uses your browser's random number generation, giving every face an equal chance with no pattern or bias. Every roll is independent of the ones before it, just like fair physical dice."}}, {"@type": "Question", "name": "If I roll several sixes in a row, is a six less likely next time?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each roll is independent, so a fair die is exactly as likely to show a six after three sixes as at any other time. Believing otherwise is the gambler's fallacy \u2014 the dice have no memory."}}, {"@type": "Question", "name": "Can I roll different kinds of dice?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can choose the number of sides \u2014 four, six, eight, ten, twelve, twenty, or more \u2014 and the number of dice, so it works for board games and tabletop role-playing games alike."}}, {"@type": "Question", "name": "Why does rolling two dice favor the middle numbers?", "acceptedAnswer": {"@type": "Answer", "text": "Because more combinations add up to middle totals. With two six-sided dice, a total of seven can be made several ways while two or twelve can each be made only one way, so middle totals come up more often."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🎲 Online Dice Roller</h1>
         <p>Roll one or many virtual dice online with fair, random results — perfect for board games and tabletop RPGs.</p>
-        <div id="toolContainer" data-impl="diceRoller"></div>
+        <div id="toolContainer" data-impl="diceRoller" style="--h-m:444px;--h-d:324px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -78,7 +82,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Online Dice Roller on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/dice-roller&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Online Dice Roller&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/dice-roller&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Online Dice Roller&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Online Dice Roller by &lt;a href=&quot;https://usfreetools.com/tools/dice-roller&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -100,7 +104,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Security Tools</h4>
+        <h3>Related Security Tools</h3>
         <a href="/tools/password-generator" class="related-tool"><span class="related-tool-icon">🔐</span><span>Password Generator</span></a>
           <a href="/tools/password-strength-checker" class="related-tool"><span class="related-tool-icon">🛡️</span><span>Password Strength Checker</span></a>
           <a href="/tools/random-number-generator" class="related-tool"><span class="related-tool-icon">🎲</span><span>Random Number Generator</span></a>
@@ -108,7 +112,7 @@
           <a href="/tools/pin-generator" class="related-tool"><span class="related-tool-icon">🔢</span><span>Random PIN Generator</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🔐 Security Tools</h4>
+        <h3>🔐 Security Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free security tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=security" class="btn btn-outline btn-full" style="margin-top:10px;">View All Security Tools →</a>
       </div>
@@ -157,7 +161,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

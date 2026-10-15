@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Random Name Picker", "url": "https://usfreetools.com/tools/random-name-picker.html", "description": "Pick a random name or winner from a list. Enter names, spin, and get a fair random result. Free random name picker — runs in your browser, no signup.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/random-name-picker.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does the name picker choose?", "acceptedAnswer": {"@type": "Answer", "text": "It uses your browser's randomness to select one name from your list, giving every entry an exactly equal chance regardless of position. The result is genuinely unpredictable and unbiased."}}, {"@type": "Question", "name": "Is every name equally likely?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The first and last names on your list, and every name in between, all have the same chance. There is no hidden weighting \u2014 adding or removing names simply adjusts everyone's odds equally."}}, {"@type": "Question", "name": "Is this fair for a giveaway?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Because the pick is genuinely random and every entry has an equal chance, it is a fair and defensible way to choose a winner. Picking visibly helps entrants trust the result."}}, {"@type": "Question", "name": "Is my list private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The picking happens entirely in your browser, so the names you enter are never uploaded or stored. You can use it with private lists safely."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -55,7 +59,7 @@
       <div class="tool-main-card">
         <h1>🎡 Random Name Picker</h1>
         <p>Enter a list of names and pick a fair random winner with one click. Perfect for giveaways, classrooms, and team decisions.</p>
-        <div id="toolContainer" data-impl="wheelSpinner"></div>
+        <div id="toolContainer" data-impl="wheelSpinner" style="--h-m:426px;--h-d:426px"></div>
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>What This Tool Does</h2>
@@ -76,7 +80,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Random Name Picker on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/random-name-picker&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Random Name Picker&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/random-name-picker&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Random Name Picker&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Random Name Picker by &lt;a href=&quot;https://usfreetools.com/tools/random-name-picker&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -98,14 +102,14 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Tools</h4>
+        <h3>Related Tools</h3>
           <a href="/tools/random-picker" class="related-tool"><span class="related-tool-icon">🎯</span><span>Random Picker</span></a>
           <a href="/tools/list-randomizer" class="related-tool"><span class="related-tool-icon">🔀</span><span>List Randomizer</span></a>
           <a href="/tools/dice-roller" class="related-tool"><span class="related-tool-icon">🎲</span><span>Dice Roller</span></a>
           <a href="/tools/coin-flip" class="related-tool"><span class="related-tool-icon">🪙</span><span>Coin Flip</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🎡 Random Tools</h4>
+        <h3>🎡 Random Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=random" class="btn btn-outline btn-full" style="margin-top:10px;">View All Tools →</a>
       </div>
@@ -154,7 +158,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

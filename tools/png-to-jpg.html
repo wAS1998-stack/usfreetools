@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "PNG to JPG Converter", "url": "https://usfreetools.com/tools/png-to-jpg.html", "description": "Convert PNG images to JPG online for free. Fast, private, processed in your browser with no upload. Download your JPG instantly — no signup needed.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/png-to-jpg.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why convert PNG to JPG?", "acceptedAnswer": {"@type": "Answer", "text": "Mainly to reduce file size. For photographic content, JPG produces dramatically smaller files than PNG with no visible quality loss, making images faster to load and easier to send."}}, {"@type": "Question", "name": "What happens to transparency when converting to JPG?", "acceptedAnswer": {"@type": "Answer", "text": "JPG cannot store transparency, so transparent areas are filled in, usually with a solid background color. For this reason, do not convert images that rely on transparency, like logos."}}, {"@type": "Question", "name": "Does converting to JPG reduce quality?", "acceptedAnswer": {"@type": "Answer", "text": "JPG is lossy, so the conversion introduces some compression. For photographs at good quality settings this is generally imperceptible, which is what JPG is designed for. For graphics and text, the loss is more noticeable."}}, {"@type": "Question", "name": "Are my images uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. The conversion happens entirely in your browser, so your images never leave your device. It is both private and fast."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -55,7 +59,7 @@
       <div class="tool-main-card">
         <h1>🖼️ PNG to JPG Converter</h1>
         <p>Convert PNG images to JPG format instantly in your browser. Smaller files, full privacy — your image is never uploaded.</p>
-        <div id="toolContainer" data-impl="imageConvert" data-target="image/jpeg"></div>
+        <div id="toolContainer" data-impl="imageConvert" data-target="image/jpeg" style="--h-m:101px;--h-d:101px"></div>
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>What This Tool Does</h2>
@@ -76,7 +80,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this PNG to JPG Converter on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/png-to-jpg&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;PNG to JPG Converter&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/png-to-jpg&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;PNG to JPG Converter&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;PNG to JPG Converter by &lt;a href=&quot;https://usfreetools.com/tools/png-to-jpg&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -98,14 +102,14 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Tools</h4>
+        <h3>Related Tools</h3>
           <a href="/tools/jpg-to-png" class="related-tool"><span class="related-tool-icon">🖼️</span><span>JPG to PNG</span></a>
           <a href="/tools/image-compressor" class="related-tool"><span class="related-tool-icon">🗜️</span><span>Image Compressor</span></a>
           <a href="/tools/image-resizer" class="related-tool"><span class="related-tool-icon">🖼️</span><span>Image Resizer</span></a>
           <a href="/tools/color-picker" class="related-tool"><span class="related-tool-icon">🎨</span><span>Color Picker</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🖼️ Image Tools</h4>
+        <h3>🖼️ Image Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=image" class="btn btn-outline btn-full" style="margin-top:10px;">View All Tools →</a>
       </div>
@@ -154,7 +158,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

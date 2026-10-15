@@ -23,6 +23,10 @@
   <meta name="twitter:title" content="Word Counter — Free Online Word & Character Count Tool">
   <meta name="twitter:description" content="Count words, characters, reading time & keyword density instantly. Free & private.">
   <meta name="twitter:image" content="https://usfreetools.com/og/word-counter.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -47,7 +51,7 @@
       <a href="/">Home</a><a href="/tools" class="active">All Tools</a><a href="/blog">Blog</a><a href="/about">About</a><a href="/contact">Contact</a>
       <a href="/tools" class="nav-cta">Browse Tools →</a>
     </div>
-    <button class="nav-toggle"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -242,7 +246,7 @@
 </div>
 
         <div class="sidebar-widget">
-          <h4>Related Tools</h4>
+          <h3>Related Tools</h3>
           <a href="/tools/case-converter" class="related-tool"><span class="related-tool-icon">🔤</span><span>Case Converter</span></a>
           <a href="/tools/lorem-ipsum-generator" class="related-tool"><span class="related-tool-icon">📄</span><span>Lorem Ipsum Generator</span></a>
           <a href="/tools/text-reverser" class="related-tool"><span class="related-tool-icon">↩️</span><span>Text Reverser</span></a>
@@ -252,14 +256,14 @@
         </div>
 
         <div class="sidebar-widget">
-          <h4>📖 From the Blog</h4>
+          <h3>📖 From the Blog</h3>
           <a href="/blog/word-count-for-seo" class="related-tool"><span>Ideal Word Count for SEO in 2026</span></a>
           <a href="/blog/how-to-generate-strong-passwords" class="related-tool"><span>How to Write Strong Passwords</span></a>
           <a href="/blog/json-beginners-guide" class="related-tool"><span>JSON for Beginners</span></a>
         </div>
 
         <div class="sidebar-widget">
-          <h4>💡 Quick Reference</h4>
+          <h3>💡 Quick Reference</h3>
           <p style="font-size:0.83rem;color:var(--gray);line-height:1.8;">• Meta description: ≤160 chars<br>• Title tag: ≤60 chars<br>• Tweet/X: ≤280 chars<br>• SEO post: 1,500–2,500 words<br>• 5-min speech: ~650 words</p>
         </div>
 
@@ -287,6 +291,6 @@
     </div>
   </div>
 </footer>
-<script src="/js/main.js"></script>
+<script defer src="/js/main.js"></script>
 </body>
 </html>

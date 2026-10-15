@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Paver Calculator", "url": "https://usfreetools.com/tools/paver-calculator", "description": "Calculate how many pavers a patio or walkway needs from the area and paver size, with waste — plus the gravel base and sand depths that make it last.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/paver-calculator.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many pavers do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the area by one paver's area and add waste: 120 sq ft of 12 x 12-inch pavers (1 sq ft each) with 10% waste is 132 pavers. The calculator handles any paver size in inches \u2014 4x8 bricks, 16x16 slabs, and everything between."}}, {"@type": "Question", "name": "How much base and sand goes under pavers?", "acceptedAnswer": {"@type": "Answer", "text": "The standard patio section: 4-6 inches of compacted gravel base (more for driveways), 1 inch of bedding sand, then the pavers. The base does the structural work \u2014 most paver failures are base failures."}}, {"@type": "Question", "name": "How much waste should I add for pavers?", "acceptedAnswer": {"@type": "Answer", "text": "10% for simple rectangular layouts, 15% for curves, circles, and diagonal patterns where edge cuts multiply. Cut pavers rarely yield a usable second piece, and matching a discontinued paver later is as hard as matching tile."}}, {"@type": "Question", "name": "Can I lay pavers straight on dirt or sand alone?", "acceptedAnswer": {"@type": "Answer", "text": "It works briefly and fails predictably: without a compacted base, pavers settle unevenly, rock, and heave with seasons. The gravel-plus-sand section exists because soil moves; skipping it trades a weekend of digging now for a wavy patio every year after."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🧩 Paver Calculator</h1>
         <p>Enter the patio area and your paver’s size to see how many pavers to buy — with the base gravel and bedding sand the job needs alongside.</p>
-        <div id="toolContainer" data-impl="paverCalc"></div>
+        <div id="toolContainer" data-impl="paverCalc" style="--h-m:788px;--h-d:425px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -87,7 +91,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Paver Calculator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/paver-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Paver Calculator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/paver-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Paver Calculator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Paver Calculator by &lt;a href=&quot;https://usfreetools.com/tools/paver-calculator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -110,7 +114,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Calculators</h4>
+        <h3>Related Calculators</h3>
         <a href="/tools/percentage-calculator" class="related-tool"><span class="related-tool-icon">%</span><span>Percentage Calculator</span></a>
           <a href="/tools/average-calculator" class="related-tool"><span class="related-tool-icon">➗</span><span>Average Calculator (Mean)</span></a>
           <a href="/tools/bmi-calculator" class="related-tool"><span class="related-tool-icon">⚖️</span><span>BMI Calculator</span></a>
@@ -118,7 +122,7 @@
           <a href="/tools/loan-calculator" class="related-tool"><span class="related-tool-icon">🏦</span><span>Loan Calculator</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🧮 Calculators</h4>
+        <h3>🧮 Calculators</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free calculators — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=math" class="btn btn-outline btn-full" style="margin-top:10px;">View All Calculators →</a>
       </div>
@@ -167,7 +171,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

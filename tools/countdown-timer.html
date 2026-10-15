@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Countdown Timer", "url": "https://usfreetools.com/tools/countdown-timer.html", "description": "A free online countdown timer. Set hours, minutes, and seconds, then start, pause, and reset in your browser. No download or signup needed.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/countdown-timer.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I use the countdown timer?", "acceptedAnswer": {"@type": "Answer", "text": "Set the duration you want, start it, and it counts down to zero, showing the remaining time as it goes and signaling when the time is up. It runs entirely in your browser."}}, {"@type": "Question", "name": "Why use a countdown instead of just a clock?", "acceptedAnswer": {"@type": "Answer", "text": "A countdown shows how much time remains, not just the current time, turning a duration into a visible, shrinking quantity. This creates focus and gentle urgency, and signals you when the time is done."}}, {"@type": "Question", "name": "How can a timer improve my productivity?", "acceptedAnswer": {"@type": "Answer", "text": "Working in timed blocks with breaks \u2014 a well-known focus technique \u2014 uses a countdown to bound periods of concentration. The visible deadline helps you commit and removes the temptation to drift."}}, {"@type": "Question", "name": "Does it need to stay open?", "acceptedAnswer": {"@type": "Answer", "text": "The timer runs in your browser, so keeping the page open lets it count down and alert you. It is designed to run while you work on whatever you are timing."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -55,7 +59,7 @@
       <div class="tool-main-card">
         <h1>⏳ Countdown Timer</h1>
         <p>Set a countdown in hours, minutes, and seconds, then start it right in your browser — perfect for cooking, workouts, and focus sessions.</p>
-        <div id="toolContainer" data-impl="countdownTimer"></div>
+        <div id="toolContainer" data-impl="countdownTimer" style="--h-m:589px;--h-d:358px"></div>
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>What This Tool Does</h2>
@@ -76,7 +80,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Countdown Timer on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/countdown-timer&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Countdown Timer&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/countdown-timer&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Countdown Timer&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Countdown Timer by &lt;a href=&quot;https://usfreetools.com/tools/countdown-timer&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -98,14 +102,14 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Tools</h4>
+        <h3>Related Tools</h3>
           <a href="/tools/stopwatch" class="related-tool"><span class="related-tool-icon">⏱️</span><span>Stopwatch</span></a>
           <a href="/tools/time-duration-calculator" class="related-tool"><span class="related-tool-icon">⏲️</span><span>Time Duration Calculator</span></a>
           <a href="/tools/time-converter" class="related-tool"><span class="related-tool-icon">🕐</span><span>Time Converter</span></a>
           <a href="/tools/age-calculator" class="related-tool"><span class="related-tool-icon">🎂</span><span>Age Calculator</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>⏳ Utility Tools</h4>
+        <h3>⏳ Utility Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=utility" class="btn btn-outline btn-full" style="margin-top:10px;">View All Tools →</a>
       </div>
@@ -154,7 +158,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

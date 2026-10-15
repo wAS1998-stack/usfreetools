@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Stair Calculator", "url": "https://usfreetools.com/tools/stair-calculator", "description": "Design a staircase from the total rise: number of steps, exact riser height, tread depth, and total run — with US code limits and the comfort rule built into the guidance.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/stair-calculator.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate the number of stairs?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the total rise by the maximum comfortable riser (US residential code caps risers at 7.75 inches) and round up. A 108-inch floor-to-floor rise needs \u2308108 \u00f7 7.75\u2309 = 14 risers, making each exactly 108 \u00f7 14 \u2248 7.71 inches."}}, {"@type": "Question", "name": "What is a comfortable stair riser and tread size?", "acceptedAnswer": {"@type": "Answer", "text": "US residential code allows risers up to 7.75\u2033 and treads at least 10\u2033. The classic comfort rule: riser + tread \u2248 17-18 inches (or 2 \u00d7 riser + tread \u2248 24-25). A 7\u2033 riser with an 11\u2033 tread is the traditional sweet spot."}}, {"@type": "Question", "name": "How do I find the total run of a staircase?", "acceptedAnswer": {"@type": "Answer", "text": "Treads count one fewer than risers (the top floor is the last 'tread'). Fourteen risers means 13 treads; at 10 inches each, the staircase runs 130 inches horizontally \u2014 the floor space it consumes."}}, {"@type": "Question", "name": "Why must all risers be equal?", "acceptedAnswer": {"@type": "Answer", "text": "Feet learn the rhythm on the first step, and a riser differing by more than about 3/8 inch is a trip hazard code explicitly forbids. That is why you divide the rise evenly rather than stacking 7.75-inch steps and leaving a short one."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🪜 Stair Calculator</h1>
         <p>Enter the total rise and your tread depth to get the number of steps, the exact riser height, and the staircase’s total run — with code limits in the guidance.</p>
-        <div id="toolContainer" data-impl="stairCalc"></div>
+        <div id="toolContainer" data-impl="stairCalc" style="--h-m:601px;--h-d:336px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -87,7 +91,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Stair Calculator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/stair-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Stair Calculator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/stair-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Stair Calculator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Stair Calculator by &lt;a href=&quot;https://usfreetools.com/tools/stair-calculator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -110,7 +114,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Calculators</h4>
+        <h3>Related Calculators</h3>
         <a href="/tools/percentage-calculator" class="related-tool"><span class="related-tool-icon">%</span><span>Percentage Calculator</span></a>
           <a href="/tools/average-calculator" class="related-tool"><span class="related-tool-icon">➗</span><span>Average Calculator (Mean)</span></a>
           <a href="/tools/bmi-calculator" class="related-tool"><span class="related-tool-icon">⚖️</span><span>BMI Calculator</span></a>
@@ -118,7 +122,7 @@
           <a href="/tools/loan-calculator" class="related-tool"><span class="related-tool-icon">🏦</span><span>Loan Calculator</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🧮 Calculators</h4>
+        <h3>🧮 Calculators</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free calculators — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=math" class="btn btn-outline btn-full" style="margin-top:10px;">View All Calculators →</a>
       </div>
@@ -167,7 +171,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

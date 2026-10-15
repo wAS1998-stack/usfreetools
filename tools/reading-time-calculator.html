@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Reading Time Calculator", "url": "https://usfreetools.com/tools/reading-time-calculator.html", "description": "Estimate how long text takes to read or speak. Paste your text for instant reading and speaking time at your chosen pace. Free, runs in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/reading-time-calculator.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is reading time calculated?", "acceptedAnswer": {"@type": "Answer", "text": "By dividing the word count by an average reading speed \u2014 typically 200 to 250 words per minute. A 1,000-word piece works out to about four to five minutes. The calculator counts your words and applies this automatically."}}, {"@type": "Question", "name": "How accurate is the estimate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a reasonable general guide based on average reading speed. Actual time varies with the reader and the content's difficulty \u2014 dense or technical text reads more slowly \u2014 so treat it as an approximation, not an exact figure."}}, {"@type": "Question", "name": "Why do articles show reading times?", "acceptedAnswer": {"@type": "Answer", "text": "Because it helps readers decide whether to read now, save, or skip, by setting clear expectations. This transparency improves the reading experience and often makes people more willing to start."}}, {"@type": "Question", "name": "Is my text private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The calculation happens entirely in your browser, so nothing you paste is uploaded or stored. You can analyze private text safely."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -55,7 +59,7 @@
       <div class="tool-main-card">
         <h1>📖 Reading Time Calculator</h1>
         <p>Paste any text to see how long it takes to read and to speak aloud, at the reading speed you choose. Ideal for articles, scripts, and speeches.</p>
-        <div id="toolContainer" data-impl="readingTime"></div>
+        <div id="toolContainer" data-impl="readingTime" style="--h-m:580px;--h-d:479px"></div>
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>What This Tool Does</h2>
@@ -76,7 +80,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Reading Time Calculator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/reading-time-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Reading Time Calculator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/reading-time-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Reading Time Calculator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Reading Time Calculator by &lt;a href=&quot;https://usfreetools.com/tools/reading-time-calculator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -98,14 +102,14 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Tools</h4>
+        <h3>Related Tools</h3>
           <a href="/tools/word-counter" class="related-tool"><span class="related-tool-icon">📊</span><span>Word Counter</span></a>
           <a href="/tools/character-counter" class="related-tool"><span class="related-tool-icon">🔡</span><span>Character Counter</span></a>
           <a href="/tools/paragraph-counter" class="related-tool"><span class="related-tool-icon">¶</span><span>Paragraph Counter</span></a>
           <a href="/tools/keyword-density-checker" class="related-tool"><span class="related-tool-icon">🔍</span><span>Keyword Density Checker</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>📖 Text Tools</h4>
+        <h3>📖 Text Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=text" class="btn btn-outline btn-full" style="margin-top:10px;">View All Tools →</a>
       </div>
@@ -154,7 +158,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

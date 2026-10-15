@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Formatter & Validator", "url": "https://usfreetools.com/tools/json-formatter.html", "description": "Format, beautify, validate, and minify JSON data instantly. Paste messy JSON and get clean, readable output — or detect syntax errors before they break your cod", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/json-formatter.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does formatting JSON do?", "acceptedAnswer": {"@type": "Answer", "text": "It adds indentation and line breaks so the structure is readable, turning a single dense line into a clearly laid-out tree. The data is unchanged \u2014 only its presentation becomes easier for humans to follow."}}, {"@type": "Question", "name": "Why is my JSON invalid?", "acceptedAnswer": {"@type": "Answer", "text": "The most common causes are a trailing comma after the last item, single quotes instead of double quotes, an unclosed bracket or brace, or a missing comma between items. The validator points to where the error occurs so you can fix it quickly."}}, {"@type": "Question", "name": "What is the difference between formatting and minifying?", "acceptedAnswer": {"@type": "Answer", "text": "Formatting makes JSON readable with spacing and indentation; minifying strips all that out to make the file as small as possible. Use formatting to read and debug, minifying to transmit and store."}}, {"@type": "Question", "name": "Is my data safe to paste here?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All formatting and validation happen in your browser, so your JSON is never uploaded or stored. You can safely work with private or sensitive data."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>📋 JSON Formatter &amp; Validator</h1>
         <p>Format, beautify, validate, and minify JSON data instantly. Paste messy JSON and get clean, readable output — or detect syntax errors before they break your code.</p>
-        <div id="toolContainer" data-impl="jsonFormatter"></div>
+        <div id="toolContainer" data-impl="jsonFormatter" style="--h-m:789px;--h-d:419px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -78,7 +82,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this JSON Formatter &amp; Validator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/json-formatter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;JSON Formatter &amp;amp; Validator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/json-formatter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;JSON Formatter &amp;amp; Validator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;JSON Formatter &amp;amp; Validator by &lt;a href=&quot;https://usfreetools.com/tools/json-formatter&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -101,7 +105,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Developer Tools</h4>
+        <h3>Related Developer Tools</h3>
         <a href="/tools/base64-encode-decode" class="related-tool"><span class="related-tool-icon">🔢</span><span>Base64 Encoder &amp; Decoder</span></a>
           <a href="/tools/url-encode-decode" class="related-tool"><span class="related-tool-icon">🔗</span><span>URL Encoder &amp; Decoder</span></a>
           <a href="/tools/html-encode-decode" class="related-tool"><span class="related-tool-icon">🌐</span><span>HTML Encoder &amp; Decoder</span></a>
@@ -109,7 +113,7 @@
           <a href="/tools/uuid-generator" class="related-tool"><span class="related-tool-icon">🆔</span><span>UUID Generator</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>💻 Developer Tools</h4>
+        <h3>💻 Developer Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free developer tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=developer" class="btn btn-outline btn-full" style="margin-top:10px;">View All Developer Tools →</a>
       </div>
@@ -158,7 +162,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

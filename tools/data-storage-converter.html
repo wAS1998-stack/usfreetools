@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Data Storage Converter", "url": "https://usfreetools.com/tools/data-storage-converter.html", "description": "Convert digital storage units between bytes, kilobytes, megabytes, gigabytes, and terabytes.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/data-storage-converter.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How are storage units related?", "acceptedAnswer": {"@type": "Answer", "text": "They climb by roughly a thousand at each step: about 1,000 bytes per kilobyte, 1,000 kilobytes per megabyte, 1,000 megabytes per gigabyte, and 1,000 gigabytes per terabyte. Each step is a large jump in capacity."}}, {"@type": "Question", "name": "Why does my drive show less space than advertised?", "acceptedAnswer": {"@type": "Answer", "text": "Because of the 1,000 versus 1,024 difference. Drives are often sold using decimal units (1,000 bytes per KB), while your system may measure in binary units (1,024), making the usable figure appear slightly smaller."}}, {"@type": "Question", "name": "How big is a gigabyte?", "acceptedAnswer": {"@type": "Answer", "text": "A gigabyte is about a thousand megabytes, or a million kilobytes. It is enough for many photos, songs, or documents, while large videos and software are often measured in multiple gigabytes."}}, {"@type": "Question", "name": "Is my data private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All conversion happens in your browser, so nothing you enter is uploaded or stored. You can convert figures safely."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -59,7 +63,7 @@
       <div class="tool-main-card">
         <h1>💾 Data Storage Converter</h1>
         <p>Convert digital storage units between bytes, kilobytes, megabytes, gigabytes, and terabytes.</p>
-        <div id="toolContainer" data-impl="dataConverter"></div>
+        <div id="toolContainer" data-impl="dataConverter" style="--h-m:448px;--h-d:248px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -81,7 +85,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Data Storage Converter on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/data-storage-converter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Data Storage Converter&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/data-storage-converter&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Data Storage Converter&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Data Storage Converter by &lt;a href=&quot;https://usfreetools.com/tools/data-storage-converter&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -104,14 +108,14 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Unit Converters</h4>
+        <h3>Related Unit Converters</h3>
         <a href="/tools/length-converter" class="related-tool"><span class="related-tool-icon">📐</span><span>Length Converter</span></a>
           <a href="/tools/weight-converter" class="related-tool"><span class="related-tool-icon">🏋️</span><span>Weight Converter</span></a>
           <a href="/tools/speed-converter" class="related-tool"><span class="related-tool-icon">🚀</span><span>Speed Converter</span></a>
           <a href="/tools/time-converter" class="related-tool"><span class="related-tool-icon">⏱️</span><span>Time Converter</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>📏 Unit Converters</h4>
+        <h3>📏 Unit Converters</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free unit converters — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=unit" class="btn btn-outline btn-full" style="margin-top:10px;">View All Unit Converters →</a>
       </div>
@@ -157,7 +161,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

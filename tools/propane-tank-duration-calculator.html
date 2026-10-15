@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Propane Tank Duration Calculator", "url": "https://usfreetools.com/tools/propane-tank-duration-calculator", "description": "See how long a propane tank lasts at your appliance’s BTU rating — 20 lb grill tanks to 100 lb heaters — with the energy math and level-checking tricks explained.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/propane-tank-duration-calculator.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does a 20 lb propane tank last?", "acceptedAnswer": {"@type": "Answer", "text": "A full 20 lb tank holds about 430,000 BTU. Divide by the appliance's BTU-per-hour rating: a 30,000 BTU/hr grill runs about 14.3 hours; a 60,000 BTU/hr patio heater about 7. Burners rarely run at full blast, so real-world times run longer."}}, {"@type": "Question", "name": "How many BTUs are in propane?", "acceptedAnswer": {"@type": "Answer", "text": "About 91,500 BTU per gallon, and a pound of propane is roughly 21,500 BTU. A '20 lb' tank actually holds about 4.7 gallons when properly filled (tanks fill to 80% for safety expansion room)."}}, {"@type": "Question", "name": "How can I check how much propane is left?", "acceptedAnswer": {"@type": "Answer", "text": "Weigh the tank: subtract the tare weight (the 'TW' stamped on the collar, usually ~17 lbs for a 20 lb tank) from the scale reading \u2014 the remainder is propane pounds. The warm-water trick also works: pour hot water down the side; the tank feels cool at the liquid level."}}, {"@type": "Question", "name": "Why does my tank seem to die early in winter?", "acceptedAnswer": {"@type": "Answer", "text": "Cold reduces tank pressure \u2014 propane vaporizes more slowly as temperature drops \u2014 so high-BTU appliances can starve on a cold, low tank even with fuel remaining. Keeping tanks fuller in winter and out of wind helps; it is a pressure issue, not missing fuel."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🔥 Propane Tank Duration Calculator</h1>
         <p>Choose a tank size and enter your grill or heater’s BTU rating to see how many hours the propane will last — with the math shown honestly.</p>
-        <div id="toolContainer" data-impl="propaneCalc"></div>
+        <div id="toolContainer" data-impl="propaneCalc" style="--h-m:493px;--h-d:308px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -87,7 +91,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Propane Tank Duration Calculator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/propane-tank-duration-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Propane Tank Duration Calculator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/propane-tank-duration-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Propane Tank Duration Calculator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Propane Tank Duration Calculator by &lt;a href=&quot;https://usfreetools.com/tools/propane-tank-duration-calculator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -110,7 +114,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Calculators</h4>
+        <h3>Related Calculators</h3>
         <a href="/tools/percentage-calculator" class="related-tool"><span class="related-tool-icon">%</span><span>Percentage Calculator</span></a>
           <a href="/tools/average-calculator" class="related-tool"><span class="related-tool-icon">➗</span><span>Average Calculator (Mean)</span></a>
           <a href="/tools/bmi-calculator" class="related-tool"><span class="related-tool-icon">⚖️</span><span>BMI Calculator</span></a>
@@ -118,7 +122,7 @@
           <a href="/tools/loan-calculator" class="related-tool"><span class="related-tool-icon">🏦</span><span>Loan Calculator</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🧮 Calculators</h4>
+        <h3>🧮 Calculators</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free calculators — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=math" class="btn btn-outline btn-full" style="margin-top:10px;">View All Calculators →</a>
       </div>
@@ -167,7 +171,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

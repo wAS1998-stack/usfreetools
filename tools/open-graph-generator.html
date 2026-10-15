@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Open Graph Generator", "url": "https://usfreetools.com/tools/open-graph-generator.html", "description": "Generate Open Graph meta tags so your pages display perfect previews when shared on social media.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/open-graph-generator.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are Open Graph tags?", "acceptedAnswer": {"@type": "Answer", "text": "They are HTML meta tags that control how your page appears when shared on social media \u2014 defining the title, description, and image of the preview card. Without them, social previews are unpredictable and often unattractive."}}, {"@type": "Question", "name": "Why is the Open Graph image important?", "acceptedAnswer": {"@type": "Answer", "text": "The image is what catches the eye in a social feed and does the most to attract clicks. It needs to be a good size and aspect ratio for previews, or platforms may crop it awkwardly or not show it."}}, {"@type": "Question", "name": "Do all social platforms use Open Graph?", "acceptedAnswer": {"@type": "Answer", "text": "Most do. Open Graph originated with Facebook but is now widely supported across social platforms for building link previews, making it the standard worth implementing for social sharing."}}, {"@type": "Question", "name": "Should each page have different tags?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each page should have its own title, description, and image tags reflecting its content, so every shared link previews accurately rather than showing the same generic card."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>📱 Open Graph Generator</h1>
         <p>Generate Open Graph meta tags so your pages display perfect previews when shared on social media.</p>
-        <div id="toolContainer" data-impl="metaTag"></div>
+        <div id="toolContainer" data-impl="metaTag" style="--h-m:901px;--h-d:901px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -78,7 +82,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Open Graph Generator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/open-graph-generator&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Open Graph Generator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/open-graph-generator&quot; width=&quot;100%&quot; height=&quot;520&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Open Graph Generator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Open Graph Generator by &lt;a href=&quot;https://usfreetools.com/tools/open-graph-generator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -101,7 +105,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related SEO Tools</h4>
+        <h3>Related SEO Tools</h3>
         <a href="/tools/meta-tag-generator" class="related-tool"><span class="related-tool-icon">🏷️</span><span>Meta Tag Generator</span></a>
           <a href="/tools/slug-generator" class="related-tool"><span class="related-tool-icon">🐌</span><span>URL Slug Generator</span></a>
           <a href="/tools/keyword-density-checker" class="related-tool"><span class="related-tool-icon">📈</span><span>Keyword Density Checker</span></a>
@@ -109,7 +113,7 @@
           <a href="/tools/word-to-pdf-info" class="related-tool"><span class="related-tool-icon">📰</span><span>Text Case for Headlines</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🔍 SEO Tools</h4>
+        <h3>🔍 SEO Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free seo tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=seo" class="btn btn-outline btn-full" style="margin-top:10px;">View All SEO Tools →</a>
       </div>
@@ -158,7 +162,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

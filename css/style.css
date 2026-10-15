@@ -6,7 +6,6 @@
    All legacy class names preserved for 100% backward compatibility.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   /* Core palette — warm paper + ink + electric cobalt */
@@ -698,3 +697,12 @@ html, body { overflow-x: hidden; }
 .ad-label  { display: none !important; }
 /* Remove the empty gap the hidden top ad would leave */
 .ad-banner-in { margin: 0 !important; }
+
+/* a11y-touch */
+.related-tool { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 8px 10px; margin: 0 -10px; border-radius: 10px; color: var(--ink); font-size: .95rem; text-decoration: none; transition: var(--transition); }
+.related-tool:hover { background: var(--gray-light); color: var(--primary); }
+.related-tool-icon { width: 28px; flex: none; text-align: center; font-size: 1.1rem; }
+.footer-col a { display: inline-block; padding: 6px 0; }
+.sidebar-widget h3 { font-size: 1.05rem; }
+#toolContainer { min-height: var(--h-m, 0); }
+@media (min-width: 768px) { #toolContainer { min-height: var(--h-d, 0); } }

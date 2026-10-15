@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "UTM Link Builder", "url": "https://usfreetools.com/tools/utm-builder.html", "description": "Build trackable campaign URLs with UTM parameters for Google Analytics and marketing campaigns.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/utm-builder.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are UTM parameters?", "acceptedAnswer": {"@type": "Answer", "text": "They are tracking tags added to a URL that tell your analytics where a click came from \u2014 the source, medium, and campaign. They let you see which of your marketing efforts actually drove traffic."}}, {"@type": "Question", "name": "Do UTM parameters change where the link goes?", "acceptedAnswer": {"@type": "Answer", "text": "No. They only add tracking information that analytics reads; the link still goes to the same page. The parameters simply label the visit with its origin."}}, {"@type": "Question", "name": "Why does consistency matter?", "acceptedAnswer": {"@type": "Answer", "text": "Because analytics treats different spellings or capitalizations as separate sources. Inconsistent labels split your data confusingly, so using a consistent naming convention is essential for clean tracking."}}, {"@type": "Question", "name": "Should I tag internal links?", "acceptedAnswer": {"@type": "Answer", "text": "No. Tag external campaign and promotional links, but not links within your own site. Tagging internal links can distort your analytics by misattributing the traffic source."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🔗 UTM Link Builder</h1>
         <p>Build trackable campaign URLs with UTM parameters for Google Analytics and marketing campaigns.</p>
-        <div id="toolContainer" data-impl="utmBuilder"></div>
+        <div id="toolContainer" data-impl="utmBuilder" style="--h-m:722px;--h-d:482px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -78,7 +82,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this UTM Link Builder on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/utm-builder&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;UTM Link Builder&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/utm-builder&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;UTM Link Builder&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;UTM Link Builder by &lt;a href=&quot;https://usfreetools.com/tools/utm-builder&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -101,7 +105,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related SEO Tools</h4>
+        <h3>Related SEO Tools</h3>
         <a href="/tools/meta-tag-generator" class="related-tool"><span class="related-tool-icon">🏷️</span><span>Meta Tag Generator</span></a>
           <a href="/tools/slug-generator" class="related-tool"><span class="related-tool-icon">🐌</span><span>URL Slug Generator</span></a>
           <a href="/tools/keyword-density-checker" class="related-tool"><span class="related-tool-icon">📈</span><span>Keyword Density Checker</span></a>
@@ -109,7 +113,7 @@
           <a href="/tools/word-to-pdf-info" class="related-tool"><span class="related-tool-icon">📰</span><span>Text Case for Headlines</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🔍 SEO Tools</h4>
+        <h3>🔍 SEO Tools</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free seo tools — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=seo" class="btn btn-outline btn-full" style="margin-top:10px;">View All SEO Tools →</a>
       </div>
@@ -158,7 +162,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>

@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Roof Pitch Calculator", "url": "https://usfreetools.com/tools/roof-pitch-calculator", "description": "Convert roof pitch between rise-over-12 notation, degrees, and the pitch multiplier used to estimate true roof area — with walkability and material guidance.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "dateModified": "2026-10-15", "image": "https://usfreetools.com/og/roof-pitch-calculator.png", "isAccessibleForFree": true, "browserRequirements": "Requires JavaScript", "publisher": {"@type": "Organization", "name": "USFreeTools", "url": "https://usfreetools.com/"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a 6/12 roof pitch mean?", "acceptedAnswer": {"@type": "Answer", "text": "The roof rises 6 inches for every 12 inches of horizontal run. That is an angle of about 26.6 degrees \u2014 a common, moderately sloped US residential roof. Pitch is always quoted as rise over a 12-inch run."}}, {"@type": "Question", "name": "How do I convert roof pitch to degrees?", "acceptedAnswer": {"@type": "Answer", "text": "Angle = arctangent(rise \u00f7 12). A 4/12 pitch is 18.4\u00b0, 6/12 is 26.6\u00b0, 9/12 is 36.9\u00b0, and 12/12 is exactly 45\u00b0. The calculator does the trigonometry instantly."}}, {"@type": "Question", "name": "What is the pitch factor?", "acceptedAnswer": {"@type": "Answer", "text": "The multiplier converting a roof's horizontal footprint to its true sloped area: \u221a(rise\u00b2 + 12\u00b2) \u00f7 12. A 6/12 roof has a factor of 1.118 \u2014 a 1,000 sq ft footprint carries about 1,118 sq ft of actual roof, which is what shingles must cover."}}, {"@type": "Question", "name": "What roof pitch is walkable?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly 6/12 and below is generally considered walkable with care; 7/12-9/12 requires roof jacks and experience; above that is harness-and-staging territory. Steeper also means better shedding of rain and snow \u2014 the tradeoff that sets regional styles."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,7 +60,7 @@
       <div class="tool-main-card">
         <h1>🏠 Roof Pitch Calculator</h1>
         <p>Enter the rise per 12 inches of run to get the roof’s angle in degrees and its pitch factor — the multiplier that turns footprint into true roof area.</p>
-        <div id="toolContainer" data-impl="roofPitchCalc"></div>
+        <div id="toolContainer" data-impl="roofPitchCalc" style="--h-m:549px;--h-d:306px"></div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
@@ -87,7 +91,7 @@
 <article class="content-inner embed-box" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>Embed this Roof Pitch Calculator on your site</h2>
 <p>Free for blogs, classrooms and business sites. Paste this code where you want the tool to appear. It stays up to date automatically and loads fast.</p>
-<textarea readonly rows="4" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/roof-pitch-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Roof Pitch Calculator&quot;&gt;&lt;/iframe&gt;
+<textarea readonly rows="4" aria-label="Embed code" style="width:100%;font-family:monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:8px" onclick="this.select()">&lt;iframe src=&quot;https://usfreetools.com/embed/roof-pitch-calculator&quot; width=&quot;100%&quot; height=&quot;440&quot; style=&quot;border:0;max-width:720px&quot; loading=&quot;lazy&quot; title=&quot;Roof Pitch Calculator&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px&quot;&gt;Roof Pitch Calculator by &lt;a href=&quot;https://usfreetools.com/tools/roof-pitch-calculator&quot;&gt;USFreeTools&lt;/a&gt;&lt;/p&gt;</textarea>
 <button class="btn btn-outline" style="margin-top:8px" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied ✓'">Copy embed code</button>
 </article>
@@ -110,7 +114,7 @@
       <div>
 </div>
       <div class="sidebar-widget">
-        <h4>Related Calculators</h4>
+        <h3>Related Calculators</h3>
         <a href="/tools/percentage-calculator" class="related-tool"><span class="related-tool-icon">%</span><span>Percentage Calculator</span></a>
           <a href="/tools/average-calculator" class="related-tool"><span class="related-tool-icon">➗</span><span>Average Calculator (Mean)</span></a>
           <a href="/tools/bmi-calculator" class="related-tool"><span class="related-tool-icon">⚖️</span><span>BMI Calculator</span></a>
@@ -118,7 +122,7 @@
           <a href="/tools/loan-calculator" class="related-tool"><span class="related-tool-icon">🏦</span><span>Loan Calculator</span></a>
       </div>
       <div class="sidebar-widget">
-        <h4>🧮 Calculators</h4>
+        <h3>🧮 Calculators</h3>
         <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">Explore more free calculators — all instant, private, and free with no signup required.</p>
         <a href="/tools?cat=math" class="btn btn-outline btn-full" style="margin-top:10px;">View All Calculators →</a>
       </div>
@@ -167,7 +171,7 @@
       <div class="footer-badges"><span class="footer-badge">100% Free</span><span class="footer-badge">No Signup</span><span class="footer-badge">Ad-Supported</span></div>
     </div>
   </div></footer>
-<script src="/js/main.js"></script>
-<script src="/js/tool-logic.js"></script>
+<script defer src="/js/main.js"></script>
+<script defer src="/js/tool-logic.js"></script>
 </body>
 </html>
