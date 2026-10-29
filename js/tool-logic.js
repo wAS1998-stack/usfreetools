@@ -17,6 +17,27 @@ function ui(html){ const c=$('toolContainer'); if(!c) return; c.innerHTML=html;
     if(l&&!l.htmlFor&&!l.contains(el)) l.htmlFor=el.id;
     else if(!(l&&(l.htmlFor===el.id||l.contains(el)))&&!el.getAttribute('aria-label')) el.setAttribute('aria-label',(el.placeholder||(g&&g.textContent.trim())||el.id).slice(0,60)); }); }
 
+
+// Cost add-on: turns a quantity into a budget. Prices are editable defaults —
+// typical US figures, not quotes; every supplier differs.
+function costUI(id, unit, def, note){
+  return `<div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="${id}_price">Your price ${unit}</label>
+        <input type="number" id="${id}_price" value="${def}" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="${id}_cost">—</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">${note} Materials only — delivery, tools and labour are extra.</p>
+  </div>`;
+}
+function costOut(id, qty){
+  const p = +$(id+'_price').value || 0;
+  const el = $(id+'_cost'); if(!el) return;
+  el.textContent = (qty > 0 && p > 0)
+    ? '$' + (qty*p).toLocaleString('en-US', {maximumFractionDigits:0})
+    : '—';
+}
+
 const IMPL = {
 
   // ─── WORD / CHARACTER COUNTER (also line, sentence, paragraph, string length) ───
@@ -637,7 +658,7 @@ const IMPL = {
         <div class="stat-box"><strong id="db_lf">416 lin ft</strong><span>Total linear feet</span></div>
         <div class="stat-box"><strong id="db_screws">~676</strong><span>Screws (2 per joist)</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Boards run the deck length. Add 5-10% (15% diagonal). 5/4×6 boards are 5.5" wide.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Boards run the deck length. Add 5-10% (15% diagonal). 5/4×6 boards are 5.5" wide.</p>` + costUI('db','per board','15.00','A 5/4×6×16 pressure-treated board typically runs about $12–20.') + ``);
     window.RUN=()=>{
       const l=+$('db_l').value||0,w=+$('db_w').value||0;
       const bw=+$('db_bw').value||5.5,g=+$('db_gap').value||0,js=Math.max(+$('db_joist').value||16,8);
@@ -646,6 +667,7 @@ const IMPL = {
       $('db_boards').textContent=rows;
       $('db_lf').textContent=(rows*l).toFixed(0)+' lin ft';
       $('db_screws').textContent='~'+(rows*joists*2);
+      costOut('db', rows);
     };
     RUN();
   },
@@ -662,12 +684,13 @@ const IMPL = {
         <div class="stat-box"><strong id="fw_cords">1.00</strong><span>Cords</span></div>
         <div class="stat-box"><strong id="fw_cuft">128</strong><span>Cubic feet (stacked)</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">1 cord = 128 cu ft stacked (8×4×4). A face cord of 16" logs = 1/3 cord. Verify deliveries after stacking.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">1 cord = 128 cu ft stacked (8×4×4). A face cord of 16" logs = 1/3 cord. Verify deliveries after stacking.</p>` + costUI('fw','per cord','325.00','Seasoned hardwood typically runs about $250–450 a cord delivered.') + ``);
     window.RUN=()=>{
       const l=+$('fw_l').value||0,hh=+$('fw_h').value||0,d=+$('fw_d').value||0;
       const cf=l*hh*d;
       $('fw_cords').textContent=(cf/128).toFixed(2);
       $('fw_cuft').textContent=cf.toFixed(0);
+      costOut('fw', (cf/128));
     };
     RUN();
   },
@@ -684,13 +707,14 @@ const IMPL = {
         <div class="stat-box"><strong id="ts2_tons">~2.0</strong><span>Tons (approx)</span></div>
         <div class="stat-box"><strong id="ts2_bags">67</strong><span>Bags (0.75 cu ft)</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">New lawns 4-6", beds 6-12", topdressing 1/4-1/2". Order 5-10% extra for settling.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">New lawns 4-6", beds 6-12", topdressing 1/4-1/2". Order 5-10% extra for settling.</p>` + costUI('ts2','per cubic yard','35.00','Screened topsoil typically runs about $25–45 a yard.') + ``);
     window.RUN=()=>{
       const a=+$('ts2_area').value||0, d=+$('ts2_depth').value||0;
       const cf=a*d/12, yd=cf/27;
       $('ts2_yd').textContent=yd.toFixed(2);
       $('ts2_tons').textContent='~'+(yd*1.1).toFixed(1);
       $('ts2_bags').textContent=Math.ceil(cf/0.75);
+      costOut('ts2', yd);
     };
     RUN();
   },
@@ -735,7 +759,7 @@ const IMPL = {
         <div class="stat-box"><strong id="pv2_base">1.5 yd³</strong><span>Base gravel (4")</span></div>
         <div class="stat-box"><strong id="pv2_sand">0.37 yd³</strong><span>Bedding sand (1")</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Section: 4-6" compacted gravel, 1" sand, pavers, edge restraint. Keep spare pavers.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Section: 4-6" compacted gravel, 1" sand, pavers, edge restraint. Keep spare pavers.</p>` + costUI('pv2','per paver','3.50','Concrete pavers typically run about $2–6 each.') + ``);
     window.RUN=()=>{
       const a=+$('pv2_area').value||0, ws=+$('pv2_waste').value||0;
       const w=Math.max(+$('pv2_w').value||1,0.5), hh=Math.max(+$('pv2_h').value||1,0.5);
@@ -743,6 +767,7 @@ const IMPL = {
       $('pv2_count').textContent=Math.ceil(base*(1+ws/100));
       $('pv2_base').textContent=(a*4/12/27).toFixed(1)+' yd³';
       $('pv2_sand').textContent=(a*1/12/27).toFixed(2)+' yd³';
+      costOut('pv2', Math.ceil(base*(1+ws/100)));
     };
     RUN();
   },
@@ -764,13 +789,14 @@ const IMPL = {
         <div class="stat-box"><strong id="wp_area">284 sq ft</strong><span>Paperable area</span></div>
         <div class="stat-box"><strong id="wp_rolls">11</strong><span>Rolls to buy</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Large pattern repeats waste more — add a roll for bold repeats. Buy all rolls + 1 spare from one batch.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Large pattern repeats waste more — add a roll for bold repeats. Buy all rolls + 1 spare from one batch.</p>` + costUI('wp','per roll','40.00','Wallpaper typically runs about $30–60 a single roll.') + ``);
     window.RUN=()=>{
       const len=+$('wp_len').value||0,hh=+$('wp_h').value||0;
       const d=+$('wp_d').value||0,w=+$('wp_w').value||0,cov=parseFloat($('wp_roll').value);
       const area=Math.max(len*hh - d*21 - w*15, 0);
       $('wp_area').textContent=area.toFixed(0)+' sq ft';
       $('wp_rolls').textContent=area>0?Math.ceil(area/cov):0;
+      costOut('wp', area>0?Math.ceil(area/cov):0);
     };
     RUN();
   },
@@ -787,13 +813,14 @@ const IMPL = {
         <div class="stat-box"><strong id="sd_pallets">4.9</strong><span>Pallets (~450 sq ft)</span></div>
         <div class="stat-box"><strong id="sd_wt">~4.4 tons</strong><span>Approx. weight</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Confirm your farm\u2019s pallet size (400-500 sq ft). Prep first; lay the same day it arrives.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Confirm your farm\u2019s pallet size (400-500 sq ft). Prep first; lay the same day it arrives.</p>` + costUI('sd','per roll (10 sq ft)','4.50','Sod typically runs about $0.35–0.60 a square foot.') + ``);
     window.RUN=()=>{
       const a=+$('sd_area').value||0, ws=+$('sd_waste').value||0;
       const total=a*(1+ws/100);
       $('sd_rolls').textContent=Math.ceil(total/10);
       $('sd_pallets').textContent=(total/450).toFixed(1);
       $('sd_wt').textContent='~'+(Math.ceil(total/10)*40/2000).toFixed(1)+' tons';
+      costOut('sd', Math.ceil(total/10));
     };
     RUN();
   },
@@ -869,7 +896,7 @@ const IMPL = {
         <div class="stat-box"><strong id="dw_sheets">16</strong><span>Sheets needed</span></div>
         <div class="stat-box"><strong id="dw_screws">~512</strong><span>Screws (approx)</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Add 5-10% for cuts. Ceilings: 5/8" board; hang ceilings first, stagger joints.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Add 5-10% for cuts. Ceilings: 5/8" board; hang ceilings first, stagger joints.</p>` + costUI('dw','per sheet','16.00','A 4×8 sheet of 1/2″ drywall typically runs about $14–18.') + ``);
     window.RUN=()=>{
       const l=+$('dw_l').value||0,w=+$('dw_w').value||0,hh=+$('dw_h').value||0;
       const d=+$('dw_d').value||0,win=+$('dw_win').value||0,sheet=parseFloat($('dw_sheet').value);
@@ -879,6 +906,7 @@ const IMPL = {
       $('dw_area').textContent=area.toFixed(0)+' sq ft';
       $('dw_sheets').textContent=sheets;
       $('dw_screws').textContent='~'+(sheets*(sheet===32?32:48));
+      costOut('dw', sheets);
     };
     RUN();
   },
@@ -982,10 +1010,11 @@ const IMPL = {
       <div class="tool-stats">
         <div class="stat-box"><strong id="gs_lbs">40.0 lbs</strong><span>Seed needed</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">If your seed bag lists a rate, use the bag&#39;s number. More than the rate grows weaker turf, not thicker.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">If your seed bag lists a rate, use the bag&#39;s number. More than the rate grows weaker turf, not thicker.</p>` + costUI('gs','per lb of seed','5.50','Quality cool-season seed typically runs about $4–8 a pound.') + ``);
     window.RUN=()=>{
       const a=+$('gs_area').value||0, r=parseFloat($('gs_rate').value);
       $('gs_lbs').textContent=(a/1000*r).toFixed(1)+' lbs';
+      costOut('gs', (a/1000*r));
     };
     RUN();
   },
@@ -1027,12 +1056,13 @@ const IMPL = {
         <div class="stat-box"><strong id="gv_yd">0.93</strong><span>Cubic yards</span></div>
         <div class="stat-box"><strong id="gv_tons">1.30</strong><span>Tons (approx)</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~1.4 tons per cubic yard. Depths: 2-3\" decorative, 3-4\" paths, 6-12\" driveways (layered).</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~1.4 tons per cubic yard. Depths: 2-3\" decorative, 3-4\" paths, 6-12\" driveways (layered).</p>` + costUI('gv','per ton','45.00','Crushed gravel typically runs about $30–60 a ton.') + ``);
     window.RUN=()=>{
       const a=+$('gv_area').value||0, d=+$('gv_depth').value||0;
       const yd=a*d/12/27;
       $('gv_yd').textContent=yd.toFixed(2);
       $('gv_tons').textContent=(yd*1.4).toFixed(2);
+      costOut('gv', yd*1.4);
     };
     RUN();
   },
@@ -1175,13 +1205,14 @@ const IMPL = {
         <div class="stat-box"><strong id="mu_yd">0.93</strong><span>Cubic yards</span></div>
         <div class="stat-box"><strong id="mu_bags">13</strong><span>Bags (2 cu ft)</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Use 2-4 inch depth; keep mulch off trunks and stems.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Use 2-4 inch depth; keep mulch off trunks and stems.</p>` + costUI('mu','per cubic yard','38.00','Bulk mulch typically runs about $30–45 a yard delivered.') + ``);
     window.RUN=()=>{
       const a=+$('mu_area').value||0, dep=+$('mu_depth').value||0;
       const cf=a*dep/12;
       $('mu_cuft').textContent=cf.toFixed(1);
       $('mu_yd').textContent=(cf/27).toFixed(2);
       $('mu_bags').textContent=Math.ceil(cf/2);
+      costOut('mu', (cf/27));
     };
     RUN();
   },
@@ -1199,13 +1230,14 @@ const IMPL = {
         <div class="stat-box"><strong id="cc_b80">56</strong><span>80 lb bags</span></div>
         <div class="stat-box"><strong id="cc_b60">75</strong><span>60 lb bags</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Order 5-10% extra. Past ~1 yard, consider ready-mix delivery.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Order 5-10% extra. Past ~1 yard, consider ready-mix delivery.</p>` + costUI('cc','per 80 lb bag','7.00','Typical US bag price is about $6–8.') + ``);
     window.RUN=()=>{
       const l=+$('cc_l').value||0,w=+$('cc_w').value||0,t=+$('cc_t').value||0;
       const cf=l*w*t/12;
       $('cc_yd').textContent=(cf/27).toFixed(2);
       $('cc_b80').textContent=Math.ceil(cf/0.6);
       $('cc_b60').textContent=Math.ceil(cf/0.45);
+      costOut('cc', Math.ceil(cf/0.6));
     };
     RUN();
   },
@@ -1532,7 +1564,7 @@ const IMPL = {
         <div class="stat-box"><strong id="pt_lit">0 L</strong><span>Paint needed</span></div>
         <div class="stat-box"><strong id="pt_gal">0 gal</strong><span>US gallons</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~10 m²/L coverage, 1.6 m² per door, 1.4 m² per window. Buy ~10% extra.</p>`);
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~10 m²/L coverage, 1.6 m² per door, 1.4 m² per window. Buy ~10% extra.</p>` + costUI('pt','per gallon','40.00','Mid-grade interior paint typically runs about $30–55 a gallon.') + ``);
     window.RUN=()=>{
       const l=parseFloat($('pt_l').value)||0,w=parseFloat($('pt_w').value)||0,h=parseFloat($('pt_h').value)||0;
       const d=parseInt($('pt_doors').value)||0,wi=parseInt($('pt_win').value)||0,c=Math.max(parseInt($('pt_coats').value)||1,1);
@@ -1541,6 +1573,7 @@ const IMPL = {
       $('pt_area').textContent=area.toFixed(1)+' m²';
       $('pt_lit').textContent=liters.toFixed(1)+' L';
       $('pt_gal').textContent=(liters/3.78541).toFixed(1)+' gal';
+      costOut('pt', Math.ceil(liters/3.78541));
     };
     RUN();
   },
