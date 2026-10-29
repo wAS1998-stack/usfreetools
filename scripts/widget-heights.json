@@ -288,7 +288,7 @@
 "412": 694,
 "1280": 574
 },
-"tools/lorem-pixel-info.html": {
+"tools/string-length-calculator.html": {
 "412": 770,
 "1280": 568
 },
@@ -528,7 +528,7 @@
 "412": 511,
 "1280": 511
 },
-"tools/text-to-handwriting-info.html": {
+"tools/bold-text-generator.html": {
 "412": 343,
 "1280": 343
 },
@@ -608,7 +608,7 @@
 "412": 322,
 "1280": 322
 },
-"tools/word-to-pdf-info.html": {
+"tools/headline-case-converter.html": {
 "412": 890,
 "1280": 584
 },
