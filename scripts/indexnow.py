@@ -5,7 +5,7 @@ import json, re, sys, time, urllib.request
 SITE = "https://usfreetools.com"
 KEY = "8db665c423885e2852c351d66a804286"
 urls = []
-for f in ["sitemap-main.xml","sitemap-convert.xml","sitemap-percent-1.xml","sitemap-percent-2.xml","sitemap-height.xml"]:
+for f in ["sitemap-main.xml","sitemap-convert.xml"]:
     try: urls += re.findall(r"<loc>([^<]+)</loc>", open(f, encoding="utf-8").read())
     except FileNotFoundError: pass
 print(len(urls), "urls")
