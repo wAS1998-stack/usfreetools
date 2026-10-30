@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/grass-seed-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/grass-seed-calculator.png">
-  <title>Grass Seed Calculator – How Much Seed & What It Costs | USFreeTools</title>
+  <title>Grass Seed Calculator – How Much Seed & What It Costs</title>
   <meta name="description" content="Work out how many pounds of grass seed your lawn needs from its area and the seeding rate — new lawn or overseeding — with rates for common US grass types.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/grass-seed-calculator">
@@ -61,7 +61,29 @@
       <div class="tool-main-card">
         <h1>🌿 Grass Seed Calculator</h1>
         <p>Enter your lawn’s area and choose new seeding or overseeding to see the pounds of seed to buy — using standard rates per 1,000 square feet.</p>
-        <div id="toolContainer" data-impl="grassSeedCalc" style="--h-m:472px;--h-d:308px"></div>
+        <div id="toolContainer" data-impl="grassSeedCalc" style="--h-m:472px;--h-d:308px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="gs_area">Lawn area (sq ft)</label><input type="number" id="gs_area" value="5000" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="gs_rate">Seeding rate</label><select id="gs_rate" onchange="RUN()">
+          <option value="8" selected="">Tall fescue — new lawn (8 lb/1000)</option>
+          <option value="4">Tall fescue — overseed (4 lb/1000)</option>
+          <option value="3">Kentucky bluegrass — new (3 lb/1000)</option>
+          <option value="9">Perennial rye — new (9 lb/1000)</option>
+          <option value="2">Bermuda — new (2 lb/1000)</option>
+        </select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="gs_lbs">40.0 lbs</strong><span>Seed needed</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">If your seed bag lists a rate, use the bag's number. More than the rate grows weaker turf, not thicker.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="gs_price">Your price per lb of seed</label>
+        <input type="number" id="gs_price" value="5.50" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="gs_cost">$220</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">Quality cool-season seed typically runs about $4–8 a pound. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

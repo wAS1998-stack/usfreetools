@@ -61,7 +61,21 @@
       <div class="tool-main-card">
         <h1>🏊 Pool Volume Calculator</h1>
         <p>Enter your pool’s shape, dimensions, and average depth to get its volume in gallons and liters — the number every chemical dose and pump decision depends on.</p>
-        <div id="toolContainer" data-impl="poolVolumeCalc" style="--h-m:712px;--h-d:427px"></div>
+        <div id="toolContainer" data-impl="poolVolumeCalc" style="--h-m:712px;--h-d:427px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="pv_shape">Shape</label><select id="pv_shape" onchange="PVSHAPE();RUN()">
+          <option value="rect" selected="">Rectangular</option><option value="round">Round</option>
+        </select></div>
+        <div class="form-group"><label for="pv_d">Average depth (ft)</label><input type="number" id="pv_d" value="5" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group" id="pv_lwrap"><label for="pv_l">Length (ft)</label><input type="number" id="pv_l" value="32" min="0" oninput="RUN()"></div>
+        <div class="form-group" id="pv_wwrap"><label id="pv_wlbl" for="pv_w">Width (ft)</label><input type="number" id="pv_w" value="16" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pv_gal">19,149</strong><span>Gallons</span></div>
+        <div class="stat-box"><strong id="pv_lit">72,478</strong><span>Liters</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Sloped pools: average depth = (shallow + deep) ÷ 2. Chemical labels dose per 10,000 gallons.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

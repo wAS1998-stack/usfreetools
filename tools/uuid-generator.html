@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/uuid-generator.png">
   <meta property="og:image" content="https://usfreetools.com/og/uuid-generator.png">
-  <title>UUID Generator – Generate Random UUIDs (v4) Online | USFreeTools</title>
+  <title>UUID Generator – Generate Random UUIDs (v4) Online</title>
   <meta name="description" content="Generate random universally unique identifiers (UUID v4) for databases, APIs, and software development. Generate one or many at once. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/uuid-generator">
@@ -61,7 +61,16 @@
       <div class="tool-main-card">
         <h1>🆔 UUID Generator</h1>
         <p>Generate random universally unique identifiers (UUID v4) for databases, APIs, and software development. Generate one or many at once.</p>
-        <div id="toolContainer" data-impl="uuidGenerator" style="--h-m:481px;--h-d:481px"></div>
+        <div id="toolContainer" data-impl="uuidGenerator" style="--h-m:481px;--h-d:481px">
+<div class="form-group" style="max-width:200px;"><label for="u_n">How many?</label><input type="number" id="u_n" value="5" min="1" max="100"></div>
+      <button class="btn btn-primary" onclick="RUN()" style="margin:14px 0;">🆔 Generate UUIDs</button>
+      <textarea class="tool-output-area" id="t_out" readonly="" rows="6" aria-label="t_out">efc8a949-6e19-4e42-a905-475af0d53afa
+c4a32087-25bb-4920-8909-c740b977c0b4
+134d4550-c953-4102-b249-deb97aea9a0b
+5a153002-0f08-456f-949c-efbac45195f2
+4448184e-e27c-468e-a155-25d85faa73c8</textarea>
+      <div class="tool-actions" style="margin-top:10px;"><button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋 Copy</button></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

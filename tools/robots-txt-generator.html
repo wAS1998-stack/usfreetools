@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/robots-txt-generator.png">
   <meta property="og:image" content="https://usfreetools.com/og/robots-txt-generator.png">
-  <title>Robots.txt Generator – Create a Robots.txt File | USFreeTools</title>
+  <title>Robots.txt Generator – Create a Robots.txt File</title>
   <meta name="description" content="Generate a properly formatted robots.txt file to tell search engine crawlers which pages to index or avoid. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/robots-txt-generator">
@@ -61,7 +61,14 @@
       <div class="tool-main-card">
         <h1>🤖 Robots.txt Generator</h1>
         <p>Generate a properly formatted robots.txt file to tell search engine crawlers which pages to index or avoid.</p>
-        <div id="toolContainer" data-impl="robotsTxt" style="--h-m:447px;--h-d:447px"></div>
+        <div id="toolContainer" data-impl="robotsTxt" style="--h-m:447px;--h-d:447px">
+<div class="form-group"><label for="rb_site">Sitemap URL</label><input type="text" id="rb_site" placeholder="https://example.com/sitemap.xml" oninput="RUN()"></div>
+      <label style="display:flex;gap:8px;font-size:.9rem;margin-bottom:14px;"><input type="checkbox" id="rb_all" checked="" onchange="RUN()" aria-label="rb_all"> Allow all crawlers</label>
+      <textarea class="tool-output-area" id="t_out" readonly="" rows="6" aria-label="t_out">User-agent: *
+Allow: /
+</textarea>
+      <div class="tool-actions" style="margin-top:10px;"><button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋 Copy</button></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

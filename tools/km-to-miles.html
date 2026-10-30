@@ -61,7 +61,12 @@
       <div class="tool-main-card">
         <h1>🛤️ Kilometers to Miles</h1>
         <p>Convert kilometers to miles instantly for travel and fitness.</p>
-        <div id="toolContainer" data-impl="lengthConverter" data-from="km" data-to="mi" style="--h-m:448px;--h-d:248px"></div>
+        <div id="toolContainer" data-impl="lengthConverter" data-from="km" data-to="mi" style="--h-m:448px;--h-d:248px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group"><label for="uc_v">From</label><input type="number" id="uc_v" value="1" oninput="RUN()"><select id="uc_f" onchange="RUN()" style="margin-top:8px;" aria-label="Frommkmcmmmmiydftin"><option>m</option><option selected="">km</option><option>cm</option><option>mm</option><option>mi</option><option>yd</option><option>ft</option><option>in</option></select></div>
+      <div class="form-group"><label for="uc_o">To</label><input type="text" id="uc_o" readonly="" value="0.621373"><select id="uc_t" onchange="RUN()" style="margin-top:8px;" aria-label="Tomkmcmmmmiydftin"><option>m</option><option>km</option><option>cm</option><option>mm</option><option selected="">mi</option><option>yd</option><option>ft</option><option>in</option></select></div>
+    </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

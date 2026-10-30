@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/meta-description-counter.png">
   <meta property="og:image" content="https://usfreetools.com/og/meta-description-counter.png">
-  <title>Meta Description Checker – Is My Meta Too Long? | USFreeTools</title>
+  <title>Meta Description Checker – Is My Meta Too Long?</title>
   <meta name="description" content="Check your meta description length to ensure it fits within Google search result display limits (around 155–160 characters). Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/meta-description-counter">
@@ -61,7 +61,21 @@
       <div class="tool-main-card">
         <h1>📋 Meta Description Length Checker</h1>
         <p>Check your meta description length to ensure it fits within Google search result display limits (around 155–160 characters).</p>
-        <div id="toolContainer" data-impl="wordCounter" style="--h-m:770px;--h-d:568px"></div>
+        <div id="toolContainer" data-impl="wordCounter" style="--h-m:770px;--h-d:568px">
+<textarea class="tool-input-area" id="t_in" placeholder="Type or paste your text here…" rows="9" style="min-height:200px;" aria-label="Type or paste your text here…"></textarea>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="s_words">0</strong><span>Words</span></div>
+        <div class="stat-box"><strong id="s_chars">0</strong><span>Characters</span></div>
+        <div class="stat-box"><strong id="s_charsns">0</strong><span>No Spaces</span></div>
+        <div class="stat-box"><strong id="s_sent">0</strong><span>Sentences</span></div>
+        <div class="stat-box"><strong id="s_para">0</strong><span>Paragraphs</span></div>
+        <div class="stat-box"><strong id="s_lines">0</strong><span>Lines</span></div>
+        <div class="stat-box"><strong id="s_read">0 min</strong><span>Read Time</span></div>
+      </div>
+      <div class="tool-actions">
+        <button class="btn btn-outline" onclick="document.getElementById('t_in').value='';document.getElementById('t_in').dispatchEvent(new Event('input'))">🗑️ Clear</button>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

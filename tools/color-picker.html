@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/color-picker.png">
   <meta property="og:image" content="https://usfreetools.com/og/color-picker.png">
-  <title>Color Picker – Pick a Color, Get Hex, RGB & HSL | USFreeTools</title>
+  <title>Color Picker – Pick a Color, Get Hex, RGB & HSL</title>
   <meta name="description" content="Pick any color visually and instantly get its HEX, RGB, and HSL codes ready to copy into your code. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/color-picker">
@@ -61,7 +61,15 @@
       <div class="tool-main-card">
         <h1>🖌️ Color Picker</h1>
         <p>Pick any color visually and instantly get its HEX, RGB, and HSL codes ready to copy into your code.</p>
-        <div id="toolContainer" data-impl="colorPicker" style="--h-m:476px;--h-d:476px"></div>
+        <div id="toolContainer" data-impl="colorPicker" style="--h-m:476px;--h-d:476px">
+<div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;flex-wrap:wrap;">
+        <input type="color" id="c_pick" value="#0057ff" style="width:80px;height:80px;border:none;border-radius:12px;cursor:pointer;" aria-label="c_pick">
+        <div id="c_preview" style="flex:1;min-width:120px;height:80px;border-radius:12px;background:#0057FF;"></div>
+      </div>
+      <div class="form-group"><label for="c_hex">HEX</label><div style="display:flex;gap:8px;"><input type="text" id="c_hex" value="#0057FF"><button class="btn btn-outline" onclick="copyText(document.getElementById('c_hex').value,this)">📋</button></div></div>
+      <div class="form-group"><label for="c_rgb">RGB</label><div style="display:flex;gap:8px;"><input type="text" id="c_rgb" readonly="" value="rgb(0, 87, 255)"><button class="btn btn-outline" onclick="copyText(document.getElementById('c_rgb').value,this)">📋</button></div></div>
+      <div class="form-group"><label for="c_hsl">HSL</label><div style="display:flex;gap:8px;"><input type="text" id="c_hsl" readonly="" value="hsl(220, 100%, 50%)"><button class="btn btn-outline" onclick="copyText(document.getElementById('c_hsl').value,this)">📋</button></div></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

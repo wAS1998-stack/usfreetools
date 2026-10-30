@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/propane-tank-duration-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/propane-tank-duration-calculator.png">
   <title>How Long Does a 20 lb Propane Tank Last? – Calculator</title>
-  <meta name="description" content="See how long a propane tank lasts at your appliance’s BTU rating — 20 lb grill tanks to 100 lb heaters — with the energy math and level-checking tricks explained.">
+  <meta name="description" content="See how long a propane tank lasts at your appliance’s BTU rating — 20 lb grill tanks to 100 lb heaters — with the energy math and level-checking tricks.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/propane-tank-duration-calculator">
   <meta property="og:title" content="How Long Does a 20 lb Propane Tank Last? – Calculator">
-  <meta property="og:description" content="See how long a propane tank lasts at your appliance’s BTU rating — 20 lb grill tanks to 100 lb heaters — with the energy math and level-checking tricks explained.">
+  <meta property="og:description" content="See how long a propane tank lasts at your appliance’s BTU rating — 20 lb grill tanks to 100 lb heaters — with the energy math and level-checking tricks.">
   <meta property="og:url" content="https://usfreetools.com/tools/propane-tank-duration-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,22 @@
       <div class="tool-main-card">
         <h1>🔥 Propane Tank Duration Calculator</h1>
         <p>Choose a tank size and enter your grill or heater’s BTU rating to see how many hours the propane will last — with the math shown honestly.</p>
-        <div id="toolContainer" data-impl="propaneCalc" style="--h-m:493px;--h-d:308px"></div>
+        <div id="toolContainer" data-impl="propaneCalc" style="--h-m:493px;--h-d:308px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="pr_tank">Tank size</label><select id="pr_tank" onchange="RUN()">
+          <option value="430000" selected="">20 lb (grill standard, ~430k BTU)</option>
+          <option value="645000">30 lb (~645k BTU)</option>
+          <option value="860000">40 lb (~860k BTU)</option>
+          <option value="2150000">100 lb (~2.15M BTU)</option>
+        </select></div>
+        <div class="form-group"><label for="pr_btu">Appliance rating (BTU/hr)</label><input type="number" id="pr_btu" value="30000" min="1000" step="1000" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pr_hours">14.3 hrs</strong><span>Burn time (full output)</span></div>
+        <div class="stat-box"><strong id="pr_half">~28.7 hrs</strong><span>At half setting</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Check remaining fuel by weight: scale reading − stamped TW = propane lbs (× 21,500 BTU).</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

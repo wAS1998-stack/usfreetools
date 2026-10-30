@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/wind-chill-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/wind-chill-calculator.png">
   <title>Wind Chill Calculator – Feels-Like Temperature (NWS Formula)</title>
-  <meta name="description" content="Calculate wind chill from temperature and wind speed using the official National Weather Service formula — with frostbite-time context and honest limits of the index.">
+  <meta name="description" content="Calculate wind chill from temperature and wind speed using the official National Weather Service formula — with frostbite-time context and honest limits of the.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/wind-chill-calculator">
   <meta property="og:title" content="Wind Chill Calculator – Feels-Like Temperature (NWS Formula)">
-  <meta property="og:description" content="Calculate wind chill from temperature and wind speed using the official National Weather Service formula — with frostbite-time context and honest limits of the index.">
+  <meta property="og:description" content="Calculate wind chill from temperature and wind speed using the official National Weather Service formula — with frostbite-time context and honest limits of the.">
   <meta property="og:url" content="https://usfreetools.com/tools/wind-chill-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,17 @@
       <div class="tool-main-card">
         <h1>🌬️ Wind Chill Calculator</h1>
         <p>Enter the air temperature and wind speed to get the official NWS wind chill — the “feels-like” temperature — with frostbite context in the guidance.</p>
-        <div id="toolContainer" data-impl="windChillCalc" style="--h-m:448px;--h-d:306px"></div>
+        <div id="toolContainer" data-impl="windChillCalc" style="--h-m:448px;--h-d:306px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="wc_t">Air temperature (°F)</label><input type="number" id="wc_t" value="20" step="1" oninput="RUN()"></div>
+        <div class="form-group"><label for="wc_v">Wind speed (mph)</label><input type="number" id="wc_v" value="15" min="0" step="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="wc_chill">6°F</strong><span>Wind chill (NWS)</span></div>
+        <div class="stat-box"><strong id="wc_c">−14°C</strong><span>In Celsius</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Valid for ≤50°F and ≥3 mph. Frostbite: ~30 min exposed skin at −18°F chill.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

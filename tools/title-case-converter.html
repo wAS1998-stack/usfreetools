@@ -61,7 +61,21 @@
       <div class="tool-main-card">
         <h1>🅰️ Title Case Converter</h1>
         <p>Convert text to Title Case, capitalizing the first letter of each word — perfect for headlines and titles.</p>
-        <div id="toolContainer" data-impl="caseConverter" style="--h-m:890px;--h-d:584px"></div>
+        <div id="toolContainer" data-impl="caseConverter" style="--h-m:890px;--h-d:584px">
+<textarea class="tool-input-area" id="t_in" placeholder="Type or paste text here…" rows="5" aria-label="Type or paste text here…"></textarea>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:14px 0;">
+        <button class="btn btn-primary" onclick="CC('upper')">UPPERCASE</button>
+        <button class="btn btn-outline" onclick="CC('lower')">lowercase</button>
+        <button class="btn btn-outline" onclick="CC('title')">Title Case</button>
+        <button class="btn btn-outline" onclick="CC('sentence')">Sentence case</button>
+        <button class="btn btn-outline" onclick="CC('camel')">camelCase</button>
+        <button class="btn btn-outline" onclick="CC('snake')">snake_case</button>
+        <button class="btn btn-outline" onclick="CC('kebab')">kebab-case</button>
+        <button class="btn btn-outline" onclick="CC('alt')">aLtErNaTe</button>
+      </div>
+      <textarea class="tool-output-area" id="t_out" readonly="" rows="5" aria-label="t_out"></textarea>
+      <div class="tool-actions" style="margin-top:10px;"><button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋 Copy</button></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

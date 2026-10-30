@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/overtime-pay-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/overtime-pay-calculator.png">
   <title>Overtime Pay Calculator – Time and a Half & Double Time</title>
-  <meta name="description" content="Calculate overtime pay at time-and-a-half or double time. Enter your hourly rate, regular hours, and overtime hours to see your overtime earnings and total paycheck.">
+  <meta name="description" content="Calculate overtime pay at time-and-a-half or double time. Enter your hourly rate, regular hours, and overtime hours to see your overtime earnings and total.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/overtime-pay-calculator">
   <meta property="og:title" content="Overtime Pay Calculator – Time and a Half & Double Time">
-  <meta property="og:description" content="Calculate overtime pay at time-and-a-half or double time. Enter your hourly rate, regular hours, and overtime hours to see your overtime earnings and total paycheck.">
+  <meta property="og:description" content="Calculate overtime pay at time-and-a-half or double time. Enter your hourly rate, regular hours, and overtime hours to see your overtime earnings and total.">
   <meta property="og:url" content="https://usfreetools.com/tools/overtime-pay-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,22 @@
       <div class="tool-main-card">
         <h1>⏰ Overtime Pay Calculator</h1>
         <p>Enter your hourly rate, regular hours, and overtime hours to see your time-and-a-half pay and total earnings — with double-time supported too.</p>
-        <div id="toolContainer" data-impl="overtimePayCalc" style="--h-m:813px;--h-d:427px"></div>
+        <div id="toolContainer" data-impl="overtimePayCalc" style="--h-m:813px;--h-d:427px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="ot_rate">Hourly rate ($)</label><input type="number" id="ot_rate" value="20" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label for="ot_reg">Regular hours</label><input type="number" id="ot_reg" value="40" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="ot_hrs">Overtime hours</label><input type="number" id="ot_hrs" value="8" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="ot_mult">Multiplier</label><select id="ot_mult" onchange="RUN()">
+          <option value="1.5" selected="">Time and a half (1.5x)</option><option value="2">Double time (2x)</option>
+        </select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ot_orate">$30.00</strong><span>Overtime rate</span></div>
+        <div class="stat-box"><strong id="ot_opay">$240</strong><span>Overtime pay</span></div>
+        <div class="stat-box"><strong id="ot_total">$1,040</strong><span>Total pay</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">General FLSA baseline: 1.5x beyond 40 hrs/week for non-exempt roles. Not legal advice.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

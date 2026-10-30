@@ -60,7 +60,14 @@
       <div class="tool-main-card">
         <h1>🖼️ JPG to PNG Converter</h1>
         <p>Convert JPG images to PNG format instantly in your browser. Lossless quality, full privacy — your image is never uploaded.</p>
-        <div id="toolContainer" data-impl="imageConvert" data-target="image/png" style="--h-m:101px;--h-d:101px"></div>
+        <div id="toolContainer" data-impl="imageConvert" data-target="image/png" style="--h-m:101px;--h-d:101px">
+<input type="file" id="im_file" accept="image/*" style="margin-bottom:14px;" aria-label="im_file">
+      <div id="im_ctrls" style="display:none;">
+        <p style="color:var(--gray);font-size:.9rem;margin-bottom:12px;">Your image will be converted to <strong>.png</strong>, processed entirely in your browser.</p>
+        <button class="btn btn-primary" onclick="IM.go()">Convert &amp; Download .png</button>
+      </div>
+      <canvas id="im_cv" style="display:none;"></canvas>
+</div>
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>What This Tool Does</h2>

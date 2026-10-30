@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/percentage-increase-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/percentage-increase-calculator.png">
-  <title>Percentage Increase – What Is the Percent Change? | USFreeTools</title>
+  <title>Percentage Increase – What Is the Percent Change?</title>
   <meta name="description" content="Calculate the percentage increase or decrease between an old value and a new value. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/percentage-increase-calculator">
@@ -61,7 +61,39 @@
       <div class="tool-main-card">
         <h1>📈 Percentage Increase Calculator</h1>
         <p>Calculate the percentage increase or decrease between an old value and a new value.</p>
-        <div id="toolContainer" data-impl="percentage" style="--h-m:584px;--h-d:326px"></div>
+        <div id="toolContainer" data-impl="percentage" style="--h-m:584px;--h-d:326px">
+<div class="tabs-container">
+        <div class="tabs">
+          <button class="tab active">% of number</button>
+          <button class="tab">X is what % of Y</button>
+          <button class="tab">% change</button>
+        </div>
+        <div class="tab-panel active">
+          <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+            <div class="form-group"><label for="pa_p">What is</label><input type="number" id="pa_p" value="20" oninput="PA()"></div>
+            <span style="padding-bottom:12px;">% of</span>
+            <div class="form-group"><label for="pa_n">Number</label><input type="number" id="pa_n" value="150" oninput="PA()"></div>
+          </div>
+          <div class="tool-result-bar" id="pa_r">20% of 150 = 30</div>
+        </div>
+        <div class="tab-panel">
+          <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+            <div class="form-group"><label for="pb_x">Value</label><input type="number" id="pb_x" value="30" oninput="PB()"></div>
+            <span style="padding-bottom:12px;">is what % of</span>
+            <div class="form-group"><label for="pb_y">Total</label><input type="number" id="pb_y" value="150" oninput="PB()"></div>
+          </div>
+          <div class="tool-result-bar" id="pb_r">30 is 20.00% of 150</div>
+        </div>
+        <div class="tab-panel">
+          <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+            <div class="form-group"><label for="pc_a">From</label><input type="number" id="pc_a" value="100" oninput="PC()"></div>
+            <span style="padding-bottom:12px;">to</span>
+            <div class="form-group"><label for="pc_b">To</label><input type="number" id="pc_b" value="125" oninput="PC()"></div>
+          </div>
+          <div class="tool-result-bar" id="pc_r">Change: +25.00% (increase)</div>
+        </div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/btu-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/btu-calculator.png">
   <title>BTU Calculator – What Size Air Conditioner Do I Need?</title>
-  <meta name="description" content="Estimate the air conditioner BTUs a room needs from its square footage, sun exposure, and occupancy — with tonnage shown and honest notes on when a pro load calculation matters.">
+  <meta name="description" content="Estimate the air conditioner BTUs a room needs from its square footage, sun exposure, and occupancy — with tonnage shown and honest notes on when a pro load.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/btu-calculator">
   <meta property="og:title" content="BTU Calculator – What Size Air Conditioner Do I Need?">
-  <meta property="og:description" content="Estimate the air conditioner BTUs a room needs from its square footage, sun exposure, and occupancy — with tonnage shown and honest notes on when a pro load calculation matters.">
+  <meta property="og:description" content="Estimate the air conditioner BTUs a room needs from its square footage, sun exposure, and occupancy — with tonnage shown and honest notes on when a pro load.">
   <meta property="og:url" content="https://usfreetools.com/tools/btu-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,22 @@
       <div class="tool-main-card">
         <h1>❄️ BTU Calculator (AC Sizing)</h1>
         <p>Enter the room’s square footage, sun exposure, and occupancy to estimate the air-conditioner BTUs it needs — with the equivalent tonnage shown.</p>
-        <div id="toolContainer" data-impl="btuCalc" style="--h-m:643px;--h-d:308px"></div>
+        <div id="toolContainer" data-impl="btuCalc" style="--h-m:643px;--h-d:308px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="bt_area">Room area (sq ft)</label><input type="number" id="bt_area" value="300" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="bt_sun">Sun exposure</label><select id="bt_sun" onchange="RUN()">
+          <option value="0.9">Heavily shaded (−10%)</option>
+          <option value="1" selected="">Average</option>
+          <option value="1.1">Very sunny (+10%)</option>
+        </select></div>
+        <div class="form-group"><label for="bt_ppl">Typical occupants</label><input type="number" id="bt_ppl" value="2" min="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="bt_btu">6,000 BTU</strong><span>Recommended capacity</span></div>
+        <div class="stat-box"><strong id="bt_ton">0.50</strong><span>Tons</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Rule-of-thumb for room units (+~4,000 BTU if it is a kitchen). Whole homes need a Manual J calculation.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

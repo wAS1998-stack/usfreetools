@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/cron-expression-generator.png">
   <meta property="og:image" content="https://usfreetools.com/og/cron-expression-generator.png">
-  <title>Cron Expression Generator – Build Cron Schedules | USFreeTools</title>
+  <title>Cron Expression Generator – Build Cron Schedules</title>
   <meta name="description" content="Generate and understand cron expressions for scheduling tasks on Linux servers and CI pipelines. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/cron-expression-generator">
@@ -61,7 +61,17 @@
       <div class="tool-main-card">
         <h1>⏰ Cron Expression Generator</h1>
         <p>Generate and understand cron expressions for scheduling tasks on Linux servers and CI pipelines.</p>
-        <div id="toolContainer" data-impl="cronGenerator" style="--h-m:715px;--h-d:260px"></div>
+        <div id="toolContainer" data-impl="cronGenerator" style="--h-m:715px;--h-d:260px">
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
+        <div class="form-group"><label for="cr_min">Min</label><input type="text" id="cr_min" value="*" oninput="RUN()"></div>
+        <div class="form-group"><label for="cr_hr">Hour</label><input type="text" id="cr_hr" value="*" oninput="RUN()"></div>
+        <div class="form-group"><label for="cr_dom">Day</label><input type="text" id="cr_dom" value="*" oninput="RUN()"></div>
+        <div class="form-group"><label for="cr_mon">Month</label><input type="text" id="cr_mon" value="*" oninput="RUN()"></div>
+        <div class="form-group"><label for="cr_dow">Weekday</label><input type="text" id="cr_dow" value="*" oninput="RUN()"></div>
+      </div>
+      <label style="font-size:.85rem;font-weight:600;">Cron Expression</label>
+      <div style="display:flex;gap:8px;"><input type="text" id="t_out" readonly="" style="flex:1;border:1.5px solid var(--border);border-radius:8px;padding:12px;font-family:monospace;" aria-label="t_out" value="* * * * *"><button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋</button></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

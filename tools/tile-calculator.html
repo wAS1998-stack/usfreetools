@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/tile-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/tile-calculator.png">
   <title>Tile Calculator – How Many Tiles Do I Need? | USFreeTools</title>
-  <meta name="description" content="Calculate how many tiles you need from the area and tile size, with a waste percentage built in. Works for floors, walls, and backsplashes in any tile dimensions.">
+  <meta name="description" content="Calculate how many tiles you need from the area and tile size, with a waste percentage built in.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/tile-calculator">
   <meta property="og:title" content="Tile Calculator – How Many Tiles Do I Need?">
-  <meta property="og:description" content="Calculate how many tiles you need from the area and tile size, with a waste percentage built in. Works for floors, walls, and backsplashes in any tile dimensions.">
+  <meta property="og:description" content="Calculate how many tiles you need from the area and tile size, with a waste percentage built in.">
   <meta property="og:url" content="https://usfreetools.com/tools/tile-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,19 @@
       <div class="tool-main-card">
         <h1>◻️ Tile Calculator</h1>
         <p>Enter the area, your tile size, and a waste percentage to see exactly how many tiles to buy — for floors, walls, and backsplashes.</p>
-        <div id="toolContainer" data-impl="tileCalc" style="--h-m:710px;--h-d:425px"></div>
+        <div id="toolContainer" data-impl="tileCalc" style="--h-m:710px;--h-d:425px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="tl_area">Area (sq ft)</label><input type="number" id="tl_area" value="120" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="tl_waste">Waste (%)</label><input type="number" id="tl_waste" value="10" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="tl_w">Tile width (in)</label><input type="number" id="tl_w" value="12" min="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="tl_h">Tile height (in)</label><input type="number" id="tl_h" value="12" min="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="tl_base">120</strong><span>Tiles (exact)</span></div>
+        <div class="stat-box"><strong id="tl_total">132</strong><span>Buy (with waste)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Use 10% waste for straight lay, 15% for diagonal or herringbone. Round up to whole boxes.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

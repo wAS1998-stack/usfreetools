@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/pizza-dough-hydration-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/pizza-dough-hydration-calculator.png">
   <title>Pizza Dough Hydration Calculator – Water, Salt & Yeast</title>
-  <meta name="description" content="Calculate exact water, salt, and yeast for your pizza dough from flour weight and hydration percentage. Supports 55-80% hydration for Neapolitan, NY, and pan styles.">
+  <meta name="description" content="Calculate exact water, salt, and yeast for your pizza dough from flour weight and hydration percentage.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/pizza-dough-hydration-calculator">
   <meta property="og:title" content="Pizza Dough Hydration Calculator – Water, Salt & Yeast">
-  <meta property="og:description" content="Calculate exact water, salt, and yeast for your pizza dough from flour weight and hydration percentage. Supports 55-80% hydration for Neapolitan, NY, and pan styles.">
+  <meta property="og:description" content="Calculate exact water, salt, and yeast for your pizza dough from flour weight and hydration percentage.">
   <meta property="og:url" content="https://usfreetools.com/tools/pizza-dough-hydration-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,20 @@
       <div class="tool-main-card">
         <h1>🍕 Pizza Dough Hydration Calculator</h1>
         <p>Enter your flour weight and target hydration, and get the exact water, salt, and yeast for your dough — using true baker’s percentages.</p>
-        <div id="toolContainer" data-impl="pizzaDoughCalc" style="--h-m:734px;--h-d:393px"></div>
+        <div id="toolContainer" data-impl="pizzaDoughCalc" style="--h-m:734px;--h-d:393px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="pd_flour">Flour (g)</label><input type="number" id="pd_flour" value="500" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="pd_hyd">Hydration (%)</label><input type="number" id="pd_hyd" value="65" min="40" max="100" oninput="RUN()"></div>
+        <div class="form-group"><label for="pd_salt">Salt (%)</label><input type="number" id="pd_salt" value="2" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label for="pd_yeast">Instant yeast (%)</label><input type="number" id="pd_yeast" value="0.3" min="0" step="0.1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pd_water">325 g</strong><span>Water</span></div>
+        <div class="stat-box"><strong id="pd_saltg">10 g</strong><span>Salt</span></div>
+        <div class="stat-box"><strong id="pd_yeastg">1.5 g</strong><span>Yeast</span></div>
+        <div class="stat-box"><strong id="pd_total">836.5 g</strong><span>Total dough</span></div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

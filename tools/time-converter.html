@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/time-converter.png">
   <meta property="og:image" content="https://usfreetools.com/og/time-converter.png">
-  <title>Time Converter – Hours, Minutes & Seconds Online | USFreeTools</title>
+  <title>Time Converter – Hours, Minutes & Seconds Online</title>
   <meta name="description" content="Convert time between seconds, minutes, hours, days, and weeks instantly. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/time-converter">
@@ -65,7 +65,12 @@
       <div class="tool-main-card">
         <h1>⏱️ Time Converter</h1>
         <p>Convert time between seconds, minutes, hours, days, and weeks instantly.</p>
-        <div id="toolContainer" data-impl="timeConverter" style="--h-m:448px;--h-d:248px"></div>
+        <div id="toolContainer" data-impl="timeConverter" style="--h-m:448px;--h-d:248px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group"><label for="uc_v">From</label><input type="number" id="uc_v" value="1" oninput="RUN()"><select id="uc_f" onchange="RUN()" style="margin-top:8px;" aria-label="Fromsecminhourdayweek"><option selected="">sec</option><option>min</option><option>hour</option><option>day</option><option>week</option></select></div>
+      <div class="form-group"><label for="uc_o">To</label><input type="text" id="uc_o" readonly="" value="0.016667"><select id="uc_t" onchange="RUN()" style="margin-top:8px;" aria-label="Tosecminhourdayweek"><option>sec</option><option selected="">min</option><option>hour</option><option>day</option><option>week</option></select></div>
+    </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

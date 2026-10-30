@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/gpa-to-percentage-converter.png">
   <meta property="og:image" content="https://usfreetools.com/og/gpa-to-percentage-converter.png">
   <title>GPA to Percentage Converter – 4.0, 5.0 & 10 CGPA Scales</title>
-  <meta name="description" content="Convert GPA to percentage on the 4.0 scale, 5.0 scale, or 10-point CGPA scale instantly. Includes the common CGPA x 9.5 formula and clear notes on when each applies.">
+  <meta name="description" content="Convert GPA to percentage on the 4.0 scale, 5.0 scale, or 10-point CGPA scale instantly. Includes the common CGPA x 9.5 formula and clear notes on when each.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/gpa-to-percentage-converter">
   <meta property="og:title" content="GPA to Percentage Converter – 4.0, 5.0 & 10 CGPA Scales">
-  <meta property="og:description" content="Convert GPA to percentage on the 4.0 scale, 5.0 scale, or 10-point CGPA scale instantly. Includes the common CGPA x 9.5 formula and clear notes on when each applies.">
+  <meta property="og:description" content="Convert GPA to percentage on the 4.0 scale, 5.0 scale, or 10-point CGPA scale instantly. Includes the common CGPA x 9.5 formula and clear notes on when each.">
   <meta property="og:url" content="https://usfreetools.com/tools/gpa-to-percentage-converter">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,20 @@
       <div class="tool-main-card">
         <h1>🎓 GPA to Percentage Converter</h1>
         <p>Convert your GPA or CGPA into a percentage instantly. Supports the 4.0 scale, 5.0 scale, and the 10-point CGPA scale (x 9.5 formula) — with honest notes on when each applies.</p>
-        <div id="toolContainer" data-impl="gpaPercentCalc" style="--h-m:472px;--h-d:308px"></div>
+        <div id="toolContainer" data-impl="gpaPercentCalc" style="--h-m:472px;--h-d:308px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="gp_val">GPA / CGPA</label><input type="number" id="gp_val" value="8.0" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label for="gp_scale">Scale</label><select id="gp_scale" onchange="RUN()">
+          <option value="9.5" selected="">10-point CGPA (x 9.5)</option>
+          <option value="25">4.0 scale (x 25)</option>
+          <option value="20">5.0 scale (x 20)</option>
+        </select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="gp_pct">76%</strong><span>Percentage</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Standard conversion formulas. If your institution publishes its own formula, use theirs.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

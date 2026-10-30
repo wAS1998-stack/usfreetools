@@ -8,12 +8,12 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/pace-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/pace-calculator.png">
-  <title>Running Pace Calculator – Min/Km, Min/Mile & Speed | USFreeTools</title>
-  <meta name="description" content="Calculate your running pace per kilometer and per mile from any distance and time. See pace and speed instantly for 5K, 10K, half marathon, and marathon training.">
+  <title>Running Pace Calculator – Min/Km, Min/Mile & Speed</title>
+  <meta name="description" content="Calculate your running pace per kilometer and per mile from any distance and time. See pace and speed instantly for 5K, 10K, half marathon, and marathon.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/pace-calculator">
   <meta property="og:title" content="Running Pace Calculator – Min/Km, Min/Mile & Speed">
-  <meta property="og:description" content="Calculate your running pace per kilometer and per mile from any distance and time. See pace and speed instantly for 5K, 10K, half marathon, and marathon training.">
+  <meta property="og:description" content="Calculate your running pace per kilometer and per mile from any distance and time. See pace and speed instantly for 5K, 10K, half marathon, and marathon.">
   <meta property="og:url" content="https://usfreetools.com/tools/pace-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,22 @@
       <div class="tool-main-card">
         <h1>🏃 Running Pace Calculator</h1>
         <p>Enter a distance and your time, and get your pace per kilometer and per mile, plus your speed — instantly. Perfect for 5K, 10K, half marathon, and marathon training.</p>
-        <div id="toolContainer" data-impl="paceCalc" style="--h-m:901px;--h-d:411px"></div>
+        <div id="toolContainer" data-impl="paceCalc" style="--h-m:901px;--h-d:411px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="pc_dist">Distance</label><input type="number" id="pc_dist" value="5" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label for="pc_unit">Unit</label><select id="pc_unit" onchange="RUN()"><option value="km" selected="">km</option><option value="mi">miles</option></select></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="pc_h">Hours</label><input type="number" id="pc_h" value="0" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="pc_m">Minutes</label><input type="number" id="pc_m" value="30" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="pc_s">Seconds</label><input type="number" id="pc_s" value="0" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pc_km">6:00</strong><span>Pace / km</span></div>
+        <div class="stat-box"><strong id="pc_mi">9:39</strong><span>Pace / mile</span></div>
+        <div class="stat-box"><strong id="pc_speed">10.0 km/h (6.2 mph)</strong><span>Speed</span></div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

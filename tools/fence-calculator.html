@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/fence-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/fence-calculator.png">
   <title>Fence Calculator – How Many Posts and Rails Do I Need?</title>
-  <meta name="description" content="Work out fence materials from the run length: how many posts, sections, and rails you need at your chosen post spacing, with practical layout and setting advice.">
+  <meta name="description" content="Work out fence materials from the run length: how many posts, sections, and rails you need at your chosen post spacing, with practical layout and setting.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/fence-calculator">
   <meta property="og:title" content="Fence Calculator – How Many Posts and Rails Do I Need?">
-  <meta property="og:description" content="Work out fence materials from the run length: how many posts, sections, and rails you need at your chosen post spacing, with practical layout and setting advice.">
+  <meta property="og:description" content="Work out fence materials from the run length: how many posts, sections, and rails you need at your chosen post spacing, with practical layout and setting.">
   <meta property="og:url" content="https://usfreetools.com/tools/fence-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,19 @@
       <div class="tool-main-card">
         <h1>🪵 Fence Calculator</h1>
         <p>Enter your fence length, post spacing, and rails per section to see how many posts, sections, and rails the run needs.</p>
-        <div id="toolContainer" data-impl="fenceCalc" style="--h-m:669px;--h-d:306px"></div>
+        <div id="toolContainer" data-impl="fenceCalc" style="--h-m:669px;--h-d:306px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="fc_len">Fence length (ft)</label><input type="number" id="fc_len" value="100" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="fc_sp">Post spacing (ft)</label><input type="number" id="fc_sp" value="8" min="1" oninput="RUN()"></div>
+        <div class="form-group"><label for="fc_rails">Rails per section</label><input type="number" id="fc_rails" value="2" min="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="fc_sections">13</strong><span>Sections</span></div>
+        <div class="stat-box"><strong id="fc_posts">14</strong><span>Posts</span></div>
+        <div class="stat-box"><strong id="fc_railtotal">26</strong><span>Rails</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Corners share posts between runs; gates add posts. Bury 1/3 of height, 2 ft minimum.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

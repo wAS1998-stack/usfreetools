@@ -60,7 +60,13 @@
       <div class="tool-main-card">
         <h1>🎓 Grade Calculator</h1>
         <p>Calculate your overall weighted grade from individual scores and their weights, complete with a letter grade. Add as many assignments as you need.</p>
-        <div id="toolContainer" data-impl="gradeCalc" style="--h-m:572px;--h-d:283px"></div>
+        <div id="toolContainer" data-impl="gradeCalc" style="--h-m:572px;--h-d:283px">
+<p style="color:var(--gray);font-size:.9rem;margin-bottom:10px;">Enter each score and its weight (%).</p>
+      <div id="gc_rows"><div style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:8px;"><input type="number" placeholder="Score %" class="gc_s" value="90"><input type="number" placeholder="Weight %" class="gc_w" value="40"><button class="btn btn-outline" onclick="this.parentElement.remove()">✕</button></div><div style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:8px;"><input type="number" placeholder="Score %" class="gc_s" value="85"><input type="number" placeholder="Weight %" class="gc_w" value="60"><button class="btn btn-outline" onclick="this.parentElement.remove()">✕</button></div></div>
+      <div class="tool-actions"><button class="btn btn-outline" onclick="GC.add()">+ Add Row</button>
+      <button class="btn btn-primary" onclick="GC.calc()">Calculate Grade</button></div>
+      <div id="gc_out" style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--primary);text-align:center;margin-top:18px;padding:20px;background:var(--primary-light);border-radius:12px;display:none;"></div>
+</div>
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>What This Calculator Does</h2>

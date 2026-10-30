@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/sales-tax-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/sales-tax-calculator.png">
   <title>Sales Tax Calculator – Add or Remove Sales Tax From a Price</title>
-  <meta name="description" content="Calculate sales tax on any purchase: enter the price and your local tax rate to see the tax and total, or work backward from a total to the pre-tax price. Free and instant.">
+  <meta name="description" content="Calculate sales tax on any purchase: enter the price and your local tax rate to see the tax and total, or work backward from a total to the pre-tax price.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/sales-tax-calculator">
   <meta property="og:title" content="Sales Tax Calculator – Add or Remove Sales Tax From a Price">
-  <meta property="og:description" content="Calculate sales tax on any purchase: enter the price and your local tax rate to see the tax and total, or work backward from a total to the pre-tax price. Free and instant.">
+  <meta property="og:description" content="Calculate sales tax on any purchase: enter the price and your local tax rate to see the tax and total, or work backward from a total to the pre-tax price.">
   <meta property="og:url" content="https://usfreetools.com/tools/sales-tax-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,21 @@
       <div class="tool-main-card">
         <h1>🧾 Sales Tax Calculator</h1>
         <p>Enter a price and your local sales tax rate to get the tax amount and final total instantly — or work backward from a receipt total to the pre-tax price.</p>
-        <div id="toolContainer" data-impl="salesTaxCalc" style="--h-m:693px;--h-d:308px"></div>
+        <div id="toolContainer" data-impl="salesTaxCalc" style="--h-m:693px;--h-d:308px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="st_mode">Mode</label><select id="st_mode" onchange="RUN()">
+          <option value="add" selected="">Add tax to price</option><option value="remove">Back out tax from total</option>
+        </select></div>
+        <div class="form-group"><label id="st_lbl" for="st_amt">Price ($)</label><input type="number" id="st_amt" value="50" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label for="st_rate">Tax rate (%)</label><input type="number" id="st_rate" value="8.25" min="0" step="0.01" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="st_pre">$50.00</strong><span>Pre-tax price</span></div>
+        <div class="stat-box"><strong id="st_tax">$4.13</strong><span>Sales tax</span></div>
+        <div class="stat-box"><strong id="st_total">$54.13</strong><span>Total</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Rates combine state + local and vary by location — check your local rate. Not tax advice.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

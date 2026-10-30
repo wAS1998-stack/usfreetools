@@ -48,7 +48,17 @@
       <div class="tool-main-card">
         <h1>📈 Profit Margin Calculator</h1>
         <p>Enter your cost and selling price to instantly see your profit, profit margin, and markup. Built for small businesses, freelancers, and anyone pricing a product.</p>
-        <div id="toolContainer" data-impl="profitMargin" style="--h-m:484px;--h-d:265px"></div>
+        <div id="toolContainer" data-impl="profitMargin" style="--h-m:484px;--h-d:265px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group"><label for="pm_cost">Cost ($)</label><input type="number" id="pm_cost" value="40" oninput="RUN()"></div>
+        <div class="form-group"><label for="pm_rev">Revenue / Selling Price ($)</label><input type="number" id="pm_rev" value="100" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats" style="margin-top:8px;">
+        <div class="stat-box"><strong id="pm_profit">$60.00</strong><span>Profit</span></div>
+        <div class="stat-box"><strong id="pm_margin">60.0%</strong><span>Margin</span></div>
+        <div class="stat-box"><strong id="pm_markup">150.0%</strong><span>Markup</span></div>
+      </div>
+</div>
       </div>
         <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
           <h2>Tool Overview</h2>

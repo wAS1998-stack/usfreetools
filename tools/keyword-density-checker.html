@@ -61,7 +61,11 @@
       <div class="tool-main-card">
         <h1>📈 Keyword Density Checker</h1>
         <p>Analyze the keyword density of your content to ensure natural, well-optimized writing. See the most frequent words and their percentages.</p>
-        <div id="toolContainer" data-impl="keywordDensity" style="--h-m:322px;--h-d:322px"></div>
+        <div id="toolContainer" data-impl="keywordDensity" style="--h-m:322px;--h-d:322px">
+<textarea class="tool-input-area" id="t_in" placeholder="Paste text to analyze…" rows="6" aria-label="Paste text to analyze…"></textarea>
+      <button class="btn btn-primary" onclick="RUN()" style="margin:14px 0;">📊 Analyze</button>
+      <div id="t_out" style="font-size:.9rem;"></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

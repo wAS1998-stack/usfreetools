@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/drywall-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/drywall-calculator.png">
-  <title>Drywall Calculator – How Many Sheets & What Will It Cost? | USFreeTools</title>
+  <title>Drywall Calculator – How Many Sheets & What Will It Cost?</title>
   <meta name="description" content="Work out how many drywall sheets a room needs from its dimensions, openings, and sheet size — plus the mud, tape, and screw quantities that go with them.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/drywall-calculator">
@@ -61,7 +61,33 @@
       <div class="tool-main-card">
         <h1>🧰 Drywall Calculator</h1>
         <p>Enter the room’s dimensions and openings, pick a sheet size, and see how many drywall sheets the walls and ceiling need — with the mud and screws to match.</p>
-        <div id="toolContainer" data-impl="drywallCalc" style="--h-m:1086px;--h-d:483px"></div>
+        <div id="toolContainer" data-impl="drywallCalc" style="--h-m:1086px;--h-d:483px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="dw_l">Length (ft)</label><input type="number" id="dw_l" value="12" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="dw_w">Width (ft)</label><input type="number" id="dw_w" value="12" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="dw_h">Wall height (ft)</label><input type="number" id="dw_h" value="8" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="dw_d">Doors</label><input type="number" id="dw_d" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="dw_win">Windows</label><input type="number" id="dw_win" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="dw_sheet">Sheet size</label><select id="dw_sheet" onchange="RUN()">
+          <option value="32" selected="">4×8 (32 sq ft)</option>
+          <option value="48">4×12 (48 sq ft)</option>
+        </select></div>
+      </div>
+      <div class="form-group"><label><input type="checkbox" id="dw_ceil" checked="" onchange="RUN()"> Include ceiling</label></div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="dw_area">492 sq ft</strong><span>Total surface</span></div>
+        <div class="stat-box"><strong id="dw_sheets">16</strong><span>Sheets needed</span></div>
+        <div class="stat-box"><strong id="dw_screws">~512</strong><span>Screws (approx)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Add 5-10% for cuts. Ceilings: 5/8" board; hang ceilings first, stagger joints.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="dw_price">Your price per sheet</label>
+        <input type="number" id="dw_price" value="16.00" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="dw_cost">$256</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">A 4×8 sheet of 1/2″ drywall typically runs about $14–18. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

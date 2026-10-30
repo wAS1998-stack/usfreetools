@@ -8,11 +8,11 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/gravel-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/gravel-calculator.png">
-  <title>Gravel Calculator – How Much Gravel Do I Need & Cost Estimate | USFreeTools</title>
+  <title>Gravel Calculator – How Much Gravel Do I Need?</title>
   <meta name="description" content="Work out how much gravel you need from area and depth: cubic yards and tons for driveways, paths, and drainage — with depth guidance by use.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/gravel-calculator">
-  <meta property="og:title" content="Gravel Calculator – How Much Gravel Do I Need & Cost Estimate">
+  <meta property="og:title" content="Gravel Calculator – How Much Gravel Do I Need?">
   <meta property="og:description" content="Work out how much gravel you need from area and depth: cubic yards and tons for driveways, paths, and drainage — with depth guidance by use.">
   <meta property="og:url" content="https://usfreetools.com/tools/gravel-calculator">
   <meta property="og:type" content="website">
@@ -61,7 +61,24 @@
       <div class="tool-main-card">
         <h1>🪨 Gravel Calculator</h1>
         <p>Enter the area and depth to see how much gravel to order — in cubic yards and tons — for driveways, paths, patios, and drainage.</p>
-        <div id="toolContainer" data-impl="gravelCalc" style="--h-m:470px;--h-d:306px"></div>
+        <div id="toolContainer" data-impl="gravelCalc" style="--h-m:470px;--h-d:306px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="gv_area">Area (sq ft)</label><input type="number" id="gv_area" value="100" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="gv_depth">Depth (inches)</label><input type="number" id="gv_depth" value="3" min="0" step="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="gv_yd">0.93</strong><span>Cubic yards</span></div>
+        <div class="stat-box"><strong id="gv_tons">1.30</strong><span>Tons (approx)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~1.4 tons per cubic yard. Depths: 2-3" decorative, 3-4" paths, 6-12" driveways (layered).</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="gv_price">Your price per ton</label>
+        <input type="number" id="gv_price" value="45.00" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="gv_cost">$58</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">Crushed gravel typically runs about $30–60 a ton. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

@@ -61,7 +61,15 @@
       <div class="tool-main-card">
         <h1>½ Fraction Calculator</h1>
         <p>Perform addition, subtraction, multiplication, and division on fractions, with simplified results.</p>
-        <div id="toolContainer" data-impl="fractionCalc" style="--h-m:287px;--h-d:215px"></div>
+        <div id="toolContainer" data-impl="fractionCalc" style="--h-m:287px;--h-d:215px">
+<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <input type="number" id="f_a" value="1" style="width:70px;" aria-label="f_a"> <span>/</span> <input type="number" id="f_b" value="2" style="width:70px;" aria-label="f_b">
+        <select id="f_op" style="width:60px;" aria-label="f_op"><option selected="">+</option><option>−</option><option>×</option><option>÷</option></select>
+        <input type="number" id="f_c" value="1" style="width:70px;" aria-label="f_c"> <span>/</span> <input type="number" id="f_d" value="3" style="width:70px;" aria-label="f_d">
+        <button class="btn btn-primary" onclick="RUN()">=</button>
+      </div>
+      <div class="tool-result-bar" id="t_out" style="font-size:1.2rem;">= <strong>5/6</strong> (0.8333)</div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

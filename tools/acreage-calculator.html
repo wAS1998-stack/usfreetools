@@ -61,7 +61,18 @@
       <div class="tool-main-card">
         <h1>🌾 Acreage Calculator</h1>
         <p>Enter a parcel’s length and width in feet to get its area in acres, square feet, and hectares — the land units that never quite feel intuitive.</p>
-        <div id="toolContainer" data-impl="acreageCalc" style="--h-m:571px;--h-d:306px"></div>
+        <div id="toolContainer" data-impl="acreageCalc" style="--h-m:571px;--h-d:306px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="ac_l">Length (ft)</label><input type="number" id="ac_l" value="660" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="ac_w">Width (ft)</label><input type="number" id="ac_w" value="66" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ac_sqft">43,560</strong><span>Square feet</span></div>
+        <div class="stat-box"><strong id="ac_acres">1.00</strong><span>Acres</span></div>
+        <div class="stat-box"><strong id="ac_ha">0.40</strong><span>Hectares</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">1 acre = 43,560 sq ft ≈ a square 209 ft per side. Legal boundaries: see the plat/surveyor.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/calorie-deficit-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/calorie-deficit-calculator.png">
   <title>Calorie Deficit Calculator – How Many Calories Should I Eat?</title>
-  <meta name="description" content="Estimate your maintenance calories (TDEE) and a safe calorie deficit target for gradual weight loss, using the Mifflin-St Jeor equation. General guidance, not medical advice.">
+  <meta name="description" content="Estimate your maintenance calories (TDEE) and a safe calorie deficit target for gradual weight loss, using the Mifflin-St Jeor equation.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/calorie-deficit-calculator">
   <meta property="og:title" content="Calorie Deficit Calculator – How Many Calories Should I Eat?">
-  <meta property="og:description" content="Estimate your maintenance calories (TDEE) and a safe calorie deficit target for gradual weight loss, using the Mifflin-St Jeor equation. General guidance, not medical advice.">
+  <meta property="og:description" content="Estimate your maintenance calories (TDEE) and a safe calorie deficit target for gradual weight loss, using the Mifflin-St Jeor equation.">
   <meta property="og:url" content="https://usfreetools.com/tools/calorie-deficit-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,27 @@
       <div class="tool-main-card">
         <h1>🔥 Calorie Deficit Calculator</h1>
         <p>Estimate your daily maintenance calories (TDEE) and see target intakes for a mild, moderate, or aggressive deficit — with the expected weekly change. General guidance, not medical advice.</p>
-        <div id="toolContainer" data-impl="calorieDeficitCalc" style="--h-m:936px;--h-d:552px"></div>
+        <div id="toolContainer" data-impl="calorieDeficitCalc" style="--h-m:936px;--h-d:552px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="cd_wt">Weight (kg)</label><input type="number" id="cd_wt" value="70" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="cd_ht">Height (cm)</label><input type="number" id="cd_ht" value="170" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="cd_age">Age</label><input type="number" id="cd_age" value="30" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="cd_sex">Sex</label><select id="cd_sex" onchange="RUN()"><option value="m" selected="">Male</option><option value="f">Female</option></select></div>
+      </div>
+      <div class="form-group"><label for="cd_act">Activity level</label><select id="cd_act" onchange="RUN()">
+        <option value="1.2">Sedentary (little exercise)</option>
+        <option value="1.375">Light (1-3 days/week)</option>
+        <option value="1.55" selected="">Moderate (3-5 days/week)</option>
+        <option value="1.725">Very active (6-7 days/week)</option>
+      </select></div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="cd_tdee">2507 kcal</strong><span>Maintenance (TDEE)</span></div>
+        <div class="stat-box"><strong id="cd_mild">2257 kcal</strong><span>Mild -250 (~0.25 kg/wk)</span></div>
+        <div class="stat-box"><strong id="cd_mod">2007 kcal</strong><span>Moderate -500 (~0.5 kg/wk)</span></div>
+        <div class="stat-box"><strong id="cd_agg">1757 kcal</strong><span>Aggressive -750 (~0.75 kg/wk)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Mifflin-St Jeor estimate. General guidance for healthy adults — not medical advice.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/text-repeater.png">
   <meta property="og:image" content="https://usfreetools.com/og/text-repeater.png">
-  <title>Text Repeater – Repeat Text Multiple Times Online | USFreeTools</title>
+  <title>Text Repeater – Repeat Text Multiple Times Online</title>
   <meta name="description" content="Repeat any text, phrase, or string as many times as you want, with an optional separator between each copy. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/text-repeater">
@@ -61,7 +61,17 @@
       <div class="tool-main-card">
         <h1>🔁 Text Repeater</h1>
         <p>Repeat any text, phrase, or string as many times as you want, with an optional separator between each copy.</p>
-        <div id="toolContainer" data-impl="textRepeater" style="--h-m:835px;--h-d:716px"></div>
+        <div id="toolContainer" data-impl="textRepeater" style="--h-m:835px;--h-d:716px">
+<textarea class="tool-input-area" id="t_in" placeholder="Text to repeat…" rows="3" aria-label="Text to repeat…"></textarea>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
+        <div class="form-group"><label for="r_times">Times</label><input type="number" id="r_times" value="10" min="1" max="10000"></div>
+        <div class="form-group"><label for="r_sep">Separator</label><select id="r_sep"><option value="
+" selected="">New line</option><option value=" ">Space</option><option value=", ">Comma</option><option value="">None</option></select></div>
+      </div>
+      <button class="btn btn-primary" onclick="RUN()">🔁 Repeat</button>
+      <textarea class="tool-output-area" id="t_out" readonly="" rows="8" style="margin-top:14px;" aria-label="t_out"></textarea>
+      <div class="tool-actions" style="margin-top:10px;"><button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋 Copy</button></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

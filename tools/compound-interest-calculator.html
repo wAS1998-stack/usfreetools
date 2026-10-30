@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/compound-interest-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/compound-interest-calculator.png">
-  <title>Compound Interest – How Much Will My Money Grow? | USFreeTools</title>
+  <title>Compound Interest – How Much Will My Money Grow?</title>
   <meta name="description" content="Calculate how your savings or investment grows over time with compound interest, including regular contributions. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/compound-interest-calculator">
@@ -61,7 +61,18 @@
       <div class="tool-main-card">
         <h1>💰 Compound Interest Calculator</h1>
         <p>Calculate how your savings or investment grows over time with compound interest, including regular contributions.</p>
-        <div id="toolContainer" data-impl="compoundInterest" style="--h-m:633px;--h-d:393px"></div>
+        <div id="toolContainer" data-impl="compoundInterest" style="--h-m:633px;--h-d:393px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="ci_p">Principal ($)</label><input type="number" id="ci_p" value="1000" oninput="RUN()"></div>
+        <div class="form-group"><label for="ci_r">Annual Rate (%)</label><input type="number" id="ci_r" value="5" oninput="RUN()"></div>
+        <div class="form-group"><label for="ci_y">Years</label><input type="number" id="ci_y" value="10" oninput="RUN()"></div>
+        <div class="form-group"><label for="ci_m">Monthly Contribution ($)</label><input type="number" id="ci_m" value="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ci_fv">$1,647</strong><span>Final Value</span></div>
+        <div class="stat-box"><strong id="ci_int">$647</strong><span>Total Interest</span></div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

@@ -60,7 +60,16 @@
       <div class="tool-main-card">
         <h1>📖 Reading Time Calculator</h1>
         <p>Paste any text to see how long it takes to read and to speak aloud, at the reading speed you choose. Ideal for articles, scripts, and speeches.</p>
-        <div id="toolContainer" data-impl="readingTime" style="--h-m:580px;--h-d:479px"></div>
+        <div id="toolContainer" data-impl="readingTime" style="--h-m:580px;--h-d:479px">
+<textarea class="tool-input-area" id="rt_in" placeholder="Paste your text here…" rows="8" aria-label="Paste your text here…"></textarea>
+      <div style="display:flex;align-items:center;gap:10px;margin:12px 0;"><label style="font-weight:600;font-size:.85rem;">Reading speed:</label>
+      <select id="rt_wpm" aria-label="rt_wpm"><option value="200" selected="">Average (200 wpm)</option><option value="150">Slow (150 wpm)</option><option value="265">Fast (265 wpm)</option></select></div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="rt_words">0</strong><span>Words</span></div>
+        <div class="stat-box"><strong id="rt_read">1 min</strong><span>Reading Time</span></div>
+        <div class="stat-box"><strong id="rt_speak">1 min</strong><span>Speaking Time</span></div>
+      </div>
+</div>
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>What This Tool Does</h2>

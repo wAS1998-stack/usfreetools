@@ -60,7 +60,19 @@
       <div class="tool-main-card">
         <h1>🖼️ Image Resizer</h1>
         <p>Resize any image to exact dimensions right in your browser. Keep the aspect ratio locked or set custom width and height — nothing is uploaded.</p>
-        <div id="toolContainer" data-impl="imageResizer" style="--h-m:115px;--h-d:115px"></div>
+        <div id="toolContainer" data-impl="imageResizer" style="--h-m:115px;--h-d:115px">
+<input type="file" id="ir_file" accept="image/*" style="margin-bottom:14px;" aria-label="ir_file">
+      <div id="ir_ctrls" style="display:none;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div class="form-group"><label for="ir_w">Width (px)</label><input type="number" id="ir_w"></div>
+          <div class="form-group"><label for="ir_h">Height (px)</label><input type="number" id="ir_h"></div>
+        </div>
+        <label style="display:flex;align-items:center;gap:8px;margin:8px 0;"><input type="checkbox" id="ir_lock" checked="" aria-label="ir_lock"> Maintain aspect ratio</label>
+        <button class="btn btn-primary" onclick="IR.go()">Resize &amp; Download</button>
+      </div>
+      <canvas id="ir_cv" style="display:none;"></canvas>
+      <div id="ir_prev" style="margin-top:14px;"></div>
+</div>
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>What This Tool Does</h2>

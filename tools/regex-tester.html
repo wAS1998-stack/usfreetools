@@ -61,7 +61,12 @@
       <div class="tool-main-card">
         <h1>🧩 Regex Tester</h1>
         <p>Build, test, and debug regular expressions in real time against your own sample text, with live match highlighting.</p>
-        <div id="toolContainer" data-impl="regexTester" style="--h-m:538px;--h-d:538px"></div>
+        <div id="toolContainer" data-impl="regexTester" style="--h-m:538px;--h-d:538px">
+<div class="form-group"><label for="rx_p">Regular Expression</label><input type="text" id="rx_p" placeholder="\d+" oninput="RUN()"></div>
+      <div class="form-group"><label for="rx_f">Flags</label><input type="text" id="rx_f" value="g" oninput="RUN()" style="max-width:120px;"></div>
+      <div class="form-group"><label for="rx_s">Test String</label><textarea class="tool-input-area" id="rx_s" placeholder="Test your text here…" rows="5" oninput="RUN()"></textarea></div>
+      <div class="tool-result-bar" id="t_out"></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

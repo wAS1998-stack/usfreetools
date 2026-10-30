@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/paver-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/paver-calculator.png">
-  <title>Paver Calculator – How Many Pavers & What Will They Cost? | USFreeTools</title>
+  <title>Paver Calculator – How Many Pavers & What Will They Cost?</title>
   <meta name="description" content="Calculate how many pavers a patio or walkway needs from the area and paver size, with waste — plus the gravel base and sand depths that make it last.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/paver-calculator">
@@ -61,7 +61,27 @@
       <div class="tool-main-card">
         <h1>🧩 Paver Calculator</h1>
         <p>Enter the patio area and your paver’s size to see how many pavers to buy — with the base gravel and bedding sand the job needs alongside.</p>
-        <div id="toolContainer" data-impl="paverCalc" style="--h-m:788px;--h-d:425px"></div>
+        <div id="toolContainer" data-impl="paverCalc" style="--h-m:788px;--h-d:425px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="pv2_area">Area (sq ft)</label><input type="number" id="pv2_area" value="120" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="pv2_waste">Waste (%)</label><input type="number" id="pv2_waste" value="10" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="pv2_w">Paver width (in)</label><input type="number" id="pv2_w" value="12" min="1" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="pv2_h">Paver height (in)</label><input type="number" id="pv2_h" value="12" min="1" step="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pv2_count">132</strong><span>Pavers to buy</span></div>
+        <div class="stat-box"><strong id="pv2_base">1.5 yd³</strong><span>Base gravel (4")</span></div>
+        <div class="stat-box"><strong id="pv2_sand">0.37 yd³</strong><span>Bedding sand (1")</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Section: 4-6" compacted gravel, 1" sand, pavers, edge restraint. Keep spare pavers.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="pv2_price">Your price per paver</label>
+        <input type="number" id="pv2_price" value="3.50" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="pv2_cost">$462</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">Concrete pavers typically run about $2–6 each. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

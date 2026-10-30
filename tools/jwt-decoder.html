@@ -61,7 +61,11 @@
       <div class="tool-main-card">
         <h1>🎫 JWT Decoder</h1>
         <p>Decode JSON Web Tokens (JWT) to inspect the header and payload. Decoding happens entirely in your browser for safety.</p>
-        <div id="toolContainer" data-impl="jwtDecoder" style="--h-m:535px;--h-d:535px"></div>
+        <div id="toolContainer" data-impl="jwtDecoder" style="--h-m:535px;--h-d:535px">
+<div class="form-group"><label for="t_in">JWT Token</label><textarea class="tool-input-area" id="t_in" placeholder="eyJhb..." rows="4" oninput="RUN()"></textarea></div>
+      <label style="font-size:.85rem;font-weight:600;">Decoded Payload</label>
+      <textarea class="tool-output-area" id="t_out" readonly="" rows="8" aria-label="t_out"></textarea>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

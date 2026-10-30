@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/duplicate-word-finder.png">
   <meta property="og:image" content="https://usfreetools.com/og/duplicate-word-finder.png">
-  <title>Duplicate Word Finder – Find Repeated Words in Text | USFreeTools</title>
+  <title>Duplicate Word Finder – Find Repeated Words in Text</title>
   <meta name="description" content="Spot overused and repeated words in your writing to improve clarity and style. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/duplicate-word-finder">
@@ -61,7 +61,11 @@
       <div class="tool-main-card">
         <h1>🔍 Duplicate Word Finder</h1>
         <p>Spot overused and repeated words in your writing to improve clarity and style.</p>
-        <div id="toolContainer" data-impl="wordFrequency" style="--h-m:322px;--h-d:322px"></div>
+        <div id="toolContainer" data-impl="wordFrequency" style="--h-m:322px;--h-d:322px">
+<textarea class="tool-input-area" id="t_in" placeholder="Paste text to analyze…" rows="6" aria-label="Paste text to analyze…"></textarea>
+      <button class="btn btn-primary" onclick="RUN()" style="margin:14px 0;">📊 Analyze</button>
+      <div id="t_out" style="font-size:.9rem;"></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

@@ -61,7 +61,12 @@
       <div class="tool-main-card">
         <h1>#️⃣ Hash Generator (SHA-256)</h1>
         <p>Generate secure SHA-256 cryptographic hashes for any text or string. Used for data integrity checks, password storage, and digital signatures.</p>
-        <div id="toolContainer" data-impl="hashGenerator" style="--h-m:533px;--h-d:533px"></div>
+        <div id="toolContainer" data-impl="hashGenerator" style="--h-m:533px;--h-d:533px">
+<textarea class="tool-input-area" id="t_in" placeholder="Enter text to hash…" rows="4" aria-label="Enter text to hash…"></textarea>
+      <button class="btn btn-primary" onclick="RUN()" style="margin:14px 0;">#️⃣ Generate SHA-256</button>
+      <textarea class="tool-output-area" id="t_out" readonly="" rows="3" style="word-break:break-all;" aria-label="t_out"></textarea>
+      <div class="tool-actions" style="margin-top:10px;"><button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋 Copy</button></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

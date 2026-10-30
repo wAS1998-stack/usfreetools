@@ -8,12 +8,12 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/paint-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/paint-calculator.png">
-  <title>Paint Calculator – How Much Paint Do I Need & What It Costs | USFreeTools</title>
-  <meta name="description" content="Work out how much paint you need for a room from its dimensions, doors, windows, and coats. Get wall area and liters or gallons required, with practical buying advice.">
+  <title>Paint Calculator – How Much Paint Do I Need & What It Costs</title>
+  <meta name="description" content="Work out how much paint you need for a room from its dimensions, doors, windows, and coats. Get wall area and liters or gallons required, with practical buying.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/paint-calculator">
   <meta property="og:title" content="Paint Calculator – How Much Paint Do I Need & What It Costs">
-  <meta property="og:description" content="Work out how much paint you need for a room from its dimensions, doors, windows, and coats. Get wall area and liters or gallons required, with practical buying advice.">
+  <meta property="og:description" content="Work out how much paint you need for a room from its dimensions, doors, windows, and coats. Get wall area and liters or gallons required, with practical buying.">
   <meta property="og:url" content="https://usfreetools.com/tools/paint-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,29 @@
       <div class="tool-main-card">
         <h1>🎨 Paint Calculator</h1>
         <p>Enter your room’s dimensions, subtract doors and windows, choose the coats — and see the wall area plus exactly how many liters or gallons of paint to buy.</p>
-        <div id="toolContainer" data-impl="paintCalc" style="--h-m:1028px;--h-d:425px"></div>
+        <div id="toolContainer" data-impl="paintCalc" style="--h-m:1028px;--h-d:425px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="pt_l">Length (m)</label><input type="number" id="pt_l" value="4" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label for="pt_w">Width (m)</label><input type="number" id="pt_w" value="3" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label for="pt_h">Wall height (m)</label><input type="number" id="pt_h" value="2.4" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label for="pt_doors">Doors</label><input type="number" id="pt_doors" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="pt_win">Windows</label><input type="number" id="pt_win" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="pt_coats">Coats</label><input type="number" id="pt_coats" value="2" min="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pt_area">30.6 m²</strong><span>Paintable area</span></div>
+        <div class="stat-box"><strong id="pt_lit">6.1 L</strong><span>Paint needed</span></div>
+        <div class="stat-box"><strong id="pt_gal">1.6 gal</strong><span>US gallons</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~10 m²/L coverage, 1.6 m² per door, 1.4 m² per window. Buy ~10% extra.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="pt_price">Your price per gallon</label>
+        <input type="number" id="pt_price" value="40.00" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="pt_cost">$80</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">Mid-grade interior paint typically runs about $30–55 a gallon. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

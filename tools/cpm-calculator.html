@@ -48,7 +48,15 @@
       <div class="tool-main-card">
         <h1>📣 CPM Calculator</h1>
         <p>Enter any two of cost, impressions, and CPM, and the third is calculated instantly. Essential for planning and comparing advertising campaigns.</p>
-        <div id="toolContainer" data-impl="cpmCalc" style="--h-m:594px;--h-d:282px"></div>
+        <div id="toolContainer" data-impl="cpmCalc" style="--h-m:594px;--h-d:282px">
+<p style="color:var(--gray);font-size:.88rem;margin-bottom:10px;">Enter any two values and the third is calculated. CPM = cost per 1,000 impressions.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+        <div class="form-group"><label for="cpm_cost">Total Cost ($)</label><input type="number" id="cpm_cost" value="500" oninput="CPM.calc('cost')"></div>
+        <div class="form-group"><label for="cpm_imp">Impressions</label><input type="number" id="cpm_imp" value="100000" oninput="CPM.calc('imp')"></div>
+        <div class="form-group"><label for="cpm_cpm">CPM ($)</label><input type="number" id="cpm_cpm" value="5.00" oninput="CPM.calc('cpm')"></div>
+      </div>
+      <div id="cpm_out" style="font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--primary);text-align:center;margin-top:14px;padding:16px;background:var(--primary-light);border-radius:12px;">CPM $5.00 · 100,000 impressions · $500.00 total</div>
+</div>
       </div>
         <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
           <h2>Tool Overview</h2>

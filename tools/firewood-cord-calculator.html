@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/firewood-cord-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/firewood-cord-calculator.png">
-  <title>Firewood Cord Calculator – Cords in a Stack & What It Costs | USFreeTools</title>
+  <title>Firewood Cord Calculator – Cords in a Stack & What It Costs</title>
   <meta name="description" content="Measure a firewood stack in feet and see how many cords it contains — with face cords, honest buying checks, and seasoning guidance built into the page.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/firewood-cord-calculator">
@@ -61,7 +61,25 @@
       <div class="tool-main-card">
         <h1>🪵 Firewood Cord Calculator</h1>
         <p>Enter a stack’s length, height, and depth to see how many cords of firewood it holds — and how to check that a delivery matches what you paid for.</p>
-        <div id="toolContainer" data-impl="firewoodCalc" style="--h-m:611px;--h-d:306px"></div>
+        <div id="toolContainer" data-impl="firewoodCalc" style="--h-m:611px;--h-d:306px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="fw_l">Stack length (ft)</label><input type="number" id="fw_l" value="8" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="fw_h">Stack height (ft)</label><input type="number" id="fw_h" value="4" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="fw_d">Stack depth (ft)</label><input type="number" id="fw_d" value="4" min="0" step="0.25" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="fw_cords">1.00</strong><span>Cords</span></div>
+        <div class="stat-box"><strong id="fw_cuft">128</strong><span>Cubic feet (stacked)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">1 cord = 128 cu ft stacked (8×4×4). A face cord of 16" logs = 1/3 cord. Verify deliveries after stacking.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="fw_price">Your price per cord</label>
+        <input type="number" id="fw_price" value="325.00" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="fw_cost">$325</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">Seasoned hardwood typically runs about $250–450 a cord delivered. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

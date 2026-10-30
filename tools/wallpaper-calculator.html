@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/wallpaper-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/wallpaper-calculator.png">
-  <title>Wallpaper Calculator – How Many Rolls & What Will It Cost? | USFreeTools</title>
+  <title>Wallpaper Calculator – How Many Rolls & What Will It Cost?</title>
   <meta name="description" content="Work out how many wallpaper rolls you need from wall length, height, doors, and windows — with pattern-repeat waste and US vs European roll sizes explained.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/wallpaper-calculator">
@@ -61,7 +61,30 @@
       <div class="tool-main-card">
         <h1>🖼️ Wallpaper Calculator</h1>
         <p>Enter your total wall length, height, and openings to see how many wallpaper rolls to buy — with pattern-repeat waste built into the guidance.</p>
-        <div id="toolContainer" data-impl="wallpaperCalc" style="--h-m:832px;--h-d:427px"></div>
+        <div id="toolContainer" data-impl="wallpaperCalc" style="--h-m:832px;--h-d:427px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="wp_len">Total wall length (ft)</label><input type="number" id="wp_len" value="40" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="wp_h">Wall height (ft)</label><input type="number" id="wp_h" value="8" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="wp_roll">Roll type</label><select id="wp_roll" onchange="RUN()">
+          <option value="28" selected="">US single roll (~28 sq ft usable)</option>
+          <option value="50">European roll (~50 sq ft usable)</option>
+        </select></div>
+        <div class="form-group"><label for="wp_d">Doors</label><input type="number" id="wp_d" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="wp_w">Windows</label><input type="number" id="wp_w" value="1" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="wp_area">284 sq ft</strong><span>Paperable area</span></div>
+        <div class="stat-box"><strong id="wp_rolls">11</strong><span>Rolls to buy</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Large pattern repeats waste more — add a roll for bold repeats. Buy all rolls + 1 spare from one batch.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="wp_price">Your price per roll</label>
+        <input type="number" id="wp_price" value="40.00" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="wp_cost">$440</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">Wallpaper typically runs about $30–60 a single roll. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

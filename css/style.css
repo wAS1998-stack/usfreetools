@@ -228,7 +228,7 @@ h1 { font-weight: 700; }
 .tool-page { max-width: var(--max-w); margin: 0 auto; padding: 36px 28px 70px; }
 .tool-page-inner { max-width: var(--max-w); margin: 0 auto; }
 .tool-breadcrumb { font-size: 0.86rem; color: var(--gray); margin-bottom: 26px; font-weight: 500; }
-.tool-breadcrumb a { color: var(--gray); }
+.tool-breadcrumb a { color: var(--gray); display: inline-block; padding: 6px 2px; }
 .tool-breadcrumb a:hover { color: var(--primary); }
 
 .tool-page-layout { display: grid; grid-template-columns: minmax(0,1fr) 320px; gap: 36px; align-items: start; }
@@ -463,7 +463,7 @@ h1 { font-weight: 700; }
   box-shadow: var(--shadow-xs); transition: var(--transition);
 }
 .hero-search input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-light); }
-.hero-search button { background: var(--primary); color: var(--paper); border: none; padding: 0 24px; border-radius: 13px; font-family: var(--font-body); font-weight: 600; cursor: pointer; transition: var(--transition); white-space: nowrap; }
+.hero-search button { background: var(--primary); color: var(--paper); border: none; padding: 14px 24px; min-height: 48px; border-radius: 13px; font-family: var(--font-body); font-weight: 600; cursor: pointer; transition: var(--transition); white-space: nowrap; }
 .hero-search button:hover { background: var(--primary); transform: translateY(-2px); }
 
 /* hero stats */
@@ -706,3 +706,13 @@ html, body { overflow-x: hidden; }
 .sidebar-widget h3 { font-size: 1.05rem; }
 #toolContainer { min-height: var(--h-m, 0); }
 @media (min-width: 768px) { #toolContainer { min-height: var(--h-d, 0); } }
+
+
+/* --- Mobile tap-target sizing (WCAG 2.5.8 / Lighthouse 'tap targets too small') --- */
+@media (hover: none) and (pointer: coarse) {
+  .content-inner a,
+  .tool-sidebar a,
+  .tool-page-inner p a,
+  .tool-footnote a { padding-block: 4px; }
+  .hero-search button { min-height: 48px; }
+}

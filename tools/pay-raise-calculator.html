@@ -48,7 +48,17 @@
       <div class="tool-main-card">
         <h1>💰 Pay Raise Calculator</h1>
         <p>Enter your current salary and a raise percentage to instantly see your new salary, the annual increase, and how much extra you will earn each month.</p>
-        <div id="toolContainer" data-impl="payRaise" style="--h-m:484px;--h-d:265px"></div>
+        <div id="toolContainer" data-impl="payRaise" style="--h-m:484px;--h-d:265px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group"><label for="pr_cur">Current Salary ($)</label><input type="number" id="pr_cur" value="50000" oninput="RUN()"></div>
+        <div class="form-group"><label for="pr_pct">Raise (%)</label><input type="number" id="pr_pct" value="5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats" style="margin-top:8px;">
+        <div class="stat-box"><strong id="pr_new">$52,500</strong><span>New Salary</span></div>
+        <div class="stat-box"><strong id="pr_inc">$2,500</strong><span>Annual Increase</span></div>
+        <div class="stat-box"><strong id="pr_month">$208</strong><span>Extra per Month</span></div>
+      </div>
+</div>
       </div>
         <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:22px;margin-top:24px;">
           <h2>Tool Overview</h2>

@@ -8,12 +8,12 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/aspect-ratio-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/aspect-ratio-calculator.png">
-  <title>Aspect Ratio Calculator – Resize Without Distortion | USFreeTools</title>
-  <meta name="description" content="Calculate aspect ratios and resize dimensions proportionally. Enter original width and height, then find the matching new width or height for images, videos, and screens.">
+  <title>Aspect Ratio Calculator – Resize Without Distortion</title>
+  <meta name="description" content="Calculate aspect ratios and resize dimensions proportionally. Enter original width and height, then find the matching new width or height for images, videos.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/aspect-ratio-calculator">
   <meta property="og:title" content="Aspect Ratio Calculator – Resize Without Distortion">
-  <meta property="og:description" content="Calculate aspect ratios and resize dimensions proportionally. Enter original width and height, then find the matching new width or height for images, videos, and screens.">
+  <meta property="og:description" content="Calculate aspect ratios and resize dimensions proportionally. Enter original width and height, then find the matching new width or height for images, videos.">
   <meta property="og:url" content="https://usfreetools.com/tools/aspect-ratio-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,18 @@
       <div class="tool-main-card">
         <h1>📐 Aspect Ratio Calculator</h1>
         <p>Resize images, videos, and screens without distortion. Enter the original dimensions and one new dimension — the matching one is calculated instantly, with the simplified ratio shown.</p>
-        <div id="toolContainer" data-impl="aspectRatioCalc" style="--h-m:663px;--h-d:393px"></div>
+        <div id="toolContainer" data-impl="aspectRatioCalc" style="--h-m:663px;--h-d:393px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="ar_w1">Original width</label><input type="number" id="ar_w1" value="1920" oninput="AR('w1')"></div>
+        <div class="form-group"><label for="ar_h1">Original height</label><input type="number" id="ar_h1" value="1080" oninput="AR('h1')"></div>
+        <div class="form-group"><label for="ar_w2">New width</label><input type="number" id="ar_w2" value="1280" oninput="AR('w2')"></div>
+        <div class="form-group"><label for="ar_h2">New height</label><input type="number" id="ar_h2" value="720" oninput="AR('h2')"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ar_ratio">16:9</strong><span>Aspect ratio</span></div>
+        <div class="stat-box"><strong id="ar_dims">1280 × 720</strong><span>New size</span></div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

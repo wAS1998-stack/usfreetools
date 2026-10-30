@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/fahrenheit-to-celsius.png">
   <meta property="og:image" content="https://usfreetools.com/og/fahrenheit-to-celsius.png">
-  <title>Fahrenheit to Celsius – Convert °F to °C Instantly | USFreeTools</title>
+  <title>Fahrenheit to Celsius – Convert °F to °C Instantly</title>
   <meta name="description" content="Convert temperatures from Fahrenheit to Celsius instantly, with the conversion formula. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/fahrenheit-to-celsius">
@@ -61,7 +61,13 @@
       <div class="tool-main-card">
         <h1>🌡️ Fahrenheit to Celsius</h1>
         <p>Convert temperatures from Fahrenheit to Celsius instantly, with the conversion formula.</p>
-        <div id="toolContainer" data-impl="temperature" style="--h-m:408px;--h-d:168px"></div>
+        <div id="toolContainer" data-impl="temperature" style="--h-m:408px;--h-d:168px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="tc">Celsius °C</label><input type="number" id="tc" value="0" oninput="TT('c')"></div>
+        <div class="form-group"><label for="tf">Fahrenheit °F</label><input type="number" id="tf" value="32" oninput="TT('f')"></div>
+        <div class="form-group"><label for="tk">Kelvin K</label><input type="number" id="tk" value="273.15" oninput="TT('k')"></div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

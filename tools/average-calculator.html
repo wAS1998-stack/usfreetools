@@ -61,7 +61,16 @@
       <div class="tool-main-card">
         <h1>➗ Average Calculator (Mean)</h1>
         <p>Calculate the average (mean), sum, count, minimum, and maximum of any set of numbers. Just paste your values separated by commas, spaces, or new lines.</p>
-        <div id="toolContainer" data-impl="average" style="--h-m:597px;--h-d:371px"></div>
+        <div id="toolContainer" data-impl="average" style="--h-m:597px;--h-d:371px">
+<div class="form-group"><label for="t_in">Numbers (comma, space or newline separated)</label><textarea class="tool-input-area" id="t_in" placeholder="10, 20, 30, 40" rows="4" oninput="RUN()"></textarea></div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="a_avg">0</strong><span>Average</span></div>
+        <div class="stat-box"><strong id="a_sum">0</strong><span>Sum</span></div>
+        <div class="stat-box"><strong id="a_cnt">0</strong><span>Count</span></div>
+        <div class="stat-box"><strong id="a_min">0</strong><span>Min</span></div>
+        <div class="stat-box"><strong id="a_max">0</strong><span>Max</span></div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

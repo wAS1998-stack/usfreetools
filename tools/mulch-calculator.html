@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/mulch-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/mulch-calculator.png">
-  <title>Mulch Calculator – How Much Mulch Do I Need & Cost Estimate | USFreeTools</title>
+  <title>Mulch Calculator – How Much Mulch Do I Need & Cost Estimate</title>
   <meta name="description" content="Work out how much mulch you need from bed area and depth: cubic feet, cubic yards, and the number of 2 cu ft bags — with practical depth and coverage advice.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/mulch-calculator">
@@ -61,7 +61,25 @@
       <div class="tool-main-card">
         <h1>🌱 Mulch Calculator</h1>
         <p>Enter your bed area and mulch depth to see exactly how much to buy — in cubic feet, cubic yards, and standard 2 cu ft bags.</p>
-        <div id="toolContainer" data-impl="mulchCalc" style="--h-m:549px;--h-d:306px"></div>
+        <div id="toolContainer" data-impl="mulchCalc" style="--h-m:549px;--h-d:306px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="mu_area">Bed area (sq ft)</label><input type="number" id="mu_area" value="100" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="mu_depth">Depth (inches)</label><input type="number" id="mu_depth" value="3" min="0" step="0.5" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="mu_cuft">25.0</strong><span>Cubic feet</span></div>
+        <div class="stat-box"><strong id="mu_yd">0.93</strong><span>Cubic yards</span></div>
+        <div class="stat-box"><strong id="mu_bags">13</strong><span>Bags (2 cu ft)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Use 2-4 inch depth; keep mulch off trunks and stems.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="mu_price">Your price per cubic yard</label>
+        <input type="number" id="mu_price" value="38.00" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="mu_cost">$35</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">Bulk mulch typically runs about $30–45 a yard delivered. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

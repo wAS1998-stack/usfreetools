@@ -61,7 +61,14 @@
       <div class="tool-main-card">
         <h1>📡 Morse Code Translator</h1>
         <p>Translate English text into Morse code dots and dashes, or decode Morse code back into text.</p>
-        <div id="toolContainer" data-impl="morseCode" style="--h-m:554px;--h-d:511px"></div>
+        <div id="toolContainer" data-impl="morseCode" style="--h-m:554px;--h-d:511px">
+<textarea class="tool-input-area" id="t_in" placeholder="Enter text…" rows="5" aria-label="Enter text…"></textarea>
+    <div class="tool-actions"><button class="btn btn-primary" onclick="E()">Text → Morse</button>
+    <button class="btn btn-outline" onclick="D()">Morse → Text</button>
+    <button class="btn btn-outline" onclick="document.getElementById('t_in').value='';document.getElementById('t_out').value='';">🗑️ Clear</button></div>
+    <textarea class="tool-output-area" id="t_out" readonly="" rows="5" style="margin-top:8px;" aria-label="t_out"></textarea>
+    <div class="tool-actions" style="margin-top:8px;"><button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋 Copy</button></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

@@ -8,12 +8,12 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/tire-size-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/tire-size-calculator.png">
-  <title>Tire Size Calculator – Compare Tire Sizes & Speedometer Error</title>
-  <meta name="description" content="Compare two tire sizes side by side: overall diameter, circumference, and the speedometer error a size change causes. Understand 225/45R17-style codes instantly.">
+  <title>Tire Size Calculator – Compare Sizes &amp; Speedometer Error</title>
+  <meta name="description" content="Compare two tire sizes side by side: overall diameter, circumference, and the speedometer error a size change causes.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/tire-size-calculator">
-  <meta property="og:title" content="Tire Size Calculator – Compare Tire Sizes & Speedometer Error">
-  <meta property="og:description" content="Compare two tire sizes side by side: overall diameter, circumference, and the speedometer error a size change causes. Understand 225/45R17-style codes instantly.">
+  <meta property="og:title" content="Tire Size Calculator – Compare Sizes &amp; Speedometer Error">
+  <meta property="og:description" content="Compare two tire sizes side by side: overall diameter, circumference, and the speedometer error a size change causes.">
   <meta property="og:url" content="https://usfreetools.com/tools/tire-size-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,23 @@
       <div class="tool-main-card">
         <h1>🛞 Tire Size Calculator</h1>
         <p>Enter two tire sizes in the standard 225/45R17 format and compare their true diameters, circumference, and the speedometer error a change would cause.</p>
-        <div id="toolContainer" data-impl="tireSizeCalc" style="--h-m:1079px;--h-d:447px"></div>
+        <div id="toolContainer" data-impl="tireSizeCalc" style="--h-m:1079px;--h-d:447px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="ts_w1">Tire 1 width (mm)</label><input type="number" id="ts_w1" value="225" oninput="RUN()"></div>
+        <div class="form-group"><label for="ts_a1">Aspect (%)</label><input type="number" id="ts_a1" value="45" oninput="RUN()"></div>
+        <div class="form-group"><label for="ts_r1">Wheel (in)</label><input type="number" id="ts_r1" value="17" oninput="RUN()"></div>
+        <div class="form-group"><label for="ts_w2">Tire 2 width (mm)</label><input type="number" id="ts_w2" value="235" oninput="RUN()"></div>
+        <div class="form-group"><label for="ts_a2">Aspect (%)</label><input type="number" id="ts_a2" value="40" oninput="RUN()"></div>
+        <div class="form-group"><label for="ts_r2">Wheel (in)</label><input type="number" id="ts_r2" value="18" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ts_d1">25.0 in</strong><span>Tire 1 diameter</span></div>
+        <div class="stat-box"><strong id="ts_d2">25.4 in</strong><span>Tire 2 diameter</span></div>
+        <div class="stat-box"><strong id="ts_diff">+1.7%</strong><span>Difference</span></div>
+        <div class="stat-box"><strong id="ts_speed">60 → 61.0</strong><span>Speedo reads 60, true speed</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Guideline: keep the new diameter within ~3% of original.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

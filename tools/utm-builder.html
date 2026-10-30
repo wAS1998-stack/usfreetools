@@ -61,7 +61,17 @@
       <div class="tool-main-card">
         <h1>🔗 UTM Link Builder</h1>
         <p>Build trackable campaign URLs with UTM parameters for Google Analytics and marketing campaigns.</p>
-        <div id="toolContainer" data-impl="utmBuilder" style="--h-m:722px;--h-d:482px"></div>
+        <div id="toolContainer" data-impl="utmBuilder" style="--h-m:722px;--h-d:482px">
+<div class="form-group"><label for="u_url">Website URL</label><input type="text" id="u_url" placeholder="https://example.com" oninput="RUN()"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="u_src">Source</label><input type="text" id="u_src" placeholder="google" oninput="RUN()"></div>
+        <div class="form-group"><label for="u_med">Medium</label><input type="text" id="u_med" placeholder="cpc" oninput="RUN()"></div>
+        <div class="form-group"><label for="u_cmp">Campaign</label><input type="text" id="u_cmp" placeholder="spring_sale" oninput="RUN()"></div>
+        <div class="form-group"><label for="u_trm">Term (optional)</label><input type="text" id="u_trm" placeholder="keyword" oninput="RUN()"></div>
+      </div>
+      <label style="font-size:.85rem;font-weight:600;">Tracking URL</label>
+      <div style="display:flex;gap:8px;"><input type="text" id="t_out" readonly="" style="flex:1;border:1.5px solid var(--border);border-radius:8px;padding:10px;" aria-label="t_out"><button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋</button></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

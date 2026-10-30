@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/ideal-weight-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/ideal-weight-calculator.png">
   <title>Ideal Weight Calculator – Devine, Robinson & BMI Range</title>
-  <meta name="description" content="Estimate ideal body weight from height using the Devine and Robinson formulas plus the healthy BMI range. Clear results in kg and lbs with honest notes on what the formulas mean.">
+  <meta name="description" content="Estimate ideal body weight from height using the Devine and Robinson formulas plus the healthy BMI range.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/ideal-weight-calculator">
   <meta property="og:title" content="Ideal Weight Calculator – Devine, Robinson & BMI Range">
-  <meta property="og:description" content="Estimate ideal body weight from height using the Devine and Robinson formulas plus the healthy BMI range. Clear results in kg and lbs with honest notes on what the formulas mean.">
+  <meta property="og:description" content="Estimate ideal body weight from height using the Devine and Robinson formulas plus the healthy BMI range.">
   <meta property="og:url" content="https://usfreetools.com/tools/ideal-weight-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,18 @@
       <div class="tool-main-card">
         <h1>⚖️ Ideal Weight Calculator</h1>
         <p>See what the classic formulas — Devine and Robinson — estimate for your height, alongside the healthy BMI weight range, in kg and lbs. General reference, not a personal target.</p>
-        <div id="toolContainer" data-impl="idealWeightCalc" style="--h-m:603px;--h-d:308px"></div>
+        <div id="toolContainer" data-impl="idealWeightCalc" style="--h-m:603px;--h-d:308px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="iw_ht">Height (cm)</label><input type="number" id="iw_ht" value="170" min="120" oninput="RUN()"></div>
+        <div class="form-group"><label for="iw_sex">Sex</label><select id="iw_sex" onchange="RUN()"><option value="m" selected="">Male</option><option value="f">Female</option></select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="iw_dev">65.9 kg (145 lb)</strong><span>Devine formula</span></div>
+        <div class="stat-box"><strong id="iw_rob">65.2 kg (144 lb)</strong><span>Robinson formula</span></div>
+        <div class="stat-box"><strong id="iw_bmi">53-72 kg</strong><span>Healthy BMI range</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Formula estimates for general reference — build and muscle matter more. Not medical advice.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

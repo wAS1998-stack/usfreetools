@@ -8,12 +8,12 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/topsoil-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/topsoil-calculator.png">
-  <title>Topsoil Calculator – How Much Topsoil & What It Costs | USFreeTools</title>
-  <meta name="description" content="Calculate topsoil from area and depth: cubic yards to order and approximate tons — with depth guidance for lawns, beds, and leveling, and bulk-versus-bag advice.">
+  <title>Topsoil Calculator – How Much Topsoil & What It Costs</title>
+  <meta name="description" content="Calculate topsoil from area and depth: cubic yards to order and approximate tons — with depth guidance for lawns, beds, and leveling, and bulk-versus-bag.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/topsoil-calculator">
   <meta property="og:title" content="Topsoil Calculator – How Much Topsoil & What It Costs">
-  <meta property="og:description" content="Calculate topsoil from area and depth: cubic yards to order and approximate tons — with depth guidance for lawns, beds, and leveling, and bulk-versus-bag advice.">
+  <meta property="og:description" content="Calculate topsoil from area and depth: cubic yards to order and approximate tons — with depth guidance for lawns, beds, and leveling, and bulk-versus-bag.">
   <meta property="og:url" content="https://usfreetools.com/tools/topsoil-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,25 @@
       <div class="tool-main-card">
         <h1>🟫 Topsoil Calculator</h1>
         <p>Enter the area and depth to see how much topsoil to order — in cubic yards and approximate tons — for beds, lawns, and leveling projects.</p>
-        <div id="toolContainer" data-impl="topsoilCalc" style="--h-m:549px;--h-d:306px"></div>
+        <div id="toolContainer" data-impl="topsoilCalc" style="--h-m:549px;--h-d:306px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="ts2_area">Area (sq ft)</label><input type="number" id="ts2_area" value="100" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="ts2_depth">Depth (inches)</label><input type="number" id="ts2_depth" value="6" min="0" step="0.25" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="ts2_yd">1.85</strong><span>Cubic yards</span></div>
+        <div class="stat-box"><strong id="ts2_tons">~2.0</strong><span>Tons (approx)</span></div>
+        <div class="stat-box"><strong id="ts2_bags">67</strong><span>Bags (0.75 cu ft)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">New lawns 4-6", beds 6-12", topdressing 1/4-1/2". Order 5-10% extra for settling.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="ts2_price">Your price per cubic yard</label>
+        <input type="number" id="ts2_price" value="35.00" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="ts2_cost">$65</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">Screened topsoil typically runs about $25–45 a yard. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

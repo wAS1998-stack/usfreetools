@@ -8,12 +8,12 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/water-intake-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/water-intake-calculator.png">
-  <title>Water Intake Calculator – How Much Water Per Day? | USFreeTools</title>
-  <meta name="description" content="Estimate how much water you should drink per day based on your body weight and activity level. Free daily water intake calculator with results in liters, ounces, and cups.">
+  <title>Water Intake Calculator – How Much Water Per Day?</title>
+  <meta name="description" content="Estimate how much water you should drink per day based on your body weight and activity level.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/water-intake-calculator">
   <meta property="og:title" content="Water Intake Calculator – How Much Water Per Day?">
-  <meta property="og:description" content="Estimate how much water you should drink per day based on your body weight and activity level. Free daily water intake calculator with results in liters, ounces, and cups.">
+  <meta property="og:description" content="Estimate how much water you should drink per day based on your body weight and activity level.">
   <meta property="og:url" content="https://usfreetools.com/tools/water-intake-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,19 @@
       <div class="tool-main-card">
         <h1>💧 Water Intake Calculator</h1>
         <p>Estimate how much water to drink each day based on your weight and activity. Get your daily target in liters, ounces, and cups instantly.</p>
-        <div id="toolContainer" data-impl="waterIntakeCalc" style="--h-m:671px;--h-d:308px"></div>
+        <div id="toolContainer" data-impl="waterIntakeCalc" style="--h-m:671px;--h-d:308px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="wi_wt">Weight</label><input type="number" id="wi_wt" value="70" oninput="RUN()"></div>
+        <div class="form-group"><label for="wi_unit">Unit</label><select id="wi_unit" onchange="RUN()"><option value="kg" selected="">kg</option><option value="lb">lbs</option></select></div>
+        <div class="form-group"><label for="wi_ex">Exercise (min/day)</label><input type="number" id="wi_ex" value="30" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="wi_l">2.66 L</strong><span>Liters / day</span></div>
+        <div class="stat-box"><strong id="wi_oz">90 oz</strong><span>Fluid ounces</span></div>
+        <div class="stat-box"><strong id="wi_cups">11.2</strong><span>Cups (8 oz)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">General guideline (~33 ml per kg + ~350 ml per 30 min exercise). Not medical advice.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

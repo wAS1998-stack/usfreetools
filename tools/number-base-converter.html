@@ -61,7 +61,14 @@
       <div class="tool-main-card">
         <h1>🔣 Number Base Converter</h1>
         <p>Convert numbers between binary, decimal, hexadecimal, and octal number systems instantly. Essential for computer science and programming.</p>
-        <div id="toolContainer" data-impl="numberBase" style="--h-m:528px;--h-d:288px"></div>
+        <div id="toolContainer" data-impl="numberBase" style="--h-m:528px;--h-d:288px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="nb_dec">Decimal (Base 10)</label><input type="text" id="nb_dec" placeholder="255" oninput="NB('dec')"></div>
+        <div class="form-group"><label for="nb_bin">Binary (Base 2)</label><input type="text" id="nb_bin" placeholder="11111111" oninput="NB('bin')"></div>
+        <div class="form-group"><label for="nb_hex">Hexadecimal (Base 16)</label><input type="text" id="nb_hex" placeholder="FF" oninput="NB('hex')"></div>
+        <div class="form-group"><label for="nb_oct">Octal (Base 8)</label><input type="text" id="nb_oct" placeholder="377" oninput="NB('oct')"></div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

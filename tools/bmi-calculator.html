@@ -61,7 +61,24 @@
       <div class="tool-main-card">
         <h1>⚖️ BMI Calculator</h1>
         <p>Calculate your Body Mass Index (BMI) using your height and weight, in either imperial or metric units, and see which BMI category you fall into.</p>
-        <div id="toolContainer" data-impl="bmi" style="--h-m:468px;--h-d:324px"></div>
+        <div id="toolContainer" data-impl="bmi" style="--h-m:468px;--h-d:324px">
+<div class="tabs-container"><div class="tabs"><button class="tab active">Metric</button><button class="tab">Imperial</button></div>
+        <div class="tab-panel active">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div class="form-group"><label for="bm_h">Height (cm)</label><input type="number" id="bm_h" value="170" oninput="BM('m')"></div>
+            <div class="form-group"><label for="bm_w">Weight (kg)</label><input type="number" id="bm_w" value="70" oninput="BM('m')"></div>
+          </div>
+        </div>
+        <div class="tab-panel">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+            <div class="form-group"><label for="bi_ft">Feet</label><input type="number" id="bi_ft" value="5" oninput="BM('i')"></div>
+            <div class="form-group"><label for="bi_in">Inches</label><input type="number" id="bi_in" value="7" oninput="BM('i')"></div>
+            <div class="form-group"><label for="bi_lb">Pounds</label><input type="number" id="bi_lb" value="154" oninput="BM('i')"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tool-result-bar" id="bm_r" style="font-size:1.1rem;">Your BMI: <strong>24.2</strong> — Normal weight</div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

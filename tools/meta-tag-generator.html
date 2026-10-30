@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/meta-tag-generator.png">
   <meta property="og:image" content="https://usfreetools.com/og/meta-tag-generator.png">
-  <title>Meta Tag Generator – Create SEO Meta Tags Online | USFreeTools</title>
+  <title>Meta Tag Generator – Create SEO Meta Tags Online</title>
   <meta name="description" content="Generate optimized HTML meta tags for SEO, plus Open Graph and Twitter Card tags for perfect social media previews. Copy and paste into your site head.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/meta-tag-generator">
@@ -61,7 +61,24 @@
       <div class="tool-main-card">
         <h1>🏷️ Meta Tag Generator</h1>
         <p>Generate optimized HTML meta tags for SEO, plus Open Graph and Twitter Card tags for perfect social media previews. Copy and paste into your site head.</p>
-        <div id="toolContainer" data-impl="metaTag" style="--h-m:901px;--h-d:901px"></div>
+        <div id="toolContainer" data-impl="metaTag" style="--h-m:901px;--h-d:901px">
+<div class="form-group"><label for="m_title">Page Title</label><input type="text" id="m_title" placeholder="My Awesome Page" oninput="MT()"></div>
+      <div class="form-group"><label for="m_desc">Description</label><textarea id="m_desc" rows="2" placeholder="A short description…" oninput="MT()"></textarea></div>
+      <div class="form-group"><label for="m_url">URL</label><input type="text" id="m_url" placeholder="https://example.com" oninput="MT()"></div>
+      <div class="form-group"><label for="m_img">Image URL</label><input type="text" id="m_img" placeholder="https://example.com/image.png" oninput="MT()"></div>
+      <label style="font-size:.85rem;font-weight:600;">Generated Meta Tags</label>
+      <textarea class="tool-output-area" id="t_out" readonly="" rows="9" style="font-size:.8rem;" aria-label="t_out">&lt;title&gt;&lt;/title&gt;
+&lt;meta name="description" content=""&gt;
+&lt;meta property="og:title" content=""&gt;
+&lt;meta property="og:description" content=""&gt;
+&lt;meta property="og:url" content=""&gt;
+&lt;meta property="og:image" content=""&gt;
+&lt;meta property="og:type" content="website"&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;
+&lt;meta name="twitter:title" content=""&gt;
+&lt;meta name="twitter:description" content=""&gt;</textarea>
+      <div class="tool-actions" style="margin-top:10px;"><button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋 Copy</button></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

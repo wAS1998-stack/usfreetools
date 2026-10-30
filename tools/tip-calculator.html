@@ -61,7 +61,18 @@
       <div class="tool-main-card">
         <h1>🍽️ Tip Calculator</h1>
         <p>Calculate the right tip and split the total bill evenly among any number of people. Choose your tip percentage and see per-person amounts instantly.</p>
-        <div id="toolContainer" data-impl="tipCalc" style="--h-m:614px;--h-d:273px"></div>
+        <div id="toolContainer" data-impl="tipCalc" style="--h-m:614px;--h-d:273px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="tp_bill">Bill ($)</label><input type="number" id="tp_bill" value="50" oninput="RUN()"></div>
+        <div class="form-group"><label for="tp_pct">Tip %</label><input type="number" id="tp_pct" value="18" oninput="RUN()"></div>
+        <div class="form-group"><label for="tp_split">Split</label><input type="number" id="tp_split" value="1" min="1" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="tp_tip">$9.00</strong><span>Tip</span></div>
+        <div class="stat-box"><strong id="tp_total">$59.00</strong><span>Total</span></div>
+        <div class="stat-box"><strong id="tp_each">$59.00</strong><span>Per Person</span></div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

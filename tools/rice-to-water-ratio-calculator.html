@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/rice-to-water-ratio-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/rice-to-water-ratio-calculator.png">
   <title>Rice to Water Ratio – How Much Water for Rice? | USFreeTools</title>
-  <meta name="description" content="Get the right amount of water for any type of rice. Choose white, jasmine, basmati, brown, or sushi rice and see exactly how much water to use for perfect results.">
+  <meta name="description" content="Get the right amount of water for any type of rice. Choose white, jasmine, basmati, brown, or sushi rice and see exactly how much water to use for perfect.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/rice-to-water-ratio-calculator">
   <meta property="og:title" content="Rice to Water Ratio – How Much Water for Rice?">
-  <meta property="og:description" content="Get the right amount of water for any type of rice. Choose white, jasmine, basmati, brown, or sushi rice and see exactly how much water to use for perfect results.">
+  <meta property="og:description" content="Get the right amount of water for any type of rice. Choose white, jasmine, basmati, brown, or sushi rice and see exactly how much water to use for perfect.">
   <meta property="og:url" content="https://usfreetools.com/tools/rice-to-water-ratio-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,23 @@
       <div class="tool-main-card">
         <h1>🍚 Rice to Water Ratio Calculator</h1>
         <p>Never guess rice water again. Choose your rice type, enter the amount, and get the exact water needed — in cups and milliliters — for perfectly cooked rice.</p>
-        <div id="toolContainer" data-impl="riceRatioCalc" style="--h-m:450px;--h-d:308px"></div>
+        <div id="toolContainer" data-impl="riceRatioCalc" style="--h-m:450px;--h-d:308px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="rr_rice">Rice (cups)</label><input type="number" id="rr_rice" value="1" min="0" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label for="rr_type">Rice type</label><select id="rr_type" onchange="RUN()">
+          <option value="2" selected="">White long-grain (1:2)</option>
+          <option value="1.5">Jasmine (1:1.5)</option>
+          <option value="1.5">Basmati (1:1.5)</option>
+          <option value="2.5">Brown (1:2.5)</option>
+          <option value="1.25">Sushi (1:1.25)</option>
+        </select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="rr_cups">2 cups</strong><span>Water needed</span></div>
+        <div class="stat-box"><strong id="rr_ml">473 ml</strong><span>In milliliters</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Stovetop guideline. Rice cookers often need slightly less — adjust once for your setup.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

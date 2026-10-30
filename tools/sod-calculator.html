@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/sod-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/sod-calculator.png">
-  <title>Sod Calculator – How Much Sod Do I Need & What Will It Cost? | USFreeTools</title>
+  <title>Sod Calculator – How Much Sod Do I Need & What Will It Cost?</title>
   <meta name="description" content="Calculate how much sod your lawn needs: rolls and pallets from the area, with waste margin, weight planning, and same-day installation guidance.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/sod-calculator">
@@ -61,7 +61,25 @@
       <div class="tool-main-card">
         <h1>🟩 Sod Calculator</h1>
         <p>Enter your lawn area to see the sod you need — in standard rolls and pallets — with the waste margin and weight numbers that make delivery day go smoothly.</p>
-        <div id="toolContainer" data-impl="sodCalc" style="--h-m:570px;--h-d:306px"></div>
+        <div id="toolContainer" data-impl="sodCalc" style="--h-m:570px;--h-d:306px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="sd_area">Lawn area (sq ft)</label><input type="number" id="sd_area" value="2000" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label for="sd_waste">Waste margin (%)</label><input type="number" id="sd_waste" value="10" min="0" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="sd_rolls">220</strong><span>Rolls (10 sq ft each)</span></div>
+        <div class="stat-box"><strong id="sd_pallets">4.9</strong><span>Pallets (~450 sq ft)</span></div>
+        <div class="stat-box"><strong id="sd_wt">~4.4 tons</strong><span>Approx. weight</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Confirm your farm’s pallet size (400-500 sq ft). Prep first; lay the same day it arrives.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="sd_price">Your price per roll (10 sq ft)</label>
+        <input type="number" id="sd_price" value="4.50" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="sd_cost">$990</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">Sod typically runs about $0.35–0.60 a square foot. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/deck-board-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/deck-board-calculator.png">
-  <title>Deck Board Calculator – How Many Boards & Decking Cost | USFreeTools</title>
+  <title>Deck Board Calculator – How Many Boards & Decking Cost</title>
   <meta name="description" content="Work out how many deck boards you need from the deck’s dimensions, board width, and gap spacing — with fastener counts and honest waste guidance.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/deck-board-calculator">
@@ -61,7 +61,28 @@
       <div class="tool-main-card">
         <h1>🛖 Deck Board Calculator</h1>
         <p>Enter your deck’s dimensions and board details to see how many boards to buy — with the gap spacing and fastener math handled for you.</p>
-        <div id="toolContainer" data-impl="deckBoardCalc" style="--h-m:950px;--h-d:425px"></div>
+        <div id="toolContainer" data-impl="deckBoardCalc" style="--h-m:950px;--h-d:425px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="db_l">Deck length (ft)</label><input type="number" id="db_l" value="16" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="db_w">Deck width (ft)</label><input type="number" id="db_w" value="12" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="db_bw">Board width (in)</label><input type="number" id="db_bw" value="5.5" min="1" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label for="db_gap">Gap (in)</label><input type="number" id="db_gap" value="0.25" min="0" step="0.125" oninput="RUN()"></div>
+        <div class="form-group"><label for="db_joist">Joist spacing (in)</label><input type="number" id="db_joist" value="16" min="8" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="db_boards">26</strong><span>Boards (deck length)</span></div>
+        <div class="stat-box"><strong id="db_lf">416 lin ft</strong><span>Total linear feet</span></div>
+        <div class="stat-box"><strong id="db_screws">~676</strong><span>Screws (2 per joist)</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Boards run the deck length. Add 5-10% (15% diagonal). 5/4×6 boards are 5.5" wide.</p><div class="cost-addon" style="margin-top:18px;padding:14px;border:1px solid var(--border);border-radius:10px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;">
+      <div class="form-group" style="margin:0;"><label for="db_price">Your price per board</label>
+        <input type="number" id="db_price" value="15.00" min="0" step="0.01" oninput="RUN()"></div>
+      <div class="stat-box" style="margin:0;"><strong id="db_cost">$390</strong><span>Estimated material cost</span></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin:10px 0 0;">A 5/4×6×16 pressure-treated board typically runs about $12–20. Materials only — delivery, tools and labour are extra.</p>
+  </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

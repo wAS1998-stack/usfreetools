@@ -8,12 +8,12 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/coffee-ratio-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/coffee-ratio-calculator.png">
-  <title>Coffee to Water Ratio – How Much Coffee Per Cup? | USFreeTools</title>
-  <meta name="description" content="Calculate how much coffee to use for your water amount with the ideal coffee-to-water ratio. Supports 1:15, 1:16, 1:17 and custom ratios for pour over, drip, and French press.">
+  <title>Coffee to Water Ratio – How Much Coffee Per Cup?</title>
+  <meta name="description" content="Calculate how much coffee to use for your water amount with the ideal coffee-to-water ratio.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/coffee-ratio-calculator">
   <meta property="og:title" content="Coffee to Water Ratio – How Much Coffee Per Cup?">
-  <meta property="og:description" content="Calculate how much coffee to use for your water amount with the ideal coffee-to-water ratio. Supports 1:15, 1:16, 1:17 and custom ratios for pour over, drip, and French press.">
+  <meta property="og:description" content="Calculate how much coffee to use for your water amount with the ideal coffee-to-water ratio.">
   <meta property="og:url" content="https://usfreetools.com/tools/coffee-ratio-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,20 @@
       <div class="tool-main-card">
         <h1>☕ Coffee to Water Ratio Calculator</h1>
         <p>Get the right amount of coffee for your water. Choose a brew ratio like 1:15 or 1:16, enter your water, and see exactly how many grams of coffee to use.</p>
-        <div id="toolContainer" data-impl="coffeeRatioCalc" style="--h-m:536px;--h-d:275px"></div>
+        <div id="toolContainer" data-impl="coffeeRatioCalc" style="--h-m:536px;--h-d:275px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="cf_water">Water (ml)</label><input type="number" id="cf_water" value="240" oninput="RUN()"></div>
+        <div class="form-group"><label for="cf_ratio">Ratio (1:X)</label><select id="cf_ratio" onchange="RUN()">
+          <option value="15">1:15 — strong</option><option value="16" selected="">1:16 — balanced</option>
+          <option value="17">1:17 — lighter</option><option value="14">1:14 — French press</option>
+        </select></div>
+        <div class="form-group"><label for="cf_cups">Cups (240 ml)</label><input type="number" id="cf_cups" value="1" min="0" step="0.5" oninput="CUPS()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="cf_coffee">15.0 g</strong><span>Coffee needed</span></div>
+        <div class="stat-box"><strong id="cf_tbsp">~2.5</strong><span>Tablespoons (approx)</span></div>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

@@ -43,7 +43,7 @@
 <div class="content-page"><div class="content-inner">
   <h2 style="margin-top:0;">Contact Us</h2>
   <p>Fill out the form below and we'll get back to you as soon as possible. You can also email us directly at <strong>hello@usfreetools.com</strong>.</p>
-  <div id="contactAlert" class="alert alert-success hidden">✅ Thank you! Your message has been received. We'll respond within 1–2 business days.</div>
+  <div id="contactAlert" class="alert alert-success hidden">✅ Your email app should now be open with the message ready to send. If nothing opened, email us directly at <a href="mailto:hello@usfreetools.com">hello@usfreetools.com</a> — we reply within 1–2 business days.</div>
   <form id="contactForm" onsubmit="return submitContact(event)">
     <div class="form-row">
       <div class="form-group"><label for="cName">Your Name *</label><input type="text" id="cName" required placeholder="John Smith"></div>
@@ -58,9 +58,23 @@
   <div class="divider"></div>
   <h2>Other Ways to Reach Us</h2>
   <ul><li><strong>Email:</strong> hello@usfreetools.com</li><li><strong>Support:</strong> support@usfreetools.com</li><li><strong>Advertising:</strong> ads@usfreetools.com</li><li><strong>Response Time:</strong> Typically within 1–2 business days</li></ul>
-  <p style="color:var(--gray);font-size:0.85rem;">Note: To make this form functional, connect it to Formspree, AWS Lambda + SES, or Netlify Forms (see README).</p>
 </div></div>
 <footer class="footer"><div class="footer-inner"><div class="footer-bottom" style="border-top:none;padding-top:0;"><p>© 2026 USFreeTools.com · <a href="/privacy" style="color:rgba(255,255,255,0.7);">Privacy</a> · <a href="/terms" style="color:rgba(255,255,255,0.7);">Terms</a></p></div></div></footer>
 <script defer src="/js/main.js"></script>
-<script>function submitContact(e){e.preventDefault();document.getElementById('contactAlert').classList.remove('hidden');document.getElementById('contactForm').reset();window.scrollTo({top:200,behavior:'smooth'});return false;}</script>
+<script>
+function submitContact(e){
+  e.preventDefault();
+  var v=function(id){return (document.getElementById(id).value||'').trim();};
+  var name=v('cName'), email=v('cEmail'), subject=v('cSubject'), message=v('cMessage');
+  if(!name||!email||!subject||!message){return false;}
+  var body='From: '+name+' <'+email+'>\nTopic: '+subject+'\n\n'+message;
+  var href='mailto:hello@usfreetools.com'
+         +'?subject='+encodeURIComponent('['+subject+'] '+name)
+         +'&body='+encodeURIComponent(body);
+  window.location.href=href;
+  document.getElementById('contactAlert').classList.remove('hidden');
+  window.scrollTo({top:200,behavior:'smooth'});
+  return false;
+}
+</script>
 </body></html>

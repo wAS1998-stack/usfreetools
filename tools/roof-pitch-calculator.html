@@ -61,7 +61,18 @@
       <div class="tool-main-card">
         <h1>🏠 Roof Pitch Calculator</h1>
         <p>Enter the rise per 12 inches of run to get the roof’s angle in degrees and its pitch factor — the multiplier that turns footprint into true roof area.</p>
-        <div id="toolContainer" data-impl="roofPitchCalc" style="--h-m:549px;--h-d:306px"></div>
+        <div id="toolContainer" data-impl="roofPitchCalc" style="--h-m:549px;--h-d:306px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="rp_rise">Rise (inches per 12" run)</label><input type="number" id="rp_rise" value="6" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="rp_area">Footprint area (sq ft, optional)</label><input type="number" id="rp_area" value="" min="0" placeholder="1500" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="rp_deg">26.6°</strong><span>Angle</span></div>
+        <div class="stat-box"><strong id="rp_factor">1.118</strong><span>Pitch factor</span></div>
+        <div class="stat-box"><strong id="rp_true">—</strong><span>True roof area</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Walkable to ~6/12 with care. Shingles need ≥2/12. Add 10-15% waste for the roof style.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

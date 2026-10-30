@@ -61,7 +61,11 @@
       <div class="tool-main-card">
         <h1>📊 Word Frequency Counter</h1>
         <p>Analyze any text to see how many times each word appears, ranked from most to least frequent.</p>
-        <div id="toolContainer" data-impl="wordFrequency" style="--h-m:322px;--h-d:322px"></div>
+        <div id="toolContainer" data-impl="wordFrequency" style="--h-m:322px;--h-d:322px">
+<textarea class="tool-input-area" id="t_in" placeholder="Paste text to analyze…" rows="6" aria-label="Paste text to analyze…"></textarea>
+      <button class="btn btn-primary" onclick="RUN()" style="margin:14px 0;">📊 Analyze</button>
+      <div id="t_out" style="font-size:.9rem;"></div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

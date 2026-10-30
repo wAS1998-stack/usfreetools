@@ -8,7 +8,7 @@
   <meta property="og:site_name" content="USFreeTools">
   <meta name="twitter:image" content="https://usfreetools.com/og/json-formatter.png">
   <meta property="og:image" content="https://usfreetools.com/og/json-formatter.png">
-  <title>JSON Formatter – Format, Beautify & Validate JSON | USFreeTools</title>
+  <title>JSON Formatter – Format, Beautify & Validate JSON</title>
   <meta name="description" content="Format, beautify, validate and minify JSON instantly. Paste messy JSON to get clean, readable output or find syntax errors. Free, no signup.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/json-formatter">
@@ -61,7 +61,18 @@
       <div class="tool-main-card">
         <h1>📋 JSON Formatter &amp; Validator</h1>
         <p>Format, beautify, validate, and minify JSON data instantly. Paste messy JSON and get clean, readable output — or detect syntax errors before they break your code.</p>
-        <div id="toolContainer" data-impl="jsonFormatter" style="--h-m:789px;--h-d:419px"></div>
+        <div id="toolContainer" data-impl="jsonFormatter" style="--h-m:789px;--h-d:419px">
+<div id="t_msg" class="alert" style="display:none;"></div>
+      <div class="tool-row">
+        <div class="tool-col"><label>Input JSON</label><textarea class="tool-input-area" id="t_in" placeholder="{&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:30}" rows="11" style="min-height:240px;font-family:monospace;font-size:.85rem;" aria-label="{&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:30}"></textarea></div>
+        <div class="tool-col"><label>Output</label><textarea class="tool-output-area" id="t_out" readonly="" rows="11" style="min-height:240px;font-size:.85rem;" aria-label="t_out"></textarea></div>
+      </div>
+      <div class="tool-actions">
+        <button class="btn btn-primary" onclick="JF(2)">✨ Beautify</button>
+        <button class="btn btn-outline" onclick="JF(0)">🗜️ Minify</button>
+        <button class="btn btn-outline" onclick="copyText(document.getElementById('t_out').value,this)">📋 Copy</button>
+      </div>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">

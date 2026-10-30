@@ -60,7 +60,18 @@
       <div class="tool-main-card">
         <h1>⏳ Countdown Timer</h1>
         <p>Set a countdown in hours, minutes, and seconds, then start it right in your browser — perfect for cooking, workouts, and focus sessions.</p>
-        <div id="toolContainer" data-impl="countdownTimer" style="--h-m:589px;--h-d:358px"></div>
+        <div id="toolContainer" data-impl="countdownTimer" style="--h-m:589px;--h-d:358px">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+        <div class="form-group"><label for="cd_h">Hours</label><input type="number" id="cd_h" value="0" min="0" max="99"></div>
+        <div class="form-group"><label for="cd_m">Minutes</label><input type="number" id="cd_m" value="5" min="0" max="59"></div>
+        <div class="form-group"><label for="cd_s">Seconds</label><input type="number" id="cd_s" value="0" min="0" max="59"></div>
+      </div>
+      <div id="cd_disp" style="font-family:var(--font-head);font-size:3.2rem;font-weight:800;text-align:center;color:var(--primary);padding:24px;background:var(--primary-light);border-radius:14px;margin-top:14px;">05:00</div>
+      <div class="tool-actions" style="justify-content:center;">
+        <button class="btn btn-primary" id="cd_btn" onclick="CD.toggle()">▶ Start</button>
+        <button class="btn btn-outline" onclick="CD.reset()">↺ Reset</button>
+      </div>
+</div>
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
 <h2>What This Tool Does</h2>

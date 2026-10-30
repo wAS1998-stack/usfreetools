@@ -9,11 +9,11 @@
   <meta name="twitter:image" content="https://usfreetools.com/og/board-foot-calculator.png">
   <meta property="og:image" content="https://usfreetools.com/og/board-foot-calculator.png">
   <title>Board Foot Calculator – Lumber Volume & Cost | USFreeTools</title>
-  <meta name="description" content="Calculate board feet from thickness, width, length, and quantity — with total cost at a price per board foot. Includes nominal-size and hardwood-buying guidance.">
+  <meta name="description" content="Calculate board feet from thickness, width, length, and quantity — with total cost at a price per board foot.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://usfreetools.com/tools/board-foot-calculator">
   <meta property="og:title" content="Board Foot Calculator – Lumber Volume & Cost">
-  <meta property="og:description" content="Calculate board feet from thickness, width, length, and quantity — with total cost at a price per board foot. Includes nominal-size and hardwood-buying guidance.">
+  <meta property="og:description" content="Calculate board feet from thickness, width, length, and quantity — with total cost at a price per board foot.">
   <meta property="og:url" content="https://usfreetools.com/tools/board-foot-calculator">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,21 @@
       <div class="tool-main-card">
         <h1>🪚 Board Foot Calculator</h1>
         <p>Enter thickness, width, length, and quantity to get total board feet — and the cost, if you add a price per board foot.</p>
-        <div id="toolContainer" data-impl="boardFootCalc" style="--h-m:890px;--h-d:527px"></div>
+        <div id="toolContainer" data-impl="boardFootCalc" style="--h-m:890px;--h-d:527px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label for="bf_t">Thickness (in)</label><input type="number" id="bf_t" value="1" min="0" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label for="bf_w">Width (in)</label><input type="number" id="bf_w" value="6" min="0" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label for="bf_l">Length (ft)</label><input type="number" id="bf_l" value="8" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label for="bf_q">Quantity</label><input type="number" id="bf_q" value="10" min="1" oninput="RUN()"></div>
+      </div>
+      <div class="form-group"><label for="bf_p">Price per board foot ($, optional)</label><input type="number" id="bf_p" value="" min="0" step="0.01" placeholder="8.50" oninput="RUN()"></div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="bf_each">4.0</strong><span>Board feet each</span></div>
+        <div class="stat-box"><strong id="bf_total">40.0</strong><span>Total board feet</span></div>
+        <div class="stat-box"><strong id="bf_cost">—</strong><span>Total cost</span></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Use actual dimensions (4/4 = 1"). Add 20-30% waste for hardwood projects.</p>
+</div>
 
       </div>
         <article class="content-inner" style="margin-top:24px;border:1px solid var(--border);max-width:100%;">
