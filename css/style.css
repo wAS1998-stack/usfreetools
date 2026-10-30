@@ -716,3 +716,31 @@ html, body { overflow-x: hidden; }
   .tool-footnote a { padding-block: 4px; }
   .hero-search button { min-height: 48px; }
 }
+
+/* ---- Reference data on tool pages: charts, quick answers, sub-tools ---- */
+.ref-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 14px 0 18px; border: 1px solid var(--border); border-radius: 12px; background: var(--paper2); }
+.ref-table { width: 100%; border-collapse: collapse; font-size: .92rem; font-variant-numeric: tabular-nums; }
+.ref-table th, .ref-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+.ref-table thead th { background: var(--primary-light); color: var(--ink); font-weight: 600; }
+.ref-table tbody tr:nth-child(even) { background: var(--gray-light); }
+.ref-table tbody tr:last-child td { border-bottom: none; }
+.ref-table td:first-child { font-weight: 600; color: var(--ink); }
+.ref-note { font-size: .86rem; color: var(--gray); }
+.answer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: 12px 0 18px; }
+.answer-grid div { background: var(--paper2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: .92rem; color: var(--ink2); }
+.answer-grid strong { display: block; color: var(--primary); font-family: var(--font-head); font-size: 1.08rem; }
+.tool-sub { margin-top: 22px; padding-top: 18px; border-top: 1px dashed var(--border-strong); }
+.tool-sub h3 { font-size: 1.05rem; margin: 0 0 12px; }
+#toolContainer .check { display: flex !important; align-items: center; gap: 8px; font-weight: 500 !important; margin: 0 0 14px !important; cursor: pointer; }
+#toolContainer .check input { width: 18px; height: 18px; margin: 0; }
+#toolContainer details { margin-top: 18px; }
+#toolContainer summary { cursor: pointer; font-weight: 600; color: var(--primary); min-height: 44px; display: flex; align-items: center; }
+#toolContainer canvas { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; background: #fff; }
+.tool-note { font-size: .85rem; color: var(--gray); margin-top: 10px; }
+@media (max-width: 560px) { .ref-table { font-size: .85rem; } .ref-table th, .ref-table td { padding: 8px 9px; } }
+/* Tabs inside a tool: the generic #toolContainer button style was painting every tab as active */
+#toolContainer .tab { background: transparent; color: var(--gray); box-shadow: none; padding: 9px 22px; border-radius: 9px; transform: none; }
+#toolContainer .tab:hover { color: var(--ink); background: var(--gray-light); box-shadow: none; transform: none; }
+#toolContainer .tab.active { background: var(--primary); color: #fff; box-shadow: 0 2px 8px rgba(27,67,232,0.25); }
+/* Short numeric rows (h/m/s, L/W/H) stay side by side on phones instead of stacking */
+@media (max-width: 420px) { #toolContainer .cols-keep { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 10px !important; } #toolContainer .cols-keep label { font-size: .82rem; } }

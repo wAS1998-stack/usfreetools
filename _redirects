@@ -7,3 +7,9 @@
 /convert/ /convert 301
 /percent/ /percent 301
 /height/ /height 301
+/tools/text-to-handwriting-info /tools/bold-text-generator 301
+/embed/text-to-handwriting-info /embed/bold-text-generator 301
+/tools/word-to-pdf-info /tools/title-case-converter 301
+/embed/word-to-pdf-info /embed/title-case-converter 301
+/tools/lorem-pixel-info /tools/placeholder-image-generator 301
+/embed/lorem-pixel-info /embed/placeholder-image-generator 301

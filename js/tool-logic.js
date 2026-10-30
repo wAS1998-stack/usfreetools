@@ -632,7 +632,56 @@ const IMPL = {
 
   // ─── LOAN / MORTGAGE ───
   loanCalc(){ loanImpl('Loan'); },
-  mortgageCalc(){ loanImpl('Mortgage'); },
+  mortgageCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Home price ($)</label><input type="number" id="mg_price" value="400000" min="0" step="1000" oninput="RUN()"></div>
+        <div class="form-group"><label>Down payment (%)</label><input type="number" id="mg_down" value="20" min="0" max="100" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Interest rate (% APR)</label><input type="number" id="mg_rate" value="6.5" min="0" step="0.05" oninput="RUN()"></div>
+        <div class="form-group"><label>Loan term</label><select id="mg_term" onchange="RUN()"><option value="30" selected>30 years</option><option value="20">20 years</option><option value="15">15 years</option><option value="10">10 years</option></select></div>
+        <div class="form-group"><label>Property tax (% of price per year)</label><input type="number" id="mg_tax" value="1" min="0" step="0.05" oninput="RUN()"></div>
+        <div class="form-group"><label>Home insurance ($ per year)</label><input type="number" id="mg_ins" value="1800" min="0" step="50" oninput="RUN()"></div>
+        <div class="form-group"><label>PMI (% of loan per year)</label><input type="number" id="mg_pmi" value="0.5" min="0" step="0.05" oninput="RUN()"></div>
+        <div class="form-group"><label>HOA dues ($ per month)</label><input type="number" id="mg_hoa" value="0" min="0" step="10" oninput="RUN()"></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="mg_total">—</strong><span>Monthly payment</span></div>
+        <div class="stat-box"><strong id="mg_pi">—</strong><span>Principal &amp; interest</span></div>
+        <div class="stat-box"><strong id="mg_loan">—</strong><span>Loan amount</span></div>
+        <div class="stat-box"><strong id="mg_int">—</strong><span>Total interest</span></div>
+      </div>
+      <div class="tool-stats" style="margin-top:8px;">
+        <div class="stat-box"><strong id="mg_t">—</strong><span>Tax / month</span></div>
+        <div class="stat-box"><strong id="mg_i">—</strong><span>Insurance / month</span></div>
+        <div class="stat-box"><strong id="mg_p">—</strong><span>PMI / month</span></div>
+        <div class="stat-box"><strong id="mg_h">—</strong><span>HOA / month</span></div>
+      </div>
+      <p class="tool-note" id="mg_note">—</p>
+      <details><summary>Show the amortization schedule (by year)</summary>
+        <div class="ref-wrap"><table class="ref-table"><thead><tr><th>Year</th><th>Principal paid</th><th>Interest paid</th><th>Balance</th></tr></thead><tbody id="mg_sched"></tbody></table></div>
+      </details>`);
+    const usd=x=>'$'+Math.round(x).toLocaleString('en-US');
+    window.RUN=()=>{
+      const price=+$('mg_price').value||0, down=Math.min(Math.max(+$('mg_down').value||0,0),100);
+      const loan=price*(1-down/100), r=(+$('mg_rate').value||0)/100/12, n=(+$('mg_term').value||30)*12;
+      const pi=loan<=0?0:(r>0?loan*r/(1-Math.pow(1+r,-n)):loan/n);
+      const tax=price*(+$('mg_tax').value||0)/100/12, ins=(+$('mg_ins').value||0)/12, hoa=+$('mg_hoa').value||0;
+      const pmiRate=(+$('mg_pmi').value||0)/100, needPmi=down<20&&loan>0, pmi=needPmi?loan*pmiRate/12:0;
+      // amortize; PMI ends automatically once the balance reaches 78% of the original price
+      let bal=loan, totInt=0, pmiMonths=0, rows='', yP=0, yI=0;
+      for(let m=1;m<=n&&bal>0.005;m++){
+        if(needPmi&&bal>0.78*price) pmiMonths++;
+        const it=bal*r, pr=Math.min(pi-it,bal); bal-=pr; totInt+=it; yP+=pr; yI+=it;
+        if(m%12===0||bal<=0.005){ rows+=`<tr><td>${Math.ceil(m/12)}</td><td>${usd(yP)}</td><td>${usd(yI)}</td><td>${usd(Math.max(bal,0))}</td></tr>`; yP=0; yI=0; }
+      }
+      $('mg_total').textContent=usd(pi+tax+ins+pmi+hoa);
+      $('mg_pi').textContent=usd(pi); $('mg_loan').textContent=usd(loan); $('mg_int').textContent=usd(totInt);
+      $('mg_t').textContent=usd(tax); $('mg_i').textContent=usd(ins); $('mg_p').textContent=usd(pmi); $('mg_h').textContent=usd(hoa);
+      $('mg_sched').innerHTML=rows;
+      $('mg_note').textContent='Down payment '+usd(price*down/100)+'. '+(needPmi?'PMI applies because the down payment is under 20%; in this estimate it drops off after about '+Math.round(pmiMonths/12)+' years, when the balance reaches 78% of the price. ':'No PMI at 20% or more down. ')+'Total of all '+(n)+' principal-and-interest payments: '+usd(pi*n)+'. Estimate only — your lender’s Loan Estimate is the real number.';
+    };
+    RUN();
+  },
 
 
 
@@ -674,23 +723,39 @@ const IMPL = {
 
   // ─── FIREWOOD ───
   firewoodCalc(){
+    // Utah State University Forestry Extension: [species, green lb/cord, dry lb/cord, million BTU/cord]
+    const SP=[['Oak, red',4888,3528,24.6],['Oak, white',5573,4200,29.1],['Oak, bur',4960,3768,26.2],['Maple (other than silver)',4685,3680,25.5],['Maple, silver',3904,2752,19],['Ash, white',3952,3472,24.2],['Ash, green',4184,2880,20],['Beech',0,3760,27.5],['Birch',4312,2992,20.8],['Cherry',3696,2928,20.4],['Locust, black',4616,4016,27.9],['Apple',4850,3888,27],['Walnut, black',4584,3192,22.2],['Elm, American',4456,2872,20],['Osage-orange',5120,4728,32.9],['Douglas-fir',3319,2970,20.7],['Pine, ponderosa',3600,2336,16.2],['Pine, white',0,2250,15.9],['Spruce',2800,2240,15.5],['Aspen',0,2160,18.2],['Cottonwood',4640,2272,15.8]];
     ui(`
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div class="cols-keep" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
         <div class="form-group"><label>Stack length (ft)</label><input type="number" id="fw_l" value="8" min="0" step="0.5" oninput="RUN()"></div>
         <div class="form-group"><label>Stack height (ft)</label><input type="number" id="fw_h" value="4" min="0" step="0.5" oninput="RUN()"></div>
         <div class="form-group"><label>Stack depth (ft)</label><input type="number" id="fw_d" value="4" min="0" step="0.25" oninput="RUN()"></div>
       </div>
-      <div class="tool-stats">
-        <div class="stat-box"><strong id="fw_cords">1.00</strong><span>Cords</span></div>
-        <div class="stat-box"><strong id="fw_cuft">128</strong><span>Cubic feet (stacked)</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Piece length (inches)</label><input type="number" id="fw_len" value="16" min="6" max="48" oninput="RUN()"></div>
+        <div class="form-group"><label>Wood species</label><select id="fw_sp" onchange="RUN()">${SP.map((s,i)=>`<option value="${i}">${s[0]}</option>`).join('')}</select></div>
+        <div class="form-group"><label>Condition</label><select id="fw_dry" onchange="RUN()"><option value="1" selected>Seasoned (air-dry)</option><option value="0">Green (fresh cut)</option></select></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">1 cord = 128 cu ft stacked (8×4×4). A face cord of 16" logs = 1/3 cord. Verify deliveries after stacking.</p>` + costUI('fw','per cord','325.00','Seasoned hardwood typically runs about $250–450 a cord delivered.') + ``);
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="fw_cords">1.00</strong><span>Full cords</span></div>
+        <div class="stat-box"><strong id="fw_face">3.00</strong><span>Face cords (ricks)</span></div>
+        <div class="stat-box"><strong id="fw_cuft">128</strong><span>Cubic feet (stacked)</span></div>
+        <div class="stat-box"><strong id="fw_wt">—</strong><span>Approx. weight</span></div>
+        <div class="stat-box"><strong id="fw_btu">—</strong><span>Heat (million BTU)</span></div>
+      </div>
+      <p class="tool-note" id="fw_note">1 cord = 128 cu ft stacked (4 × 4 × 8 ft). A face cord is a 4 × 8 ft stack one piece deep.</p>` + costUI('fw','per cord','325.00','Seasoned hardwood typically runs about $250–450 a cord delivered.') + ``);
     window.RUN=()=>{
       const l=+$('fw_l').value||0,hh=+$('fw_h').value||0,d=+$('fw_d').value||0;
-      const cf=l*hh*d;
-      $('fw_cords').textContent=(cf/128).toFixed(2);
+      const cf=l*hh*d, cords=cf/128, s=SP[+$('fw_sp').value]||SP[0], dry=$('fw_dry').value==='1';
+      $('fw_cords').textContent=cords.toFixed(2);
+      const len=Math.max(+$('fw_len').value||16,1), fcf=32*len/12;
+      $('fw_face').textContent=(cf/fcf).toFixed(2);
       $('fw_cuft').textContent=cf.toFixed(0);
-      costOut('fw', (cf/128));
+      const lb=dry?s[2]:s[1];
+      $('fw_wt').textContent=lb?Math.round(cords*lb).toLocaleString('en-US')+' lb':'n/a';
+      $('fw_btu').textContent=dry?(cords*s[3]).toFixed(1):'season first';
+      $('fw_note').textContent='A face cord of '+len+'-inch pieces is 4 × 8 ft × '+len+'″ = '+fcf.toFixed(1)+' cu ft, or '+(fcf/128).toFixed(2)+' of a full cord. Weight and heat use Utah State University Extension figures for '+s[0].toLowerCase()+'.';
+      costOut('fw', cords);
     };
     RUN();
   },
@@ -698,22 +763,24 @@ const IMPL = {
   // ─── TOPSOIL ───
   topsoilCalc(){
     ui(`
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
         <div class="form-group"><label>Area (sq ft)</label><input type="number" id="ts2_area" value="100" min="0" oninput="RUN()"></div>
         <div class="form-group"><label>Depth (inches)</label><input type="number" id="ts2_depth" value="6" min="0" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label>Bag size</label><select id="ts2_bag" onchange="RUN()"><option value="0.75" selected>0.75 cu ft (≈40 lb)</option><option value="1">1 cu ft</option><option value="1.5">1.5 cu ft</option><option value="2">2 cu ft</option></select></div>
       </div>
       <div class="tool-stats">
         <div class="stat-box"><strong id="ts2_yd">1.85</strong><span>Cubic yards</span></div>
         <div class="stat-box"><strong id="ts2_tons">~2.0</strong><span>Tons (approx)</span></div>
-        <div class="stat-box"><strong id="ts2_bags">67</strong><span>Bags (0.75 cu ft)</span></div>
+        <div class="stat-box"><strong id="ts2_bags">67</strong><span id="ts2_bagl">Bags (0.75 cu ft)</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">New lawns 4-6", beds 6-12", topdressing 1/4-1/2". Order 5-10% extra for settling.</p>` + costUI('ts2','per cubic yard','35.00','Screened topsoil typically runs about $25–45 a yard.') + ``);
+      <p class="tool-note">New lawns 4–6″, beds 6–12″, topdressing ¼–½″. Weight assumes about 1.1 tons per cubic yard; wet soil weighs more. Order 5–10% extra for settling.</p>` + costUI('ts2','per cubic yard','35.00','Screened topsoil typically runs about $25–45 a yard.') + ``);
     window.RUN=()=>{
-      const a=+$('ts2_area').value||0, d=+$('ts2_depth').value||0;
+      const a=+$('ts2_area').value||0, d=+$('ts2_depth').value||0, bag=+$('ts2_bag').value||0.75;
       const cf=a*d/12, yd=cf/27;
       $('ts2_yd').textContent=yd.toFixed(2);
       $('ts2_tons').textContent='~'+(yd*1.1).toFixed(1);
-      $('ts2_bags').textContent=Math.ceil(cf/0.75);
+      $('ts2_bags').textContent=Math.ceil(cf/bag-1e-9);
+      $('ts2_bagl').textContent='Bags ('+bag+' cu ft)';
       costOut('ts2', yd);
     };
     RUN();
@@ -1048,21 +1115,35 @@ const IMPL = {
   // ─── GRAVEL ───
   gravelCalc(){
     ui(`
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
         <div class="form-group"><label>Area (sq ft)</label><input type="number" id="gv_area" value="100" min="0" oninput="RUN()"></div>
         <div class="form-group"><label>Depth (inches)</label><input type="number" id="gv_depth" value="3" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Tons per cubic yard</label><input type="number" id="gv_den" value="1.4" min="0.5" max="3" step="0.05" oninput="RUN()"></div>
       </div>
       <div class="tool-stats">
         <div class="stat-box"><strong id="gv_yd">0.93</strong><span>Cubic yards</span></div>
         <div class="stat-box"><strong id="gv_tons">1.30</strong><span>Tons (approx)</span></div>
+        <div class="stat-box"><strong id="gv_lb">2,593</strong><span>Pounds (approx)</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~1.4 tons per cubic yard. Depths: 2-3\" decorative, 3-4\" paths, 6-12\" driveways (layered).</p>` + costUI('gv','per ton','45.00','Crushed gravel typically runs about $30–60 a ton.') + ``);
+      <p class="tool-note">Most gravel and crushed stone weighs 1.3–1.5 tons per cubic yard; ask your supplier for theirs. Depths: 2–3″ decorative, 3–4″ paths, 6–12″ driveways in layers.</p>` + costUI('gv','per ton','45.00','Crushed gravel typically runs about $30–60 a ton.') + `
+      <div class="tool-sub">
+        <h3>Convert tons ↔ cubic yards</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div class="form-group"><label>Amount</label><input type="number" id="gv_cv" value="10" min="0" step="0.5" oninput="RUN()"></div>
+          <div class="form-group"><label>Direction</label><select id="gv_dir" onchange="RUN()"><option value="t2y" selected>Tons → cubic yards</option><option value="y2t">Cubic yards → tons</option></select></div>
+        </div>
+        <div class="tool-result-bar" id="gv_cvout">10 tons ≈ 7.14 cubic yards</div>
+      </div>`);
     window.RUN=()=>{
-      const a=+$('gv_area').value||0, d=+$('gv_depth').value||0;
-      const yd=a*d/12/27;
+      const a=+$('gv_area').value||0, d=+$('gv_depth').value||0, den=+$('gv_den').value||1.4;
+      const yd=a*d/12/27, t=yd*den;
       $('gv_yd').textContent=yd.toFixed(2);
-      $('gv_tons').textContent=(yd*1.4).toFixed(2);
-      costOut('gv', yd*1.4);
+      $('gv_tons').textContent=t.toFixed(2);
+      $('gv_lb').textContent=Math.round(t*2000).toLocaleString('en-US');
+      costOut('gv', t);
+      const v=+$('gv_cv').value||0, y2t=$('gv_dir').value==='y2t';
+      const out=y2t?v*den:v/den, f=x=>(Math.round(x*100)/100).toLocaleString('en-US');
+      $('gv_cvout').textContent=y2t?f(v)+' cubic yard'+(v===1?'':'s')+' ≈ '+f(out)+' tons':f(v)+' ton'+(v===1?'':'s')+' ≈ '+f(out)+' cubic yards';
     };
     RUN();
   },
@@ -1196,22 +1277,24 @@ const IMPL = {
   // ─── MULCH ───
   mulchCalc(){
     ui(`
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
         <div class="form-group"><label>Bed area (sq ft)</label><input type="number" id="mu_area" value="100" min="0" oninput="RUN()"></div>
         <div class="form-group"><label>Depth (inches)</label><input type="number" id="mu_depth" value="3" min="0" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Bag size</label><select id="mu_bag" onchange="RUN()"><option value="1.5">1.5 cu ft</option><option value="2" selected>2 cu ft</option><option value="3">3 cu ft</option></select></div>
       </div>
       <div class="tool-stats">
         <div class="stat-box"><strong id="mu_cuft">25.0</strong><span>Cubic feet</span></div>
         <div class="stat-box"><strong id="mu_yd">0.93</strong><span>Cubic yards</span></div>
-        <div class="stat-box"><strong id="mu_bags">13</strong><span>Bags (2 cu ft)</span></div>
+        <div class="stat-box"><strong id="mu_bags">13</strong><span id="mu_bagl">Bags (2 cu ft)</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Use 2-4 inch depth; keep mulch off trunks and stems.</p>` + costUI('mu','per cubic yard','38.00','Bulk mulch typically runs about $30–45 a yard delivered.') + ``);
+      <p class="tool-note">Use 2–4 inches; keep mulch a few inches off trunks and stems. One cubic yard = 27 cubic feet = 13.5 bags of 2 cu ft.</p>` + costUI('mu','per cubic yard','38.00','Bulk mulch typically runs about $30–45 a yard delivered.') + ``);
     window.RUN=()=>{
-      const a=+$('mu_area').value||0, dep=+$('mu_depth').value||0;
+      const a=+$('mu_area').value||0, dep=+$('mu_depth').value||0, bag=+$('mu_bag').value||2;
       const cf=a*dep/12;
       $('mu_cuft').textContent=cf.toFixed(1);
       $('mu_yd').textContent=(cf/27).toFixed(2);
-      $('mu_bags').textContent=Math.ceil(cf/2);
+      $('mu_bags').textContent=Math.ceil(cf/bag-1e-9);
+      $('mu_bagl').textContent='Bags ('+bag+' cu ft)';
       costOut('mu', (cf/27));
     };
     RUN();
@@ -1293,29 +1376,46 @@ const IMPL = {
 
   // ─── SALES TAX ───
   salesTaxCalc(){
+    // Tax Foundation, rates as of July 1, 2026: [state, state rate, avg combined state+local, max local]
+    const S=[['Alabama',4,9.46,8],['Alaska',0,1.82,7.85],['Arizona',5.6,8.54,5.3],['Arkansas',6.5,9.48,6.13],['California',7.25,9.03,5.25],['Colorado',2.9,7.89,9.1],['Connecticut',6.35,6.35,0],['Delaware',0,0,0],['District of Columbia',6,6,0],['Florida',6,6.98,2],['Georgia',4,7.56,5],['Hawaii',4,4.5,0.5],['Idaho',6,6.03,3],['Illinois',6.25,8.98,4.75],['Indiana',7,7,0],['Iowa',6,6.94,1],['Kansas',6.5,8.71,4.25],['Kentucky',6,6,0],['Louisiana',5,10.13,7],['Maine',5.5,5.5,0],['Maryland',6,6,0],['Massachusetts',6.25,6.25,0],['Michigan',6,6,0],['Minnesota',6.875,8.14,3],['Mississippi',7,7.06,1],['Missouri',4.225,8.44,6.25],['Montana',0,0,0],['Nebraska',5.5,6.98,2],['Nevada',6.85,8.24,1.53],['New Hampshire',0,0,0],['New Jersey',6.625,6.6,3.31],['New Mexico',4.875,7.68,4.56],['New York',4,8.54,4.88],['North Carolina',4.75,7.1,3.5],['North Dakota',5,7.09,3.75],['Ohio',5.75,7.29,2.25],['Oklahoma',4.5,9.06,7],['Oregon',0,0,0],['Pennsylvania',6,6.34,2],['Rhode Island',7,7,0],['South Carolina',6,7.49,3],['South Dakota',4.2,6.11,4.5],['Tennessee',7,9.61,2.75],['Texas',6.25,8.2,2],['Utah',6.1,7.42,4.7],['Vermont',6,6.43,1],['Virginia',5.3,5.77,2.7],['Washington',6.5,9.57,4.2],['West Virginia',6,6.6,1.4],['Wisconsin',5,5.72,2.9],['Wyoming',4,5.39,3]];
+    const p=x=>(+x).toFixed(3).replace(/\.?0+$/,'')+'%';
     ui(`
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>State (fills in the rate)</label><select id="st_state" onchange="STATE()">
+          <option value="">Enter my own rate</option>${S.map((s,i)=>`<option value="${i}">${s[0]}</option>`).join('')}
+        </select></div>
+        <div class="form-group"><label>Rate to use</label><select id="st_which" onchange="STATE()">
+          <option value="c" selected>Average state + local</option><option value="s">State rate only</option>
+        </select></div>
         <div class="form-group"><label>Mode</label><select id="st_mode" onchange="RUN()">
           <option value="add">Add tax to price</option><option value="remove">Back out tax from total</option>
         </select></div>
         <div class="form-group"><label id="st_lbl">Price ($)</label><input type="number" id="st_amt" value="50" min="0" step="0.01" oninput="RUN()"></div>
-        <div class="form-group"><label>Tax rate (%)</label><input type="number" id="st_rate" value="8.25" min="0" step="0.01" oninput="RUN()"></div>
       </div>
+      <div class="form-group"><label>Tax rate (%)</label><input type="number" id="st_rate" value="8.25" min="0" step="0.001" oninput="RUN()"></div>
       <div class="tool-stats">
         <div class="stat-box"><strong id="st_pre">$50.00</strong><span>Pre-tax price</span></div>
         <div class="stat-box"><strong id="st_tax">$4.13</strong><span>Sales tax</span></div>
         <div class="stat-box"><strong id="st_total">$54.13</strong><span>Total</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Rates combine state + local and vary by location — check your local rate. Not tax advice.</p>`);
+      <p class="tool-note" id="st_info">Pick a state to fill in its rate, or type the exact rate for your city — local taxes vary by address. Not tax advice.</p>`);
+    window.STATE=()=>{
+      const i=$('st_state').value; if(i===''){ $('st_info').textContent='Type the exact rate for your city — local taxes vary by address. Not tax advice.'; return RUN(); }
+      const s=S[+i], useC=$('st_which').value==='c';
+      $('st_rate').value=useC?s[2]:s[1];
+      $('st_info').textContent = s[1]===0&&s[2]===0 ? s[0]+' has no general sales tax.'
+        : s[0]==='New Jersey' ? 'New Jersey: 6.625% state rate. Certain sellers in Urban Enterprise Zones charge a reduced rate. Rates as of July 2026.'
+        : s[0]+': '+p(s[1])+' state rate'+(s[2]>s[1]?' + local taxes averaging '+p(Math.round((s[2]-s[1])*100)/100)+' = '+p(s[2])+' on average (local add-ons up to '+p(s[3])+').':(s[3]>0?' (some areas add up to '+p(s[3])+').':', with no local add-ons.'))+' Rates as of July 2026 — check your exact address.';
+      RUN();
+    };
     window.RUN=()=>{
       const mode=$('st_mode').value, a=parseFloat($('st_amt').value)||0, r=(parseFloat($('st_rate').value)||0)/100;
       $('st_lbl').textContent = mode==='add'?'Price ($)':'Total paid ($)';
       let pre, tax, total;
       if(mode==='add'){ pre=a; tax=a*r; total=a+tax; }
       else { pre=a/(1+r); tax=a-pre; total=a; }
-      $('st_pre').textContent='$'+pre.toFixed(2);
-      $('st_tax').textContent='$'+tax.toFixed(2);
-      $('st_total').textContent='$'+total.toFixed(2);
+      const m=x=>'$'+x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+      $('st_pre').textContent=m(pre); $('st_tax').textContent=m(tax); $('st_total').textContent=m(total);
     };
     RUN();
   },
@@ -1524,26 +1624,47 @@ const IMPL = {
   // ─── PPI ───
   ppiCalc(){
     ui(`
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
-        <div class="form-group"><label>Width (px)</label><input type="number" id="pp_w" value="2560" min="0" oninput="RUN()"></div>
-        <div class="form-group"><label>Height (px)</label><input type="number" id="pp_h" value="1440" min="0" oninput="RUN()"></div>
+      <div class="form-group"><label>Common resolution</label><select id="pp_pre" onchange="PRESET()">
+        <option value="">Custom</option>
+        <option value="1366x768">1366 × 768 (HD)</option>
+        <option value="1920x1080">1920 × 1080 (Full HD, 1080p)</option>
+        <option value="1920x1200">1920 × 1200 (WUXGA)</option>
+        <option value="2560x1440" selected>2560 × 1440 (QHD, 1440p)</option>
+        <option value="2560x1600">2560 × 1600 (WQXGA)</option>
+        <option value="3440x1440">3440 × 1440 (ultrawide QHD)</option>
+        <option value="3840x2160">3840 × 2160 (4K UHD)</option>
+        <option value="5120x2880">5120 × 2880 (5K)</option>
+        <option value="7680x4320">7680 × 4320 (8K)</option>
+      </select></div>
+      <div class="cols-keep" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Width (px)</label><input type="number" id="pp_w" value="2560" min="0" oninput="$('pp_pre').value='';RUN()"></div>
+        <div class="form-group"><label>Height (px)</label><input type="number" id="pp_h" value="1440" min="0" oninput="$('pp_pre').value='';RUN()"></div>
         <div class="form-group"><label>Diagonal (inches)</label><input type="number" id="pp_d" value="27" min="0" step="0.1" oninput="RUN()"></div>
       </div>
       <div class="tool-stats">
         <div class="stat-box"><strong id="pp_ppi">109</strong><span>PPI</span></div>
+        <div class="stat-box"><strong id="pp_dot">0.233 mm</strong><span>Dot pitch</span></div>
+        <div class="stat-box"><strong id="pp_size">—</strong><span>Screen width × height</span></div>
+        <div class="stat-box"><strong id="pp_ret">—</strong><span>Pixels blend beyond</span></div>
         <div class="stat-box"><strong id="pp_total">3.7 MP</strong><span>Total pixels</span></div>
         <div class="stat-box"><strong id="pp_ar">16:9</strong><span>Aspect ratio</span></div>
-      </div>`);
+      </div>
+      <p class="tool-note">“Pixels blend beyond” is the viewing distance where one pixel shrinks below one arcminute — the limit of 20/20 vision.</p>`);
     const gcd=(a,b)=>b?gcd(b,a%b):a;
+    window.PRESET=()=>{ const v=$('pp_pre').value; if(!v)return; const [w,h]=v.split('x'); $('pp_w').value=w; $('pp_h').value=h; RUN(); };
     window.RUN=()=>{
       const w=parseFloat($('pp_w').value)||0,h=parseFloat($('pp_h').value)||0,d=parseFloat($('pp_d').value)||0;
       if(w>0&&h>0&&d>0){
-        const diagpx=Math.sqrt(w*w+h*h);
-        $('pp_ppi').textContent=Math.round(diagpx/d);
+        const diagpx=Math.sqrt(w*w+h*h), ppi=diagpx/d, dist=3438/ppi;
+        $('pp_ppi').textContent=Math.round(ppi);
+        $('pp_dot').textContent=(25.4/ppi).toFixed(3)+' mm';
+        $('pp_size').textContent=(d*w/diagpx).toFixed(1)+'″ × '+(d*h/diagpx).toFixed(1)+'″';
+        $('pp_ret').textContent=Math.round(dist)+'″ ('+Math.round(dist*2.54)+' cm)';
         $('pp_total').textContent=((w*h)/1e6).toFixed(1)+' MP';
-        const g=gcd(Math.round(w),Math.round(h));
-        $('pp_ar').textContent=(Math.round(w)/g)+':'+(Math.round(h)/g);
-      }
+        const g=gcd(Math.round(w),Math.round(h)); let a=(Math.round(w)/g)+':'+(Math.round(h)/g);
+        if(a==='64:27'||a==='43:18') a+=' (21:9)'; else if(a==='8:5') a='16:10';
+        $('pp_ar').textContent=a;
+      } else ['pp_ppi','pp_dot','pp_size','pp_ret','pp_total','pp_ar'].forEach(i=>$(i).textContent='—');
     };
     RUN();
   },
@@ -1551,29 +1672,44 @@ const IMPL = {
   // ─── PAINT ───
   paintCalc(){
     ui(`
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
-        <div class="form-group"><label>Length (m)</label><input type="number" id="pt_l" value="4" min="0" step="0.1" oninput="RUN()"></div>
-        <div class="form-group"><label>Width (m)</label><input type="number" id="pt_w" value="3" min="0" step="0.1" oninput="RUN()"></div>
-        <div class="form-group"><label>Wall height (m)</label><input type="number" id="pt_h" value="2.4" min="0" step="0.1" oninput="RUN()"></div>
+      <div class="form-group"><label>Units</label><select id="pt_u" onchange="UNITS()"><option value="ft" selected>Feet (US)</option><option value="m">Meters</option></select></div>
+      <div class="cols-keep" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label id="pt_ll">Room length (ft)</label><input type="number" id="pt_l" value="12" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label id="pt_wl">Room width (ft)</label><input type="number" id="pt_w" value="12" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label id="pt_hl">Wall height (ft)</label><input type="number" id="pt_h" value="8" min="0" step="0.1" oninput="RUN()"></div>
         <div class="form-group"><label>Doors</label><input type="number" id="pt_doors" value="1" min="0" oninput="RUN()"></div>
-        <div class="form-group"><label>Windows</label><input type="number" id="pt_win" value="1" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Windows</label><input type="number" id="pt_win" value="2" min="0" oninput="RUN()"></div>
         <div class="form-group"><label>Coats</label><input type="number" id="pt_coats" value="2" min="1" oninput="RUN()"></div>
       </div>
+      <label class="check"><input type="checkbox" id="pt_ceil" onchange="RUN()"> Paint the ceiling too</label>
       <div class="tool-stats">
-        <div class="stat-box"><strong id="pt_area">0 m²</strong><span>Paintable area</span></div>
-        <div class="stat-box"><strong id="pt_lit">0 L</strong><span>Paint needed</span></div>
-        <div class="stat-box"><strong id="pt_gal">0 gal</strong><span>US gallons</span></div>
+        <div class="stat-box"><strong id="pt_area">0 sq ft</strong><span>Wall area to paint</span></div>
+        <div class="stat-box"><strong id="pt_gal">0 gal</strong><span>Paint needed</span></div>
+        <div class="stat-box"><strong id="pt_buy">—</strong><span>What to buy</span></div>
+        <div class="stat-box"><strong id="pt_lit">0 L</strong><span>In liters</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Assumes ~10 m²/L coverage, 1.6 m² per door, 1.4 m² per window. Buy ~10% extra.</p>` + costUI('pt','per gallon','40.00','Mid-grade interior paint typically runs about $30–55 a gallon.') + ``);
+      <p class="tool-note" id="pt_note">Assumes about 350 sq ft per gallon per coat, 20 sq ft per door and 15 sq ft per window.</p>` + costUI('pt','per gallon','40.00','Mid-grade interior paint typically runs about $30–55 a gallon.') + ``);
+    window.UNITS=()=>{
+      const m=$('pt_u').value==='m', f=m?0.3048:1/0.3048;
+      ['pt_l','pt_w','pt_h'].forEach(id=>{ const v=+$(id).value; if(v>0) $(id).value=(Math.round(v*f*10)/10); });
+      const u=m?'m':'ft'; $('pt_ll').textContent='Room length ('+u+')'; $('pt_wl').textContent='Room width ('+u+')'; $('pt_hl').textContent='Wall height ('+u+')';
+      RUN();
+    };
     window.RUN=()=>{
+      const m=$('pt_u').value==='m';
       const l=parseFloat($('pt_l').value)||0,w=parseFloat($('pt_w').value)||0,h=parseFloat($('pt_h').value)||0;
       const d=parseInt($('pt_doors').value)||0,wi=parseInt($('pt_win').value)||0,c=Math.max(parseInt($('pt_coats').value)||1,1);
-      const area=Math.max(2*(l+w)*h - d*1.6 - wi*1.4, 0);
-      const liters=area*c/10;
-      $('pt_area').textContent=area.toFixed(1)+' m²';
-      $('pt_lit').textContent=liters.toFixed(1)+' L';
-      $('pt_gal').textContent=(liters/3.78541).toFixed(1)+' gal';
-      costOut('pt', Math.ceil(liters/3.78541));
+      // work in square feet internally
+      const k=m?10.7639:1, L=l*(m?3.28084:1), W=w*(m?3.28084:1), H=h*(m?3.28084:1);
+      const walls=Math.max(2*(L+W)*H - d*20 - wi*15, 0), ceil=$('pt_ceil').checked?L*W:0;
+      const gal=(walls+ceil)*c/350, lit=gal*3.78541;
+      $('pt_area').textContent=m?(walls/k).toFixed(1)+' m²':Math.round(walls)+' sq ft';
+      $('pt_gal').textContent=gal.toFixed(1)+' gal';
+      $('pt_lit').textContent=lit.toFixed(1)+' L';
+      let g=Math.floor(gal), q=Math.ceil((gal-g)*4-1e-9); if(q===4){g++;q=0;}
+      $('pt_buy').textContent=gal<=0?'—':(g?g+' gal':'')+(g&&q?' + ':'')+(q?q+' qt':'');
+      $('pt_note').textContent='Walls'+(ceil?' and ceiling':'')+', '+c+' coat'+(c>1?'s':'')+'. Assumes about 350 sq ft per gallon per coat (8.6 m² per liter), '+(m?'1.9 m²':'20 sq ft')+' per door and '+(m?'1.4 m²':'15 sq ft')+' per window.'+(ceil?' Ceiling adds '+(ceil*c/350).toFixed(1)+' gal.':'');
+      costOut('pt', gal>0?Math.ceil(gal):0);
     };
     RUN();
   },
@@ -1607,12 +1743,13 @@ const IMPL = {
 
   // ─── PACE ───
   paceCalc(){
+    const MI=1.609344;
     ui(`
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
         <div class="form-group"><label>Distance</label><input type="number" id="pc_dist" value="5" min="0" step="0.1" oninput="RUN()"></div>
         <div class="form-group"><label>Unit</label><select id="pc_unit" onchange="RUN()"><option value="km">km</option><option value="mi">miles</option></select></div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div class="cols-keep" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
         <div class="form-group"><label>Hours</label><input type="number" id="pc_h" value="0" min="0" oninput="RUN()"></div>
         <div class="form-group"><label>Minutes</label><input type="number" id="pc_m" value="30" min="0" oninput="RUN()"></div>
         <div class="form-group"><label>Seconds</label><input type="number" id="pc_s" value="0" min="0" oninput="RUN()"></div>
@@ -1621,42 +1758,113 @@ const IMPL = {
         <div class="stat-box"><strong id="pc_km">6:00</strong><span>Pace / km</span></div>
         <div class="stat-box"><strong id="pc_mi">9:39</strong><span>Pace / mile</span></div>
         <div class="stat-box"><strong id="pc_speed">10.0 km/h</strong><span>Speed</span></div>
+      </div>
+      <p class="tool-note" style="margin:16px 0 0;">Finish times at this pace</p>
+      <div class="tool-stats" style="margin-top:8px;">
+        <div class="stat-box"><strong id="pc_5k">—</strong><span>5K</span></div>
+        <div class="stat-box"><strong id="pc_10k">—</strong><span>10K</span></div>
+        <div class="stat-box"><strong id="pc_hm">—</strong><span>Half marathon</span></div>
+        <div class="stat-box"><strong id="pc_fm">—</strong><span>Marathon</span></div>
+      </div>
+      <div class="tool-sub">
+        <h3>Pace converter: min/mile ↔ min/km</h3>
+        <div class="cols-keep" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+          <div class="form-group"><label>Minutes</label><input type="number" id="pv_m" value="8" min="0" oninput="RUN()"></div>
+          <div class="form-group"><label>Seconds</label><input type="number" id="pv_s" value="0" min="0" max="59" oninput="RUN()"></div>
+          <div class="form-group"><label>Pace is per</label><select id="pv_u" onchange="RUN()"><option value="mi">mile</option><option value="km">km</option></select></div>
+        </div>
+        <div class="tool-stats">
+          <div class="stat-box"><strong id="pv_out">—</strong><span id="pv_lbl">Pace / km</span></div>
+          <div class="stat-box"><strong id="pv_mph">—</strong><span>mph</span></div>
+          <div class="stat-box"><strong id="pv_kmh">—</strong><span>km/h</span></div>
+        </div>
       </div>`);
-    const fmt=(sec)=>{if(!isFinite(sec)||sec<=0)return'—';const m=Math.floor(sec/60),s=Math.round(sec%60);return m+':'+String(s).padStart(2,'0');};
+    // Round the total first so 359.6 s shows as 6:00, never 5:60
+    const fmt=(sec)=>{if(!isFinite(sec)||sec<=0)return'—';let t=Math.round(sec);const h=Math.floor(t/3600);t-=h*3600;const m=Math.floor(t/60),s=t%60;return(h?h+':'+String(m).padStart(2,'0'):m)+':'+String(s).padStart(2,'0');};
     window.RUN=()=>{
-      let d=parseFloat($('pc_dist').value)||0; const u=$('pc_unit').value;
+      const d=parseFloat($('pc_dist').value)||0, u=$('pc_unit').value;
       const t=(parseFloat($('pc_h').value)||0)*3600+(parseFloat($('pc_m').value)||0)*60+(parseFloat($('pc_s').value)||0);
-      const km=u==='mi'?d*1.60934:d;
+      const km=u==='mi'?d*MI:d;
       if(km>0&&t>0){
-        $('pc_km').textContent=fmt(t/km);
-        $('pc_mi').textContent=fmt(t/(km/1.60934));
-        const kmh=km/(t/3600);
-        $('pc_speed').textContent=kmh.toFixed(1)+' km/h ('+(kmh/1.60934).toFixed(1)+' mph)';
-      } else { $('pc_km').textContent='—';$('pc_mi').textContent='—';$('pc_speed').textContent='—'; }
+        const spk=t/km, kmh=3600/spk;
+        $('pc_km').textContent=fmt(spk);
+        $('pc_mi').textContent=fmt(spk*MI);
+        $('pc_speed').textContent=kmh.toFixed(1)+' km/h ('+(kmh/MI).toFixed(1)+' mph)';
+        $('pc_5k').textContent=fmt(spk*5); $('pc_10k').textContent=fmt(spk*10);
+        $('pc_hm').textContent=fmt(spk*21.0975); $('pc_fm').textContent=fmt(spk*42.195);
+      } else ['pc_km','pc_mi','pc_speed','pc_5k','pc_10k','pc_hm','pc_fm'].forEach(i=>$(i).textContent='—');
+      const ps=(parseFloat($('pv_m').value)||0)*60+(parseFloat($('pv_s').value)||0), pu=$('pv_u').value;
+      if(ps>0){
+        const spk2=pu==='mi'?ps/MI:ps, kmh2=3600/spk2;
+        $('pv_out').textContent=fmt(pu==='mi'?spk2:ps*MI);
+        $('pv_lbl').textContent=pu==='mi'?'Pace / km':'Pace / mile';
+        $('pv_mph').textContent=(kmh2/MI).toFixed(2);
+        $('pv_kmh').textContent=kmh2.toFixed(2);
+      } else ['pv_out','pv_mph','pv_kmh'].forEach(i=>$(i).textContent='—');
     };
     RUN();
   },
 
   // ─── GPA TO PERCENTAGE ───
   gpaPercentCalc(){
+    // Common US plus/minus scale: [minimum %, letter, 4.0 points]
+    const PM=[[97,'A+',4.0],[93,'A',4.0],[90,'A−',3.7],[87,'B+',3.3],[83,'B',3.0],[80,'B−',2.7],[77,'C+',2.3],[73,'C',2.0],[70,'C−',1.7],[67,'D+',1.3],[65,'D',1.0],[0,'F',0.0]];
+    const RANGE={'A+':'97–100%','A':'93–96%','A−':'90–92%','B+':'87–89%','B':'83–86%','B−':'80–82%','C+':'77–79%','C':'73–76%','C−':'70–72%','D+':'67–69%','D':'65–66%','F':'below 65%'};
     ui(`
+      <div class="form-group"><label>Convert</label><select id="gp_dir" onchange="RUN()">
+        <option value="g2p" selected>GPA → percentage</option>
+        <option value="p2g">Percentage → GPA</option>
+        <option value="s2s">GPA on one scale → another scale</option>
+      </select></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-        <div class="form-group"><label>GPA / CGPA</label><input type="number" id="gp_val" value="8.0" min="0" step="0.01" oninput="RUN()"></div>
-        <div class="form-group"><label>Scale</label><select id="gp_scale" onchange="RUN()">
-          <option value="9.5" selected>10-point CGPA (x 9.5)</option>
-          <option value="25">4.0 scale (x 25)</option>
-          <option value="20">5.0 scale (x 20)</option>
+        <div class="form-group"><label id="gp_vlbl">GPA / CGPA</label><input type="number" id="gp_val" value="8.0" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label id="gp_slbl">Scale</label><select id="gp_scale" onchange="RUN()">
+          <option value="10" selected>10-point CGPA</option>
+          <option value="4">4.0 scale</option>
+          <option value="5">5.0 scale</option>
         </select></div>
       </div>
+      <div class="form-group" id="gp_towrap" style="display:none"><label>To scale</label><select id="gp_to" onchange="RUN()">
+        <option value="4" selected>4.0 scale</option><option value="4.33">4.33 scale</option><option value="5">5.0 scale</option><option value="10">10-point scale</option>
+      </select></div>
       <div class="tool-stats">
-        <div class="stat-box"><strong id="gp_pct">76%</strong><span>Percentage</span></div>
+        <div class="stat-box"><strong id="gp_pct">76%</strong><span id="gp_olbl">Percentage</span></div>
+        <div class="stat-box"><strong id="gp_alt">80%</strong><span id="gp_altlbl">Using × 10</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Standard conversion formulas. If your institution publishes its own formula, use theirs.</p>`);
+      <p class="tool-note" id="gp_note">CBSE formula: CGPA × 9.5. If your university prints its own formula on the marksheet, use that one.</p>`);
+    const pct=x=>(Math.round(x*10)/10).toString()+'%';
+    const g2=x=>(Math.round(x*100)/100).toFixed(2);
     window.RUN=()=>{
-      const v=parseFloat($('gp_val').value)||0, m=parseFloat($('gp_scale').value);
-      const max=m===25?4:(m===20?5:10);
-      const pct=Math.min(v*m,100);
-      $('gp_pct').textContent=(v>max?'GPA exceeds scale':pct.toFixed(1).replace(/\.0$/,'')+'%');
+      const dir=$('gp_dir').value, v=parseFloat($('gp_val').value), sc=parseFloat($('gp_scale').value);
+      $('gp_towrap').style.display=dir==='s2s'?'':'none';
+      $('gp_vlbl').textContent=dir==='p2g'?'Percentage (%)':'GPA / CGPA';
+      $('gp_slbl').textContent=dir==='p2g'?'Convert to':(dir==='s2s'?'From scale':'Scale');
+      let main='—', alt='—', olbl='Percentage', altlbl='—', note='';
+      if(isFinite(v)&&v>=0){
+        if(dir==='g2p'){
+          if(v>sc){ main='Above scale'; }
+          else if(sc===10){ main=pct(v*9.5); alt=pct(v*10); altlbl='Using × 10'; note='CBSE formula: CGPA × 9.5. Some universities use × 10 or their own formula — if your marksheet prints one, use that.'; }
+          else if(sc===4){
+            main=pct(v*25); olbl='Percentage (GPA ÷ 4 × 100)';
+            const hit=PM.find(r=>Math.abs(r[2]-v)<0.001);
+            if(hit){ alt=hit[1]; altlbl='Letter grade ('+RANGE[hit[1]]+')'; }
+            else { const up=PM.slice().reverse().find(r=>r[2]>v), lo=PM.find(r=>r[2]<v);
+              alt=(lo?lo[1]:'F')+' to '+(up?up[1]:'A'); altlbl='Between '+(lo?RANGE[lo[1]]:'')+' and '+(up?RANGE[up[1]]:''); }
+            note='A straight conversion divides by the 4.0 maximum. Schools that grade on a letter scale map grades to percentages differently — see the chart below.';
+          } else { main=pct(v*20); olbl='Percentage (GPA ÷ 5 × 100)'; note='Straight proportional conversion on a 5.0 scale.'; }
+        } else if(dir==='p2g'){
+          if(v>100){ main='Above 100%'; }
+          else if(sc===4){ const r=PM.find(r=>v>=r[0]); main=r[2].toFixed(1)+' ('+r[1]+')'; olbl='GPA, letter-grade method'; alt=g2(v/25); altlbl='Straight-line (% ÷ 25)'; note='Most US high schools convert by letter grade: 90–92% is an A− (3.7), 83–86% a B (3.0). The straight-line figure is what some international evaluators use.'; }
+          else if(sc===10){ main=g2(v/9.5); olbl='CGPA (% ÷ 9.5)'; alt=g2(v/10); altlbl='Using ÷ 10'; note='Reverse of the CBSE formula. Use your own university’s formula if it publishes one.'; }
+          else { main=g2(v/20); olbl='GPA on 5.0 scale (% ÷ 20)'; note='Straight proportional conversion on a 5.0 scale.'; }
+        } else {
+          const to=parseFloat($('gp_to').value);
+          if(v>sc){ main='Above scale'; }
+          else { main=g2(v/sc*to); olbl='GPA on '+(to===10?'10-point':to+'')+' scale'; alt=pct(v/sc*100); altlbl='Share of maximum'; note='Proportional conversion: (GPA ÷ old maximum) × new maximum. Credential evaluators such as WES convert course by course, so an official result can differ.'; }
+        }
+      }
+      $('gp_pct').textContent=main; $('gp_olbl').textContent=olbl;
+      $('gp_alt').textContent=alt; $('gp_altlbl').textContent=altlbl; $('gp_note').textContent=note;
     };
     RUN();
   },
@@ -2240,21 +2448,45 @@ Dana</textarea>
   // ─── PAY RAISE CALCULATOR ───
   payRaise(){
     ui(`
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-        <div class="form-group"><label>Current Salary ($)</label><input type="number" id="pr_cur" value="50000" oninput="RUN()"></div>
-        <div class="form-group"><label>Raise (%)</label><input type="number" id="pr_pct" value="5" oninput="RUN()"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Pay type</label><select id="pr_type" onchange="TYPE()"><option value="yr" selected>Annual salary</option><option value="hr">Hourly wage</option></select></div>
+        <div class="form-group"><label id="pr_curlbl">Current salary ($ per year)</label><input type="number" id="pr_cur" value="50000" min="0" oninput="RUN()"></div>
+        <div class="form-group"><label>Raise given as</label><select id="pr_mode" onchange="RUN()"><option value="pct" selected>Percent (%)</option><option value="amt">Dollar amount ($)</option></select></div>
+        <div class="form-group"><label id="pr_pctlbl">Raise (%)</label><input type="number" id="pr_pct" value="4" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Hours per week</label><input type="number" id="pr_hrs" value="40" min="1" max="100" oninput="RUN()"></div>
+        <div class="form-group"><label>Project over (years)</label><input type="number" id="pr_yrs" value="5" min="1" max="40" oninput="RUN()"></div>
       </div>
-      <div class="tool-stats" style="margin-top:8px;">
-        <div class="stat-box"><strong id="pr_new">—</strong><span>New Salary</span></div>
-        <div class="stat-box"><strong id="pr_inc">—</strong><span>Annual Increase</span></div>
-        <div class="stat-box"><strong id="pr_month">—</strong><span>Extra per Month</span></div>
-      </div>`);
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="pr_new">—</strong><span>New annual pay</span></div>
+        <div class="stat-box"><strong id="pr_newhr">—</strong><span>New hourly rate</span></div>
+        <div class="stat-box"><strong id="pr_inc">—</strong><span>Raise per year</span></div>
+        <div class="stat-box"><strong id="pr_month">—</strong><span>Raise per month</span></div>
+        <div class="stat-box"><strong id="pr_check">—</strong><span>Per biweekly check</span></div>
+        <div class="stat-box"><strong id="pr_eff">—</strong><span>Raise as a %</span></div>
+      </div>
+      <p class="tool-note" id="pr_proj">—</p>`);
+    const usd=(x,d)=>'$'+x.toLocaleString('en-US',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});
+    window.TYPE=()=>{
+      const hr=$('pr_type').value==='hr', cur=$('pr_cur');
+      $('pr_curlbl').textContent=hr?'Current wage ($ per hour)':'Current salary ($ per year)';
+      if(hr&&+cur.value>500) cur.value=(+cur.value/(+$('pr_hrs').value||40)/52).toFixed(2);
+      else if(!hr&&+cur.value<=500) cur.value=Math.round(+cur.value*(+$('pr_hrs').value||40)*52);
+      RUN();
+    };
     window.RUN=()=>{
-      const cur=+$('pr_cur').value||0, pct=+$('pr_pct').value||0;
-      const inc=cur*pct/100, nw=cur+inc;
-      $('pr_new').textContent='$'+nw.toLocaleString(undefined,{maximumFractionDigits:0});
-      $('pr_inc').textContent='$'+inc.toLocaleString(undefined,{maximumFractionDigits:0});
-      $('pr_month').textContent='$'+(inc/12).toLocaleString(undefined,{maximumFractionDigits:0});
+      const hr=$('pr_type').value==='hr', hrs=+$('pr_hrs').value||40, yrs=Math.min(Math.max(Math.round(+$('pr_yrs').value||1),1),40);
+      const cur=+$('pr_cur').value||0, mode=$('pr_mode').value, val=+$('pr_pct').value||0;
+      $('pr_pctlbl').textContent=mode==='pct'?'Raise (%)':(hr?'Raise ($ per hour)':'Raise ($ per year)');
+      const annual=hr?cur*hrs*52:cur;
+      const incAnnual=mode==='pct'?annual*val/100:(hr?val*hrs*52:val);
+      const nw=annual+incAnnual, rate=annual>0?incAnnual/annual:0;
+      $('pr_new').textContent=usd(nw); $('pr_newhr').textContent=usd(nw/hrs/52,2);
+      $('pr_inc').textContent=usd(incAnnual); $('pr_month').textContent=usd(incAnnual/12);
+      $('pr_check').textContent=usd(incAnnual/26); $('pr_eff').textContent=(Math.round(rate*1000)/10)+'%';
+      if(annual>0&&rate>0){
+        let pay=annual, extra=0; for(let k=1;k<=yrs;k++){ pay*=1+rate; extra+=pay-annual; }
+        $('pr_proj').textContent='If you got the same '+(Math.round(rate*1000)/10)+'% raise every year, your pay would reach '+usd(pay)+' a year after '+yrs+' raise'+(yrs>1?'s':'')+' — '+usd(extra)+' more earned in total than with no raises. Figures are before tax.';
+      } else $('pr_proj').textContent='Enter your current pay and a raise to see the result. Figures are before tax.';
     };
     RUN();
   },
@@ -2303,6 +2535,91 @@ Dana</textarea>
       $('cpm_out').textContent=`CPM $${cpm.toFixed(2)} · ${imp.toLocaleString()} impressions · $${cost.toFixed(2)} total`;
     }};
     CPM.calc('cost');
+  },
+  cubicYardCalc(){
+    ui(`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Shape</label><select id="cy_shape" onchange="SHAPE()"><option value="rect" selected>Rectangle or square</option><option value="circle">Circle (round bed, column, hole)</option><option value="tri">Triangle</option></select></div>
+        <div class="form-group"><label>Add for waste / settling (%)</label><input type="number" id="cy_extra" value="10" min="0" max="50" oninput="RUN()"></div>
+        <div class="form-group" id="cy_a_g"><label id="cy_a_l">Length (ft)</label><input type="number" id="cy_a" value="10" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group" id="cy_b_g"><label id="cy_b_l">Width (ft)</label><input type="number" id="cy_b" value="10" min="0" step="0.1" oninput="RUN()"></div>
+        <div class="form-group"><label>Depth or thickness</label><input type="number" id="cy_d" value="4" min="0" step="0.25" oninput="RUN()"></div>
+        <div class="form-group"><label>Depth unit</label><select id="cy_du" onchange="RUN()"><option value="in" selected>inches</option><option value="ft">feet</option></select></div>
+      </div>
+      <div class="tool-stats">
+        <div class="stat-box"><strong id="cy_yd">—</strong><span>Cubic yards</span></div>
+        <div class="stat-box"><strong id="cy_yd2">—</strong><span id="cy_yd2l">With 10% extra</span></div>
+        <div class="stat-box"><strong id="cy_ft">—</strong><span>Cubic feet</span></div>
+        <div class="stat-box"><strong id="cy_m">—</strong><span>Cubic meters</span></div>
+        <div class="stat-box"><strong id="cy_area">—</strong><span>Area (sq ft)</span></div>
+      </div>
+      <p class="tool-note">Cubic yards = length × width × depth (all in feet) ÷ 27. One cubic yard is a 3 × 3 × 3 ft cube.</p>`);
+    window.SHAPE=()=>{
+      const s=$('cy_shape').value;
+      $('cy_a_l').textContent=s==='circle'?'Diameter (ft)':(s==='tri'?'Base (ft)':'Length (ft)');
+      $('cy_b_l').textContent=s==='tri'?'Height of triangle (ft)':'Width (ft)';
+      $('cy_b_g').style.display=s==='circle'?'none':'';
+      RUN();
+    };
+    window.RUN=()=>{
+      const s=$('cy_shape').value, a=+$('cy_a').value||0, b=+$('cy_b').value||0;
+      const d=(+$('cy_d').value||0)/($('cy_du').value==='in'?12:1), ex=Math.max(+$('cy_extra').value||0,0);
+      const area=s==='circle'?Math.PI*a*a/4:(s==='tri'?a*b/2:a*b), cf=area*d, yd=cf/27;
+      const f=(x,p)=>x>0?x.toLocaleString('en-US',{minimumFractionDigits:p,maximumFractionDigits:p}):'—';
+      $('cy_yd').textContent=f(yd,2); $('cy_yd2').textContent=f(yd*(1+ex/100),2); $('cy_yd2l').textContent='With '+ex+'% extra';
+      $('cy_ft').textContent=f(cf,1); $('cy_m').textContent=f(cf*0.0283168,2); $('cy_area').textContent=f(area,1);
+    };
+    RUN();
+  },
+  placeholderImg(){
+    ui(`
+      <div class="form-group"><label>Preset size</label><select id="ph_pre" onchange="PRE()">
+        <option value="">Custom</option>
+        <option value="1200x630" selected>1200 × 630 — Open Graph / link preview</option>
+        <option value="1600x900">1600 × 900 — 16:9 image</option>
+        <option value="1280x720">1280 × 720 — YouTube thumbnail</option>
+        <option value="1080x1080">1080 × 1080 — square post</option>
+        <option value="1080x1350">1080 × 1350 — portrait post (4:5)</option>
+        <option value="1080x1920">1080 × 1920 — story / reel (9:16)</option>
+        <option value="1500x500">1500 × 500 — X header</option>
+        <option value="728x90">728 × 90 — leaderboard banner</option>
+        <option value="300x250">300 × 250 — medium rectangle</option>
+        <option value="160x600">160 × 600 — wide skyscraper</option>
+        <option value="512x512">512 × 512 — app icon</option>
+      </select></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Width (px)</label><input type="number" id="ph_w" value="1200" min="1" max="4000" oninput="$('ph_pre').value='';RUN()"></div>
+        <div class="form-group"><label>Height (px)</label><input type="number" id="ph_h" value="630" min="1" max="4000" oninput="$('ph_pre').value='';RUN()"></div>
+        <div class="form-group"><label>Background</label><input type="color" id="ph_bg" value="#d9dde5" oninput="RUN()" style="width:100%;height:46px;padding:4px;border-radius:11px;border:1px solid var(--border-strong);"></div>
+        <div class="form-group"><label>Text color</label><input type="color" id="ph_fg" value="#4a5160" oninput="RUN()" style="width:100%;height:46px;padding:4px;border-radius:11px;border:1px solid var(--border-strong);"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:2fr 1fr;gap:14px;">
+        <div class="form-group"><label>Text (leave blank to show the size)</label><input type="text" id="ph_t" value="" placeholder="1200 × 630" oninput="RUN()"></div>
+        <div class="form-group"><label>Format</label><select id="ph_f" onchange="RUN()"><option value="png" selected>PNG</option><option value="jpeg">JPG</option><option value="webp">WebP</option></select></div>
+      </div>
+      <canvas id="ph_c" width="1200" height="630" aria-label="Placeholder image preview"></canvas>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+        <button type="button" id="ph_dl" onclick="DL()">Download image</button>
+      </div>
+      <p class="tool-note" id="ph_info">Made in your browser — nothing is uploaded.</p>`);
+    window.PRE=()=>{ const v=$('ph_pre').value; if(!v)return; const [w,h]=v.split('x'); $('ph_w').value=w; $('ph_h').value=h; RUN(); };
+    window.RUN=()=>{
+      const c=$('ph_c'), x=c.getContext('2d');
+      const w=Math.min(Math.max(Math.round(+$('ph_w').value||1),1),4000), h=Math.min(Math.max(Math.round(+$('ph_h').value||1),1),4000);
+      c.width=w; c.height=h;
+      x.fillStyle=$('ph_bg').value; x.fillRect(0,0,w,h);
+      const t=$('ph_t').value.trim()||(w+' × '+h);
+      let fs=Math.max(Math.round(Math.min(w/(t.length*0.62),h*0.5)),8);
+      x.fillStyle=$('ph_fg').value; x.font='600 '+fs+'px system-ui, -apple-system, Segoe UI, Roboto, sans-serif';
+      x.textAlign='center'; x.textBaseline='middle'; x.fillText(t,w/2,h/2);
+      $('ph_info').textContent=w+' × '+h+' px · '+$('ph_f').value.toUpperCase().replace('JPEG','JPG')+' · made in your browser — nothing is uploaded.';
+    };
+    window.DL=()=>{
+      const f=$('ph_f').value, a=document.createElement('a');
+      a.download='placeholder-'+$('ph_c').width+'x'+$('ph_c').height+'.'+(f==='jpeg'?'jpg':f);
+      a.href=$('ph_c').toDataURL('image/'+f,0.92); document.body.appendChild(a); a.click(); a.remove();
+    };
+    RUN();
   },
 };
 

@@ -157,8 +157,8 @@
 "1280": 721
 },
 "tools/firewood-cord-calculator.html": {
-"412": 611,
-"1280": 306
+"412": 1314,
+"1280": 660
 },
 "tools/fraction-calculator.html": {
 "412": 287,
@@ -173,8 +173,8 @@
 "1280": 437
 },
 "tools/gpa-to-percentage-converter.html": {
-"412": 472,
-"1280": 308
+"412": 580,
+"1280": 437
 },
 "tools/grade-calculator.html": {
 "412": 572,
@@ -185,8 +185,8 @@
 "1280": 308
 },
 "tools/gravel-calculator.html": {
-"412": 470,
-"1280": 306
+"412": 1423,
+"1280": 771
 },
 "tools/hash-generator.html": {
 "412": 533,
@@ -288,10 +288,6 @@
 "412": 694,
 "1280": 574
 },
-"tools/lorem-pixel-info.html": {
-"412": 770,
-"1280": 568
-},
 "tools/lowercase-converter.html": {
 "412": 890,
 "1280": 584
@@ -317,16 +313,16 @@
 "1280": 511
 },
 "tools/mortgage-calculator.html": {
-"412": 614,
-"1280": 273
+"412": 1626,
+"1280": 848
 },
 "tools/mpg-calculator.html": {
 "412": 635,
 "1280": 273
 },
 "tools/mulch-calculator.html": {
-"412": 549,
-"1280": 306
+"412": 1020,
+"1280": 533
 },
 "tools/number-base-converter.html": {
 "412": 528,
@@ -341,12 +337,12 @@
 "1280": 427
 },
 "tools/pace-calculator.html": {
-"412": 901,
-"1280": 411
+"412": 1279,
+"1280": 831
 },
 "tools/paint-calculator.html": {
-"412": 1028,
-"1280": 425
+"412": 1044,
+"1280": 782
 },
 "tools/paragraph-counter.html": {
 "412": 770,
@@ -365,8 +361,8 @@
 "1280": 425
 },
 "tools/pay-raise-calculator.html": {
-"412": 484,
-"1280": 265
+"412": 1198,
+"1280": 693
 },
 "tools/percentage-calculator.html": {
 "412": 584,
@@ -397,8 +393,8 @@
 "1280": 248
 },
 "tools/ppi-calculator.html": {
-"412": 614,
-"1280": 273
+"412": 760,
+"1280": 587
 },
 "tools/profit-margin-calculator.html": {
 "412": 484,
@@ -469,8 +465,8 @@
 "1280": 306
 },
 "tools/sales-tax-calculator.html": {
-"412": 693,
-"1280": 308
+"412": 918,
+"1280": 553
 },
 "tools/scientific-calculator.html": {
 "412": 1345,
@@ -528,10 +524,6 @@
 "412": 511,
 "1280": 511
 },
-"tools/text-to-handwriting-info.html": {
-"412": 343,
-"1280": 343
-},
 "tools/tile-calculator.html": {
 "412": 710,
 "1280": 425
@@ -557,8 +549,8 @@
 "1280": 584
 },
 "tools/topsoil-calculator.html": {
-"412": 549,
-"1280": 306
+"412": 1043,
+"1280": 511
 },
 "tools/twitter-character-counter.html": {
 "412": 770,
@@ -608,13 +600,21 @@
 "412": 322,
 "1280": 322
 },
-"tools/word-to-pdf-info.html": {
-"412": 890,
-"1280": 584
-},
 "tools/xml-formatter.html": {
 "412": 511,
 "1280": 511
+},
+"tools/bold-text-generator.html": {
+"412": 343,
+"1280": 343
+},
+"tools/cubic-yard-calculator.html": {
+"412": 1155,
+"1280": 549
+},
+"tools/placeholder-image-generator.html": {
+"412": 1096,
+"1280": 838
 }
 },
 "keys": {
