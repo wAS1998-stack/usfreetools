@@ -744,3 +744,6 @@ html, body { overflow-x: hidden; }
 #toolContainer .tab.active { background: var(--primary); color: #fff; box-shadow: 0 2px 8px rgba(27,67,232,0.25); }
 /* Short numeric rows (h/m/s, L/W/H) stay side by side on phones instead of stacking */
 @media (max-width: 420px) { #toolContainer .cols-keep { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 10px !important; } #toolContainer .cols-keep label { font-size: .82rem; } }
+/* Heat index chart cells, NWS category colors */
+.ref-table .hi-c, .ref-table .hi-ec, .ref-table .hi-d, .ref-table .hi-ed, .ref-note .hi-c, .ref-note .hi-ec, .ref-note .hi-d, .ref-note .hi-ed { display: inline-block; padding: 2px 7px; border-radius: 6px; font-weight: 600; }
+.hi-c { background: #fff7cc; color: #6b5300; } .hi-ec { background: #ffe08a; color: #6b4300; } .hi-d { background: #ffb37a; color: #7a2e00; } .hi-ed { background: #f26b5b; color: #fff; }

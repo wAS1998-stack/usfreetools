@@ -924,21 +924,27 @@ const IMPL = {
         <div class="form-group"><label>Relative humidity (%)</label><input type="number" id="hi_r" value="70" min="0" max="100" step="1" oninput="RUN()"></div>
       </div>
       <div class="tool-stats">
-        <div class="stat-box"><strong id="hi_val">105°F</strong><span>Heat index (NWS)</span></div>
+        <div class="stat-box"><strong id="hi_val">106°F</strong><span>Heat index (NWS)</span></div>
+        <div class="stat-box"><strong id="hi_c">41°C</strong><span>In Celsius</span></div>
         <div class="stat-box"><strong id="hi_cat">Danger</strong><span>NWS category</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;" >Designed for ≥80°F and ≥40% RH, in shade — full sun can add up to 15°F.</p>`);
+      <p class="tool-note">Uses the National Weather Service method, including its low- and high-humidity adjustments. Values are for shade — full sun can add up to 15°F.</p>`);
+    // NWS: simple formula first; if that averages to 80°F or more, use the Rothfusz regression plus adjustments
+    const HI=(T,R)=>{
+      let h=0.5*(T+61+((T-68)*1.2)+(R*0.094));
+      if((h+T)/2<80) return h;
+      h=-42.379+2.04901523*T+10.14333127*R-0.22475541*T*R-0.00683783*T*T-0.05481717*R*R+0.00122874*T*T*R+0.00085282*T*R*R-0.00000199*T*T*R*R;
+      if(R<13&&T>=80&&T<=112) h-=((13-R)/4)*Math.sqrt((17-Math.abs(T-95))/17);
+      else if(R>85&&T>=80&&T<=87) h+=((R-85)/10)*((87-T)/5);
+      return h;
+    };
     window.RUN=()=>{
-      const T=+$('hi_t').value, R=+$('hi_r').value||0;
-      if(T>=80&&R>=40){
-        let HI=-42.379+2.04901523*T+10.14333127*R-0.22475541*T*R-0.00683783*T*T-0.05481717*R*R+0.00122874*T*T*R+0.00085282*T*R*R-0.00000199*T*T*R*R;
-        const v=Math.round(HI);
-        $('hi_val').textContent=v+'°F';
-        $('hi_cat').textContent=v>=125?'Extreme danger':v>=103?'Danger':v>=90?'Extreme caution':'Caution';
-      } else {
-        $('hi_val').textContent='N/A';
-        $('hi_cat').textContent='Outside index range';
-      }
+      const T=parseFloat($('hi_t').value), R=Math.min(Math.max(parseFloat($('hi_r').value)||0,0),100);
+      if(!isFinite(T)){ $('hi_val').textContent='—'; $('hi_c').textContent='—'; $('hi_cat').textContent='—'; return; }
+      const v=Math.round(HI(T,R));
+      $('hi_val').textContent=v+'°F';
+      $('hi_c').textContent=Math.round((v-32)*5/9)+'°C';
+      $('hi_cat').textContent=v>=125?'Extreme danger':v>=103?'Danger':v>=90?'Extreme caution':v>=80?'Caution':'Below caution level';
     };
     RUN();
   },
@@ -1258,17 +1264,25 @@ const IMPL = {
         <div class="stat-box"><strong id="ts_diff">+1.7%</strong><span>Difference</span></div>
         <div class="stat-box"><strong id="ts_speed">60 → 61.0</strong><span>Speedo reads 60, true speed</span></div>
       </div>
-      <p style="font-size:.85rem;color:var(--text-muted);margin-top:10px;">Guideline: keep the new diameter within ~3% of original.</p>`);
+      <div class="tool-stats" style="margin-top:8px;">
+        <div class="stat-box"><strong id="ts_sw">—</strong><span>Sidewall height (1 → 2)</span></div>
+        <div class="stat-box"><strong id="ts_wd">—</strong><span>Section width (1 → 2)</span></div>
+        <div class="stat-box"><strong id="ts_rev">—</strong><span>Revolutions per mile (1 → 2)</span></div>
+      </div>
+      <p class="tool-note">Guideline: keep the new diameter within about 3% of the original.</p>`);
     window.RUN=()=>{
       const d=(w,a,r)=>r*25.4+2*(w*a/100);
-      const d1=d(+$('ts_w1').value||0,+$('ts_a1').value||0,+$('ts_r1').value||0);
-      const d2=d(+$('ts_w2').value||0,+$('ts_a2').value||0,+$('ts_r2').value||0);
+      const w1=+$('ts_w1').value||0,a1=+$('ts_a1').value||0,r1=+$('ts_r1').value||0,w2=+$('ts_w2').value||0,a2=+$('ts_a2').value||0,r2=+$('ts_r2').value||0;
+      const d1=d(w1,a1,r1), d2=d(w2,a2,r2), i=x=>(x/25.4).toFixed(1)+'″', rev=x=>Math.round(63360/(Math.PI*x/25.4));
       if(d1>0&&d2>0){
         $('ts_d1').textContent=(d1/25.4).toFixed(1)+' in';
         $('ts_d2').textContent=(d2/25.4).toFixed(1)+' in';
         const pct=(d2-d1)/d1*100;
         $('ts_diff').textContent=(pct>=0?'+':'')+pct.toFixed(1)+'%';
         $('ts_speed').textContent='60 → '+(60*d2/d1).toFixed(1);
+        $('ts_sw').textContent=i(w1*a1/100)+' → '+i(w2*a2/100);
+        $('ts_wd').textContent=i(w1)+' → '+i(w2);
+        $('ts_rev').textContent=rev(d1)+' → '+rev(d2);
       }
     };
     RUN();
@@ -1493,16 +1507,23 @@ const IMPL = {
       <div class="tool-stats">
         <div class="stat-box"><strong id="mp_mpg">30.0</strong><span>MPG</span></div>
         <div class="stat-box"><strong id="mp_cpm">11.7¢</strong><span>Cost per mile</span></div>
+        <div class="stat-box"><strong id="mp_100">$11.67</strong><span>Cost per 100 miles</span></div>
         <div class="stat-box"><strong id="mp_trip">$39.90</strong><span>Fuel cost (this tank)</span></div>
+        <div class="stat-box"><strong id="mp_l100">7.8</strong><span>L/100 km</span></div>
+        <div class="stat-box"><strong id="mp_kml">12.8</strong><span>km per liter</span></div>
       </div>`);
     window.RUN=()=>{
       const mi=parseFloat($('mp_mi').value)||0, g=parseFloat($('mp_gal').value)||0, p=parseFloat($('mp_price').value)||0;
+      const ids=['mp_mpg','mp_cpm','mp_100','mp_trip','mp_l100','mp_kml'];
       if(mi>0&&g>0){
         const mpg=mi/g;
         $('mp_mpg').textContent=mpg.toFixed(1);
         $('mp_cpm').textContent=p>0?(p/mpg*100).toFixed(1)+'¢':'—';
+        $('mp_100').textContent=p>0?'$'+(100/mpg*p).toFixed(2):'—';
         $('mp_trip').textContent=p>0?'$'+(g*p).toFixed(2):'—';
-      } else { $('mp_mpg').textContent='—';$('mp_cpm').textContent='—';$('mp_trip').textContent='—'; }
+        $('mp_l100').textContent=(235.215/mpg).toFixed(1);
+        $('mp_kml').textContent=(mpg*0.425144).toFixed(1);
+      } else ids.forEach(i=>$(i).textContent='—');
     };
     RUN();
   },
@@ -1976,18 +1997,24 @@ const IMPL = {
   // ─── DISCOUNT ───
   discountCalc(){
     ui(`
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-        <div class="form-group"><label>Original Price ($)</label><input type="number" id="d_price" value="100" oninput="RUN()"></div>
-        <div class="form-group"><label>Discount %</label><input type="number" id="d_pct" value="25" oninput="RUN()"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div class="form-group"><label>Original price ($)</label><input type="number" id="d_price" value="100" min="0" step="0.01" oninput="RUN()"></div>
+        <div class="form-group"><label>Discount (%)</label><input type="number" id="d_pct" value="25" min="0" max="100" step="0.5" oninput="RUN()"></div>
+        <div class="form-group"><label>Extra % off (optional)</label><input type="number" id="d_pct2" value="" min="0" max="100" step="0.5" placeholder="e.g. 10" oninput="RUN()"></div>
       </div>
       <div class="tool-stats">
-        <div class="stat-box"><strong id="d_final">$0</strong><span>Final Price</span></div>
-        <div class="stat-box"><strong id="d_save">$0</strong><span>You Save</span></div>
-      </div>`);
+        <div class="stat-box"><strong id="d_final">$0</strong><span>Final price</span></div>
+        <div class="stat-box"><strong id="d_save">$0</strong><span>You save</span></div>
+        <div class="stat-box"><strong id="d_total">25%</strong><span>Total discount</span></div>
+      </div>
+      <p class="tool-note" id="d_note">Stacked discounts multiply, they don’t add: 20% off then an extra 10% off is 28% off, not 30%.</p>`);
     window.RUN=()=>{
-      const p=parseFloat($('d_price').value)||0,d=parseFloat($('d_pct').value)||0;
-      const save=p*d/100;
-      $('d_final').textContent='$'+(p-save).toFixed(2);$('d_save').textContent='$'+save.toFixed(2);
+      const p=parseFloat($('d_price').value)||0, a=Math.min(Math.max(parseFloat($('d_pct').value)||0,0),100), b=Math.min(Math.max(parseFloat($('d_pct2').value)||0,0),100);
+      const fin=p*(1-a/100)*(1-b/100), tot=p>0?(1-fin/p)*100:(1-(1-a/100)*(1-b/100))*100;
+      const m=x=>'$'+x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+      $('d_final').textContent=m(fin); $('d_save').textContent=m(p-fin);
+      $('d_total').textContent=(Math.round(tot*100)/100)+'%';
+      $('d_note').textContent=b>0?a+'% off then an extra '+b+'% off = '+(Math.round(tot*100)/100)+'% off in total — stacked discounts multiply, they don’t add.':'Stacked discounts multiply, they don’t add: 20% off then an extra 10% off is 28% off, not 30%.';
     };
     RUN();
   },
