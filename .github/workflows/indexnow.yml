@@ -8,4 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/indexnow.py 180
+        with:
+          fetch-depth: 0
+      # On a push, submit only the pages that changed; a manual run submits the whole sitemap.
+      - run: python3 scripts/indexnow.py 180 "${{ github.event.before }}" "${{ github.sha }}"
